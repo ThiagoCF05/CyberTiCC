@@ -7,10 +7,12 @@ Description:
     This script aims to populate the database with training and dev sets of the WebNLG Challenge
 """
 
+import sys
+sys.path.append('../')
 import os
 import xml.etree.ElementTree as ET
 
-from db import operations as db
+from db import operations as dbop
 
 class DBInit(object):
     def __init__(self):
@@ -41,7 +43,7 @@ class DBInit(object):
         entries = root.find('entries')
 
         for _entry in entries:
-            entry = db.save_entry(docid=_entry.attrib['eid'], size=_entry.attrib['size'], category=_entry.attrib['category'], set=self.typeset)
+            entry = dbop.save_entry(docid=_entry.attrib['eid'], size=_entry.attrib['size'], category=_entry.attrib['category'], set=self.typeset)
 
             entities_type = []
 
@@ -61,23 +63,23 @@ class DBInit(object):
             for i, mtriple in enumerate(mtripleset):
                 e1, pred, e2 = mtriple.text.split('|')
 
-                entity1 = db.save_entity(e1.replace('\'', '').strip(), entities_type[i]['e1_type'])
-                predicate = db.save_predicate(pred)
-                entity2 = db.save_entity(e2.replace('\'', '').strip(), entities_type[i]['e2_type'])
+                entity1 = dbop.save_entity(e1.replace('\'', '').strip(), entities_type[i]['e1_type'])
+                predicate = dbop.save_predicate(pred)
+                entity2 = dbop.save_entity(e2.replace('\'', '').strip(), entities_type[i]['e2_type'])
 
-                triple = db.save_triple(entity1, predicate, entity2)
+                triple = dbop.save_triple(entity1, predicate, entity2)
 
-                db.add_triple(entry, triple)
+                dbop.add_triple(entry, triple)
 
             # process lexical entries
             lexEntries = _entry.findall('lex')
             for lexEntry in lexEntries:
-                lexEntry = db.save_lexEntry(docid=lexEntry.attrib['lid'], comment=lexEntry.attrib['comment'], text=lexEntry.text.strip())
+                lexEntry = dbop.save_lexEntry(docid=lexEntry.attrib['lid'], comment=lexEntry.attrib['comment'], text=lexEntry.text.strip())
 
-                db.add_lexEntry(entry, lexEntry)
+                dbop.add_lexEntry(entry, lexEntry)
 
 if __name__ == '__main__':
-    db.clean()
+    dbop.clean()
 
     dbinit = DBInit()
 
