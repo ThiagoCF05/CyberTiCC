@@ -82,7 +82,7 @@ if __name__ == '__main__':
     dbinit = DBInit()
 
     # TRAIN SET
-    TRAIN_DIR = 'data/train'
+    TRAIN_DIR = '../data/train'
     for dir in os.listdir(TRAIN_DIR):
         if dir != '.DS_Store':
             f = os.path.join(TRAIN_DIR, dir)
@@ -90,7 +90,7 @@ if __name__ == '__main__':
             dbinit.run(f, 'train')
 
     # DEV SET
-    DEV_DIR = 'data/dev'
+    DEV_DIR = '../data/dev'
     for dir in os.listdir(DEV_DIR):
         if dir != '.DS_Store':
             f = os.path.join(DEV_DIR, dir)
