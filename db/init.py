@@ -43,40 +43,41 @@ class DBInit(object):
         entries = root.find('entries')
 
         for _entry in entries:
-            entry = dbop.save_entry(docid=_entry.attrib['eid'], size=_entry.attrib['size'], category=_entry.attrib['category'], set=self.typeset)
+            if int(_entry.attrib['size']) == 1:
+                entry = dbop.save_entry(docid=_entry.attrib['eid'], size=int(_entry.attrib['size']), category=_entry.attrib['category'], set=self.typeset)
 
-            entities_type = []
+                entities_type = []
 
-            # Reading original triples to extract the entities type
-            otripleset = _entry.find('originaltripleset')
-            for otriple in otripleset:
-                e1, pred, e2 = otriple.text.split(' | ')
+                # Reading original triples to extract the entities type
+                otripleset = _entry.find('originaltripleset')
+                for otriple in otripleset:
+                    e1, pred, e2 = otriple.text.split(' | ')
 
-                entity1_type = self.extract_entity_type(e1.strip())
-                entity2_type = self.extract_entity_type(e2.strip())
+                    entity1_type = self.extract_entity_type(e1.strip())
+                    entity2_type = self.extract_entity_type(e2.strip())
 
-                types = {'e1_type':entity1_type, 'e2_type':entity2_type}
-                entities_type.append(types)
+                    types = {'e1_type':entity1_type, 'e2_type':entity2_type}
+                    entities_type.append(types)
 
-            # Reading modified triples to extract entities and predicate
-            mtripleset = _entry.find('modifiedtripleset')
-            for i, mtriple in enumerate(mtripleset):
-                e1, pred, e2 = mtriple.text.split('|')
+                # Reading modified triples to extract entities and predicate
+                mtripleset = _entry.find('modifiedtripleset')
+                for i, mtriple in enumerate(mtripleset):
+                    e1, pred, e2 = mtriple.text.split(' | ')
 
-                entity1 = dbop.save_entity(e1.replace('\'', '').strip(), entities_type[i]['e1_type'])
-                predicate = dbop.save_predicate(pred)
-                entity2 = dbop.save_entity(e2.replace('\'', '').strip(), entities_type[i]['e2_type'])
+                    entity1 = dbop.save_entity(e1.replace('\'', '').strip(), entities_type[i]['e1_type'])
+                    predicate = dbop.save_predicate(pred)
+                    entity2 = dbop.save_entity(e2.replace('\'', '').strip(), entities_type[i]['e2_type'])
 
-                triple = dbop.save_triple(entity1, predicate, entity2)
+                    triple = dbop.save_triple(entity1, predicate, entity2)
 
-                dbop.add_triple(entry, triple)
+                    dbop.add_triple(entry, triple)
 
-            # process lexical entries
-            lexEntries = _entry.findall('lex')
-            for lexEntry in lexEntries:
-                lexEntry = dbop.save_lexEntry(docid=lexEntry.attrib['lid'], comment=lexEntry.attrib['comment'], text=lexEntry.text.strip())
+                # process lexical entries
+                lexEntries = _entry.findall('lex')
+                for lexEntry in lexEntries:
+                    lexEntry = dbop.save_lexEntry(docid=lexEntry.attrib['lid'], comment=lexEntry.attrib['comment'], text=lexEntry.text.strip())
 
-                dbop.add_lexEntry(entry, lexEntry)
+                    dbop.add_lexEntry(entry, lexEntry)
 
 if __name__ == '__main__':
     dbop.clean()

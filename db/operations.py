@@ -10,6 +10,7 @@ Description:
 import sys
 sys.path.append('../')
 from db.model import *
+from mongoengine.queryset.visitor import Q
 
 # Predicate operations
 def save_predicate(name):
@@ -67,13 +68,13 @@ def save_entry(docid, size, category, set):
     return entry
 
 def add_triple(entry, triple):
-    query = Entry.objects(triples=triple)
+    query = Entry.objects(Q(id=entry.id) & Q(triples=triple))
 
     if query.count() == 0:
         entry.update(add_to_set__triples=[triple])
 
 def add_lexEntry(entry, lexEntry):
-    query = Entry.objects(texts=lexEntry)
+    query = Entry.objects(Q(id=entry.id) & Q(texts=lexEntry))
 
     if query.count() == 0:
         entry.update(add_to_set__texts=[lexEntry])
