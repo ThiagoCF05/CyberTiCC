@@ -50,7 +50,7 @@ class DBInit(object):
             # Reading original triples to extract the entities type
             otripleset = _entry.find('originaltripleset')
             for otriple in otripleset:
-                e1, pred, e2 = otriple.text.split('|')
+                e1, pred, e2 = otriple.text.split(' | ')
 
                 entity1_type = self.extract_entity_type(e1.strip())
                 entity2_type = self.extract_entity_type(e2.strip())

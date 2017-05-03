@@ -7,6 +7,8 @@ Description:
     CRUD (Create, read, update and delete) operations in database
 """
 
+import sys
+sys.path.append('../')
 from db.model import *
 
 # Predicate operations
