@@ -60,7 +60,7 @@ def save_lexEntry(docid, comment, text):
 def save_entry(docid, size, category, set):
     entry = Entry(docid=docid, size=size, category=category, set=set)
 
-    query = Entry.objects(docid=docid, size=size, category=category)
+    query = Entry.objects(docid=docid, size=size, category=category, set=set)
     if query.count() == 0:
         entry.save()
     else:
