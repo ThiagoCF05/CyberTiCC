@@ -24,10 +24,20 @@ class Triple(Document):
 
     meta = {'allow_inheritance': True}
 
+class Reference(Document):
+    tag = StringField(required=True, max_length=20)
+    entity = ReferenceField(Entity)
+    # refex = StringField(required=True, max_length=400)
+
+    meta = {'allow_inheritance': True}
+
 class Lex(Document):
     docid = StringField(required=True, max_length=10)
     comment = StringField(required=True, max_length=20)
     text = StringField(required=True, max_length=1000)
+
+    template = StringField(max_length=1000)
+    references = ListField(ReferenceField(Reference))
 
 class Entry(Document):
     docid = StringField(required=True, max_length=10)
@@ -39,10 +49,3 @@ class Entry(Document):
     texts = ListField(ReferenceField(Lex))
 
     meta = {'allow_inheritance': True}
-
-class Delex(Document):
-    template = StringField(required=True, max_length=1000)
-
-class EntityMap(Document):
-    key = StringField(required=True, max_length=20)
-    entity = ReferenceField(Entity)

@@ -34,6 +34,9 @@ def save_entity(name, type):
         entity = query.get()
     return entity
 
+def get_entity(name):
+    return Entity.objects(name=name).first()
+
 # Triple operations
 def save_triple(e1, pred, e2):
     triple = Triple(agent=e1, predicate=pred, patient=e2)
@@ -46,15 +49,20 @@ def save_triple(e1, pred, e2):
     return triple
 
 # Lexical entry operations
-def save_lexEntry(docid, comment, text):
-    lexEntry = Lex(docid=docid, comment=comment, text=text)
-
-    query = Lex.objects(docid=docid, comment=comment, text=text)
-    if query.count() == 0:
-        lexEntry.save()
-    else:
-        lexEntry = query.get()
+def save_lexEntry(docid, comment, text, template=''):
+    lexEntry = Lex(docid=docid, comment=comment, text=text, template=template)
+    lexEntry.save()
     return lexEntry
+
+def insert_template(lexEntry, template):
+    lexEntry.modify(set__template=template)
+    return lexEntry
+
+def add_reference(lexEntry, reference):
+    query = Lex.objects(Q(id=lexEntry.id) & Q(references=reference))
+
+    if query.count() == 0:
+        lexEntry.update(add_to_set__references=[reference])
 
 # Entry operations
 def save_entry(docid, size, category, set):
@@ -79,10 +87,30 @@ def add_lexEntry(entry, lexEntry):
     if query.count() == 0:
         entry.update(add_to_set__texts=[lexEntry])
 
+# Reference operations
+def save_reference(tag, entity):
+    if type(entity) == str:
+        entity = Entity.objects(name=entity).get()
+    reference = Reference(tag=tag, entity=entity)
+
+    query = Reference.objects(tag=tag, entity=entity)
+
+    if query.count() == 0:
+        reference.save()
+    else:
+        reference = query.get()
+    return reference
+
 # Clean database
 def clean():
     Entry.objects().delete()
     Triple.objects().delete()
+    Reference.objects().delete()
     Lex.objects().delete()
     Entity.objects().delete()
     Predicate.objects().delete()
+
+# Clean delex information
+def clean_delex():
+    Reference.objects().delete()
+    Lex.objects.update(template='')
