@@ -39,3 +39,10 @@ class Entry(Document):
     texts = ListField(ReferenceField(Lex))
 
     meta = {'allow_inheritance': True}
+
+class Delex(Document):
+    template = StringField(required=True, max_length=1000)
+
+class EntityMap(Document):
+    key = StringField(required=True, max_length=20)
+    entity = ReferenceField(Entity)
