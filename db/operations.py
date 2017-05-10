@@ -49,8 +49,8 @@ def save_triple(e1, pred, e2):
     return triple
 
 # Lexical entry operations
-def save_lexEntry(docid, comment, text, template=''):
-    lexEntry = Lex(docid=docid, comment=comment, text=text, template=template)
+def save_lexEntry(docid, comment, text, parse_tree, template=''):
+    lexEntry = Lex(docid=docid, comment=comment, text=text, template=template, parse_tree=parse_tree)
     lexEntry.save()
     return lexEntry
 

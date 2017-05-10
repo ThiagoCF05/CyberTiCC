@@ -13,10 +13,12 @@ import os
 import xml.etree.ElementTree as ET
 
 from db import operations as dbop
+sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
+from stanford_corenlp_pywrapper import CoreNLP
 
 class DBInit(object):
     def __init__(self):
-        pass
+        self.proc = CoreNLP('parse')
 
     def run(self, dir, typeset):
         self.typeset = typeset
@@ -35,6 +37,22 @@ class DBInit(object):
             return aux[-1]
 
         return 'wiki'
+
+    def extract_parse_tree(self, text):
+        out = self.proc.parse_doc(text)
+
+        parse_trees = []
+        for snt in out['sentences']:
+            parse_trees.append(snt['parse'])
+
+        if len(parse_trees) > 1:
+            parse = '(MULTI-SENTENCE '
+            for tree in parse_trees:
+                parse += tree + ' '
+            parse = parse.strip() + ')'
+        else:
+            parse = parse_trees[0]
+        return parse
 
     def proc_file(self, fname):
         tree = ET.parse(fname)
@@ -74,7 +92,9 @@ class DBInit(object):
             # process lexical entries
             lexEntries = _entry.findall('lex')
             for lexEntry in lexEntries:
-                lexEntry = dbop.save_lexEntry(docid=lexEntry.attrib['lid'], comment=lexEntry.attrib['comment'], text=lexEntry.text.strip())
+                text = lexEntry.text.strip()
+                parse_tree = self.extract_parse_tree(text)
+                lexEntry = dbop.save_lexEntry(docid=lexEntry.attrib['lid'], comment=lexEntry.attrib['comment'], text=text, parse_tree=parse_tree)
 
                 dbop.add_lexEntry(entry, lexEntry)
 

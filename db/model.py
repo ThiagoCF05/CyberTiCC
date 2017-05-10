@@ -35,6 +35,7 @@ class Lex(Document):
     docid = StringField(required=True, max_length=10)
     comment = StringField(required=True, max_length=20)
     text = StringField(required=True, max_length=1000)
+    parse_tree = StringField()
 
     template = StringField(max_length=1000)
     references = ListField(ReferenceField(Reference))
