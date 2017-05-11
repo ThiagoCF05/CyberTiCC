@@ -11,6 +11,7 @@ Description:
 import sys
 sys.path.append('../')
 from db.model import *
+sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
 from stanford_corenlp_pywrapper import CoreNLP
 from nltk.metrics import edit_distance
 import xml.etree.ElementTree as ET
@@ -43,7 +44,14 @@ class Delexicalizer(object):
 
                 entity_map[str(new_tag)] = entity_map[str(tag)]
                 del entity_map[str(tag)]
+
                 nbridges += 1
+                for tag in entity_map:
+                    role, id = tag.split('-')
+                    id = int(id)
+                    if role == 'PATIENT' and id > npatients:
+                        entity_map[role+str(id-1)] = entity_map[str(tag)]
+                        del entity_map[str(tag)]
                 npatients -= 1
             else:
                 f = filter(lambda tag: entity_map[tag].name == agent and 'AGENT' in tag, entity_map)
@@ -59,7 +67,14 @@ class Delexicalizer(object):
 
                 entity_map[str(new_tag)] = entity_map[str(tag)]
                 del entity_map[str(tag)]
+
                 nbridges += 1
+                for tag in entity_map:
+                    role, id = tag.split('-')
+                    id = int(id)
+                    if role == 'AGENT' and id > nagents:
+                        entity_map[role+str(id-1)] = entity_map[str(tag)]
+                        del entity_map[str(tag)]
                 nagents -= 1
             else:
                 f = filter(lambda tag: entity_map[tag].name == patient, entity_map)
@@ -144,11 +159,12 @@ class Delexicalizer(object):
             for mention in snt['entitymentions']:
                 if mention['type'] == 'DATE' and 'timex_xml' in mention:
                     root = ET.fromstring(mention['timex_xml'])
-                    normalized, text = root.attrib['value'], root.text
+                    if 'value' in root.attrib:
+                        normalized, text = root.attrib['value'], root.text
 
-                    if re.match(regex, normalized) != None:
-                        template = template.replace(text, normalized)
-                        nps.append(normalized)
+                        if re.match(regex, normalized) != None:
+                            template = template.replace(text, normalized)
+                            nps.append(normalized)
         return template, nps
 
     def get_nps(self, tree):
@@ -228,7 +244,7 @@ class Delexicalizer(object):
 
     def run(self):
         # entries = Entry.objects(size=2, category="Astronaut", set='train')
-        entries = Entry.objects(size=7, set='train')
+        entries = Entry.objects()
 
         print entries.count()
         for entry in entries:

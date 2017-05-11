@@ -1,0 +1,10 @@
+# Aligning
+
+perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
+    -root-dir . \
+    --corpus train \
+    -mgiza \
+    -external-bin-dir /home/tcastrof/workspace/mgiza \
+    --f de --e en \
+    --last-step 3 \
+    --parallel \
