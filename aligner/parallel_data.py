@@ -52,9 +52,25 @@ def get_parallel(set, delex=True, size=10):
             else:
                 target = lexEntry.text
 
+
+            # print source
+            # print target
+            # print 10 * '-'
             de.append(source.strip())
             en.append(target)
     return de, en
 
+def write(fname, docs):
+    f = open(fname, 'w')
+    for doc in docs:
+        f.write(doc)
+        f.write('\n')
+    f.close()
+
 if __name__ == '__main__':
-    de, en = get_parallel('train', True)
+    DE_FILE = '../data/alignments/delex_train.de'
+    EN_FILE = '../data/alignments/delex_train.en'
+    de, en = get_parallel('train', True, 10)
+
+    write(DE_FILE, de)
+    write(EN_FILE, en)
