@@ -21,7 +21,7 @@ def map_entities(triples):
             del entity_map[str(original_tag)]
 
             nbridges += 1
-            for tag in entity_map:
+            for tag in entity_map.keys():
                 role, id = tag.split('-')
                 id = int(id)
                 if role == 'PATIENT' and id > original_id:
@@ -43,7 +43,7 @@ def map_entities(triples):
             del entity_map[str(original_tag)]
 
             nbridges += 1
-            for tag in entity_map:
+            for tag in entity_map.keys():
                 role, id = tag.split('-')
                 id = int(id)
                 if role == 'AGENT' and id > original_id:
