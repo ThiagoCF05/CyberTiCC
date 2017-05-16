@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/delex.py" afterPath="$PROJECT_DIR$/delexicalizer/delex.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
@@ -23,35 +24,36 @@
       <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+            <state relative-caret-position="186">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+            <state relative-caret-position="840">
+              <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delex.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="delex.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="49" column="44" lean-forward="false" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+            <state relative-caret-position="695">
+              <caret line="84" column="58" lean-forward="false" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
               <folding>
-                <element signature="e#3247#4598#0" expanded="false" />
-                <element signature="e#4684#5271#0" expanded="false" />
-                <element signature="e#5341#5899#0" expanded="false" />
-                <element signature="e#5961#6586#0" expanded="false" />
-                <element signature="e#6625#7337#0" expanded="false" />
-                <element signature="e#7427#8093#0" expanded="false" />
+                <element signature="e#3543#4894#0" expanded="false" />
+                <element signature="e#4980#5567#0" expanded="false" />
+                <element signature="e#5637#6195#0" expanded="false" />
+                <element signature="e#6257#6882#0" expanded="false" />
+                <element signature="e#6921#7633#0" expanded="false" />
+                <element signature="e#7723#8389#0" expanded="false" />
+                <element signature="e#8429#9478#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -826,10 +828,10 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aligner/parallel_data.py</url>
           <line>22</line>
-          <option name="timeStamp" value="71" />
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="73" />
+      <option name="time" value="75" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -871,12 +873,13 @@
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="22" />
           <folding>
-            <element signature="e#3247#4598#0" expanded="false" />
-            <element signature="e#4684#5271#0" expanded="false" />
-            <element signature="e#5341#5899#0" expanded="false" />
-            <element signature="e#5961#6586#0" expanded="false" />
-            <element signature="e#6625#7337#0" expanded="false" />
-            <element signature="e#7427#8093#0" expanded="false" />
+            <element signature="e#3543#4894#0" expanded="false" />
+            <element signature="e#4980#5567#0" expanded="false" />
+            <element signature="e#5637#6195#0" expanded="false" />
+            <element signature="e#6257#6882#0" expanded="false" />
+            <element signature="e#6921#7633#0" expanded="false" />
+            <element signature="e#7723#8389#0" expanded="false" />
+            <element signature="e#8429#9478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -913,12 +916,13 @@
         <state relative-caret-position="375">
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
-            <element signature="e#3247#4598#0" expanded="false" />
-            <element signature="e#4684#5271#0" expanded="false" />
-            <element signature="e#5341#5899#0" expanded="false" />
-            <element signature="e#5961#6586#0" expanded="false" />
-            <element signature="e#6625#7337#0" expanded="false" />
-            <element signature="e#7427#8093#0" expanded="false" />
+            <element signature="e#3543#4894#0" expanded="false" />
+            <element signature="e#4980#5567#0" expanded="false" />
+            <element signature="e#5637#6195#0" expanded="false" />
+            <element signature="e#6257#6882#0" expanded="false" />
+            <element signature="e#6921#7633#0" expanded="false" />
+            <element signature="e#7723#8389#0" expanded="false" />
+            <element signature="e#8429#9478#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1174,40 +1178,41 @@
     </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/fields.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="321">
           <caret line="296" column="0" lean-forward="false" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+        <state relative-caret-position="186">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="49" column="44" lean-forward="false" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="695">
+          <caret line="84" column="58" lean-forward="false" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
           <folding>
-            <element signature="e#3247#4598#0" expanded="false" />
-            <element signature="e#4684#5271#0" expanded="false" />
-            <element signature="e#5341#5899#0" expanded="false" />
-            <element signature="e#5961#6586#0" expanded="false" />
-            <element signature="e#6625#7337#0" expanded="false" />
-            <element signature="e#7427#8093#0" expanded="false" />
+            <element signature="e#3543#4894#0" expanded="false" />
+            <element signature="e#4980#5567#0" expanded="false" />
+            <element signature="e#5637#6195#0" expanded="false" />
+            <element signature="e#6257#6882#0" expanded="false" />
+            <element signature="e#6921#7633#0" expanded="false" />
+            <element signature="e#7723#8389#0" expanded="false" />
+            <element signature="e#8429#9478#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

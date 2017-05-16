@@ -47,12 +47,15 @@ class Delexicalizer(object):
                 del entity_map[str(original_tag)]
 
                 nbridges += 1
+                new_entity_map = {}
                 for tag in entity_map.keys():
                     role, id = tag.split('-')
                     id = int(id)
                     if role == 'PATIENT' and id > original_id:
-                        entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
-                        del entity_map[str(tag)]
+                        new_entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
+                    else:
+                        new_entity_map[str(tag)] = entity_map[str(tag)]
+                entity_map = copy.deepcopy(new_entity_map)
                 npatients -= 1
             else:
                 f = filter(lambda tag: entity_map[tag].name == agent and 'AGENT' in tag, entity_map)
@@ -71,12 +74,15 @@ class Delexicalizer(object):
                 del entity_map[str(original_tag)]
 
                 nbridges += 1
+                new_entity_map = {}
                 for tag in entity_map.keys():
                     role, id = tag.split('-')
                     id = int(id)
                     if role == 'AGENT' and id > original_id:
-                        entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
-                        del entity_map[str(tag)]
+                        new_entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
+                    else:
+                        new_entity_map[str(tag)] = entity_map[str(tag)]
+                entity_map = copy.deepcopy(new_entity_map)
                 nagents -= 1
             else:
                 f = filter(lambda tag: entity_map[tag].name == patient, entity_map)

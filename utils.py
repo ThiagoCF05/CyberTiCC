@@ -1,4 +1,4 @@
-
+import copy
 
 # TO DO: bring entities with references
 def map_entities(triples):
@@ -21,12 +21,15 @@ def map_entities(triples):
             del entity_map[str(original_tag)]
 
             nbridges += 1
+            new_entity_map = {}
             for tag in entity_map.keys():
                 role, id = tag.split('-')
                 id = int(id)
                 if role == 'PATIENT' and id > original_id:
-                    entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
-                    del entity_map[str(tag)]
+                    new_entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
+                else:
+                    new_entity_map[str(tag)] = entity_map[str(tag)]
+            entity_map = copy.deepcopy(new_entity_map)
             npatients -= 1
         elif agent not in entity_map.values():
             tag = 'AGENT-' + str(nagents)
@@ -43,12 +46,15 @@ def map_entities(triples):
             del entity_map[str(original_tag)]
 
             nbridges += 1
+            new_entity_map = {}
             for tag in entity_map.keys():
                 role, id = tag.split('-')
                 id = int(id)
                 if role == 'AGENT' and id > original_id:
-                    entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
-                    del entity_map[str(tag)]
+                    new_entity_map[role+'-'+str(id-1)] = entity_map[str(tag)]
+                else:
+                    new_entity_map[str(tag)] = entity_map[str(tag)]
+            entity_map = copy.deepcopy(new_entity_map)
             nagents -= 1
         elif patient not in entity_map.values():
             tag = 'PATIENT-' + str(npatients)
