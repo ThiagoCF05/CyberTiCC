@@ -53,9 +53,9 @@ def get_parallel(set, delex=True, size=10):
                 target = lexEntry.text
 
 
-            # print source
-            # print target
-            # print 10 * '-'
+            print source
+            print target
+            print 10 * '-'
             de.append(source.strip())
             en.append(target)
     return de, en
