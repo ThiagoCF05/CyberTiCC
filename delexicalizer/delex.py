@@ -39,12 +39,12 @@ class Delexicalizer(object):
 
             f = filter(lambda tag: entity_map[tag].name == agent and 'PATIENT' in tag, entity_map)
             if len(f) > 0:
-                tag = f[0]
-                original_id = int(tag.split('-')[1])
+                original_tag = f[0]
+                original_id = int(original_tag.split('-')[1])
                 new_tag = 'BRIDGE-' + str(nbridges)
 
-                entity_map[str(new_tag)] = entity_map[str(tag)]
-                del entity_map[str(tag)]
+                entity_map[str(new_tag)] = entity_map[str(original_tag)]
+                del entity_map[str(original_tag)]
 
                 nbridges += 1
                 for tag in entity_map:
@@ -63,12 +63,12 @@ class Delexicalizer(object):
 
             f = filter(lambda tag: entity_map[tag].name == patient and 'AGENT' in tag, entity_map)
             if len(f) > 0:
-                tag = f[0]
-                original_id = int(tag.split('-')[1])
+                original_tag = f[0]
+                original_id = int(original_tag.split('-')[1])
                 new_tag = 'BRIDGE-' + str(nbridges)
 
-                entity_map[str(new_tag)] = entity_map[str(tag)]
-                del entity_map[str(tag)]
+                entity_map[str(new_tag)] = entity_map[str(original_tag)]
+                del entity_map[str(original_tag)]
 
                 nbridges += 1
                 for tag in entity_map:
