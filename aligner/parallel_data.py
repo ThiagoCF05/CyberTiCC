@@ -68,9 +68,9 @@ def write(fname, docs):
     f.close()
 
 if __name__ == '__main__':
-    DE_FILE = '../data/alignments/delex_train.de'
-    EN_FILE = '../data/alignments/delex_train.en'
-    de, en = get_parallel('train', True, 10)
+    DE_FILE = '/home/tcastrof/cyber/data/lex/train.de'
+    EN_FILE = '/home/tcastrof/cyber/data/lex/train.en'
+    de, en = get_parallel('train', False, 10)
 
     write(DE_FILE, de)
     write(EN_FILE, en)
