@@ -63,7 +63,7 @@ def get_parallel(set, delex=True, size=10):
 def write(fname, docs):
     f = open(fname, 'w')
     for doc in docs:
-        f.write(doc)
+        f.write(doc.encode('utf-8'))
         f.write('\n')
     f.close()
 
