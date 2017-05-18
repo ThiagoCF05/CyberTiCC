@@ -8,7 +8,7 @@ import operator
 import utils
 
 if __name__ == '__main__':
-    deventries = Entry.objects(size=2, set='dev')
+    deventries = Entry.objects(set='dev')
 
     f = open('out.txt', 'w')
     for deventry in deventries:
@@ -37,16 +37,16 @@ if __name__ == '__main__':
 
         f.write(10 * '-')
         f.write('\n')
-        f.write('Entities: ' + entitymap)
+        f.write('Entities: ' + str(entitymap))
         f.write('\n')
-        f.write('Predicate: ' + predicates)
+        f.write('Predicate: ' + str(predicates))
         f.write('\n')
         for item in sorted(templates.items(), key=operator.itemgetter(1), reverse=True)[:5]:
             template, freq = item
             for tag, name in entitymap.iteritems():
                 template = template.replace(tag, ' '.join(name.split('_')))
-            f.write(template + ' ' + freq)
+            f.write(template.encode('utf-8') + ' ' + str(freq))
             f.write('\n')
         f.write(10 * '-')
         f.write('\n')
-        f.close()
+    f.close()
