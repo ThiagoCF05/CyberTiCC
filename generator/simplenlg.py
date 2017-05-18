@@ -2,15 +2,54 @@
 import sys
 sys.path.append('../')
 from db.model import *
-import db.operations as dbop
 import nltk
 import operator
 import utils
 
+def write_references(refs):
+    f1 = open('ref1', 'w')
+    f2 = open('ref2', 'w')
+    f3 = open('ref3', 'w')
+    f4 = open('ref4', 'w')
+    f5 = open('ref5', 'w')
+
+    for references in refs:
+        f1.write(references[0].encode('utf-8'))
+        f1.write('\n')
+
+        if len(references) >= 2:
+            f2.write(references[1].encode('utf-8'))
+        f2.write('\n')
+
+        if len(references) >= 3:
+            f3.write(references[2].encode('utf-8'))
+        f3.write('\n')
+
+        if len(references) >= 4:
+            f4.write(references[3].encode('utf-8'))
+        f4.write('\n')
+
+        if len(references) >= 5:
+            f5.write(references[4].encode('utf-8'))
+        f5.write('\n')
+
+    f1.close()
+    f2.close()
+    f3.close()
+    f4.close()
+    f5.close()
+
+def write_hyps(hyps):
+    f = open('hyps', 'w')
+    for hyp in hyps:
+        f.write(hyp.encode('utf-8'))
+    f.close()
+
 if __name__ == '__main__':
     deventries = Entry.objects(set='dev')
 
-    f = open('out.txt', 'w')
+    references, hyps = [], []
+
     for deventry in deventries:
         # entity and predicate mapping
         entitymap, predicates = utils.map_entities(triples=deventry.triples)
@@ -18,6 +57,13 @@ if __name__ == '__main__':
         trainentries = Entry.objects(size=len(deventry.triples), set='train')
         for i, triple in enumerate(deventry.triples):
             trainentries = filter(lambda entry: entry.triples[i].predicate.name == triple.predicate.name, trainentries)
+
+        # extract references
+        refs = []
+        for lexEntry in deventry.texts:
+            text = lexEntry.text
+            refs.append(text)
+        references.append(refs)
 
         # extract templates
         templates = []
@@ -32,21 +78,23 @@ if __name__ == '__main__':
                         break
                 if entitiesPresence:
                     templates.append(template)
-
         templates = nltk.FreqDist(templates)
 
-        f.write(10 * '-')
-        f.write('\n')
-        f.write('Entities: ' + str(entitymap))
-        f.write('\n')
-        f.write('Predicate: ' + str(predicates))
-        f.write('\n')
-        for item in sorted(templates.items(), key=operator.itemgetter(1), reverse=True)[:5]:
-            template, freq = item
+        item = sorted(templates.items(), key=operator.itemgetter(1), reverse=True)
+        if len(item) == 0:
+            template, freq = '', 0
+        else:
+            template, freq = item[0]
             for tag, name in entitymap.iteritems():
                 template = template.replace(tag, ' '.join(name.split('_')))
-            f.write(template.encode('utf-8') + ' ' + str(freq))
-            f.write('\n')
-        f.write(10 * '-')
-        f.write('\n')
-    f.close()
+
+        print 10 * '-'
+        print 'Entities: ', str(entitymap)
+        print 'Predicate: ', str(predicates)
+        print template.encode('utf-8'), freq
+        print 10 * '-'
+
+        hyps.append(template)
+
+    write_references(references)
+    write_hyps(hyps)
