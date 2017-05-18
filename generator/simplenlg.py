@@ -10,6 +10,7 @@ import utils
 if __name__ == '__main__':
     deventries = Entry.objects(size=2, set='dev')
 
+    f = open('out.txt', 'w')
     for deventry in deventries:
         # entity and predicate mapping
         entitymap, predicates = utils.map_entities(triples=deventry.triples)
@@ -34,10 +35,18 @@ if __name__ == '__main__':
 
         templates = nltk.FreqDist(templates)
 
-        print 10 * '-'
-        print 'Entities:', entitymap
-        print 'Predicate:', predicates
+        f.write(10 * '-')
+        f.write('\n')
+        f.write('Entities: ' + entitymap)
+        f.write('\n')
+        f.write('Predicate: ' + predicates)
+        f.write('\n')
         for item in sorted(templates.items(), key=operator.itemgetter(1), reverse=True)[:5]:
             template, freq = item
-            print template, freq
-        print 10 * '-'
+            for tag, name in entitymap.iteritems():
+                template = template.replace(tag, ' '.join(name.split('_')))
+            f.write(template + ' ' + freq)
+            f.write('\n')
+        f.write(10 * '-')
+        f.write('\n')
+        f.close()
