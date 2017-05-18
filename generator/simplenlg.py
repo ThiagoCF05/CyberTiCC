@@ -8,25 +8,19 @@ import operator
 import utils
 
 if __name__ == '__main__':
-    deventries = Entry.objects(size=1, set='dev')
+    deventries = Entry.objects(size=2, set='dev')
 
     for deventry in deventries:
+        # entity and predicate mapping
         entitymap, predicates = utils.map_entities(triples=deventry.triples)
 
-        pred = predicates[0]
-
-        # search triples with the predicate
-        predicate = Predicate.objects(name=pred).get()
-        ftriples = Triple.objects(predicate=predicate)
-
-        # search entries with the triples
-        entries = []
-        for ftriple in ftriples:
-            entries.extend(Entry.objects(set='train', size=1, triples=ftriple))
+        trainentries = Entry.objects(size=len(deventry.triples), set='train')
+        for i, triple in enumerate(deventry.triples):
+            trainentries = filter(lambda entry: entry.triples[i].predicate.name == triple.predicate.name, trainentries)
 
         # extract templates
         templates = []
-        for entry in entries:
+        for entry in trainentries:
             for lexEntry in entry.texts:
                 template = lexEntry.template
 
@@ -42,8 +36,8 @@ if __name__ == '__main__':
 
         print 10 * '-'
         print 'Entities:', entitymap
-        print 'Predicate:', pred
-        for item in sorted(templates.items(), key=operator.itemgetter(1), reverse=True)[:4]:
+        print 'Predicate:', predicates
+        for item in sorted(templates.items(), key=operator.itemgetter(1), reverse=True)[:5]:
             template, freq = item
             print template, freq
         print 10 * '-'
