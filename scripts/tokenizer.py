@@ -6,7 +6,11 @@ Date: 19/05/2017
 Description:
     Tokenize the output from the systems for automatic evaluation
 """
+# encoding=utf8
+import sys
 
+reload(sys)
+sys.setdefaultencoding('utf8')
 import nltk
 
 def tokenize(fread, fwrite):

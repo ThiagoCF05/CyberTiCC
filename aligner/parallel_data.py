@@ -15,7 +15,7 @@ from db.model import *
 
 import utils
 
-def get_parallel(set, delex=True, size=10):
+def get_parallel(set, delex=True, size=10, evaluation=False):
     entries = Entry.objects(size__lte=size, set=set)
 
     de, en = [], []
@@ -46,18 +46,24 @@ def get_parallel(set, delex=True, size=10):
                 source += patient
             source += ' '
 
+        target_list = []
         for lexEntry in entry.texts:
             if delex:
                 target = lexEntry.template
             else:
                 target = lexEntry.text
+            target_list.append(target)
 
 
             print source
             print target
             print 10 * '-'
+            if not evaluation:
+                de.append(source.strip())
+                en.append(target)
+        if evaluation:
             de.append(source.strip())
-            en.append(target)
+            en.append(target_list)
     return de, en
 
 def write(fname, docs):
@@ -68,9 +74,10 @@ def write(fname, docs):
     f.close()
 
 if __name__ == '__main__':
-    DE_FILE = '/home/tcastrof/cyber/data/lex/train.de'
-    EN_FILE = '/home/tcastrof/cyber/data/lex/train.en'
-    de, en = get_parallel('train', False, 10)
+    DE_FILE = '/home/tcastrof/cyber/data/lex/eval.de'
+    EN_FILE = '/home/tcastrof/cyber/data/lex/ref'
+    de, en = get_parallel('dev', False, 10, True)
 
     write(DE_FILE, de)
-    write(EN_FILE, en)
+    # write(EN_FILE, en)
+    utils.write_references(EN_FILE, en)

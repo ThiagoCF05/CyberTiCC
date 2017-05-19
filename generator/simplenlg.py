@@ -1,3 +1,13 @@
+__author__ = 'thiagocastroferreira'
+
+"""
+Author: Thiago Castro Ferreira
+Date: 18/05/2017
+Description:
+    Simple natural language generation system which retrieves text templates
+    based on the order of the predicates
+"""
+
 
 import sys
 sys.path.append('../')
