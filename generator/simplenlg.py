@@ -43,6 +43,7 @@ def write_hyps(hyps):
     f = open('hyps', 'w')
     for hyp in hyps:
         f.write(hyp.encode('utf-8'))
+        f.write('\n')
     f.close()
 
 if __name__ == '__main__':
