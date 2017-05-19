@@ -16,8 +16,8 @@ def tokenize(fread, fwrite):
 
     f = open(fwrite, 'w')
     for text in texts:
-        tokens = ' '.join(nltk.word_tokenize(text))
-        f.write(tokens.encode('utf-8'))
+        tokens = u' '.join(nltk.word_tokenize(text))
+        f.write(tokens)
         f.write('\n')
     f.close()
 
