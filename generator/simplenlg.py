@@ -8,7 +8,7 @@ Description:
     based on the order of the predicates
 """
 
-
+import argparse
 import sys
 sys.path.append('../')
 from db.model import *
@@ -16,12 +16,12 @@ import nltk
 import operator
 import utils
 
-def write_references(refs):
-    f1 = open('ref1', 'w')
-    f2 = open('ref2', 'w')
-    f3 = open('ref3', 'w')
-    f4 = open('ref4', 'w')
-    f5 = open('ref5', 'w')
+def write_references(refs, fname):
+    f1 = open(fname+'1', 'w')
+    f2 = open(fname+'2', 'w')
+    f3 = open(fname+'3', 'w')
+    f4 = open(fname+'4', 'w')
+    f5 = open(fname+'5', 'w')
 
     for references in refs:
         f1.write(references[0].encode('utf-8'))
@@ -49,14 +49,14 @@ def write_references(refs):
     f4.close()
     f5.close()
 
-def write_hyps(hyps):
-    f = open('hyps', 'w')
+def write_hyps(hyps, fname):
+    f = open(fname, 'w')
     for hyp in hyps:
         f.write(hyp.encode('utf-8'))
         f.write('\n')
     f.close()
 
-if __name__ == '__main__':
+def main():
     deventries = Entry.objects(set='dev')
 
     references, hyps = [], []
@@ -106,6 +106,16 @@ if __name__ == '__main__':
         print 10 * '-'
 
         hyps.append(template)
+    return hyps, references
 
-    write_references(references)
-    write_hyps(hyps)
+if __name__ == '__main__':
+    # python simplenlg.py /home/tcastrof/cyber/data/easy_nlg/hyps /home/tcastrof/cyber/data/easy_nlg/ref
+    parser = argparse.ArgumentParser()
+    parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
+    parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
+    args = parser.parse_args()
+
+    hyps, references = main()
+
+    write_references(references, args.refs)
+    write_hyps(hyps, args.hyps)

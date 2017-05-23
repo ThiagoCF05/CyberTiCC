@@ -7,11 +7,13 @@ Description:
     Tokenize and lowercasing the output from the systems for automatic evaluation
 """
 # encoding=utf8
+import argparse
 import sys
 
 reload(sys)
 sys.setdefaultencoding('utf8')
 import nltk
+import os
 
 def tokenize(fread, fwrite):
     f = open(fread)
@@ -26,32 +28,38 @@ def tokenize(fread, fwrite):
     f.close()
 
 if __name__ == '__main__':
+    # python simplenlg.py /home/tcastrof/cyber/data/easy_nlg
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('directory', type=str, default='/home/tcastrof/cyber/data/easy_nlg', help='directory')
+    args = parser.parse_args()
+
     print 'Hypothesis'
-    fread = '/home/tcastrof/cyber/data/easy_nlg/hyps'
-    fwrite = '/home/tcastrof/cyber/data/easy_nlg/hyps_tok'
+    fread = os.path.join(args.directory, 'hyps')
+    fwrite = os.path.join(args.directory, 'hyps_tok')
     tokenize(fread, fwrite)
 
     print 'Reference 1'
-    fread = '/home/tcastrof/cyber/data/easy_nlg/ref1'
-    fwrite = '/home/tcastrof/cyber/data/easy_nlg/ref1_tok'
+    fread = os.path.join(args.directory, 'ref1')
+    fwrite = os.path.join(args.directory, 'ref1_tok')
     tokenize(fread, fwrite)
 
     print 'Reference 2'
-    fread = '/home/tcastrof/cyber/data/easy_nlg/ref2'
-    fwrite = '/home/tcastrof/cyber/data/easy_nlg/ref2_tok'
+    fread = os.path.join(args.directory, 'ref2')
+    fwrite = os.path.join(args.directory, 'ref2_tok')
     tokenize(fread, fwrite)
 
     print 'Reference 3'
-    fread = '/home/tcastrof/cyber/data/easy_nlg/ref3'
-    fwrite = '/home/tcastrof/cyber/data/easy_nlg/ref3_tok'
+    fread = os.path.join(args.directory, 'ref3')
+    fwrite = os.path.join(args.directory, 'ref3_tok')
     tokenize(fread, fwrite)
 
     print 'Reference 4'
-    fread = '/home/tcastrof/cyber/data/easy_nlg/ref4'
-    fwrite = '/home/tcastrof/cyber/data/easy_nlg/ref4_tok'
+    fread = os.path.join(args.directory, 'ref4')
+    fwrite = os.path.join(args.directory, 'ref4_tok')
     tokenize(fread, fwrite)
 
     print 'Reference 5'
-    fread = '/home/tcastrof/cyber/data/easy_nlg/ref5'
-    fwrite = '/home/tcastrof/cyber/data/easy_nlg/ref5_tok'
+    fread = os.path.join(args.directory, 'ref5')
+    fwrite = os.path.join(args.directory, 'ref5_tok')
     tokenize(fread, fwrite)

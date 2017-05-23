@@ -7,6 +7,7 @@ Description:
     This script aims to evaluate the quality of the delexicalizers by measuring accuracy
 """
 
+import argparse
 import sys
 sys.path.append('../')
 import utils
@@ -40,4 +41,8 @@ def evaluate(verbose=False):
     print 'Evaluation: ', (float(num) / dem)
 
 if __name__ == '__main__':
-    evaluate(verbose=False)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--verbose", action="store_true", help="verbose")
+    args = parser.parse_args()
+
+    evaluate(verbose=args.verbose)

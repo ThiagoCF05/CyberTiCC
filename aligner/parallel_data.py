@@ -9,6 +9,7 @@ Description:
     by the texts (delexicalised or not)
 """
 
+import argparse
 import sys
 sys.path.append('../')
 from db.model import *
@@ -74,10 +75,31 @@ def write(fname, docs):
     f.close()
 
 if __name__ == '__main__':
-    DE_FILE = '/home/tcastrof/cyber/data/lex/eval.de'
-    EN_FILE = '/home/tcastrof/cyber/data/lex/ref'
-    de, en = get_parallel('dev', False, 10, True)
+    # python parallel_data.py /home/tcastrof/cyber/data/delex/train.de /home/tcastrof/cyber/data/delex/train.en 10 --dev --delex --eval
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('de', type=str, default='/home/tcastrof/cyber/data/delex/train.de', help='source language file')
+    parser.add_argument('en', type=str, default='/home/tcastrof/cyber/data/delex/train.en', help='target language file')
+    parser.add_argument('size', type=int, default=10, help='consider sentences with less or equal to N triples')
+    parser.add_argument("--dev", action="store_true", help="development set")
+    parser.add_argument("--delex", action="store_true", help="delexicalized templates")
+    parser.add_argument("--eval", action="store_true", help="evaluation mode")
+
+    args = parser.parse_args()
+
+    DE_FILE = args.de
+    EN_FILE = args.en
+    SIZE = args.size
+    SET = 'train'
+    if args.dev:
+        SET = 'dev'
+    DELEX = args.delex
+    EVAL =  args.eval
+
+    de, en = get_parallel(SET, DELEX, SIZE, EVAL)
 
     write(DE_FILE, de)
-    # write(EN_FILE, en)
-    utils.write_references(EN_FILE, en)
+    if EVAL:
+        utils.write_references(EN_FILE, en)
+    else:
+        write(EN_FILE, en)
