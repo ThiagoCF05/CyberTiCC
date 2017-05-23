@@ -66,7 +66,7 @@ class EasyNLG(object):
 
         template, entitymap, predicates = '', {}, []
         i = len(deventry.triples)
-        while template == '' or i > 0:
+        while template == '' and i > 0:
             triple1, triple2 = deventry.triples[:i], deventry.triples[i:]
 
             template1, entitymap, predicates = self.extract_template(triple1)
