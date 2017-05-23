@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
         for j, align in enumerate(de_en[i]):
             i1, i2 = map(lambda x: int(x), align.split('-'))
-            alignments[i2].append(i1)
+            alignments[i1].append(i2)
 
         for j, alignment in enumerate(alignments):
             f.write(alignment[0].encode('utf-8'))
