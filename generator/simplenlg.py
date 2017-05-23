@@ -21,7 +21,7 @@ class EasyNLG(object):
         self.references = []
         self.hyps = []
 
-        deventries = Entry.objects(set='dev')
+        deventries = Entry.objects(set='dev').timeout(False)
         for deventry in deventries:
             self.process(deventry)
 
@@ -68,7 +68,7 @@ class EasyNLG(object):
         template, entitymap, predicates = self.extract_template(deventry.triples)
 
         if template.strip() == '':
-            template1, template2, entitymap, predicates = '', '', {}, []
+            template1, template2 = '', ''
             i = len(deventry.triples)
             while (template1 == '' or template2 == '') and i > 0:
                 triple1, triple2 = deventry.triples[:i], deventry.triples[i:]
