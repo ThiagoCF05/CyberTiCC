@@ -64,18 +64,22 @@ class EasyNLG(object):
             refs.append(text)
         self.references.append(refs)
 
-        template, entitymap, predicates = '', {}, []
-        i = len(deventry.triples)
-        while template == '' and i > 0:
-            triple1, triple2 = deventry.triples[:i], deventry.triples[i:]
 
-            template1, entitymap, predicates = self.extract_template(triple1)
-            template2, entitymap, predicates = self.extract_template(triple2)
+        template, entitymap, predicates = self.extract_template(deventry.triples)
+
+        if template.strip() == '':
+            template1, template2, entitymap, predicates = '', '', {}, []
+            i = len(deventry.triples)
+            while (template1 == '' or template2 == '') and i > 0:
+                triple1, triple2 = deventry.triples[:i], deventry.triples[i:]
+
+                template1, _, _ = self.extract_template(triple1)
+                template2, _, _ = self.extract_template(triple2)
+
+                i = i - 1
 
             template = template1 + ' ' + template2
             template = template.strip()
-            i = i - 1
-
         self.hyps.append(template)
 
         print 10 * '-'
