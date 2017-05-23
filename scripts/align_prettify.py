@@ -24,8 +24,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     DE_EN_FILE = os.path.join(args.dir, 'model/aligned.grow-diag-final')
-    DE_FILE = os.path.join(args.dir, 'train.de')
-    EN_FILE = os.path.join(args.dir, 'train.en')
+    DE_FILE = os.path.join(args.dir, 'train_tok_lw.de')
+    EN_FILE = os.path.join(args.dir, 'train_tok_lw.en')
     OUT_FILE = os.path.join(args.dir, 'align.txt')
 
     de = read(DE_FILE)
