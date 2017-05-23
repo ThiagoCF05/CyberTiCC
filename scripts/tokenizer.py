@@ -4,7 +4,7 @@ __author__ = 'thiagocastroferreira'
 Author: Thiago Castro Ferreira
 Date: 19/05/2017
 Description:
-    Tokenize the output from the systems for automatic evaluation
+    Tokenize and lowercasing the output from the systems for automatic evaluation
 """
 # encoding=utf8
 import sys
@@ -20,7 +20,7 @@ def tokenize(fread, fwrite):
 
     f = open(fwrite, 'w')
     for text in texts:
-        tokens = u' '.join(nltk.word_tokenize(text))
+        tokens = u' '.join(nltk.word_tokenize(text.lower()))
         f.write(tokens)
         f.write('\n')
     f.close()
