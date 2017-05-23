@@ -18,6 +18,7 @@ def read(fname):
     return doc
 
 if __name__ == '__main__':
+    # python align_prettify.py /home/tcastrof/cyber/data/delex
     parser = argparse.ArgumentParser()
     parser.add_argument('dir', type=str, default='/home/tcastrof/cyber/data/delex', help='working directory')
     args = parser.parse_args()
