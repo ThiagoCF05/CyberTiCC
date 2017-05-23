@@ -1,7 +1,7 @@
 # Aligning
 perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
     -root-dir . \
-    --corpus delex_train \
+    --corpus train_tok_lw \
     -mgiza \
     -external-bin-dir /home/tcastrof/workspace/mgiza \
     --f de --e en \
@@ -14,7 +14,7 @@ perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
 # Training
 perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
     -root-dir . \
-    --corpus train_tok_lc \
+    --corpus train_tok_lw \
     -mgiza \
     --max-phrase-length 9 \
     -external-bin-dir /home/tcastrof/workspace/mgiza \
@@ -26,8 +26,8 @@ perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
 
 # Tunning
 perl /home/tcastrof/workspace/mosesdecoder/scripts/training/mert-moses.pl \
-        dev_tok_lc.de \
-        dev_tok_lc.en \
+        dev_tok_lw.de \
+        dev_tok_lw.en \
     /home/tcastrof/workspace/mosesdecoder/bin/moses \
     model/moses.ini \
     --mertdir /home/tcastrof/workspace/mosesdecoder/mert \
