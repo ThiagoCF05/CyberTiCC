@@ -64,23 +64,55 @@ class EasyNLG(object):
             refs.append(text)
         self.references.append(refs)
 
-
+        # Try to extract a full template
         template, entitymap, predicates = self.extract_template(deventry.triples)
 
+        # In case the template is not found, the search is splitted in two
         if template.strip() == '':
             template1, template2 = '', ''
             i = len(deventry.triples)
+
+            # while one of the two the templates is empty...
+            history = []
             while (template1 == '' or template2 == '') and i > 0:
                 triple1, triple2 = deventry.triples[:i], deventry.triples[i:]
 
                 template1, _, _ = self.extract_template(triple1)
                 template2, _, _ = self.extract_template(triple2)
 
+                history.append({'triple1':triple1, 'triple2':triple2, 'template1':template1, 'template2':template2})
                 i = i - 1
 
-            template = template1 + ' ' + template2
-            template = template.strip()
-        self.hyps.append(template)
+            # If two template is found, return them. Otherwise, get the longest template and realize others separately
+            if template1 != '' and template2 != '':
+                template = template1 + ' ' + template2
+                template = template.strip()
+            else:
+                best_aggregation = {}
+                for h in history:
+                    if h['template1'] != '':
+                        if 'maxtriple' not in best_aggregation:
+                            best_aggregation['maxtriple'] = h['triple1']
+                            best_aggregation['template'] = h['template1']
+                            best_aggregation['remaining'] = h['triple2']
+                        elif len(best_aggregation['maxtriple']) < len(h['triple1']):
+                            best_aggregation['maxtriple'] = h['triple1']
+                            best_aggregation['template'] = h['template1']
+                            best_aggregation['remaining'] = h['triple2']
+                    else:
+                        if 'maxtriple' not in best_aggregation:
+                            best_aggregation['maxtriple'] = h['triple2']
+                            best_aggregation['template'] = h['template2']
+                            best_aggregation['remaining'] = h['triple1']
+                        elif len(best_aggregation['maxtriple']) < len(h['triple2']):
+                            best_aggregation['maxtriple'] = h['triple2']
+                            best_aggregation['template'] = h['template2']
+                            best_aggregation['remaining'] = h['triple1']
+
+                template = best_aggregation['template']
+                for triple in best_aggregation['remaining']:
+                    template = template + ' ' + self.extract_template([triple])[0]
+        self.hyps.append(template.strip())
 
         print 10 * '-'
         print 'Entities: ', str(entitymap)
