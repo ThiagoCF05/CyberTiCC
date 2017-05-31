@@ -24,10 +24,18 @@ class Triple(Document):
 
     meta = {'allow_inheritance': True}
 
+class Refex(Document):
+    ref_type = StringField(required=True, max_length=10)
+    refex = StringField(required=True, max_length=400)
+
 class Reference(Document):
-    tag = StringField(required=True, max_length=20)
     entity = ReferenceField(Entity)
-    # refex = StringField(required=True, max_length=400)
+
+    syntax = StringField(required=True, max_length=10)
+    text_status = StringField(required=True, max_length=10)
+    sentence_status = StringField(required=True, max_length=10)
+
+    refexes = ListField(ReferenceField(Refex))
 
     meta = {'allow_inheritance': True}
 
@@ -38,7 +46,7 @@ class Lex(Document):
     parse_tree = StringField()
 
     template = StringField(max_length=1000)
-    references = ListField(ReferenceField(Reference))
+    # references = ListField(ReferenceField(Reference))
 
 class Entry(Document):
     docid = StringField(required=True, max_length=10)

@@ -58,11 +58,11 @@ def insert_template(lexEntry, template):
     lexEntry.modify(set__template=template)
     return lexEntry
 
-def add_reference(lexEntry, reference):
-    query = Lex.objects(Q(id=lexEntry.id) & Q(references=reference))
-
-    if query.count() == 0:
-        lexEntry.update(add_to_set__references=[reference])
+# def add_reference(lexEntry, reference):
+#     query = Lex.objects(Q(id=lexEntry.id) & Q(references=reference))
+#
+#     if query.count() == 0:
+#         lexEntry.update(add_to_set__references=[reference])
 
 # Entry operations
 def save_entry(docid, size, category, set):
@@ -88,18 +88,32 @@ def add_lexEntry(entry, lexEntry):
         entry.update(add_to_set__texts=[lexEntry])
 
 # Reference operations
-def save_reference(tag, entity):
-    if type(entity) == str:
+def save_reference(entity, syntax, text_status, sentence_status):
+    if type(entity) == str or type(entity) == unicode:
         entity = Entity.objects(name=entity).get()
-    reference = Reference(tag=tag, entity=entity)
+    reference = Reference(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
 
-    query = Reference.objects(tag=tag, entity=entity)
+    query = Reference.objects(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
 
     if query.count() == 0:
         reference.save()
     else:
         reference = query.get()
     return reference
+
+def add_refex(reference, refex):
+    reference.update(add_to_set__refexes=[refex])
+
+# Referring expression
+def save_refex(reftype, refex):
+    entry = Refex(ref_type=reftype, refex=refex)
+
+    query = Refex.objects(ref_type=reftype, refex=refex)
+    if query.count() == 0:
+        entry.save()
+    else:
+        entry = query.get()
+    return entry
 
 # Clean database
 def clean():
