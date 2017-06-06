@@ -49,8 +49,9 @@ class ProperNameTraining(object):
             # self.trainset_backoff[(entity, n_tm1)] = sorted(self.trainset_backoff[(entity, n_tm1)].items(), key=operator.itemgetter(1), reverse=True)[:3]
 
     def write(self):
+        keys = sorted(self.trainset.keys(), key=lambda x: (x[0], x[1], x[2]))
         f = open('name_distribution.txt', 'w')
-        for key in self.trainset:
+        for key in keys:
             entity, text_status, n_tm1 = key
             f.write(entity.encode('utf-8'))
             f.write('\t')
