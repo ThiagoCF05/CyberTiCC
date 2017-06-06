@@ -30,9 +30,9 @@ class ProperNameTraining(object):
                     bigrams = nltk.bigrams(tokens)
                     for bigram in bigrams:
                         if (text_status, entity, bigram[0]) not in self.trainset:
-                            self.trainset[(text_status, entity)] = []
-                        if entity not in self.trainset_backoff:
-                            self.trainset_backoff[entity] = []
+                            self.trainset[(text_status, entity, bigram[0])] = []
+                        if (entity, bigram[0]) not in self.trainset_backoff:
+                            self.trainset_backoff[(entity, bigram[0])] = []
 
                         self.trainset[(text_status, entity, bigram[0])].append(bigram[1])
                         self.trainset_backoff[(entity, bigram[0])].append(bigram[1])
