@@ -25,7 +25,7 @@ class ProperNameTraining(object):
 
             for refex in reference.refexes:
                 if refex.ref_type == u'name':
-                    tokens = [u'<S>'] + nltk.word_tokenize(refex.refex) + [u'</S>']
+                    tokens = [u'START'] + nltk.word_tokenize(refex.refex) + [u'END']
 
                     bigrams = nltk.bigrams(tokens)
                     for bigram in bigrams:
@@ -62,7 +62,7 @@ class ProperNameTraining(object):
             for word in self.trainset[key]:
                 f.write(word[0].encode('utf-8'))
                 f.write('\t')
-                f.write(word[1].encode('utf-8'))
+                f.write(word[1])
                 f.write('\n')
             f.write('\n')
         f.close()
@@ -78,7 +78,7 @@ class ProperNameTraining(object):
         #     for word in self.trainset[key]:
         #         f.write(word[0].encode('utf-8'))
         #         f.write('\t')
-        #         f.write(word[1].encode('utf-8'))
+        #         f.write(word[1])
         #         f.write('\n')
         #     f.write('\n')
         # f.close()
