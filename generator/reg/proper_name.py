@@ -7,6 +7,8 @@ Description:
     Proper name generation
 """
 
+import sys
+sys.path.append('../../')
 from db.model import *
 import nltk
 import operator
@@ -57,9 +59,9 @@ class ProperNameTraining(object):
             f.write('\n')
 
             for word in self.trainset[key]:
-                f.write(word[0])
+                f.write(word[0].encode('utf-8'))
                 f.write('\t')
-                f.write(word[1])
+                f.write(word[1].encode('utf-8'))
                 f.write('\n')
             f.write('\n')
         f.close()
@@ -73,9 +75,9 @@ class ProperNameTraining(object):
             f.write('\n')
 
             for word in self.trainset[key]:
-                f.write(word[0])
+                f.write(word[0].encode('utf-8'))
                 f.write('\t')
-                f.write(word[1])
+                f.write(word[1].encode('utf-8'))
                 f.write('\n')
             f.write('\n')
         f.close()
