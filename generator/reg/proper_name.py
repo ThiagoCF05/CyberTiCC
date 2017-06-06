@@ -62,7 +62,7 @@ class ProperNameTraining(object):
             for word in self.trainset[key]:
                 f.write(word[0].encode('utf-8'))
                 f.write('\t')
-                f.write(word[1])
+                f.write(str(word[1]))
                 f.write('\n')
             f.write('\n')
         f.close()
@@ -78,7 +78,7 @@ class ProperNameTraining(object):
         #     for word in self.trainset[key]:
         #         f.write(word[0].encode('utf-8'))
         #         f.write('\t')
-        #         f.write(word[1])
+        #         f.write(str(word[1]))
         #         f.write('\n')
         #     f.write('\n')
         # f.close()
