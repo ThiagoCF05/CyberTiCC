@@ -45,8 +45,8 @@ class ProperNameTraining(object):
             self.trainset[key] = nltk.FreqDist(self.trainset[key])
             self.trainset[key] = sorted(self.trainset[key].items(), key=operator.itemgetter(1), reverse=True)[:3]
 
-            self.trainset_backoff[(entity, n_tm1)] = nltk.FreqDist(self.trainset_backoff[(entity, n_tm1)])
-            self.trainset_backoff[(entity, n_tm1)] = sorted(self.trainset_backoff[(entity, n_tm1)].items(), key=operator.itemgetter(1), reverse=True)[:3]
+            # self.trainset_backoff[(entity, n_tm1)] = nltk.FreqDist(self.trainset_backoff[(entity, n_tm1)])
+            # self.trainset_backoff[(entity, n_tm1)] = sorted(self.trainset_backoff[(entity, n_tm1)].items(), key=operator.itemgetter(1), reverse=True)[:3]
 
     def write(self):
         f = open('name_distribution.txt', 'w')
@@ -67,21 +67,21 @@ class ProperNameTraining(object):
             f.write('\n')
         f.close()
 
-        f = open('name_backoff_distribution.txt', 'w')
-        for key in self.trainset_backoff:
-            entity, n_tm1 = key
-            f.write(entity.encode('utf-8'))
-            f.write('\t')
-            f.write(n_tm1.encode('utf-8'))
-            f.write('\n')
-
-            for word in self.trainset[key]:
-                f.write(word[0].encode('utf-8'))
-                f.write('\t')
-                f.write(word[1].encode('utf-8'))
-                f.write('\n')
-            f.write('\n')
-        f.close()
+        # f = open('name_backoff_distribution.txt', 'w')
+        # for key in self.trainset_backoff:
+        #     entity, n_tm1 = key
+        #     f.write(entity.encode('utf-8'))
+        #     f.write('\t')
+        #     f.write(n_tm1.encode('utf-8'))
+        #     f.write('\n')
+        #
+        #     for word in self.trainset[key]:
+        #         f.write(word[0].encode('utf-8'))
+        #         f.write('\t')
+        #         f.write(word[1].encode('utf-8'))
+        #         f.write('\n')
+        #     f.write('\n')
+        # f.close()
 
 if __name__ == '__main__':
     train = ProperNameTraining()

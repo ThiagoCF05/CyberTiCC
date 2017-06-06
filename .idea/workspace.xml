@@ -72,8 +72,8 @@
       <file leaf-file-name="proper_name.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="47" column="88" lean-forward="true" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+            <state relative-caret-position="802">
+              <caret line="83" column="19" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="83" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -1291,8 +1291,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="47" column="88" lean-forward="true" selection-start-line="47" selection-start-column="88" selection-end-line="47" selection-end-column="88" />
+        <state relative-caret-position="802">
+          <caret line="83" column="19" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="83" selection-end-column="19" />
           <folding />
         </state>
       </provider>
