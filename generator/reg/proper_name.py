@@ -21,7 +21,7 @@ class ProperNameTraining(object):
         self.trainset_backoff = {}
         for reference in references:
             text_status = reference.text_status
-            entity = reference.entity
+            entity = reference.entity.name
 
             for refex in reference.refexes:
                 if refex.ref_type == u'name':
