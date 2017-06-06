@@ -7,6 +7,7 @@ Description:
     Proper name generation
 """
 
+import cPickle as p
 import sys
 sys.path.append('../../')
 from db.model import *
@@ -85,6 +86,38 @@ class ProperNameTraining(object):
             f.write('\n')
         f.close()
 
+    def write_pickle(self):
+        p.dump(self.trainset, open('model.cPickle', 'w'))
+        p.dump(self.trainset_backoff, open('backoff_model.cPickle', 'w'))
+
+class ProperNameGeneration(object):
+    def __init__(self):
+        self.load_models()
+
+    def load_models(self):
+        self.model = p.load(open('model.cPickle'))
+        self.backoff = p.load(open('backoff_model.cPickle'))
+
+    def generate(self, reference):
+        text_status = reference.text_status
+        entity = reference.entity.name
+        n_tm1 = u'START'
+
+        if (text_status, entity, n_tm1) in self.model:
+            name, n_t = '', u'START'
+            while n_t != 'END':
+                name = name + n_t + ' '
+                n_t = self.model[(text_status, entity, n_t)][0][0]
+        elif (entity, n_tm1) in self.backoff:
+            name, n_t = '', u'START'
+            while n_t != 'END':
+                name = name + n_t + ' '
+                n_t = self.backoff[(entity, n_t)][0][0]
+        else:
+            name = entity.replace('\"', '').replace('\'', '').replace('_', ' ')
+
+        return name.strip()
+
 if __name__ == '__main__':
     train = ProperNameTraining()
-    train.write()
+    train.write_pickle()
