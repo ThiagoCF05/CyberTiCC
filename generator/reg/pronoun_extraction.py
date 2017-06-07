@@ -6,7 +6,8 @@ Date: 07/06/2017
 Description:
     This script aims to extract all pronoun per entity in each syntactic position
 """
-
+import sys
+sys.path.append('../../')
 import cPickle as p
 import nltk
 
