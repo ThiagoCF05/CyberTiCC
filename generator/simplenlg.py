@@ -16,12 +16,16 @@ import nltk
 import operator
 import utils
 
+from reg.reg_main import REG
+
 class EasyNLG(object):
     def __init__(self):
         self.references = []
         self.hyps = []
 
-        deventries = Entry.objects(set='dev').timeout(False)
+        self.reg = REG()
+
+        deventries = Entry.objects(set='dev', size__lte=3).timeout(False)
         for deventry in deventries:
             self.process(deventry)
 
@@ -46,15 +50,26 @@ class EasyNLG(object):
                         break
                 if entitiesPresence:
                     templates.append(template)
+
         templates = nltk.FreqDist(templates)
         item = sorted(templates.items(), key=operator.itemgetter(1), reverse=True)
         if len(item) == 0:
             template, freq = '', 0
         else:
             template, freq = item[0]
+            # REPLACE ENTITY TAGS FOR WIKIPEDIA IDs
             for tag, name in entitymap.iteritems():
-                template = template.replace(tag, ' '.join(name.replace('\'', '').replace('\"', '').split('_')))
+                template = template.replace(tag, '_'.join(name.replace('\'', '').replace('\"', '').split()))
         return template, entitymap, predicates
+
+    def get_new_entitymap(self, entitymap):
+        new_entitymap = {}
+
+        tags = sorted(entitymap.keys())
+        for i, tag in enumerate(tags):
+            new_tag = 'ENTITY-' + str(i+1)
+            new_entitymap[entitymap[tag]] = new_tag
+        return new_entitymap
 
     def process(self, deventry):
         # extract references
@@ -83,7 +98,7 @@ class EasyNLG(object):
                 history.append({'triple1':triple1, 'triple2':triple2, 'template1':template1, 'template2':template2})
                 i = i - 1
 
-            # If two template is found, return them. Otherwise, get the longest template and realize others separately
+            # If two templates are found, return them. Otherwise, get the longest template and realize others separately
             if template1 != '' and template2 != '':
                 template = template1 + ' ' + template2
                 template = template.strip()
@@ -112,6 +127,16 @@ class EasyNLG(object):
                 template = best_aggregation['template']
                 for triple in best_aggregation['remaining']:
                     template = template + ' ' + self.extract_template([triple])[0]
+
+        # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
+        new_entitymap = self.get_new_entitymap(entitymap)
+        for entity, tag in new_entitymap.iteritems():
+            name = '_'.join(entity.replace('\'', '').replace('\"', '').split())
+            template = template.replace(name, tag)
+
+        new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))
+        template = self.reg.generate(template, new_entitymap)
+
         self.hyps.append(template.strip())
 
         print 10 * '-'
@@ -163,12 +188,12 @@ def write_hyps(hyps, fname):
 
 if __name__ == '__main__':
     # python simplenlg.py /home/tcastrof/cyber/data/easy_nlg/hyps /home/tcastrof/cyber/data/easy_nlg/ref
-    parser = argparse.ArgumentParser()
-    parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
-    parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
+    # parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
+    # args = parser.parse_args()
 
     nlg = EasyNLG()
 
-    write_references(nlg.references, args.refs)
-    write_hyps(nlg.hyps, args.hyps)
+    # write_references(nlg.references, args.refs)
+    # write_hyps(nlg.hyps, args.hyps)

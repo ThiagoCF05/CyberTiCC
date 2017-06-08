@@ -7,11 +7,12 @@ Description:
     Choice of referential form model
 """
 
+import copy
 import cPickle as p
 import operator
 from random import shuffle
 
-DISTRIBUTIONS = p.load(open('form_distributions.cPickle'))
+DISTRIBUTIONS = p.load(open('reg/form_distributions.cPickle'))
 
 # text-new -> name / text-old -> pronoun
 def rule_form_choice(text_status):
@@ -21,27 +22,25 @@ def rule_form_choice(text_status):
         return 'pronoun'
 
 def regular_bayes(references, distributions=DISTRIBUTIONS):
-    forms = []
     for reference in references:
-        X = (reference.syntax, reference.text_status, reference.sentence_status)
+        X = (reference['syntax'], reference['text_status'], reference['sentence_status'])
 
         form = sorted(distributions[X].items(), key=operator.itemgetter(1), reverse=True)[0][0]
-        forms.append(form)
-    return forms
+        reference['form'] = form
+    return references
 
-def variation_bayes(references, distributions=DISTRIBUTIONS):
+def variation_bayes(references):
+    distributions = p.load(open('reg/form_distributions.cPickle'))
     def group():
         g = {}
         for reference in references:
-            X = (reference.syntax, reference.text_status, reference.sentence_status)
+            X = (reference['syntax'], reference['text_status'], reference['sentence_status'])
             if X not in g:
                 g[X] = {'distribution': distributions[X], 'references':[]}
             g[X]['references'].append(reference)
         return g
 
     def choose_form(_references, distribution):
-        result = {}
-
         size = len(_references)
         for form in distribution:
             distribution[form] = size * distribution[form]
@@ -50,14 +49,14 @@ def variation_bayes(references, distributions=DISTRIBUTIONS):
         shuffle(_references)
         for reference in _references:
             form = sorted(distribution.items(), key=operator.itemgetter(1), reverse=True)[0][0]
-            result[reference.id] = form
+            reference['form'] = form
 
             distribution[form] -= 1
-        return result
+        return _references
 
     groups = group()
-    forms = {}
+    references = []
     for g in groups:
-        f = choose_form(groups[g]['references'], groups[g]['distribution'])
-        forms.update(f)
-    return forms
+        _references = choose_form(groups[g]['references'], groups[g]['distribution'])
+        references.extend(_references)
+    return references

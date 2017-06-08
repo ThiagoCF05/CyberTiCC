@@ -188,13 +188,13 @@ class Delexicalizer(object):
             if i == 0 or (reference['entity'].name != self.references[i-1]['entity'].name):
                 reference['text_status'] = 'new'
             else:
-                reference['text_status'] = 'old'
+                reference['text_status'] = 'given'
 
-            if reference['entity'] not in sentence_statuses:
+            if reference['entity'].name not in sentence_statuses:
                 reference['sentence_status'] = 'new'
             else:
-                reference['sentence_status'] = 'old'
-            sentence_statuses[reference['entity']] = reference['sentence']
+                reference['sentence_status'] = 'given'
+            sentence_statuses[reference['entity'].name] = reference['sentence']
 
             ref = dbop.save_reference(entity=reference['entity'],
                                       syntax=reference['syntax'],

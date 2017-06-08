@@ -13,6 +13,22 @@ import nltk
 
 from db.model import *
 
+class Pronominalization(object):
+    def __init__(self):
+        self.pronoun_list = p.load(open('reg/pronouns.cPickle'))
+
+    def generate(self, reference):
+        entity = reference['entity']
+        syntax = reference['syntax']
+
+        if (entity, syntax) in self.pronoun_list:
+            return self.pronoun_list[(entity, syntax)][0][0].lower()
+        else:
+            if syntax == 'subj-det':
+                return 'its'
+            else:
+                return 'it'
+
 def run():
     references = Reference.objects()
 

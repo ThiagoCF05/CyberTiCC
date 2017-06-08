@@ -95,28 +95,28 @@ class ProperNameGeneration(object):
         self.load_models()
 
     def load_models(self):
-        self.model = p.load(open('model.cPickle'))
-        self.backoff = p.load(open('backoff_model.cPickle'))
+        self.model = p.load(open('reg/model.cPickle'))
+        self.backoff = p.load(open('reg/backoff_model.cPickle'))
 
     def generate(self, reference):
-        text_status = reference.text_status
-        entity = reference.entity.name
+        text_status = reference['text_status']
+        entity = reference['entity']
         n_tm1 = u'START'
 
         if (text_status, entity, n_tm1) in self.model:
             name, n_t = '', u'START'
-            while n_t != 'END':
+            while n_t != 'END' and len(name.split()) < 8:
                 name = name + n_t + ' '
                 n_t = self.model[(text_status, entity, n_t)][0][0]
         elif (entity, n_tm1) in self.backoff:
             name, n_t = '', u'START'
-            while n_t != 'END':
+            while n_t != 'END'  and len(name.split()) < 8:
                 name = name + n_t + ' '
                 n_t = self.backoff[(entity, n_t)][0][0]
         else:
             name = entity.replace('\"', '').replace('\'', '').replace('_', ' ')
 
-        return name.strip()
+        return name.replace(u'START', u'').strip()
 
 if __name__ == '__main__':
     train = ProperNameTraining()
