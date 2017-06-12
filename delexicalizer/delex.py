@@ -148,7 +148,7 @@ class Delexicalizer(object):
             template = template.replace(' ' + pronref['reference'], ' PRON-'+tag, 1)
             out = self.proc_parse.parse_doc(template)['sentences']
 
-            references = self.get_references(out, 'PRON-'+tag, entity_map[tag])
+            references, template = self.get_references(out, 'PRON-'+tag, entity_map[tag])
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'pronoun'
@@ -160,16 +160,19 @@ class Delexicalizer(object):
         return template
     ############################################################################
     # REFERRING EXPRESSIONS PROCESSING
-    # get reference details (syntactic position and referential status)
+    # get reference details (syntactic position and referential status) and remove determiners and compounds
     def get_references(self, out, tag, entity):
         references = []
+        snt_templates = len(out) * ['']
+
         for i, snt in enumerate(out):
             deps = snt['deps_cc']
             visited_tokens = []
             for dep in deps:
+                # get syntax
                 if snt['tokens'][dep[2]] == tag and dep[2] not in visited_tokens:
                     visited_tokens.append(dep[2])
-                    reference = {'syntax':'', 'sentence':i, 'pos':dep[2], 'entity':entity, 'tag':tag}
+                    reference = {'syntax':'', 'sentence':i, 'pos':dep[2], 'entity':entity, 'tag':tag, 'determiner':'', 'compounds':[]}
                     if 'nsubj' in dep[0] or 'nsubjpass' in dep[0]:
                         reference['syntax'] = 'np-subj'
                     elif 'nmod:poss' in dep[0] or 'compound' in dep[0]:
@@ -177,7 +180,36 @@ class Delexicalizer(object):
                     else:
                         reference['syntax'] = 'np-obj'
                     references.append(reference)
-        return references
+
+        for i, snt in enumerate(out):
+            deps = snt['deps_cc']
+            removals = []
+            for dep in deps:
+                # mark compounds and determiners
+                if snt['tokens'][dep[1]] == tag:
+                    if dep[0] == 'det':
+                        for j, reference in enumerate(references):
+                            if reference['sentence'] == i and reference['pos'] == dep[1]:
+                                references[j]['determiner'] = snt['tokens'][dep[2]].lower()
+                                removals.append(dep[2])
+
+                    if dep[0] == 'compound':
+                        for j, reference in enumerate(references):
+                            if reference['sentence'] == i and reference['pos'] == dep[1] \
+                                    and 'AGENT' not in snt['tokens'][dep[2]] \
+                                    and 'PATIENT' not in snt['tokens'][dep[2]] \
+                                    and 'BRIDGE' not in snt['tokens'][dep[2]]:
+                                references[j]['compounds'].append((dep[2], snt['tokens'][dep[2]]))
+                                removals.append(dep[2])
+
+            snt_template = []
+            for j, token in enumerate(snt['tokens']):
+                if j not in removals:
+                    snt_template.append(token)
+            snt_templates[i] = ' '.join(snt_template)
+
+        template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+        return references, template
 
     # Parse and save references (referential status)
     def parse_references(self):
@@ -226,11 +258,18 @@ class Delexicalizer(object):
         out = self.proc_parse.parse_doc(template)['sentences']
         for tag_entity in entities:
             tag, entity = tag_entity
-            references = self.get_references(out, 'SIMPLE-'+tag, entity)
+            references, template = self.get_references(out, 'SIMPLE-'+tag, entity)
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
-                reference['refex'] = refexes[entity.name]
+
+                reference['refex'] = reference['determiner']
+                for compound in sorted(reference['compounds'], key=lambda x: x[0]):
+                    reference['refex'] = reference['refex'] + ' ' + compound[1]
+                reference['refex'] = reference['refex'] + ' ' + refexes[entity.name]
+
+                del reference['determiner']
+                del reference['compounds']
             self.references.extend(references)
 
         return template, delex
@@ -276,8 +315,9 @@ class Delexicalizer(object):
         tree = tree.split()
         for i, elem in enumerate(tree):
             if elem == '(NP':
-                nps.append(parse_np(i))
-
+                np = parse_np(i)
+                if 'AGENT' not in np and 'PATIENT' not in np and 'BRIDGE' not in np:
+                    nps.append(np)
         return nps
 
     def similarity_match(self, template, entity_map, delex_tag, nps):
@@ -298,18 +338,15 @@ class Delexicalizer(object):
 
         out = self.proc_parse.parse_doc(template)['sentences']
         for tag, entity in entity_map.iteritems():
-            references = self.get_references(out, 'SIMILARITY-'+tag, entity)
+            references, template = self.get_references(out, 'SIMILARITY-'+tag, entity)
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
                 reference['refex'] = refexes[entity.name]
+
+                del reference['determiner']
+                del reference['compounds']
             self.references.extend(references)
-
-            # TO DO: save reference np before delete it
-            # nps.remove(np)
-
-            # reference = dbop.save_reference(tag, entity)
-            # dbop.add_reference(lexEntry, reference)
 
         return template, delex_tag
     ############################################################################
@@ -338,6 +375,8 @@ class Delexicalizer(object):
             if len(delex_tags) < len(entity_map):
                 template, new_nps = self.normalize_dates(template, out_parse)
 
+                # out = self.proc_parse.parse_doc(template)['sentences']
+                # snt_templates = []
                 nps = self.get_nps(lexEntry.parse_tree)
                 nps.extend(new_nps)
                 template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)

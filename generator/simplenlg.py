@@ -25,7 +25,7 @@ class EasyNLG(object):
 
         self.reg = REG()
 
-        deventries = Entry.objects(set='dev', size__lte=3).timeout(False)
+        deventries = Entry.objects(set='dev').timeout(False)
         for deventry in deventries:
             self.process(deventry)
 
@@ -134,6 +134,7 @@ class EasyNLG(object):
             name = '_'.join(entity.replace('\'', '').replace('\"', '').split())
             template = template.replace(name, tag)
 
+        # Generating referring expressions
         new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))
         template = self.reg.generate(template, new_entitymap)
 
@@ -188,12 +189,12 @@ def write_hyps(hyps, fname):
 
 if __name__ == '__main__':
     # python simplenlg.py /home/tcastrof/cyber/data/easy_nlg/hyps /home/tcastrof/cyber/data/easy_nlg/ref
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
-    # parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
+    parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
+    args = parser.parse_args()
 
     nlg = EasyNLG()
 
-    # write_references(nlg.references, args.refs)
-    # write_hyps(nlg.hyps, args.hyps)
+    write_references(nlg.references, args.refs)
+    write_hyps(nlg.hyps, args.hyps)
