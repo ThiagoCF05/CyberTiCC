@@ -26,7 +26,7 @@ for entry in entries:
     f.write('\n\nENTITY MAP\n')
     entitymap, predicates = utils.map_entities(entry.triples)
     for tag, entity in entitymap.iteritems():
-        f.write(tag.encode('utf-8') + ' | ' + entity.name.encode('utf-8') + '\n')
+        f.write(tag.encode('utf-8') + ' | ' + entity.encode('utf-8') + '\n')
 
     f.write('\n\nLEX\n')
     for lex in entry.texts:
