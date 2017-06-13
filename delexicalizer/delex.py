@@ -384,11 +384,13 @@ class Delexicalizer(object):
             template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '')
             dbop.insert_template(lexEntry, template)
 
+            print template
+            print entity_map
             self.parse_references()
 
     def run(self):
-        # entries = Entry.objects(size=5, category="Astronaut", set='train')
-        entries = Entry.objects(set='train')
+        entries = Entry.objects(set='train', id='592edf62bda9645713a91a1e')
+        # entries = Entry.objects(set='train')
 
         print entries.count()
         for entry in entries:

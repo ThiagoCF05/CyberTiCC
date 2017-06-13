@@ -17,7 +17,7 @@ entries = Entry.objects(set='train')
 f = open('report.txt', 'w')
 for entry in entries:
     f.write('\n')
-    f.write('Entry: ' + str(entry.docid))
+    f.write('Entry: ' + str(entry.docid) + ' ' + str(entry.size) + ' ' + str(entry.category))
     f.write('\n\nTRIPLES\n')
     for triple in entry.triples:
         str_triple = triple.agent.name + ' | ' + triple.predicate.name + ' | ' + triple.patient.name
