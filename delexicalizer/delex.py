@@ -96,7 +96,6 @@ class Delexicalizer(object):
                     entity_map[str(tag)] = dbop.get_entity(patient)
                     npatients += 1
         return entity_map, predicates
-
     ############################################################################
     # COREFERENCE MATCH
     def get_pronrefs(self, out_parse):
@@ -128,6 +127,9 @@ class Delexicalizer(object):
             pronrefs.extend(entity_pronouns)
 
         # Sort similar pronominal references by their order in the text
+        for pronominal in pronrefs:
+            print pronominal
+        print 10 * '-'
         return sorted(pronrefs, key=lambda x: (x['sentence'], x['pos']))
 
     def coreference_match(self, template, entity_map, out_parse):
@@ -235,7 +237,6 @@ class Delexicalizer(object):
 
             refex = dbop.save_refex(reftype=reference['reftype'], refex=reference['refex'])
             dbop.add_refex(ref, refex)
-
     ############################################################################
     # Simple matching
     def simple_match(self, template, entity_map):
@@ -291,7 +292,6 @@ class Delexicalizer(object):
                             template = template.replace(text, normalized)
                             nps.append(normalized)
         return template, nps
-
     ############################################################################
     # Similarity match
     def get_nps(self, tree):
@@ -327,7 +327,7 @@ class Delexicalizer(object):
             if tag not in delex_tag:
                 ranking = {}
                 for np in nps:
-                    ranking[np] = edit_distance(entity_map[tag].name, np)
+                    ranking[np] = edit_distance(' '.join(entity_map[tag].name.split('_')), np)
 
                 ranking = sorted(ranking.items(), key=operator.itemgetter(1))
                 np = ranking[0][0]
