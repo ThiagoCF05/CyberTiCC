@@ -20,12 +20,14 @@ for entry in entries:
     f.write('\n\nTRIPLES\n')
     for triple in entry.triples:
         str_triple = triple.agent.name + ' | ' + triple.predicate.name + ' | ' + triple.patient.name
-        f.write(str_triple + '\n')
+        f.write(str_triple.encode('utf-8') + '\n')
+        f.write('-\n')
 
     f.write('\n\nLEX\n')
     for lex in entry.texts:
-        f.write(lex.text + '\n')
-        f.write(lex.template + '\n')
+        f.write(lex.text.encode('utf-8') + '\n')
+        f.write(lex.template.encode('utf-8') + '\n')
+        f.write('-\n')
     f.write('\n')
     f.write(50 * '*')
     f.write('\n')
