@@ -13,7 +13,7 @@ from db.model import *
 
 entries = Entry.objects(set='train')
 
-f = open('report.txt')
+f = open('report.txt', 'w')
 for entry in entries:
     f.write('\n')
     f.write('Entry: ' + str(entry.docid))
@@ -27,4 +27,5 @@ for entry in entries:
         f.write(lex.text + '\n')
         f.write(lex.template + '\n')
     f.write('\n')
-    f.write(50 * '*' + '\n')
+    f.write(50 * '*')
+    f.write('\n')
