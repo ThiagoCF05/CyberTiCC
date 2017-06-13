@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/delex.py" afterPath="$PROJECT_DIR$/delexicalizer/delex.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,15 +22,15 @@
       <file leaf-file-name="delex.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1583">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="720">
+              <caret line="128" column="71" lean-forward="false" selection-start-line="128" selection-start-column="71" selection-end-line="128" selection-end-column="71" />
               <folding>
                 <element signature="e#848#3602#0" expanded="false" />
-                <element signature="e#6588#9026#0" expanded="false" />
-                <element signature="e#9121#10222#0" expanded="false" />
-                <element signature="e#10379#11822#0" expanded="false" />
-                <element signature="e#11965#12590#0" expanded="false" />
-                <element signature="e#12732#13556#0" expanded="false" />
+                <element signature="e#6500#8938#0" expanded="false" />
+                <element signature="e#9033#10134#0" expanded="false" />
+                <element signature="e#10291#11734#0" expanded="false" />
+                <element signature="e#11877#12502#0" expanded="false" />
+                <element signature="e#12644#13468#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -966,7 +965,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/delexicalizer/delex.py</url>
-          <line>152</line>
+          <line>149</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
@@ -1320,15 +1319,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1583">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="720">
+          <caret line="128" column="71" lean-forward="false" selection-start-line="128" selection-start-column="71" selection-end-line="128" selection-end-column="71" />
           <folding>
             <element signature="e#848#3602#0" expanded="false" />
-            <element signature="e#6588#9026#0" expanded="false" />
-            <element signature="e#9121#10222#0" expanded="false" />
-            <element signature="e#10379#11822#0" expanded="false" />
-            <element signature="e#11965#12590#0" expanded="false" />
-            <element signature="e#12732#13556#0" expanded="false" />
+            <element signature="e#6500#8938#0" expanded="false" />
+            <element signature="e#9033#10134#0" expanded="false" />
+            <element signature="e#10291#11734#0" expanded="false" />
+            <element signature="e#11877#12502#0" expanded="false" />
+            <element signature="e#12644#13468#0" expanded="false" />
           </folding>
         </state>
       </provider>

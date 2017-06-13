@@ -127,9 +127,6 @@ class Delexicalizer(object):
             pronrefs.extend(entity_pronouns)
 
         # Sort similar pronominal references by their order in the text
-        for pronominal in pronrefs:
-            print pronominal
-        print 10 * '-'
         return sorted(pronrefs, key=lambda x: (x['sentence'], x['pos']))
 
     def coreference_match(self, template, entity_map, out_parse):
