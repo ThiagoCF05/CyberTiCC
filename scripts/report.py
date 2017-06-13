@@ -10,6 +10,7 @@ Description:
 import sys
 sys.path.append('../')
 from db.model import *
+import utils
 
 entries = Entry.objects(set='train')
 
@@ -21,7 +22,11 @@ for entry in entries:
     for triple in entry.triples:
         str_triple = triple.agent.name + ' | ' + triple.predicate.name + ' | ' + triple.patient.name
         f.write(str_triple.encode('utf-8') + '\n')
-        f.write('-\n')
+
+    f.write('\n\nENTITY MAP\n')
+    entitymap, predicates = utils.map_entities(entry.triples)
+    for tag, entity in entitymap.iteritems():
+        f.write(tag.encode('utf-8') + ' | ' + entity.name.encode('utf-8') + '\n')
 
     f.write('\n\nLEX\n')
     for lex in entry.texts:
