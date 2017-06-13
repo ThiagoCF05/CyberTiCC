@@ -379,7 +379,6 @@ class Delexicalizer(object):
 
     def process(self, entry):
         entity_map, predicates = self.parse(entry.triples)
-        print entity_map
         lexEntries = entry.texts
         for lexEntry in lexEntries:
             self.references = []
@@ -413,7 +412,6 @@ class Delexicalizer(object):
             template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '')
             dbop.insert_template(lexEntry, template)
 
-            print template
             self.parse_references()
 
     def run(self):
