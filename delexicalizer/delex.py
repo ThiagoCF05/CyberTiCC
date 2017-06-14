@@ -249,9 +249,9 @@ class Delexicalizer(object):
                 template = template.replace(matcher, 'SIMPLE-'+tag)
                 refexes[entity.name] = matcher
 
-                # reference = dbop.save_reference(tag=tag, entity=entity)
-                # dbop.add_reference(lexEntry, reference)
-                delex.append(tag)
+                # Solving the bracket problem of regular expressions
+                if len(re.findall(matcher, template)) == 0:
+                    delex.append(tag)
 
         out = self.proc_parse.parse_doc(template)['sentences']
         removals = dict(map(lambda i: (i, []), range(len(out))))
@@ -415,7 +415,7 @@ class Delexicalizer(object):
             self.parse_references()
 
     def run(self):
-        # entries = Entry.objects(set='train', docid='Id66', size=4, category='Building')
+        # entries = Entry.objects(set='train', docid='Id51', size=4, category='Building')
         entries = Entry.objects(set='train')
 
         print entries.count()
