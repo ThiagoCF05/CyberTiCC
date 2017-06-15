@@ -19,6 +19,7 @@ import xml.etree.ElementTree as ET
 import db.operations as dbop
 import copy
 import evaluation
+import nltk
 import numpy as np
 import operator
 import re
@@ -240,13 +241,14 @@ class Delexicalizer(object):
         delex = []
         refexes = {}
 
-        entities = sorted(entity_map.items(), key=lambda x: len(x[1]), reverse=True)
+        entities = sorted(entity_map.items(), key=lambda x: len(x[1].name), reverse=True)
         for tag_entity in entities:
             tag, entity = tag_entity
             matcher = ' '.join(entity.name.replace('\'', '').replace('\"', '').split('_'))
+            matcher = ' '.join(nltk.word_tokenize(matcher)) + ' '
 
             if len(re.findall(matcher, template)) > 0:
-                template = template.replace(matcher, 'SIMPLE-'+tag)
+                template = template.replace(matcher, 'SIMPLE-'+tag+' ')
                 refexes[entity.name] = matcher
 
                 # Solving the bracket problem of regular expressions
@@ -334,7 +336,8 @@ class Delexicalizer(object):
     def similarity_match(self, template, entity_map, delex_tag, nps):
         refexes = {}
 
-        for tag, entity in entity_map.iteritems():
+        entities = sorted(entity_map.items(), key=lambda x: len(x[1].name), reverse=True)
+        for tag, entity in entities:
             if tag not in delex_tag:
                 ranking = {}
                 for np in nps:
@@ -390,24 +393,39 @@ class Delexicalizer(object):
             # get template
             text = lexEntry.text
             if lexEntry.template == '':
-                template = copy.copy(text)
+                template = []
+                for snt in self.out_parse['sentences']:
+                    template.append(' '.join(snt['tokens']))
+                template = ' '.join(template).replace('-LRB-', '(').replace('-RRB-', ')').strip()
             else:
                 template = copy.copy(lexEntry.template)
 
             # Simple match
             template, delex_tags = self.simple_match(template, entity_map)
 
+            # Similarity matching
             if len(delex_tags) < len(entity_map):
-                template, new_nps = self.normalize_dates(template, out_parse)
+                out = self.proc_parse.parse_doc(template)
+                parse_trees = []
+                for snt in out['sentences']:
+                    parse_trees.append(snt['parse'])
 
-                # out = self.proc_parse.parse_doc(template)['sentences']
-                # snt_templates = []
-                nps = self.get_nps(lexEntry.parse_tree)
+                if len(parse_trees) > 1:
+                    parse_tree = '(MULTI-SENTENCE '
+                    for tree in parse_trees:
+                        parse_tree += tree + ' '
+                    parse_tree = parse_tree.strip() + ')'
+                else:
+                    parse_tree = parse_trees[0]
+
+                template, new_nps = self.normalize_dates(template, self.out_parse)
+
+                nps = self.get_nps(parse_tree)
                 nps.extend(new_nps)
                 template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)
 
             # Coreference match
-            template = self.coreference_match(template, entity_map, out_parse)
+            template = self.coreference_match(template, entity_map, self.out_parse)
 
             template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '')
             dbop.insert_template(lexEntry, template)
@@ -415,7 +433,7 @@ class Delexicalizer(object):
             self.parse_references()
 
     def run(self):
-        # entries = Entry.objects(set='train', docid='Id51', size=4, category='Building')
+        # entries = Entry.objects(set='train', docid='Id20', size=4, category='Building')
         entries = Entry.objects(set='train')
 
         print entries.count()

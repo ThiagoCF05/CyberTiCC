@@ -58,7 +58,7 @@ class EasyNLG(object):
         else:
             template, freq = item[0]
             # REPLACE ENTITY TAGS FOR WIKIPEDIA IDs
-            for tag, name in entitymap.iteritems():
+            for tag, name in sorted(entitymap.items(), key=lambda x: len(x[1]), reverse=True):
                 template = template.replace(tag, '_'.join(name.replace('\'', '').replace('\"', '').split()))
         return template, entitymap, predicates
 
@@ -130,7 +130,7 @@ class EasyNLG(object):
 
         # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
         new_entitymap = self.get_new_entitymap(entitymap)
-        for entity, tag in new_entitymap.iteritems():
+        for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0]), reverse=True):
             name = '_'.join(entity.replace('\'', '').replace('\"', '').split())
             template = template.replace(name, tag)
 

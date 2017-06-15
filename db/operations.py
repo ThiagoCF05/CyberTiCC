@@ -127,4 +127,5 @@ def clean():
 # Clean delex information
 def clean_delex():
     Reference.objects().delete()
+    Refex.objects().delete()
     Lex.objects.update(template='')
