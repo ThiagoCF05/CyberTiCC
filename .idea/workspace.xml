@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/operations.py" afterPath="$PROJECT_DIR$/db/operations.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/delex.py" afterPath="$PROJECT_DIR$/delexicalizer/delex.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/simplenlg.py" afterPath="$PROJECT_DIR$/generator/simplenlg.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -25,8 +22,8 @@
       <file leaf-file-name="delex.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1975">
-              <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+            <state relative-caret-position="415">
+              <caret line="425" column="20" lean-forward="false" selection-start-line="425" selection-start-column="20" selection-end-line="425" selection-end-column="20" />
               <folding>
                 <element signature="e#860#3476#0" expanded="false" />
                 <element signature="e#3629#4980#0" expanded="false" />
@@ -1253,8 +1250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1975">
-          <caret line="437" column="0" lean-forward="true" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
+        <state relative-caret-position="415">
+          <caret line="425" column="20" lean-forward="false" selection-start-line="425" selection-start-column="20" selection-end-line="425" selection-end-column="20" />
           <folding>
             <element signature="e#860#3476#0" expanded="false" />
             <element signature="e#3629#4980#0" expanded="false" />

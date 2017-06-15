@@ -422,7 +422,8 @@ class Delexicalizer(object):
 
                 nps = self.get_nps(parse_tree)
                 nps.extend(new_nps)
-                template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)
+                if len(nps) > 0:
+                    template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)
 
             # Coreference match
             template = self.coreference_match(template, entity_map, self.out_parse)
