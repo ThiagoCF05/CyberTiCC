@@ -38,7 +38,7 @@ def get_entity(name):
     return Entity.objects(name=name).first()
 
 def add_description(entity, description):
-    entity.update(description=description)
+    entity.update(set__description=description)
 
 def add_ner(entity, ner):
     entity.update(ner=ner)
@@ -66,6 +66,12 @@ def save_lexEntry(docid, comment, text, parse_tree, template=''):
 def insert_template(lexEntry, template):
     lexEntry.modify(set__template=template)
     return lexEntry
+
+def add_triple_to_lex(lexEntry, triple):
+    query = Lex.objects(Q(id=lexEntry.id) & Q(triples=triple))
+
+    if query.count() == 0:
+        lexEntry.update(add_to_set__triples=[triple])
 
 # def add_reference(lexEntry, reference):
 #     query = Lex.objects(Q(id=lexEntry.id) & Q(references=reference))
