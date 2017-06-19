@@ -16,6 +16,9 @@ class Predicate(Document):
 class Entity(Document):
     name = StringField(required=True, max_length=300)
     type = StringField(required=True, max_length=100)
+    ner = StringField()
+    category = StringField()
+    description = StringField()
 
 class Triple(Document):
     agent = ReferenceField(Entity)
@@ -39,14 +42,22 @@ class Reference(Document):
 
     meta = {'allow_inheritance': True}
 
+# class Template(Document):
+#     triples = ListField(ReferenceField(Triple))
+#     template = StringField(max_length=1000)
+#
+#     meta = {'allow_inheritance': True}
+
 class Lex(Document):
     docid = StringField(required=True, max_length=10)
     comment = StringField(required=True, max_length=20)
     text = StringField(required=True, max_length=1000)
     parse_tree = StringField()
 
+    triples = ListField(ReferenceField(Triple))
     template = StringField(max_length=1000)
     # references = ListField(ReferenceField(Reference))
+    meta = {'allow_inheritance': True}
 
 class Entry(Document):
     docid = StringField(required=True, max_length=10)

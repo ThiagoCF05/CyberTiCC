@@ -37,6 +37,15 @@ def save_entity(name, type):
 def get_entity(name):
     return Entity.objects(name=name).first()
 
+def add_description(entity, description):
+    entity.update(description=description)
+
+def add_ner(entity, ner):
+    entity.update(ner=ner)
+
+def add_category(entity, category):
+    entity.update(category=category)
+
 # Triple operations
 def save_triple(e1, pred, e2):
     triple = Triple(agent=e1, predicate=pred, patient=e2)
@@ -120,6 +129,7 @@ def clean():
     Entry.objects().delete()
     Triple.objects().delete()
     Reference.objects().delete()
+    Refex.objects().delete()
     Lex.objects().delete()
     Entity.objects().delete()
     Predicate.objects().delete()
