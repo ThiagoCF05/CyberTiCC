@@ -25,11 +25,13 @@ import operator
 import re
 
 class Delexicalizer(object):
-    def __init__(self):
+    def __init__(self, _set='train', save_references=True):
+        self._set = _set
         self.proc = CoreNLP('coref')
 
         self.proc_parse = CoreNLP('parse')
 
+        self.save_references = save_references
         # referring expressions per entity
         self.refexes = {}
 
@@ -431,11 +433,12 @@ class Delexicalizer(object):
             template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '')
             dbop.insert_template(lexEntry, template)
 
-            self.parse_references()
+            if self.save_references:
+                self.parse_references()
 
     def run(self):
         # entries = Entry.objects(set='train', docid='Id20', size=4, category='Building')
-        entries = Entry.objects(set='train')
+        entries = Entry.objects(set=self._set)
 
         print entries.count()
         for entry in entries:
@@ -444,4 +447,5 @@ class Delexicalizer(object):
 
 if __name__ == '__main__':
     dbop.clean_delex()
-    Delexicalizer().run()
+    Delexicalizer(_set='train', save_references=True).run()
+    Delexicalizer(_set='dev', save_references=False).run()

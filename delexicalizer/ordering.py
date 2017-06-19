@@ -15,6 +15,7 @@ sys.path.append('../')
 from db.model import *
 sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
 from stanford_corenlp_pywrapper import CoreNLP
+import db.operations as dbop
 import utils
 
 class Ordering(object):
@@ -73,7 +74,7 @@ class Ordering(object):
                     for snt in out['sentences']:
                         template.extend(snt['tokens'])
                     template = self.generate_template(sort_triples, template, entitymap)
-                    training_set.append({'sorted_triples':sort_triples, 'triples':entry.triples, 'template':template})
+                    training_set.append({'sorted_triples':sort_triples, 'triples':entry.triples, 'template':template, 'lexEntry':lex})
         return training_set
 
     def order(self, triples, entitymap, prev_tags, tags):
@@ -97,24 +98,35 @@ class Ordering(object):
                     break
         return triples_sorted, triples
 
-    def write(self, trainingset):
+    def update_db(self, trainingset):
+        '''
+        :param trainingset: set with triples, ordered triples, lexical entry and updateded template
+        :return:
+        '''
+        for row in trainingset:
+            lex, triples, sorted_triples, template = row['lexEntry'], row['triples'], row['sorted_triples'], row['template']
+
+            # Update database with template with right entity order id and ordered triples
+            dbop.insert_template(lex, template)
+            for triple in sorted_triples:
+                dbop.add_triple_to_lex(lex, triple)
+
+    def write(self, trainingset, fname):
         result = []
 
         for row in trainingset:
-            triples, sorted_triples, template = row['triples'], row['sorted_triples'], row['template']
+            lex, triples, sorted_triples, template = row['lexEntry'], row['triples'], row['sorted_triples'], row['template']
 
             row['triples'] = map(lambda triple: triple.agent.name + ' | ' + triple.predicate.name + ' | ' + triple.patient.name, row['triples'])
-
             row['sorted_triples'] = map(lambda triple: triple.agent.name + ' | ' + triple.predicate.name + ' | ' + triple.patient.name, row['sorted_triples'])
-
             result.append({'triples':row['triples'], 'sorted':row['sorted_triples']})
 
-            print triples
-            print sorted_triples
+            print row['triples']
+            print row['sorted_triples']
             print template
             print 10 * '-'
 
-        json.dump(result, open('train_order.json', 'w'), indent=4, separators=(',', ': '))
+        json.dump(result, open(fname, 'w'), indent=4, separators=(',', ': '))
 
 if __name__ == '__main__':
     ordering = Ordering()
@@ -127,4 +139,15 @@ if __name__ == '__main__':
         result = ordering.process(entry)
         training.extend(result)
 
-    ordering.write(training)
+    ordering.update_db(training)
+    ordering.write(training, 'train_order.json')
+
+    dev = []
+    entries = Entry.objects(set='dev')
+
+    for entry in entries:
+        result = ordering.process(entry)
+        dev.extend(result)
+
+    ordering.update_db(dev)
+    ordering.write(dev, 'dev_order.json')
