@@ -14,6 +14,7 @@ from stanford_corenlp_pywrapper import CoreNLP
 
 import pronoun as prp
 import proper_name as nnp
+import description as dsc
 import form_choice
 
 class REG(object):
@@ -21,6 +22,7 @@ class REG(object):
         self.proc = CoreNLP('parse')
         self.nnp = nnp.ProperNameGeneration()
         self.prp = prp.Pronominalization()
+        self.dsc = dsc.DescriptionGeneration()
 
     def _extract_references(self):
         out = self.proc.parse_doc(self.template)['sentences']
@@ -60,11 +62,20 @@ class REG(object):
 
         return references
 
-    def _realize(self, reference):
+    def _realize(self, prev_references, reference):
         if reference['form'] == 'pronoun':
-            return self.prp.generate(reference)
-        elif reference['form'] in ['pronoun', 'name', 'description', 'demonstrative']:
+            isCompetitor, pronoun = self.prp.generate(prev_references, reference)
+
+            if isCompetitor:
+                return self.dsc.generate(prev_references, reference, 'description')
+            else:
+                return pronoun
+        elif reference['form'] == 'name':
             return self.nnp.generate(reference)
+        elif reference['form'] == 'description':
+            return self.dsc.generate(prev_references, reference, 'description')
+        elif reference['form'] == 'demonstrative':
+            return self.dsc.generate(prev_references, reference, 'demonstrative')
 
     def generate(self, template, entitymap):
         self.template = template
@@ -73,10 +84,12 @@ class REG(object):
         references = self._extract_references()
         references = form_choice.variation_bayes(references)
 
-        for reference in references:
-            reference['realization'] = self._realize(reference)
-
         references = sorted(references, key=lambda x: (x['sentence'], x['pos']))
+        prev_references = []
+        for reference in references:
+            reference['realization'] = self._realize(prev_references, reference)
+            prev_references.append(reference)
+
         for reference in references:
             template = template.replace(reference['tag'], reference['realization'], 1)
 

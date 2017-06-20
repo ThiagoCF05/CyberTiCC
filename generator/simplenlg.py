@@ -58,8 +58,8 @@ class EasyNLG(object):
         else:
             template, freq = item[0]
             # REPLACE ENTITY TAGS FOR WIKIPEDIA IDs
-            for tag, name in sorted(entitymap.items(), key=lambda x: len(x[1]), reverse=True):
-                template = template.replace(tag, '_'.join(name.replace('\'', '').replace('\"', '').split()))
+            for tag, entity in sorted(entitymap.items(), key=lambda x: len(x[1].name), reverse=True):
+                template = template.replace(tag, '_'.join(entity.name.replace('\'', '').replace('\"', '').split()))
         return template, entitymap, predicates
 
     def get_new_entitymap(self, entitymap):
@@ -130,8 +130,8 @@ class EasyNLG(object):
 
         # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
         new_entitymap = self.get_new_entitymap(entitymap)
-        for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0]), reverse=True):
-            name = '_'.join(entity.replace('\'', '').replace('\"', '').split())
+        for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0].name), reverse=True):
+            name = '_'.join(entity.name.replace('\'', '').replace('\"', '').split())
             template = template.replace(name, tag)
 
         # Generating referring expressions
@@ -141,7 +141,7 @@ class EasyNLG(object):
         self.hyps.append(template.strip())
 
         print 10 * '-'
-        print 'Entities: ', str(entitymap)
+        print 'Entities: ', str(map(lambda x: (x[0], x[1].name), entitymap.items()))
         print 'Predicate: ', str(predicates)
         print template.encode('utf-8')
         print 10 * '-'

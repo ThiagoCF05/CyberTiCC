@@ -5,13 +5,13 @@ def map_entities(triples):
     entity_map, nagents, npatients, nbridges = {}, 1, 1, 1
     predicates = []
     for triple in triples:
-        agent = triple.agent.name
-        predicate = triple.predicate.name
-        patient = triple.patient.name
+        agent = triple.agent
+        predicate = triple.predicate
+        patient = triple.patient
 
         predicates.append(predicate)
 
-        f = filter(lambda tag: entity_map[tag] == agent and 'PATIENT' in tag, entity_map)
+        f = filter(lambda tag: entity_map[tag].name == agent.name and 'PATIENT' in tag, entity_map)
         if len(f) > 0:
             original_tag = f[0]
             original_id = int(original_tag.split('-')[1])
@@ -31,12 +31,12 @@ def map_entities(triples):
                     new_entity_map[str(tag)] = entity_map[str(tag)]
             entity_map = copy.deepcopy(new_entity_map)
             npatients -= 1
-        elif agent not in entity_map.values():
+        elif agent.name not in map(lambda entity: entity.name, entity_map.values()):
             tag = 'AGENT-' + str(nagents)
             entity_map[str(tag)] = agent
             nagents += 1
 
-        f = filter(lambda tag: entity_map[tag] == patient and 'AGENT' in tag, entity_map)
+        f = filter(lambda tag: entity_map[tag].name == patient.name and 'AGENT' in tag, entity_map)
         if len(f) > 0:
             original_tag = f[0]
             original_id = int(original_tag.split('-')[1])
@@ -56,7 +56,7 @@ def map_entities(triples):
                     new_entity_map[str(tag)] = entity_map[str(tag)]
             entity_map = copy.deepcopy(new_entity_map)
             nagents -= 1
-        elif patient not in entity_map.values():
+        elif patient.name not in map(lambda entity: entity.name, entity_map.values()):
             tag = 'PATIENT-' + str(npatients)
             entity_map[str(tag)] = patient
             npatients += 1

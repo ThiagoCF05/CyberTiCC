@@ -15,19 +15,40 @@ from db.model import *
 
 class Pronominalization(object):
     def __init__(self):
-        self.pronoun_list = p.load(open('reg/pronouns.cPickle'))
+        self.pronoun_list = p.load(open('reg/pronoun_data/pronouns.cPickle'))
 
-    def generate(self, reference):
+    def generate(self, prev_references, reference):
+        '''
+        :param prev_references: previous realized references
+        :param reference: reference to be pronominalized
+        :return: competitor flag (another entity realized with the same pronoun) and the proper pronoun for the context
+        '''
         entity = reference['entity']
         syntax = reference['syntax']
 
         if (entity, syntax) in self.pronoun_list:
-            return self.pronoun_list[(entity, syntax)][0][0].lower()
+            pronoun = self.pronoun_list[(entity, syntax)][0][0].lower()
         else:
             if syntax == 'subj-det':
-                return 'its'
+                pronoun = 'its'
             else:
-                return 'it'
+                pronoun = 'it'
+
+        # Check for a competitor
+        competitors = {
+            'he':'he', 'his':'he',
+            'she':'she', 'her':'she', 'hers':'she',
+            'it':'it', 'its':'it',
+            'we':'we', 'our':'we', 'ours':'we', 'us':'we',
+            'they':'they', 'their':'they', 'theirs':'they', 'them':'they'
+        }
+        isCompetitor = False
+        for prev_reference in prev_references:
+            if prev_reference['entity'].name != entity.name and competitors[prev_reference['realization']] == competitors[pronoun]:
+                isCompetitor = True
+                break
+
+        return isCompetitor, pronoun
 
 def run():
     references = Reference.objects()
@@ -47,7 +68,7 @@ def run():
         pronouns[k] = nltk.FreqDist(pronouns[k])
         pronouns[k] = sorted(pronouns[k].items(), key=lambda x: x[1], reverse=True)[:2]
 
-    p.dump(pronouns, open('pronouns.cPickle', 'w'))
+    p.dump(pronouns, open('pronoun_data/pronouns.cPickle', 'w'))
 
 if __name__ == '__main__':
     run()

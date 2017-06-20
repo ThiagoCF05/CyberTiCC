@@ -301,7 +301,7 @@ class Delexicalizer(object):
                 if mention['type'] == 'DATE' and 'timex_xml' in mention:
                     root = ET.fromstring(mention['timex_xml'])
                     if 'value' in root.attrib:
-                        normalized, text = root.attrib['value'], root.text
+                        normalized, text = root.attrib['value'], ' '.join(nltk.word_tokenize(root.text))
 
                         if re.match(regex, normalized) != None:
                             template = template.replace(text, normalized)
@@ -433,12 +433,16 @@ class Delexicalizer(object):
             template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '')
             dbop.insert_template(lexEntry, template)
 
+            print text
+            print template
+            print 10 * '-'
+
             if self.save_references:
                 self.parse_references()
 
     def run(self):
-        # entries = Entry.objects(set='train', docid='Id20', size=4, category='Building')
-        entries = Entry.objects(set=self._set)
+        entries = Entry.objects(set='train', docid='Id86', size=7, category='Astronaut')
+        # entries = Entry.objects(set=self._set)
 
         print entries.count()
         for entry in entries:
@@ -447,5 +451,5 @@ class Delexicalizer(object):
 
 if __name__ == '__main__':
     dbop.clean_delex()
-    Delexicalizer(_set='train', save_references=True).run()
+    # Delexicalizer(_set='train', save_references=True).run()
     Delexicalizer(_set='dev', save_references=False).run()

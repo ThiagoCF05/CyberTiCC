@@ -51,7 +51,7 @@ class ProperNameTraining(object):
 
     def write(self):
         keys = sorted(self.trainset.keys(), key=lambda x: (x[0], x[1], x[2]))
-        f = open('name_distribution.txt', 'w')
+        f = open('name_data/name_distribution.txt', 'w')
         for key in keys:
             entity, text_status, n_tm1 = key
             f.write(entity.encode('utf-8'))
@@ -70,7 +70,7 @@ class ProperNameTraining(object):
         f.close()
 
         keys = sorted(self.trainset_backoff.keys(), key=lambda x: (x[0], x[1]))
-        f = open('name_backoff_distribution.txt', 'w')
+        f = open('name_data/name_backoff_distribution.txt', 'w')
         for key in keys:
             entity, n_tm1 = key
             f.write(entity.encode('utf-8'))
@@ -87,8 +87,8 @@ class ProperNameTraining(object):
         f.close()
 
     def write_pickle(self):
-        p.dump(self.trainset, open('model.cPickle', 'w'))
-        p.dump(self.trainset_backoff, open('backoff_model.cPickle', 'w'))
+        p.dump(self.trainset, open('name_data/model.cPickle', 'w'))
+        p.dump(self.trainset_backoff, open('name_data/backoff_model.cPickle', 'w'))
 
 class ProperNameGeneration(object):
     def __init__(self):
