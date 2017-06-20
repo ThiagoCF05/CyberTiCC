@@ -441,8 +441,8 @@ class Delexicalizer(object):
                 self.parse_references()
 
     def run(self):
-        entries = Entry.objects(set='train', docid='Id86', size=7, category='Astronaut')
-        # entries = Entry.objects(set=self._set)
+        # entries = Entry.objects(set='train', docid='Id86', size=7, category='Astronaut')
+        entries = Entry.objects(set=self._set)
 
         print entries.count()
         for entry in entries:
@@ -451,5 +451,5 @@ class Delexicalizer(object):
 
 if __name__ == '__main__':
     dbop.clean_delex()
-    # Delexicalizer(_set='train', save_references=True).run()
+    Delexicalizer(_set='train', save_references=True).run()
     Delexicalizer(_set='dev', save_references=False).run()
