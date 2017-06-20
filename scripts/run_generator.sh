@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../generator/reg
+cd generator/reg
 python pronoun.py
 python proper_name.py
 

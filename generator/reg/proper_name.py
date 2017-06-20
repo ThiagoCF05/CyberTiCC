@@ -95,8 +95,8 @@ class ProperNameGeneration(object):
         self.load_models()
 
     def load_models(self):
-        self.model = p.load(open('reg/model.cPickle'))
-        self.backoff = p.load(open('reg/backoff_model.cPickle'))
+        self.model = p.load(open('reg/name_data/model.cPickle'))
+        self.backoff = p.load(open('reg/name_data/backoff_model.cPickle'))
 
     def generate(self, reference):
         text_status = reference['text_status']
