@@ -142,7 +142,7 @@ class EasyNLG(object):
 
         print 10 * '-'
         print 'Entities: ', str(map(lambda x: (x[0], x[1].name), entitymap.items()))
-        print 'Predicate: ', str(predicates)
+        print 'Predicate: ', str(map(lambda predicate: predicate.name, predicates))
         print template.encode('utf-8')
         print 10 * '-'
         return template

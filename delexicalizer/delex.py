@@ -441,7 +441,7 @@ class Delexicalizer(object):
                 self.parse_references()
 
     def run(self):
-        # entries = Entry.objects(set='train', docid='Id86', size=7, category='Astronaut')
+        # entries = Entry.objects(set='train', size=1)
         entries = Entry.objects(set=self._set)
 
         print entries.count()

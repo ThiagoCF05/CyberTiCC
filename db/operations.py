@@ -41,10 +41,10 @@ def add_description(entity, description):
     entity.update(set__description=description)
 
 def add_ner(entity, ner):
-    entity.update(ner=ner)
+    entity.update(set__ner=ner)
 
 def add_category(entity, category):
-    entity.update(category=category)
+    entity.update(set__category=category)
 
 # Triple operations
 def save_triple(e1, pred, e2):
@@ -67,17 +67,11 @@ def insert_template(lexEntry, template):
     lexEntry.modify(set__template=template)
     return lexEntry
 
-def add_triple_to_lex(lexEntry, triple):
-    query = Lex.objects(Q(id=lexEntry.id) & Q(triples=triple))
-
-    if query.count() == 0:
-        lexEntry.update(add_to_set__triples=[triple])
-
-# def add_reference(lexEntry, reference):
-#     query = Lex.objects(Q(id=lexEntry.id) & Q(references=reference))
-#
-#     if query.count() == 0:
-#         lexEntry.update(add_to_set__references=[reference])
+# Template operations
+def save_template(category, triples, template):
+    template = Entry(category=category, triples=triples, template=template)
+    template.save()
+    return template
 
 # Entry operations
 def save_entry(docid, size, category, set):

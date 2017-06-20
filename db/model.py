@@ -42,11 +42,12 @@ class Reference(Document):
 
     meta = {'allow_inheritance': True}
 
-# class Template(Document):
-#     triples = ListField(ReferenceField(Triple))
-#     template = StringField(max_length=1000)
-#
-#     meta = {'allow_inheritance': True}
+class Template(Document):
+    category = StringField(required=True, max_length=20)
+    triples = ListField(ReferenceField(Triple))
+    template = StringField(max_length=1000)
+
+    meta = {'allow_inheritance': True}
 
 class Lex(Document):
     docid = StringField(required=True, max_length=10)
@@ -54,7 +55,6 @@ class Lex(Document):
     text = StringField(required=True, max_length=1000)
     parse_tree = StringField()
 
-    triples = ListField(ReferenceField(Triple))
     template = StringField(max_length=1000)
     # references = ListField(ReferenceField(Reference))
     meta = {'allow_inheritance': True}

@@ -74,7 +74,7 @@ class Ordering(object):
                     for snt in out['sentences']:
                         template.extend(snt['tokens'])
                     template = self.generate_template(sort_triples, template, entitymap)
-                    training_set.append({'sorted_triples':sort_triples, 'triples':entry.triples, 'template':template, 'lexEntry':lex})
+                    training_set.append({'sorted_triples':sort_triples, 'triples':entry.triples, 'template':template, 'lexEntry':lex, 'semcategory':entry.category})
         return training_set
 
     def order(self, triples, entitymap, prev_tags, tags):
@@ -104,12 +104,8 @@ class Ordering(object):
         :return:
         '''
         for row in trainingset:
-            lex, triples, sorted_triples, template = row['lexEntry'], row['triples'], row['sorted_triples'], row['template']
-
             # Update database with template with right entity order id and ordered triples
-            dbop.insert_template(lex, template)
-            for triple in sorted_triples:
-                dbop.add_triple_to_lex(lex, triple)
+            dbop.save_template(category=row['category'], triples=row['sorted_triples'], template=row['template'])
 
     def write(self, trainingset, fname):
         result = []

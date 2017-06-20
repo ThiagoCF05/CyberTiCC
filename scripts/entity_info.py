@@ -26,6 +26,9 @@ def get_ner(entity):
 def get_category(entity):
     return filter(lambda key: entity.name in semcategory[key], semcategory)
 
+def get_description(entity):
+    return filter(lambda key: entity.name in descriptions[key], descriptions)
+
 missing, total = 0, 0
 missinginst = []
 for entity in entities:
@@ -41,6 +44,10 @@ for entity in entities:
     category = get_category(entity)
     if len(category) > 0:
         dbop.add_ner(entity, category[0])
+
+    description = get_description(entity)
+    if len(description) > 0:
+        dbop.add_description(entity, description[0])
 
 print str(missing), str(total)
 
