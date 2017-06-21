@@ -24,10 +24,10 @@ def save_predicate(name):
     return predicate
 
 # Entity operations
-def save_entity(name, type):
+def save_entity(name, type, ner, category, description):
     entity = Entity(name=name, type=type)
 
-    query = Entity.objects(name=name, type=type)
+    query = Entity.objects(name=name, type=type, ner=ner, category=category, description=description)
     if query.count() == 0:
         entity.save()
     else:

@@ -9,6 +9,7 @@ Description:
 
 import sys
 sys.path.append('../')
+import json
 import os
 import xml.etree.ElementTree as ET
 
@@ -19,6 +20,9 @@ from stanford_corenlp_pywrapper import CoreNLP
 class DBInit(object):
     def __init__(self):
         self.proc = CoreNLP('parse')
+        self.ner = json.load(open('../data/delexicalization/ner_dict.json'))
+        self.semcategory = json.load(open('../data/delexicalization/delex_dict.json'))
+        self.descriptions = json.load(open('../data/delexicalization/descriptions.json'))
 
     def run(self, dir, typeset):
         self.typeset = typeset
@@ -37,6 +41,28 @@ class DBInit(object):
             return aux[-1]
 
         return 'wiki'
+
+    def get_entity_info(self, entity):
+        fner = filter(lambda key: entity in self.ner[key], self.ner)
+        fsemcategory = filter(lambda key: entity.name in self.semcategory[key], self.semcategory)
+        fdescription = filter(lambda key: entity.name in self.descriptions[key], self.descriptions)
+
+        if len(fner) > 0:
+            fner = fner[0]
+        else:
+            fner = ''
+
+        if len(fsemcategory) > 0:
+            fsemcategory = fsemcategory[0]
+        else:
+            fsemcategory = ''
+
+        if len(fdescription) > 0:
+            fdescription = fdescription[0]
+        else:
+            fdescription = ''
+
+        return fner, fsemcategory, fdescription
 
     def extract_parse_tree(self, text):
         out = self.proc.parse_doc(text)
@@ -81,9 +107,13 @@ class DBInit(object):
             for i, mtriple in enumerate(mtripleset):
                 e1, pred, e2 = mtriple.text.split(' | ')
 
-                entity1 = dbop.save_entity(e1.replace('\'', '').strip(), entities_type[i]['e1_type'])
+                ner, semcategory, description = self.get_entity_info(e1)
+                entity1 = dbop.save_entity(name=e1.replace('\'', '').strip(), type=entities_type[i]['e1_type'], ner=ner, category=semcategory, description=description)
+
                 predicate = dbop.save_predicate(pred)
-                entity2 = dbop.save_entity(e2.replace('\'', '').strip(), entities_type[i]['e2_type'])
+
+                ner, semcategory, description = self.get_entity_info(e2)
+                entity2 = dbop.save_entity(e2.replace('\'', '').strip(), entities_type[i]['e2_type'], ner=ner, category=semcategory, description=description)
 
                 triple = dbop.save_triple(entity1, predicate, entity2)
 
