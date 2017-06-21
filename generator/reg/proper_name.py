@@ -100,7 +100,7 @@ class ProperNameGeneration(object):
 
     def generate(self, reference):
         text_status = reference['text_status']
-        entity = reference['entity']
+        entity = reference['entity'].name
         n_tm1 = u'START'
 
         if (text_status, entity, n_tm1) in self.model:
