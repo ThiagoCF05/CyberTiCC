@@ -21,7 +21,7 @@ class DescriptionGeneration(object):
         entity = reference['entity']
         description = entity.description
         # Return the proper name of the entity if description is not available in the database
-        if description == '':
+        if description in ['', None]:
             name = ' '.join(entity.name.replace('\'', '').replace('\"', '').split('_'))
             return name
         else:

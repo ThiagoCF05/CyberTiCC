@@ -90,8 +90,6 @@ class REG(object):
             reference['realization'] = self._realize(prev_references, reference)
             prev_references.append(reference)
 
-        print references
-
         for reference in references:
             template = template.replace(reference['tag'], reference['realization'], 1)
 

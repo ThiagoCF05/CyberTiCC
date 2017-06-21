@@ -38,13 +38,13 @@ def get_entity(name):
     return Entity.objects(name=name).first()
 
 def add_description(entity, description):
-    entity.update(set__description=description)
+    entity.modify(set__description=description)
 
 def add_ner(entity, ner):
-    entity.update(set__ner=ner)
+    entity.modify(set__ner=ner)
 
 def add_category(entity, category):
-    entity.update(set__category=category)
+    entity.modify(set__category=category)
 
 # Triple operations
 def save_triple(e1, pred, e2):
