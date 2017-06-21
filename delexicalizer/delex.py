@@ -31,6 +31,8 @@ class Delexicalizer(object):
 
         self.proc_parse = CoreNLP('parse')
 
+        self.e2f = {}
+
         self.save_references = save_references
         # referring expressions per entity
         self.refexes = {}
@@ -308,7 +310,7 @@ class Delexicalizer(object):
                             nps.append(normalized)
         return template, nps
     ############################################################################
-    # Similarity match
+    # Similarity and probabilist matches match
     def get_nps(self, tree):
         def parse_np(index):
             np = ''
@@ -334,6 +336,39 @@ class Delexicalizer(object):
                 if 'AGENT' not in np and 'PATIENT' not in np and 'BRIDGE' not in np:
                     nps.append(np)
         return nps
+
+    def probabilistic_match(self, template, entity_map, predicates, nps):
+        def calc_prob(np, wiki):
+            words = np.split()
+
+            _min = np.log(sys.float_info.min)
+            prob = 0
+            for word in words:
+                if word in self.e2f[wiki]:
+                    prob += np.log(self.e2f[wiki][word])
+                else:
+                    prob += _min
+            return prob
+
+        refexes = {}
+        while len(nps) > 0:
+            np = nps[0]
+            ranking = {}
+            for tag, entity in entity_map.items():
+                ranking[tag] = calc_prob(np, entity_map[tag].name)
+
+            for predicate in predicates:
+                ranking[predicate.name] = calc_prob(np, predicate.name)
+
+            ranking = sorted(ranking.items(), key=operator.itemgetter(1))
+
+            tag = ranking[0][0]
+            if tag not in map(lambda predicate: predicate.name, predicates):
+                template = template.replace(np, 'PROBABILISTIC-'+tag)
+                entity = entity_map[tag]
+                refexes[entity.name] = np
+
+        return template
 
     def similarity_match(self, template, entity_map, delex_tag, nps):
         refexes = {}
@@ -430,7 +465,7 @@ class Delexicalizer(object):
             # Coreference match
             template = self.coreference_match(template, entity_map, self.out_parse)
 
-            template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '')
+            template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '').replace('PROBABILISTIC-', '')
             dbop.insert_template(lexEntry, template)
 
             print text

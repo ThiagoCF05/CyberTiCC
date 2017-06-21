@@ -23,9 +23,9 @@ def tokenize(fread, fwrite, useNLTK=False):
     f = open(fwrite, 'w')
     for text in texts:
         if useNLTK:
-            tokens = nltk.word_tokenize(text.lower())
+            tokens = nltk.word_tokenize(text)
         else:
-            tokens = text.lower().split()
+            tokens = text.split()
         tokens = u' '.join(tokens)
 
         f.write(tokens)
@@ -33,7 +33,7 @@ def tokenize(fread, fwrite, useNLTK=False):
     f.close()
 
 if __name__ == '__main__':
-    # python tokenizer.py /home/tcastrof/cyber/data/easy_nlg
+    # python tokenizer.py /home/tcastrof/cyber/data/easy_nlg --nltk
 
     parser = argparse.ArgumentParser()
     parser.add_argument('directory', type=str, default='/home/tcastrof/cyber/data/easy_nlg', help='directory')
@@ -71,6 +71,16 @@ if __name__ == '__main__':
         print 'Reference 5'
         fread = os.path.join(args.directory, 'ref5')
         fwrite = os.path.join(args.directory, 'ref5_tok')
+        tokenize(fread, fwrite, args.nltk)
+
+        print 'Reference 6'
+        fread = os.path.join(args.directory, 'ref6')
+        fwrite = os.path.join(args.directory, 'ref6_tok')
+        tokenize(fread, fwrite, args.nltk)
+
+        print 'Reference 7'
+        fread = os.path.join(args.directory, 'ref7')
+        fwrite = os.path.join(args.directory, 'ref7_tok')
         tokenize(fread, fwrite, args.nltk)
     else:
         fread = args.fread
