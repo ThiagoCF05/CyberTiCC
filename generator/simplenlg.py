@@ -72,6 +72,9 @@ class EasyNLG(object):
         return new_entitymap
 
     def process(self, deventry):
+        print 10 * '-'
+        print 'ID:', str(deventry.docid), str(deventry.size), str(deventry.category)
+
         # extract references
         refs = []
         for lexEntry in deventry.texts:
@@ -140,7 +143,6 @@ class EasyNLG(object):
 
         self.hyps.append(template.strip())
 
-        print 10 * '-'
         print 'Entities: ', str(map(lambda x: (x[0], x[1].name), entitymap.items()))
         print 'Predicate: ', str(map(lambda predicate: predicate.name, predicates))
         print template.encode('utf-8')
