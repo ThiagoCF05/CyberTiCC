@@ -44,9 +44,10 @@ class Pronominalization(object):
         }
         isCompetitor = False
         for prev_reference in prev_references:
-            if prev_reference['entity'].name != entity.name and competitors[prev_reference['realization']] == competitors[pronoun]:
-                isCompetitor = True
-                break
+            if prev_reference['entity'].name != entity.name and prev_reference['realization'] in competitors:
+                if competitors[prev_reference['realization']] == competitors[pronoun]:
+                    isCompetitor = True
+                    break
 
         return isCompetitor, pronoun
 
