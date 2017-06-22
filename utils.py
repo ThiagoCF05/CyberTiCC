@@ -65,6 +65,23 @@ def map_entities(triples):
 def entity2tag(entity_map):
     return dict(map(lambda x: (x[1], x[0]), entity_map.items()))
 
+def get_e2f(fname):
+    f = open(fname)
+    doc = f.read().split('\n')
+    f.close()
+
+    e2f = {}
+    for row in doc:
+        aux = row.split()
+        if len(aux) == 3:
+            wiki, word, prob = aux
+
+            if wiki not in e2f:
+                e2f[wiki] = {}
+
+            e2f[wiki][word] = float(prob)
+    return e2f
+
 def write_references(fname, refs):
     f1 = open(fname+'1', 'w')
     f2 = open(fname+'2', 'w')

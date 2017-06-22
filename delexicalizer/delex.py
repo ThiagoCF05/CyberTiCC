@@ -20,9 +20,10 @@ import db.operations as dbop
 import copy
 import evaluation
 import nltk
-import numpy as np
+import numpy
 import operator
 import re
+import utils
 
 class Delexicalizer(object):
     def __init__(self, _set='train', save_references=True):
@@ -31,7 +32,7 @@ class Delexicalizer(object):
 
         self.proc_parse = CoreNLP('parse')
 
-        self.e2f = {}
+        self.e2f = utils.get_e2f('../data/lex.e2f')
 
         self.save_references = save_references
         # referring expressions per entity
@@ -341,11 +342,14 @@ class Delexicalizer(object):
         def calc_prob(np, wiki):
             words = np.split()
 
-            _min = np.log(sys.float_info.min)
+            if wiki not in self.e2f:
+                return None
+
+            _min = numpy.log(sys.float_info.min)
             prob = 0
             for word in words:
                 if word in self.e2f[wiki]:
-                    prob += np.log(self.e2f[wiki][word])
+                    prob += numpy.log(self.e2f[wiki][word])
                 else:
                     prob += _min
             return prob
@@ -353,20 +357,54 @@ class Delexicalizer(object):
         refexes = {}
         while len(nps) > 0:
             np = nps[0]
-            ranking = {}
-            for tag, entity in entity_map.items():
-                ranking[tag] = calc_prob(np, entity_map[tag].name)
+            if np in template:
+                ranking = {}
+                for tag, entity in entity_map.items():
+                    prob = calc_prob(np.lower(), entity_map[tag].name.lower())
+                    if prob != None:
+                        ranking[tag] = prob
 
-            for predicate in predicates:
-                ranking[predicate.name] = calc_prob(np, predicate.name)
+                for predicate in predicates:
+                    prob = calc_prob(np.lower(), predicate.lower())
+                    if prob != None:
+                        ranking[predicate] = prob
 
-            ranking = sorted(ranking.items(), key=operator.itemgetter(1))
+                ranking = sorted(ranking.items(), key=operator.itemgetter(1), reverse=True)
 
-            tag = ranking[0][0]
-            if tag not in map(lambda predicate: predicate.name, predicates):
-                template = template.replace(np, 'PROBABILISTIC-'+tag)
-                entity = entity_map[tag]
-                refexes[entity.name] = np
+                tag = ranking[0][0]
+                if tag not in predicates:
+                    template = template.replace(np, 'PROBABILISTIC-'+tag)
+                    entity = entity_map[tag]
+                    refexes[entity.name] = np
+
+            del nps[0]
+
+        out = self.proc_parse.parse_doc(template)['sentences']
+        removals = dict(map(lambda i: (i, []), range(len(out))))
+        for tag, entity in entity_map.iteritems():
+            references, entity_removals = self.get_references(out, 'PROBABILISTIC-'+tag, entity)
+            for reference in references:
+                reference['tag'] = tag
+                reference['reftype'] = 'name'
+                reference['refex'] = refexes[entity.name]
+
+                del reference['determiner']
+                del reference['compounds']
+            self.references.extend(references)
+
+            for k in entity_removals:
+                removals[k].extend(entity_removals[k])
+
+        # Remove marked tokens
+        snt_templates = len(out) * ['']
+        for i, snt in enumerate(out):
+            snt_template = []
+            for j, token in enumerate(snt['tokens']):
+                if j not in removals[i]:
+                    snt_template.append(token)
+            snt_templates[i] = ' '.join(snt_template)
+
+        template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
 
         return template
 
@@ -440,8 +478,10 @@ class Delexicalizer(object):
             # Simple match
             template, delex_tags = self.simple_match(template, entity_map)
 
-            # Similarity matching
+            # Similarity matching (only for date matching from now on)
             if len(delex_tags) < len(entity_map):
+                template, new_nps = self.normalize_dates(template, self.out_parse)
+
                 out = self.proc_parse.parse_doc(template)
                 parse_trees = []
                 for snt in out['sentences']:
@@ -455,12 +495,14 @@ class Delexicalizer(object):
                 else:
                     parse_tree = parse_trees[0]
 
-                template, new_nps = self.normalize_dates(template, self.out_parse)
-
                 nps = self.get_nps(parse_tree)
                 nps.extend(new_nps)
                 if len(nps) > 0:
                     template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)
+
+            # Probabilistic matching
+            # nps = self.get_nps(parse_tree)
+            # template = self.probabilistic_match(template, entity_map, predicates, nps)
 
             # Coreference match
             template = self.coreference_match(template, entity_map, self.out_parse)

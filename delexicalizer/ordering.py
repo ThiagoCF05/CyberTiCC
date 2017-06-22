@@ -145,5 +145,5 @@ if __name__ == '__main__':
         result = ordering.process(entry)
         dev.extend(result)
 
-    ordering.update_db(dev)
+    # ordering.update_db(dev)
     ordering.write(dev, 'dev_order.json')

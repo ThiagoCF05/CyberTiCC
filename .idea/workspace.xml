@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/init.py" afterPath="$PROJECT_DIR$/db/init.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/operations.py" afterPath="$PROJECT_DIR$/db/operations.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/delex.py" afterPath="$PROJECT_DIR$/delexicalizer/delex.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/tokenizer.py" afterPath="$PROJECT_DIR$/scripts/tokenizer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/ordering.py" afterPath="$PROJECT_DIR$/delexicalizer/ordering.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -31,30 +35,91 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delex.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
+      <file leaf-file-name="operations.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/operations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="376" column="8" lean-forward="false" selection-start-line="376" selection-start-column="8" selection-end-line="376" selection-end-column="8" />
+            <state relative-caret-position="127">
+              <caret line="71" column="23" lean-forward="false" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
               <folding>
-                <element signature="e#991#3607#0" expanded="false" />
-                <element signature="e#3760#5111#0" expanded="false" />
-                <element signature="e#5187#6732#0" expanded="false" />
-                <element signature="e#7018#9082#0" expanded="false" />
-                <element signature="e#9177#10278#0" expanded="false" />
-                <element signature="e#10435#12597#0" expanded="false" />
-                <element signature="e#12740#13395#0" expanded="false" />
-                <element signature="e#13561#14385#0" expanded="false" />
+                <element signature="e#327#516#0" expanded="false" />
+                <element signature="e#873#913#0" expanded="false" />
+                <element signature="e#1199#1424#0" expanded="false" />
+                <element signature="e#1523#1660#0" expanded="false" />
+                <element signature="e#2309#2445#0" expanded="false" />
+                <element signature="e#2486#2624#0" expanded="false" />
+                <element signature="e#2717#3167#0" expanded="false" />
+                <element signature="e#3206#3251#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tokenizer.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
+      <file leaf-file-name="delex.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+            <state relative-caret-position="382">
+              <caret line="473" column="40" lean-forward="false" selection-start-line="473" selection-start-column="40" selection-end-line="473" selection-end-column="40" />
+              <folding>
+                <element signature="e#1028#3644#0" expanded="false" />
+                <element signature="e#3797#5148#0" expanded="false" />
+                <element signature="e#5224#6769#0" expanded="false" />
+                <element signature="e#7055#9119#0" expanded="false" />
+                <element signature="e#9214#10315#0" expanded="false" />
+                <element signature="e#10472#12634#0" expanded="false" />
+                <element signature="e#13598#14422#0" expanded="false" />
+                <element signature="e#14506#17015#0" expanded="false" />
+                <element signature="e#17095#18890#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ordering.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/delexicalizer/ordering.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1125">
+              <caret line="75" column="43" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+              <folding>
+                <element signature="e#156#167#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1605">
+              <caret line="114" column="33" lean-forward="false" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
+              <folding>
+                <element signature="e#225#240#0" expanded="true" />
+                <element signature="e#2252#2474#0" expanded="false" />
+                <element signature="e#4790#5855#0" expanded="false" />
+                <element signature="e#5890#6004#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simplenlg.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generator/simplenlg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="54" column="29" lean-forward="false" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+              <folding>
+                <element signature="e#2083#2305#0" expanded="false" />
+                <element signature="e#6196#7261#0" expanded="false" />
+                <element signature="e#7296#7410#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -100,11 +165,9 @@
         <option value="$PROJECT_DIR$/data/delexicalization/ner_dict.json" />
         <option value="$PROJECT_DIR$/data/delexicalization/descriptions.json" />
         <option value="$PROJECT_DIR$/scripts/run.sh" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/generator/description.py" />
         <option value="$PROJECT_DIR$/scripts/entity_info.py" />
         <option value="$PROJECT_DIR$/db/model.py" />
-        <option value="$PROJECT_DIR$/delexicalizer/ordering.py" />
         <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
         <option value="$PROJECT_DIR$/scripts/run_delex.sh" />
         <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
@@ -112,11 +175,14 @@
         <option value="$PROJECT_DIR$/generator/simplenlg.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
         <option value="$PROJECT_DIR$/generator/reg/description.py" />
-        <option value="$PROJECT_DIR$/db/operations.py" />
-        <option value="$PROJECT_DIR$/db/init.py" />
         <option value="$PROJECT_DIR$/generator/reg/form_choice.py" />
-        <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
         <option value="$PROJECT_DIR$/scripts/tokenizer.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/db/init.py" />
+        <option value="$PROJECT_DIR$/delexicalizer/ordering.py" />
+        <option value="$PROJECT_DIR$/db/operations.py" />
+        <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
+        <option value="$PROJECT_DIR$/generator/cybernlg.py" />
       </list>
     </option>
   </component>
@@ -142,6 +208,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -210,10 +278,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CyberTiCC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CyberTiCC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,7 +311,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/anaconda/bin" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/thiagocastroferreira/Documents/Doutorado/4 - Fourth/CyberTiCC/db/model.py" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/thiagocastroferreira/Documents/Doutorado/4 - Fourth/CyberTiCC/delexicalizer/delex.py" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
@@ -243,7 +323,7 @@
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.simplenlg">
+  <component name="RunManager" selected="Python.delex">
     <configuration default="false" name="delex" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -743,9 +823,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.simplenlg" />
-        <item index="1" class="java.lang.String" itemvalue="Python.delex" />
-        <item index="2" class="java.lang.String" itemvalue="Python.init" />
+        <item index="0" class="java.lang.String" itemvalue="Python.delex" />
+        <item index="1" class="java.lang.String" itemvalue="Python.init" />
+        <item index="2" class="java.lang.String" itemvalue="Python.simplenlg" />
         <item index="3" class="java.lang.String" itemvalue="Python.ordering" />
         <item index="4" class="java.lang.String" itemvalue="Python.entity_info" />
       </list>
@@ -789,14 +869,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4244898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3102041" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1971917" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15323566" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -846,20 +926,35 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/delexicalizer/delex.py</url>
-          <line>159</line>
+          <line>160</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/delexicalizer/delex.py</url>
-          <line>305</line>
+          <line>306</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/delexicalizer/delex.py</url>
+          <line>521</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/delexicalizer/delex.py</url>
+          <line>373</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/delexicalizer/delex.py</url>
+          <line>358</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="199" />
+      <option name="time" value="207" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="entity.name" language="Python" />
+        <watch expression="self.e2f['\&quot;india\&quot;']" language="Python" />
         <watch expression="re.findall(matcher, template)" language="Python" />
       </configuration>
     </watches-manager>
@@ -869,20 +964,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -933,13 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="286" column="0" lean-forward="false" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/document.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1006,13 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/fields.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="296" column="0" lean-forward="false" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/delexicalization/ner_dict" />
     <entry file="file://$PROJECT_DIR$/data/delexicalization/ner_dict.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1056,13 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1245">
@@ -1090,15 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/run_delex.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,18 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="90" column="67" lean-forward="false" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="62" column="9" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="9" />
-          <folding>
-            <element signature="e#209#258#0" expanded="false" />
-            <element signature="e#506#655#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1125,7 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
           <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,7 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,19 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="45" lean-forward="false" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator/simplenlg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#2083#2305#0" expanded="false" />
-            <element signature="e#6196#7261#0" expanded="false" />
-            <element signature="e#7296#7410#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1161,40 +1185,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="77" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/operations.py">
+    <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="29" column="100" lean-forward="false" selection-start-line="29" selection-start-column="100" selection-end-line="29" selection-end-column="100" />
-          <folding>
-            <element signature="e#327#516#0" expanded="false" />
-            <element signature="e#873#913#0" expanded="false" />
-            <element signature="e#1199#1424#0" expanded="false" />
-            <element signature="e#1523#1660#0" expanded="false" />
-            <element signature="e#2306#2442#0" expanded="false" />
-            <element signature="e#2483#2621#0" expanded="false" />
-            <element signature="e#2714#3164#0" expanded="false" />
-            <element signature="e#3203#3248#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/run_delex.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="31" lean-forward="false" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/document.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/init.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="115" column="156" lean-forward="false" selection-start-line="115" selection-start-column="156" selection-end-line="115" selection-end-column="156" />
-          <folding />
+        <state relative-caret-position="705">
+          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/ordering.py">
+    <entry file="file://$PROJECT_DIR$/data/lex.e2f">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="-435">
+          <caret line="1451" column="18" lean-forward="false" selection-start-line="1451" selection-start-column="13" selection-end-line="1451" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1206,28 +1245,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
+    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="376" column="8" lean-forward="false" selection-start-line="376" selection-start-column="8" selection-end-line="376" selection-end-column="8" />
+        <state relative-caret-position="1605">
+          <caret line="114" column="33" lean-forward="false" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
           <folding>
-            <element signature="e#991#3607#0" expanded="false" />
-            <element signature="e#3760#5111#0" expanded="false" />
-            <element signature="e#5187#6732#0" expanded="false" />
-            <element signature="e#7018#9082#0" expanded="false" />
-            <element signature="e#9177#10278#0" expanded="false" />
-            <element signature="e#10435#12597#0" expanded="false" />
-            <element signature="e#12740#13395#0" expanded="false" />
-            <element signature="e#13561#14385#0" expanded="false" />
+            <element signature="e#225#240#0" expanded="true" />
+            <element signature="e#2252#2474#0" expanded="false" />
+            <element signature="e#4790#5855#0" expanded="false" />
+            <element signature="e#5890#6004#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
+    <entry file="file://$PROJECT_DIR$/generator/simplenlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
+        <state relative-caret-position="795">
+          <caret line="54" column="29" lean-forward="false" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+          <folding>
+            <element signature="e#2083#2305#0" expanded="false" />
+            <element signature="e#6196#7261#0" expanded="false" />
+            <element signature="e#7296#7410#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/operations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="71" column="23" lean-forward="false" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+          <folding>
+            <element signature="e#327#516#0" expanded="false" />
+            <element signature="e#873#913#0" expanded="false" />
+            <element signature="e#1199#1424#0" expanded="false" />
+            <element signature="e#1523#1660#0" expanded="false" />
+            <element signature="e#2309#2445#0" expanded="false" />
+            <element signature="e#2486#2624#0" expanded="false" />
+            <element signature="e#2717#3167#0" expanded="false" />
+            <element signature="e#3206#3251#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="473" column="40" lean-forward="false" selection-start-line="473" selection-start-column="40" selection-end-line="473" selection-end-column="40" />
+          <folding>
+            <element signature="e#1028#3644#0" expanded="false" />
+            <element signature="e#3797#5148#0" expanded="false" />
+            <element signature="e#5224#6769#0" expanded="false" />
+            <element signature="e#7055#9119#0" expanded="false" />
+            <element signature="e#9214#10315#0" expanded="false" />
+            <element signature="e#10472#12634#0" expanded="false" />
+            <element signature="e#13598#14422#0" expanded="false" />
+            <element signature="e#14506#17015#0" expanded="false" />
+            <element signature="e#17095#18890#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delexicalizer/ordering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="43" lean-forward="false" selection-start-line="75" selection-start-column="43" selection-end-line="75" selection-end-column="43" />
+          <folding>
+            <element signature="e#156#167#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -44,8 +44,8 @@ class DBInit(object):
 
     def get_entity_info(self, entity):
         fner = filter(lambda key: entity in self.ner[key], self.ner)
-        fsemcategory = filter(lambda key: entity.name in self.semcategory[key], self.semcategory)
-        fdescription = filter(lambda key: entity.name in self.descriptions[key], self.descriptions)
+        fsemcategory = filter(lambda key: entity in self.semcategory[key], self.semcategory)
+        fdescription = filter(lambda key: entity in self.descriptions[key], self.descriptions)
 
         if len(fner) > 0:
             fner = fner[0]

@@ -69,7 +69,7 @@ def insert_template(lexEntry, template):
 
 # Template operations
 def save_template(category, triples, template):
-    template = Entry(category=category, triples=triples, template=template)
+    template = Template(category=category, triples=triples, template=template)
     template.save()
     return template
 
