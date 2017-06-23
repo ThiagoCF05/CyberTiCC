@@ -142,7 +142,7 @@ class Delexicalizer(object):
 
                 for nomref in pronref['nominalrefs']:
                     ranking[tag].append(edit_distance(entity_map[tag].name, nomref))
-                ranking[tag] = np.mean(ranking[tag])
+                ranking[tag] = numpy.mean(ranking[tag])
 
             ranking = sorted(ranking.items(), key=operator.itemgetter(1))
             tag = ranking[0][0]

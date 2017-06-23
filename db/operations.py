@@ -60,11 +60,13 @@ def save_triple(e1, pred, e2):
 # Lexical entry operations
 def save_lexEntry(docid, comment, text, parse_tree, template=''):
     lexEntry = Lex(docid=docid, comment=comment, text=text, template=template, parse_tree=parse_tree)
-    lexEntry.save()
+    response = lexEntry.save()
     return lexEntry
 
 def insert_template(lexEntry, template):
-    lexEntry.modify(set__template=template)
+    response = lexEntry.modify(set__template=template)
+    if not response:
+        raise NameError('Insert template error: ', lexEntry.text)
     return lexEntry
 
 # Template operations
@@ -138,4 +140,5 @@ def clean():
 def clean_delex():
     Reference.objects().delete()
     Refex.objects().delete()
-    Lex.objects.update(template='')
+    Lex.objects().update(template='')
+    Template.objects().delete()
