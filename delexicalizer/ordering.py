@@ -85,12 +85,12 @@ class Ordering(object):
 
             for prev_tag in prev_tags:
                 if 'AGENT' in tag and 'PATIENT' in prev_tag:
-                    f = filter(lambda triple: triple.agent.name == entitymap[tag] and triple.patient.name == entitymap[prev_tag], triples)
+                    f = filter(lambda triple: triple.agent.name == entitymap[tag].name and triple.patient.name == entitymap[prev_tag].name, triples)
                 elif 'PATIENT' in tag and 'AGENT' in prev_tag:
-                    f = filter(lambda triple: triple.patient.name == entitymap[tag] and triple.agent.name == entitymap[prev_tag], triples)
+                    f = filter(lambda triple: triple.patient.name == entitymap[tag].name and triple.agent.name == entitymap[prev_tag].name, triples)
                 else:
-                    f = filter(lambda triple: (triple.agent.name == entitymap[tag] and triple.patient.name == entitymap[prev_tag]) or
-                                              (triple.patient.name == entitymap[tag] and triple.agent.name == entitymap[prev_tag]), triples)
+                    f = filter(lambda triple: (triple.agent.name == entitymap[tag].name and triple.patient.name == entitymap[prev_tag].name) or
+                                              (triple.patient.name == entitymap[tag].name and triple.agent.name == entitymap[prev_tag].name), triples)
 
                 if len(f) > 0:
                     triples_sorted.append(f[0])
@@ -129,7 +129,7 @@ if __name__ == '__main__':
 
     training = []
     entries = Entry.objects(set='train')
-    # entries = Entry.objects(set='train', size=4, category='Building')
+    # entries = Entry.objects(set='train', size=1)
 
     for entry in entries:
         result = ordering.process(entry)
