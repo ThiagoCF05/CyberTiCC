@@ -34,11 +34,11 @@ class Ordering(object):
     # Fixing the tags for the correct order
     def generate_template(self, triples, template, entitymap):
         new_entitymap, predicates = utils.map_entities(triples)
-        new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))
+        new_entitymap = dict(map(lambda x: (x[1].name, x[0]), new_entitymap.items()))
         new_template = []
         for token in template:
             if token in entitymap:
-                new_template.append(new_entitymap[entitymap[token]])
+                new_template.append(new_entitymap[entitymap[token].name])
             else:
                 new_template.append(token)
         return ' '.join(new_template).replace('-LRB-', '(').replace('-RRB-', ')').strip()
