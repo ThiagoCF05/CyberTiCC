@@ -105,7 +105,7 @@ class Ordering(object):
         '''
         for row in trainingset:
             # Update database with template with right entity order id and ordered triples
-            dbop.save_template(category=row['category'], triples=row['sorted_triples'], template=row['template'])
+            dbop.save_template(category=row['semcategory'], triples=row['sorted_triples'], template=row['template'])
 
     def write(self, trainingset, fname):
         result = []
