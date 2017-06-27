@@ -56,18 +56,18 @@ class CyberNLG(object):
                 templates.append(template)
 
         templates = nltk.FreqDist(templates)
-        items = sorted(templates.items(), key=operator.itemgetter(1), reverse=True)
+        templates = sorted(templates.items(), key=operator.itemgetter(1), reverse=True)
 
-        formatted_templates = []
+        new_templates = []
         dem = sum(map(lambda item: item[1], templates))
-        for item in items:
+        for item in templates:
             template, freq = item
             # REPLACE ENTITY TAGS FOR WIKIPEDIA IDs
             for tag, entity in sorted(entitymap.items(), key=lambda x: len(x[1].name), reverse=True):
                 template = template.replace(tag, '_'.join(entity.name.replace('\'', '').replace('\"', '').split()))
-            formatted_templates.append((template, float(freq)/dem))
+            new_templates.append((template, float(freq)/dem))
 
-        return formatted_templates, entitymap, predicates
+        return new_templates, entitymap, predicates
 
     def get_new_entitymap(self, entitymap):
         new_entitymap = {}
@@ -77,6 +77,23 @@ class CyberNLG(object):
             new_tag = 'ENTITY-' + str(i+1)
             new_entitymap[entitymap[tag]] = new_tag
         return new_entitymap
+
+    def reg_process(self, templates, entitymap):
+        new_templates = []
+        for item in templates:
+            template, freq = item
+
+            # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
+            new_entitymap = self.get_new_entitymap(entitymap)
+            for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0].name), reverse=True):
+                name = '_'.join(entity.name.replace('\'', '').replace('\"', '').split())
+                template = template.replace(name, tag)
+
+            # Generating referring expressions
+            new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))
+            template = self.reg.generate(template, new_entitymap)
+            new_templates.append(template)
+        return new_templates
 
     def process(self, deventry):
         print 10 * '-'
@@ -90,19 +107,20 @@ class CyberNLG(object):
         self.references.append(refs)
 
         # Try to extract a full template
+        # TO DO: ordering triples
         triples = deventry.triples
         begin, end, templates = 0, len(triples), []
         while begin != end:
-            snt_templates, entitymap, predicates = self.extract_template(triples[begin:end])[:self.beam]
+            partial_templates, entitymap, predicates = self.extract_template(triples[begin:end])[:self.beam]
 
-            if len(snt_templates) > 0:
+            if len(partial_templates) > 0:
                 if len(templates) == 0:
-                    templates = map(lambda template: ([template[0]], template[1]), snt_templates)
+                    templates = map(lambda template: ([template[0]], template[1]), partial_templates)
                 else:
                     for i, template in enumerate(templates):
-                        for snt_template in snt_templates:
-                            templates[i][0].append(snt_template[0])
-                            templates[i][1] *= snt_template[1]
+                        for partial_template in partial_templates:
+                            templates[i][0].append(partial_template[0])
+                            templates[i][1] *= partial_template[1]
 
                     templates = sorted(templates, key=lambda template: template[1], reverse=True)[:self.beam]
 
@@ -112,17 +130,10 @@ class CyberNLG(object):
                 end -= 1
 
         entitymap, predicates = utils.map_entities(deventry.triples)
-        template = ' '.join(templates)
+        templates = self.reg_process(templates, entitymap)
 
-        # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
-        new_entitymap = self.get_new_entitymap(entitymap)
-        for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0].name), reverse=True):
-            name = '_'.join(entity.name.replace('\'', '').replace('\"', '').split())
-            template = template.replace(name, tag)
-
-        # Generating referring expressions
-        new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))
-        template = self.reg.generate(template, new_entitymap)
+        # Ranking with KenLM
+        template = sorted(templates, key=lambda x: self.model.score(x), reverse=True)[0]
 
         self.hyps.append(template.strip())
 
@@ -191,7 +202,7 @@ if __name__ == '__main__':
     parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
     args = parser.parse_args()
 
-    nlg = CyberNLG()
+    nlg = CyberNLG(lm_path='/roaming/tcastrof/gigaword/gigaword5.bin', beam=100)
 
     write_references(nlg.references, args.refs)
     write_hyps(nlg.hyps, args.hyps)

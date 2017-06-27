@@ -14,7 +14,7 @@ import utils
 from db.model import *
 
 def evaluate(verbose=False):
-    entries = Entry.objects(size=1, set='train')
+    entries = Entry.objects(set='train')
 
     # evaluation
     num, dem = 0, 0

@@ -30,8 +30,11 @@ for entry in entries:
 
     f.write('\n\nLEX\n')
     for lex in entry.texts:
-        f.write(lex.text.encode('utf-8') + '\n')
-        f.write(lex.template.encode('utf-8') + '\n')
+        f.write(str(lex.docid).encode('utf-8') + '\n')
+        f.write('TEXT: ' + lex.text.encode('utf-8') + '\n')
+        f.write('TEMPLATE: ' + lex.template.encode('utf-8') + '\n')
+        f.write('CORRECT: \n')
+        f.write('COMMENT: \n')
         f.write('-\n')
     f.write('\n')
     f.write(50 * '*')
