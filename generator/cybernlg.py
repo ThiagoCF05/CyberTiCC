@@ -130,6 +130,7 @@ class CyberNLG(object):
                 end -= 1
 
         entitymap, predicates = utils.map_entities(deventry.triples)
+        templates = map(lambda template: template[0], templates)
         templates = self.reg_process(templates, entitymap)
 
         # Ranking with KenLM

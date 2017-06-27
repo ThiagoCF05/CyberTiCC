@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -74,13 +73,13 @@
       <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="122" column="77" lean-forward="false" selection-start-line="122" selection-start-column="77" selection-end-line="122" selection-end-column="77" />
+            <state relative-caret-position="594">
+              <caret line="132" column="64" lean-forward="false" selection-start-line="132" selection-start-column="64" selection-end-line="132" selection-end-column="64" />
               <folding>
                 <element signature="e#225#240#0" expanded="true" />
                 <element signature="e#2242#2464#0" expanded="false" />
-                <element signature="e#5260#6325#0" expanded="false" />
-                <element signature="e#6360#6474#0" expanded="false" />
+                <element signature="e#5325#6390#0" expanded="false" />
+                <element signature="e#6425#6539#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1338,13 +1337,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="122" column="77" lean-forward="false" selection-start-line="122" selection-start-column="77" selection-end-line="122" selection-end-column="77" />
+        <state relative-caret-position="594">
+          <caret line="132" column="64" lean-forward="false" selection-start-line="132" selection-start-column="64" selection-end-line="132" selection-end-column="64" />
           <folding>
             <element signature="e#225#240#0" expanded="true" />
             <element signature="e#2242#2464#0" expanded="false" />
-            <element signature="e#5260#6325#0" expanded="false" />
-            <element signature="e#6360#6474#0" expanded="false" />
+            <element signature="e#5325#6390#0" expanded="false" />
+            <element signature="e#6425#6539#0" expanded="false" />
           </folding>
         </state>
       </provider>
