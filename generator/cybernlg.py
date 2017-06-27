@@ -80,9 +80,7 @@ class CyberNLG(object):
 
     def reg_process(self, templates, entitymap):
         new_templates = []
-        for item in templates:
-            template, freq = item
-
+        for template in templates:
             # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
             new_entitymap = self.get_new_entitymap(entitymap)
             for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0].name), reverse=True):

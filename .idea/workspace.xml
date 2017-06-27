@@ -73,13 +73,13 @@
       <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="132" column="64" lean-forward="false" selection-start-line="132" selection-start-column="64" selection-end-line="132" selection-end-column="64" />
+            <state relative-caret-position="353">
+              <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
               <folding>
                 <element signature="e#225#240#0" expanded="true" />
                 <element signature="e#2242#2464#0" expanded="false" />
-                <element signature="e#5325#6390#0" expanded="false" />
-                <element signature="e#6425#6539#0" expanded="false" />
+                <element signature="e#5294#6359#0" expanded="false" />
+                <element signature="e#6394#6508#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1337,13 +1337,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="132" column="64" lean-forward="false" selection-start-line="132" selection-start-column="64" selection-end-line="132" selection-end-column="64" />
+        <state relative-caret-position="353">
+          <caret line="82" column="34" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
           <folding>
             <element signature="e#225#240#0" expanded="true" />
             <element signature="e#2242#2464#0" expanded="false" />
-            <element signature="e#5325#6390#0" expanded="false" />
-            <element signature="e#6425#6539#0" expanded="false" />
+            <element signature="e#5294#6359#0" expanded="false" />
+            <element signature="e#6394#6508#0" expanded="false" />
           </folding>
         </state>
       </provider>
