@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/evaluation.py" afterPath="$PROJECT_DIR$/delexicalizer/evaluation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/report.py" afterPath="$PROJECT_DIR$/scripts/report.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/run_delex.sh" afterPath="$PROJECT_DIR$/scripts/run_delex.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/run_generator.sh" afterPath="$PROJECT_DIR$/scripts/run_generator.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -74,17 +70,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1870">
-              <caret line="200" column="76" lean-forward="false" selection-start-line="200" selection-start-column="66" selection-end-line="200" selection-end-column="76" />
+            <state relative-caret-position="412">
+              <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
               <folding>
                 <element signature="e#225#240#0" expanded="true" />
                 <element signature="e#2242#2464#0" expanded="false" />
                 <element signature="e#5227#6292#0" expanded="false" />
                 <element signature="e#6327#6441#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_generator.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/run_generator.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -184,7 +190,6 @@
         <option value="$PROJECT_DIR$/generator/description.py" />
         <option value="$PROJECT_DIR$/scripts/entity_info.py" />
         <option value="$PROJECT_DIR$/db/model.py" />
-        <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
         <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
         <option value="$PROJECT_DIR$/generator/reg/pronoun.py" />
         <option value="$PROJECT_DIR$/generator/simplenlg.py" />
@@ -201,6 +206,7 @@
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/scripts/run_delex.sh" />
         <option value="$PROJECT_DIR$/scripts/report.py" />
+        <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
       </list>
     </option>
   </component>
@@ -1114,13 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/run_generator.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1330,14 +1329,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="200" column="76" lean-forward="false" selection-start-line="200" selection-start-column="66" selection-end-line="200" selection-end-column="76" />
+        <state relative-caret-position="412">
+          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
             <element signature="e#225#240#0" expanded="true" />
             <element signature="e#2242#2464#0" expanded="false" />
             <element signature="e#5227#6292#0" expanded="false" />
             <element signature="e#6327#6441#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/run_generator.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

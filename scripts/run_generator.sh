@@ -5,4 +5,4 @@ python pronoun.py
 python proper_name.py
 
 cd ../
-python simplenlg.py /home/tcastrof/cyber/data/easy_nlg_reg/hyps /home/tcastrof/cyber/data/easy_nlg_reg/ref
+python cybernlg.py /home/tcastrof/cyber/data/new_nlg_reg/hyps /home/tcastrof/cyber/data/new_nlg_reg/ref
