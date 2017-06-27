@@ -120,7 +120,7 @@ class CyberNLG(object):
                     for i, template in enumerate(templates):
                         for partial_template in partial_templates:
                             templates[i][0].append(partial_template[0])
-                            templates[i][1] *= partial_template[1]
+                            templates[i] = (templates[i][0], templates[i][1] * partial_template[1])
 
                     templates = sorted(templates, key=lambda template: template[1], reverse=True)[:self.beam]
 
