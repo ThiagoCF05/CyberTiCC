@@ -1,0 +1,4160 @@
+[
+    {
+        "sorted": [
+            "A_Fortress_of_Grey_Ice | country | United_States",
+            "United_States | language | English_language"
+        ],
+        "triples": [
+            "United_States | language | English_language",
+            "A_Fortress_of_Grey_Ice | country | United_States"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Fortress_of_Grey_Ice | country | United_States",
+            "United_States | language | English_language"
+        ],
+        "triples": [
+            "United_States | language | English_language",
+            "A_Fortress_of_Grey_Ice | country | United_States"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "AIDS_(journal) | academicDiscipline | HIV",
+            "HIV | family | Orthoretrovirinae"
+        ],
+        "triples": [
+            "HIV | family | Orthoretrovirinae",
+            "AIDS_(journal) | academicDiscipline | HIV"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "AIDS_(journal) | academicDiscipline | HIV",
+            "HIV | family | Orthoretrovirinae"
+        ],
+        "triples": [
+            "HIV | family | Orthoretrovirinae",
+            "AIDS_(journal) | academicDiscipline | HIV"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "AIDS_(journal) | academicDiscipline | HIV",
+            "HIV | family | Orthoretrovirinae"
+        ],
+        "triples": [
+            "HIV | family | Orthoretrovirinae",
+            "AIDS_(journal) | academicDiscipline | HIV"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\"",
+            "Alcatraz_Versus_the_Evil_Librarians | numberOfPages | \"320\""
+        ],
+        "triples": [
+            "Alcatraz_Versus_the_Evil_Librarians | numberOfPages | \"320\"",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\"",
+            "Alcatraz_Versus_the_Evil_Librarians | numberOfPages | \"320\""
+        ],
+        "triples": [
+            "Alcatraz_Versus_the_Evil_Librarians | numberOfPages | \"320\"",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Alcatraz_Versus_the_Evil_Librarians | numberOfPages | \"320\"",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "triples": [
+            "Alcatraz_Versus_the_Evil_Librarians | numberOfPages | \"320\"",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Alcatraz_Versus_the_Evil_Librarians | mediaType | Hardcover",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "triples": [
+            "Alcatraz_Versus_the_Evil_Librarians | mediaType | Hardcover",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Alcatraz_Versus_the_Evil_Librarians | mediaType | Hardcover",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "triples": [
+            "Alcatraz_Versus_the_Evil_Librarians | mediaType | Hardcover",
+            "Alcatraz_Versus_the_Evil_Librarians | ISBN_number | \"0-439-92550-9\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Aenir | author | Garth_Nix",
+            "Aenir | ISBN_number | \"0-439-17684-0\""
+        ],
+        "triples": [
+            "Aenir | author | Garth_Nix",
+            "Aenir | ISBN_number | \"0-439-17684-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Aenir | author | Garth_Nix",
+            "Aenir | ISBN_number | \"0-439-17684-0\""
+        ],
+        "triples": [
+            "Aenir | author | Garth_Nix",
+            "Aenir | ISBN_number | \"0-439-17684-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Aenir | author | Garth_Nix",
+            "Aenir | ISBN_number | \"0-439-17684-0\""
+        ],
+        "triples": [
+            "Aenir | author | Garth_Nix",
+            "Aenir | ISBN_number | \"0-439-17684-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Cornell_University | affiliation | Association_of_Public_and_Land-grant_Universities",
+            "Administrative_Science_Quarterly | publisher | Cornell_University"
+        ],
+        "triples": [
+            "Administrative_Science_Quarterly | publisher | Cornell_University",
+            "Cornell_University | affiliation | Association_of_Public_and_Land-grant_Universities"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Cornell_University | affiliation | Association_of_Public_and_Land-grant_Universities",
+            "Administrative_Science_Quarterly | publisher | Cornell_University"
+        ],
+        "triples": [
+            "Administrative_Science_Quarterly | publisher | Cornell_University",
+            "Cornell_University | affiliation | Association_of_Public_and_Land-grant_Universities"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Cornell_University | affiliation | Association_of_Public_and_Land-grant_Universities",
+            "Administrative_Science_Quarterly | publisher | Cornell_University"
+        ],
+        "triples": [
+            "Administrative_Science_Quarterly | publisher | Cornell_University",
+            "Cornell_University | affiliation | Association_of_Public_and_Land-grant_Universities"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Administrative_Science_Quarterly | CODEN_code | \"ASCQAG\"",
+            "Administrative_Science_Quarterly | abbreviation | \"Admin. Sci. Q.\""
+        ],
+        "triples": [
+            "Administrative_Science_Quarterly | CODEN_code | \"ASCQAG\"",
+            "Administrative_Science_Quarterly | abbreviation | \"Admin. Sci. Q.\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Acta_Mathematica_Hungarica | publisher | Springer_Science+Business_Media",
+            "Springer_Science+Business_Media | founder | Julius_Springer"
+        ],
+        "triples": [
+            "Acta_Mathematica_Hungarica | publisher | Springer_Science+Business_Media",
+            "Springer_Science+Business_Media | founder | Julius_Springer"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Springer_Science+Business_Media | founder | Julius_Springer",
+            "Acta_Mathematica_Hungarica | publisher | Springer_Science+Business_Media"
+        ],
+        "triples": [
+            "Acta_Mathematica_Hungarica | publisher | Springer_Science+Business_Media",
+            "Springer_Science+Business_Media | founder | Julius_Springer"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Springer_Science+Business_Media | founder | Julius_Springer",
+            "Acta_Mathematica_Hungarica | publisher | Springer_Science+Business_Media"
+        ],
+        "triples": [
+            "Acta_Mathematica_Hungarica | publisher | Springer_Science+Business_Media",
+            "Springer_Science+Business_Media | founder | Julius_Springer"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Above_the_Veil | precededBy | Aenir",
+            "Aenir | precededBy | Castle_(novel)"
+        ],
+        "triples": [
+            "Above_the_Veil | precededBy | Aenir",
+            "Aenir | precededBy | Castle_(novel)"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Above_the_Veil | precededBy | Aenir",
+            "Aenir | precededBy | Castle_(novel)"
+        ],
+        "triples": [
+            "Above_the_Veil | precededBy | Aenir",
+            "Aenir | precededBy | Castle_(novel)"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Aenir | followedBy | Above_the_Veil",
+            "Above_the_Veil | language | English_language"
+        ],
+        "triples": [
+            "Above_the_Veil | language | English_language",
+            "Aenir | followedBy | Above_the_Veil"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Aenir | followedBy | Above_the_Veil",
+            "Above_the_Veil | language | English_language"
+        ],
+        "triples": [
+            "Above_the_Veil | language | English_language",
+            "Aenir | followedBy | Above_the_Veil"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Aenir | followedBy | Above_the_Veil",
+            "Above_the_Veil | language | English_language"
+        ],
+        "triples": [
+            "Above_the_Veil | language | English_language",
+            "Aenir | followedBy | Above_the_Veil"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Above_the_Veil | precededBy | Aenir",
+            "Above_the_Veil | country | Australians"
+        ],
+        "triples": [
+            "Above_the_Veil | country | Australians",
+            "Above_the_Veil | precededBy | Aenir"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Above_the_Veil | precededBy | Aenir",
+            "Above_the_Veil | country | Australians"
+        ],
+        "triples": [
+            "Above_the_Veil | country | Australians",
+            "Above_the_Veil | precededBy | Aenir"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | numberOfPages | \"560\"",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | numberOfPages | \"560\"",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | numberOfPages | \"560\"",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | numberOfPages | \"560\"",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\"",
+            "A_Wizard_of_Mars | numberOfPages | \"560\""
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | numberOfPages | \"560\"",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | mediaType | Hardcover",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | mediaType | Hardcover",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | mediaType | Hardcover",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | mediaType | Hardcover",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\"",
+            "A_Wizard_of_Mars | mediaType | Hardcover"
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | mediaType | Hardcover",
+            "A_Wizard_of_Mars | ISBN_number | \"978-0-15-204770-2\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | author | Diane_Duane",
+            "A_Wizard_of_Mars | OCLC_number | 318875313"
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | author | Diane_Duane",
+            "A_Wizard_of_Mars | OCLC_number | 318875313"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Wizard_of_Mars | author | Diane_Duane",
+            "A_Wizard_of_Mars | OCLC_number | 318875313"
+        ],
+        "triples": [
+            "A_Wizard_of_Mars | author | Diane_Duane",
+            "A_Wizard_of_Mars | OCLC_number | 318875313"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Loyal_Character_Dancer | publisher | Soho_Press",
+            "Soho_Press | country | United_States"
+        ],
+        "triples": [
+            "A_Loyal_Character_Dancer | publisher | Soho_Press",
+            "Soho_Press | country | United_States"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Loyal_Character_Dancer | publisher | Soho_Press",
+            "Soho_Press | country | United_States"
+        ],
+        "triples": [
+            "A_Loyal_Character_Dancer | publisher | Soho_Press",
+            "Soho_Press | country | United_States"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Loyal_Character_Dancer | publisher | Soho_Press",
+            "Soho_Press | country | United_States"
+        ],
+        "triples": [
+            "A_Loyal_Character_Dancer | publisher | Soho_Press",
+            "Soho_Press | country | United_States"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Loyal_Character_Dancer | country | United_States",
+            "United_States | ethnicGroup | Asian_Americans"
+        ],
+        "triples": [
+            "A_Loyal_Character_Dancer | country | United_States",
+            "United_States | ethnicGroup | Asian_Americans"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Loyal_Character_Dancer | country | United_States",
+            "United_States | ethnicGroup | Asian_Americans"
+        ],
+        "triples": [
+            "A_Loyal_Character_Dancer | country | United_States",
+            "United_States | ethnicGroup | Asian_Americans"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Loyal_Character_Dancer | country | United_States",
+            "United_States | ethnicGroup | Asian_Americans"
+        ],
+        "triples": [
+            "A_Loyal_Character_Dancer | country | United_States",
+            "United_States | ethnicGroup | Asian_Americans"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Long_Long_Way | ISBN_number | \"0-670-03380-4\"",
+            "A_Long_Long_Way | OCLC_number | 57392246"
+        ],
+        "triples": [
+            "A_Long_Long_Way | OCLC_number | 57392246",
+            "A_Long_Long_Way | ISBN_number | \"0-670-03380-4\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Long_Long_Way | OCLC_number | 57392246",
+            "A_Long_Long_Way | ISBN_number | \"0-670-03380-4\""
+        ],
+        "triples": [
+            "A_Long_Long_Way | OCLC_number | 57392246",
+            "A_Long_Long_Way | ISBN_number | \"0-670-03380-4\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Long_Long_Way | ISBN_number | \"0-670-03380-4\"",
+            "A_Long_Long_Way | OCLC_number | 57392246"
+        ],
+        "triples": [
+            "A_Long_Long_Way | OCLC_number | 57392246",
+            "A_Long_Long_Way | ISBN_number | \"0-670-03380-4\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | numberOfPages | \"1174\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | numberOfPages | \"1174\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | mediaType | \"Print\"",
+            "A_Glastonbury_Romance | numberOfPages | \"1174\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | numberOfPages | \"1174\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | numberOfPages | \"1174\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | numberOfPages | \"1174\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\"",
+            "A_Glastonbury_Romance | mediaType | Hardcover"
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | mediaType | Hardcover",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | mediaType | Hardcover",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | mediaType | Hardcover",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | mediaType | Hardcover",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | mediaType | Hardcover",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | mediaType | \"Print\"",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\"",
+            "A_Glastonbury_Romance | mediaType | \"Print\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | mediaType | \"Print\"",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Glastonbury_Romance | mediaType | \"Print\"",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "triples": [
+            "A_Glastonbury_Romance | mediaType | \"Print\"",
+            "A_Glastonbury_Romance | ISBN_number | \"0-7156-3648-0\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Fortress_of_Grey_Ice | author | J._V._Jones",
+            "A_Fortress_of_Grey_Ice | ISBN_number | \"0-7653-0633-6\""
+        ],
+        "triples": [
+            "A_Fortress_of_Grey_Ice | author | J._V._Jones",
+            "A_Fortress_of_Grey_Ice | ISBN_number | \"0-7653-0633-6\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Fortress_of_Grey_Ice | author | J._V._Jones",
+            "A_Fortress_of_Grey_Ice | ISBN_number | \"0-7653-0633-6\""
+        ],
+        "triples": [
+            "A_Fortress_of_Grey_Ice | author | J._V._Jones",
+            "A_Fortress_of_Grey_Ice | ISBN_number | \"0-7653-0633-6\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "A_Fortress_of_Grey_Ice | author | J._V._Jones",
+            "A_Fortress_of_Grey_Ice | ISBN_number | \"0-7653-0633-6\""
+        ],
+        "triples": [
+            "A_Fortress_of_Grey_Ice | author | J._V._Jones",
+            "A_Fortress_of_Grey_Ice | ISBN_number | \"0-7653-0633-6\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "AIDS_(journal) | country | United_Kingdom",
+            "United_Kingdom | leaderName | Elizabeth_II"
+        ],
+        "triples": [
+            "AIDS_(journal) | country | United_Kingdom",
+            "United_Kingdom | leaderName | Elizabeth_II"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "AIDS_(journal) | country | United_Kingdom",
+            "United_Kingdom | leaderName | Elizabeth_II"
+        ],
+        "triples": [
+            "AIDS_(journal) | country | United_Kingdom",
+            "United_Kingdom | leaderName | Elizabeth_II"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "AIDS_(journal) | country | United_Kingdom",
+            "United_Kingdom | leaderName | Elizabeth_II"
+        ],
+        "triples": [
+            "AIDS_(journal) | country | United_Kingdom",
+            "United_Kingdom | leaderName | Elizabeth_II"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "ACM_Transactions_on_Information_Systems | CODEN_code | \"ATISET\"",
+            "ACM_Transactions_on_Information_Systems | abbreviation | \"ACM Trans. Inf. Syst.\""
+        ],
+        "triples": [
+            "ACM_Transactions_on_Information_Systems | abbreviation | \"ACM Trans. Inf. Syst.\"",
+            "ACM_Transactions_on_Information_Systems | CODEN_code | \"ATISET\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "ACM_Transactions_on_Information_Systems | abbreviation | \"ACM Trans. Inf. Syst.\"",
+            "ACM_Transactions_on_Information_Systems | CODEN_code | \"ATISET\""
+        ],
+        "triples": [
+            "ACM_Transactions_on_Information_Systems | abbreviation | \"ACM Trans. Inf. Syst.\"",
+            "ACM_Transactions_on_Information_Systems | CODEN_code | \"ATISET\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | Hardcover"
+        ],
+        "triples": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | Hardcover"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Ram_Rebellion | mediaType | Hardcover",
+            "1634:_The_Ram_Rebellion | author | Eric_Flint"
+        ],
+        "triples": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | Hardcover"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Ram_Rebellion | mediaType | Hardcover",
+            "1634:_The_Ram_Rebellion | author | Eric_Flint"
+        ],
+        "triples": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | Hardcover"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | E-book"
+        ],
+        "triples": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | E-book"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Ram_Rebellion | mediaType | E-book",
+            "1634:_The_Ram_Rebellion | author | Eric_Flint"
+        ],
+        "triples": [
+            "1634:_The_Ram_Rebellion | author | Eric_Flint",
+            "1634:_The_Ram_Rebellion | mediaType | E-book"
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Bavarian_Crisis | author | \"Virginia DeMarce and Eric Flint\"",
+            "1634:_The_Bavarian_Crisis | precededBy | Grantville_Gazette_III"
+        ],
+        "triples": [
+            "1634:_The_Bavarian_Crisis | precededBy | Grantville_Gazette_III",
+            "1634:_The_Bavarian_Crisis | author | \"Virginia DeMarce and Eric Flint\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "1634:_The_Bavarian_Crisis | author | \"Virginia DeMarce and Eric Flint\"",
+            "1634:_The_Bavarian_Crisis | precededBy | Grantville_Gazette_III"
+        ],
+        "triples": [
+            "1634:_The_Bavarian_Crisis | precededBy | Grantville_Gazette_III",
+            "1634:_The_Bavarian_Crisis | author | \"Virginia DeMarce and Eric Flint\""
+        ],
+        "semcategory": "WrittenWork"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | state | Karnataka",
+            "Karnataka | has to its west | Arabian_Sea"
+        ],
+        "triples": [
+            "Karnataka | has to its west | Arabian_Sea",
+            "Acharya_Institute_of_Technology | state | Karnataka"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | state | Karnataka",
+            "Karnataka | has to its west | Arabian_Sea"
+        ],
+        "triples": [
+            "Karnataka | has to its west | Arabian_Sea",
+            "Acharya_Institute_of_Technology | state | Karnataka"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | state | Karnataka",
+            "Karnataka | has to its west | Arabian_Sea"
+        ],
+        "triples": [
+            "Karnataka | has to its west | Arabian_Sea",
+            "Acharya_Institute_of_Technology | state | Karnataka"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "School of Business and Social Sciences at the Aarhus University | affiliation | European_University_Association",
+            "European_University_Association | headquarters | Brussels"
+        ],
+        "triples": [
+            "European_University_Association | headquarters | Brussels",
+            "School of Business and Social Sciences at the Aarhus University | affiliation | European_University_Association"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "School of Business and Social Sciences at the Aarhus University | affiliation | European_University_Association",
+            "European_University_Association | headquarters | Brussels"
+        ],
+        "triples": [
+            "European_University_Association | headquarters | Brussels",
+            "School of Business and Social Sciences at the Aarhus University | affiliation | European_University_Association"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "School of Business and Social Sciences at the Aarhus University | affiliation | European_University_Association",
+            "European_University_Association | headquarters | Brussels"
+        ],
+        "triples": [
+            "European_University_Association | headquarters | Brussels",
+            "School of Business and Social Sciences at the Aarhus University | affiliation | European_University_Association"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Tennis | sportsGoverningBody | International_Tennis_Federation",
+            "Acharya_Institute_of_Technology | sportsOffered | Tennis"
+        ],
+        "triples": [
+            "Acharya_Institute_of_Technology | sportsOffered | Tennis",
+            "Tennis | sportsGoverningBody | International_Tennis_Federation"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | was given the 'Technical Campus' status by | All_India_Council_for_Technical_Education",
+            "Acharya_Institute_of_Technology | officialSchoolColour | \"Blue, White and Orange\""
+        ],
+        "triples": [
+            "Acharya_Institute_of_Technology | officialSchoolColour | \"Blue, White and Orange\"",
+            "Acharya_Institute_of_Technology | was given the 'Technical Campus' status by | All_India_Council_for_Technical_Education"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | officialSchoolColour | \"Blue, White and Orange\"",
+            "Acharya_Institute_of_Technology | was given the 'Technical Campus' status by | All_India_Council_for_Technical_Education"
+        ],
+        "triples": [
+            "Acharya_Institute_of_Technology | officialSchoolColour | \"Blue, White and Orange\"",
+            "Acharya_Institute_of_Technology | was given the 'Technical Campus' status by | All_India_Council_for_Technical_Education"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | officialSchoolColour | \"Blue, White and Orange\"",
+            "Acharya_Institute_of_Technology | was given the 'Technical Campus' status by | All_India_Council_for_Technical_Education"
+        ],
+        "triples": [
+            "Acharya_Institute_of_Technology | officialSchoolColour | \"Blue, White and Orange\"",
+            "Acharya_Institute_of_Technology | was given the 'Technical Campus' status by | All_India_Council_for_Technical_Education"
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Acharya_Institute_of_Technology | campus | \"In Soldevanahalli, Acharya Dr. Sarvapalli Radhakrishnan Road, Hessarghatta Main Road, Bangalore \u2013 560090.\"",
+            "Acharya_Institute_of_Technology | director | \"Dr. G. P. Prabhukumar\""
+        ],
+        "triples": [
+            "Acharya_Institute_of_Technology | director | \"Dr. G. P. Prabhukumar\"",
+            "Acharya_Institute_of_Technology | campus | \"In Soldevanahalli, Acharya Dr. Sarvapalli Radhakrishnan Road, Hessarghatta Main Road, Bangalore \u2013 560090.\""
+        ],
+        "semcategory": "University"
+    },
+    {
+        "sorted": [
+            "Massimo_Drago | club | S.S._Chieti_Calcio",
+            "A.C._Cesena | manager | Massimo_Drago"
+        ],
+        "triples": [
+            "Massimo_Drago | club | S.S._Chieti_Calcio",
+            "A.C._Cesena | manager | Massimo_Drago"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Cesena | manager | Massimo_Drago",
+            "Massimo_Drago | club | S.S._Chieti_Calcio"
+        ],
+        "triples": [
+            "Massimo_Drago | club | S.S._Chieti_Calcio",
+            "A.C._Cesena | manager | Massimo_Drago"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Akron_Summit_Assault | ground | Akron,_Ohio",
+            "Akron,_Ohio | country | United_States"
+        ],
+        "triples": [
+            "Akron_Summit_Assault | ground | Akron,_Ohio",
+            "Akron,_Ohio | country | United_States"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Akron_Summit_Assault | ground | Akron,_Ohio",
+            "Akron,_Ohio | country | United_States"
+        ],
+        "triples": [
+            "Akron_Summit_Assault | ground | Akron,_Ohio",
+            "Akron,_Ohio | country | United_States"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Akron_Summit_Assault | ground | Akron,_Ohio",
+            "Akron,_Ohio | country | United_States"
+        ],
+        "triples": [
+            "Akron_Summit_Assault | ground | Akron,_Ohio",
+            "Akron,_Ohio | country | United_States"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | fullname | \"Agremia\u00e7\u00e3o Sportiva Arapiraquense\"",
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | numberOfMembers | 17000"
+        ],
+        "triples": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | numberOfMembers | 17000",
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | fullname | \"Agremia\u00e7\u00e3o Sportiva Arapiraquense\""
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | fullname | \"Agremia\u00e7\u00e3o Sportiva Arapiraquense\"",
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | numberOfMembers | 17000"
+        ],
+        "triples": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | numberOfMembers | 17000",
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | fullname | \"Agremia\u00e7\u00e3o Sportiva Arapiraquense\""
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | ground | Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca",
+            "Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca | location | Brazil"
+        ],
+        "triples": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | ground | Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca",
+            "Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca | location | Brazil"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca | location | Brazil",
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | ground | Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca"
+        ],
+        "triples": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | ground | Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca",
+            "Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca | location | Brazil"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | ground | Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca",
+            "Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca | location | Brazil"
+        ],
+        "triples": [
+            "Agremia\u00e7\u00e3o_Sportiva_Arapiraquense | ground | Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca",
+            "Est\u00e1dio_Municipal_Coaracy_da_Mata_Fonseca | location | Brazil"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AZ_Alkmaar | fullname | \"Alkmaar Zaanstreek\"",
+            "AZ_Alkmaar | numberOfMembers | 17023"
+        ],
+        "triples": [
+            "AZ_Alkmaar | fullname | \"Alkmaar Zaanstreek\"",
+            "AZ_Alkmaar | numberOfMembers | 17023"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AZ_Alkmaar | numberOfMembers | 17023",
+            "AZ_Alkmaar | fullname | \"Alkmaar Zaanstreek\""
+        ],
+        "triples": [
+            "AZ_Alkmaar | fullname | \"Alkmaar Zaanstreek\"",
+            "AZ_Alkmaar | numberOfMembers | 17023"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AZ_Alkmaar | fullname | \"Alkmaar Zaanstreek\"",
+            "AZ_Alkmaar | numberOfMembers | 17023"
+        ],
+        "triples": [
+            "AZ_Alkmaar | fullname | \"Alkmaar Zaanstreek\"",
+            "AZ_Alkmaar | numberOfMembers | 17023"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AZAL_PFK | ground | AZAL_Arena",
+            "AZAL_Arena | location | Shuvalan"
+        ],
+        "triples": [
+            "AZAL_Arena | location | Shuvalan",
+            "AZAL_PFK | ground | AZAL_Arena"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AZAL_Arena | location | Shuvalan",
+            "AZAL_PFK | ground | AZAL_Arena"
+        ],
+        "triples": [
+            "AZAL_Arena | location | Shuvalan",
+            "AZAL_PFK | ground | AZAL_Arena"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AZAL_Arena | location | Shuvalan",
+            "AZAL_PFK | ground | AZAL_Arena"
+        ],
+        "triples": [
+            "AZAL_Arena | location | Shuvalan",
+            "AZAL_PFK | ground | AZAL_Arena"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax_(amateurs) | numberOfMembers | 5000",
+            "AFC_Ajax_(amateurs) | season | 2014\u201315_Topklasse"
+        ],
+        "triples": [
+            "AFC_Ajax_(amateurs) | season | 2014\u201315_Topklasse",
+            "AFC_Ajax_(amateurs) | numberOfMembers | 5000"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax_(amateurs) | numberOfMembers | 5000",
+            "AFC_Ajax_(amateurs) | season | 2014\u201315_Topklasse"
+        ],
+        "triples": [
+            "AFC_Ajax_(amateurs) | season | 2014\u201315_Topklasse",
+            "AFC_Ajax_(amateurs) | numberOfMembers | 5000"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax_(amateurs) | season | 2014\u201315_Topklasse",
+            "AFC_Ajax_(amateurs) | numberOfMembers | 5000"
+        ],
+        "triples": [
+            "AFC_Ajax_(amateurs) | season | 2014\u201315_Topklasse",
+            "AFC_Ajax_(amateurs) | numberOfMembers | 5000"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax_(amateurs) | ground | Amsterdam",
+            "Amsterdam | leader | Eberhard_van_der_Laan"
+        ],
+        "triples": [
+            "AFC_Ajax_(amateurs) | ground | Amsterdam",
+            "Amsterdam | leader | Eberhard_van_der_Laan"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax_(amateurs) | ground | Amsterdam",
+            "Amsterdam | leader | Eberhard_van_der_Laan"
+        ],
+        "triples": [
+            "AFC_Ajax_(amateurs) | ground | Amsterdam",
+            "Amsterdam | leader | Eberhard_van_der_Laan"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax_(amateurs) | ground | Amsterdam",
+            "Amsterdam | leader | Eberhard_van_der_Laan"
+        ],
+        "triples": [
+            "AFC_Ajax_(amateurs) | ground | Amsterdam",
+            "Amsterdam | leader | Eberhard_van_der_Laan"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax | numberOfMembers | 53502",
+            "AFC_Ajax | owner | AFC_Ajax_N.V."
+        ],
+        "triples": [
+            "AFC_Ajax | owner | AFC_Ajax_N.V.",
+            "AFC_Ajax | numberOfMembers | 53502"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax | manager | Frank_de_Boer",
+            "Frank_de_Boer | club | Ajax_Youth_Academy"
+        ],
+        "triples": [
+            "AFC_Ajax | manager | Frank_de_Boer",
+            "Frank_de_Boer | club | Ajax_Youth_Academy"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "AFC_Ajax | manager | Frank_de_Boer",
+            "Frank_de_Boer | club | Ajax_Youth_Academy"
+        ],
+        "triples": [
+            "AFC_Ajax | manager | Frank_de_Boer",
+            "Frank_de_Boer | club | Ajax_Youth_Academy"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Frank_de_Boer | club | Ajax_Youth_Academy",
+            "AFC_Ajax | manager | Frank_de_Boer"
+        ],
+        "triples": [
+            "AFC_Ajax | manager | Frank_de_Boer",
+            "Frank_de_Boer | club | Ajax_Youth_Academy"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "ACF_Fiorentina | league | Serie_A",
+            "Serie_A | country | Italy"
+        ],
+        "triples": [
+            "ACF_Fiorentina | league | Serie_A",
+            "Serie_A | country | Italy"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "ACF_Fiorentina | league | Serie_A",
+            "Serie_A | country | Italy"
+        ],
+        "triples": [
+            "ACF_Fiorentina | league | Serie_A",
+            "Serie_A | country | Italy"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.S._Roma | ground | \"Rome, Italy\"",
+            "A.S._Roma | league | Serie_A"
+        ],
+        "triples": [
+            "A.S._Roma | ground | \"Rome, Italy\"",
+            "A.S._Roma | league | Serie_A"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.S._Roma | league | Serie_A",
+            "A.S._Roma | ground | \"Rome, Italy\""
+        ],
+        "triples": [
+            "A.S._Roma | ground | \"Rome, Italy\"",
+            "A.S._Roma | league | Serie_A"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.S._Roma | ground | \"Rome, Italy\"",
+            "A.S._Roma | league | Serie_A"
+        ],
+        "triples": [
+            "A.S._Roma | ground | \"Rome, Italy\"",
+            "A.S._Roma | league | Serie_A"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.S._Livorno_Calcio | manager | Christian_Panucci",
+            "Christian_Panucci | club | Italy_national_football_team"
+        ],
+        "triples": [
+            "A.S._Livorno_Calcio | manager | Christian_Panucci",
+            "Christian_Panucci | club | Italy_national_football_team"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.S._Livorno_Calcio | manager | Christian_Panucci",
+            "Christian_Panucci | club | Italy_national_football_team"
+        ],
+        "triples": [
+            "A.S._Livorno_Calcio | manager | Christian_Panucci",
+            "Christian_Panucci | club | Italy_national_football_team"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.S._Livorno_Calcio | manager | Christian_Panucci",
+            "Christian_Panucci | club | Italy_national_football_team"
+        ],
+        "triples": [
+            "A.S._Livorno_Calcio | manager | Christian_Panucci",
+            "Christian_Panucci | club | Italy_national_football_team"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Fylde | numberOfMembers | 3180",
+            "A.F.C._Fylde | ground | \"Bryning Lane\""
+        ],
+        "triples": [
+            "A.F.C._Fylde | numberOfMembers | 3180",
+            "A.F.C._Fylde | ground | \"Bryning Lane\""
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Fylde | numberOfMembers | 3180",
+            "A.F.C._Fylde | ground | \"Bryning Lane\""
+        ],
+        "triples": [
+            "A.F.C._Fylde | numberOfMembers | 3180",
+            "A.F.C._Fylde | ground | \"Bryning Lane\""
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Fylde | ground | \"Bryning Lane\"",
+            "A.F.C._Fylde | numberOfMembers | 3180"
+        ],
+        "triples": [
+            "A.F.C._Fylde | numberOfMembers | 3180",
+            "A.F.C._Fylde | ground | \"Bryning Lane\""
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Fylde | ground | The_Fylde",
+            "A.F.C._Fylde | numberOfMembers | 3180"
+        ],
+        "triples": [
+            "A.F.C._Fylde | ground | The_Fylde",
+            "A.F.C._Fylde | numberOfMembers | 3180"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Fylde | ground | The_Fylde",
+            "A.F.C._Fylde | numberOfMembers | 3180"
+        ],
+        "triples": [
+            "A.F.C._Fylde | ground | The_Fylde",
+            "A.F.C._Fylde | numberOfMembers | 3180"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Sparta_Rotterdam"
+        ],
+        "triples": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Sparta_Rotterdam"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Stuart_Parker_(footballer) | club | Sparta_Rotterdam",
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)"
+        ],
+        "triples": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Sparta_Rotterdam"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Sparta_Rotterdam"
+        ],
+        "triples": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Sparta_Rotterdam"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Runcorn_F.C._Halton"
+        ],
+        "triples": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Runcorn_F.C._Halton"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Runcorn_F.C._Halton"
+        ],
+        "triples": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Runcorn_F.C._Halton"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Runcorn_F.C._Halton"
+        ],
+        "triples": [
+            "A.F.C._Blackpool | manager | Stuart_Parker_(footballer)",
+            "Stuart_Parker_(footballer) | club | Runcorn_F.C._Halton"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.E_Dimitra_Efxeinoupolis | numberOfMembers | 1500",
+            "A.E_Dimitra_Efxeinoupolis | league | A_EPSTH_2nd_GROUP"
+        ],
+        "triples": [
+            "A.E_Dimitra_Efxeinoupolis | numberOfMembers | 1500",
+            "A.E_Dimitra_Efxeinoupolis | league | A_EPSTH_2nd_GROUP"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.E_Dimitra_Efxeinoupolis | numberOfMembers | 1500",
+            "A.E_Dimitra_Efxeinoupolis | league | A_EPSTH_2nd_GROUP"
+        ],
+        "triples": [
+            "A.E_Dimitra_Efxeinoupolis | numberOfMembers | 1500",
+            "A.E_Dimitra_Efxeinoupolis | league | A_EPSTH_2nd_GROUP"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.D._Isidro_Metap\u00e1n | manager | Jorge_Humberto_Rodr\u00edguez",
+            "Jorge_Humberto_Rodr\u00edguez | club | C.D._FAS"
+        ],
+        "triples": [
+            "A.D._Isidro_Metap\u00e1n | manager | Jorge_Humberto_Rodr\u00edguez",
+            "Jorge_Humberto_Rodr\u00edguez | club | C.D._FAS"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.D._Isidro_Metap\u00e1n | manager | Jorge_Humberto_Rodr\u00edguez",
+            "Jorge_Humberto_Rodr\u00edguez | club | C.D._FAS"
+        ],
+        "triples": [
+            "A.D._Isidro_Metap\u00e1n | manager | Jorge_Humberto_Rodr\u00edguez",
+            "Jorge_Humberto_Rodr\u00edguez | club | C.D._FAS"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.D._Isidro_Metap\u00e1n | manager | Jorge_Humberto_Rodr\u00edguez",
+            "Jorge_Humberto_Rodr\u00edguez | club | C.D._FAS"
+        ],
+        "triples": [
+            "A.D._Isidro_Metap\u00e1n | manager | Jorge_Humberto_Rodr\u00edguez",
+            "Jorge_Humberto_Rodr\u00edguez | club | C.D._FAS"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Lumezzane | ground | Italy",
+            "Italy | leader | Pietro_Grasso"
+        ],
+        "triples": [
+            "A.C._Lumezzane | ground | Italy",
+            "Italy | leader | Pietro_Grasso"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Lumezzane | ground | Italy",
+            "Italy | leader | Pietro_Grasso"
+        ],
+        "triples": [
+            "A.C._Lumezzane | ground | Italy",
+            "Italy | leader | Pietro_Grasso"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Lumezzane | ground | Italy",
+            "Italy | leader | Pietro_Grasso"
+        ],
+        "triples": [
+            "A.C._Lumezzane | ground | Italy",
+            "Italy | leader | Pietro_Grasso"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Chievo_Verona | league | Serie_A",
+            "A.C._Chievo_Verona | ground | Stadio_MarcAntonio_Bentegodi"
+        ],
+        "triples": [
+            "A.C._Chievo_Verona | ground | Stadio_MarcAntonio_Bentegodi",
+            "A.C._Chievo_Verona | league | Serie_A"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Chievo_Verona | ground | Stadio_MarcAntonio_Bentegodi",
+            "A.C._Chievo_Verona | league | Serie_A"
+        ],
+        "triples": [
+            "A.C._Chievo_Verona | ground | Stadio_MarcAntonio_Bentegodi",
+            "A.C._Chievo_Verona | league | Serie_A"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Chievo_Verona | ground | Stadio_MarcAntonio_Bentegodi",
+            "A.C._Chievo_Verona | league | Serie_A"
+        ],
+        "triples": [
+            "A.C._Chievo_Verona | ground | Stadio_MarcAntonio_Bentegodi",
+            "A.C._Chievo_Verona | league | Serie_A"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Cesena | league | Serie_B",
+            "Serie_B | champions | Carpi_F.C._1909"
+        ],
+        "triples": [
+            "A.C._Cesena | league | Serie_B",
+            "Serie_B | champions | Carpi_F.C._1909"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Cesena | league | Serie_B",
+            "Serie_B | champions | Carpi_F.C._1909"
+        ],
+        "triples": [
+            "A.C._Cesena | league | Serie_B",
+            "Serie_B | champions | Carpi_F.C._1909"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "A.C._Cesena | league | Serie_B",
+            "Serie_B | champions | Carpi_F.C._1909"
+        ],
+        "triples": [
+            "A.C._Cesena | league | Serie_B",
+            "Serie_B | champions | Carpi_F.C._1909"
+        ],
+        "semcategory": "SportsTeam"
+    },
+    {
+        "sorted": [
+            "Dead_Mans_Plack | material | Rock_(geology)",
+            "Dead_Mans_Plack | dedicatedTo | \u00c6thelwald,_Ealdorman_of_East_Anglia"
+        ],
+        "triples": [
+            "Dead_Mans_Plack | dedicatedTo | \u00c6thelwald,_Ealdorman_of_East_Anglia",
+            "Dead_Mans_Plack | material | Rock_(geology)"
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Baku_Turkish_Martyrs_Memorial | nativeName | \"T\u00fcrk \u015eehitleri An\u0131t\u0131\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "triples": [
+            "Baku_Turkish_Martyrs_Memorial | nativeName | \"T\u00fcrk \u015eehitleri An\u0131t\u0131\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Baku_Turkish_Martyrs_Memorial | nativeName | \"T\u00fcrk \u015eehitleri An\u0131t\u0131\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "triples": [
+            "Baku_Turkish_Martyrs_Memorial | nativeName | \"T\u00fcrk \u015eehitleri An\u0131t\u0131\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\"",
+            "Baku_Turkish_Martyrs_Memorial | nativeName | \"T\u00fcrk \u015eehitleri An\u0131t\u0131\""
+        ],
+        "triples": [
+            "Baku_Turkish_Martyrs_Memorial | nativeName | \"T\u00fcrk \u015eehitleri An\u0131t\u0131\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Baku_Turkish_Martyrs_Memorial | dedicatedTo | \"Ottoman Army soldiers killed in the Battle of Baku\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "triples": [
+            "Baku_Turkish_Martyrs_Memorial | dedicatedTo | \"Ottoman Army soldiers killed in the Battle of Baku\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\"",
+            "Baku_Turkish_Martyrs_Memorial | dedicatedTo | \"Ottoman Army soldiers killed in the Battle of Baku\""
+        ],
+        "triples": [
+            "Baku_Turkish_Martyrs_Memorial | dedicatedTo | \"Ottoman Army soldiers killed in the Battle of Baku\"",
+            "Baku_Turkish_Martyrs_Memorial | material | \"Red granite and white marble\""
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Atat\u00fcrk_Monument_(\u0130zmir) | location | Turkey",
+            "Atat\u00fcrk_Monument_(\u0130zmir) | inaugurationDate | \"1932-07-27\""
+        ],
+        "triples": [
+            "Atat\u00fcrk_Monument_(\u0130zmir) | inaugurationDate | \"1932-07-27\"",
+            "Atat\u00fcrk_Monument_(\u0130zmir) | location | Turkey"
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Atat\u00fcrk_Monument_(\u0130zmir) | location | Turkey",
+            "Atat\u00fcrk_Monument_(\u0130zmir) | inaugurationDate | \"1932-07-27\""
+        ],
+        "triples": [
+            "Atat\u00fcrk_Monument_(\u0130zmir) | inaugurationDate | \"1932-07-27\"",
+            "Atat\u00fcrk_Monument_(\u0130zmir) | location | Turkey"
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Atat\u00fcrk_Monument_(\u0130zmir) | location | Turkey",
+            "Atat\u00fcrk_Monument_(\u0130zmir) | inaugurationDate | \"1932-07-27\""
+        ],
+        "triples": [
+            "Atat\u00fcrk_Monument_(\u0130zmir) | inaugurationDate | \"1932-07-27\"",
+            "Atat\u00fcrk_Monument_(\u0130zmir) | location | Turkey"
+        ],
+        "semcategory": "Monument"
+    },
+    {
+        "sorted": [
+            "Batagor | dishVariation | Siomay",
+            "Siomay | ingredient | Peanut_sauce"
+        ],
+        "triples": [
+            "Siomay | ingredient | Peanut_sauce",
+            "Batagor | dishVariation | Siomay"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Siomay | ingredient | Peanut_sauce",
+            "Batagor | dishVariation | Siomay"
+        ],
+        "triples": [
+            "Siomay | ingredient | Peanut_sauce",
+            "Batagor | dishVariation | Siomay"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Batagor | dishVariation | Siomay",
+            "Siomay | ingredient | Peanut_sauce"
+        ],
+        "triples": [
+            "Siomay | ingredient | Peanut_sauce",
+            "Batagor | dishVariation | Siomay"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bionico | dishVariation | Honey",
+            "Bionico | course | Dessert"
+        ],
+        "triples": [
+            "Bionico | dishVariation | Honey",
+            "Bionico | course | Dessert"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bionico | course | Dessert",
+            "Bionico | ingredient | Granola"
+        ],
+        "triples": [
+            "Bionico | course | Dessert",
+            "Bionico | ingredient | Granola"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bionico | course | Dessert",
+            "Bionico | ingredient | Granola"
+        ],
+        "triples": [
+            "Bionico | course | Dessert",
+            "Bionico | ingredient | Granola"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Binignit | mainIngredients | Sweet_potato",
+            "Sweet_potato | order | Solanales"
+        ],
+        "triples": [
+            "Binignit | mainIngredients | Sweet_potato",
+            "Sweet_potato | order | Solanales"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Sweet_potato | order | Solanales",
+            "Binignit | mainIngredients | Sweet_potato"
+        ],
+        "triples": [
+            "Binignit | mainIngredients | Sweet_potato",
+            "Sweet_potato | order | Solanales"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Sweet_potato | order | Solanales",
+            "Binignit | mainIngredients | Sweet_potato"
+        ],
+        "triples": [
+            "Binignit | mainIngredients | Sweet_potato",
+            "Sweet_potato | order | Solanales"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Binignit | ingredient | Sweet_potato",
+            "Sweet_potato | division | Flowering_plant"
+        ],
+        "triples": [
+            "Binignit | ingredient | Sweet_potato",
+            "Sweet_potato | division | Flowering_plant"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Sweet_potato | division | Flowering_plant",
+            "Binignit | ingredient | Sweet_potato"
+        ],
+        "triples": [
+            "Binignit | ingredient | Sweet_potato",
+            "Sweet_potato | division | Flowering_plant"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Binignit | mainIngredients | Sago",
+            "Binignit | ingredient | Sweet_potato"
+        ],
+        "triples": [
+            "Binignit | ingredient | Sweet_potato",
+            "Binignit | mainIngredients | Sago"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Binignit | ingredient | Sweet_potato",
+            "Binignit | mainIngredients | Banana"
+        ],
+        "triples": [
+            "Binignit | ingredient | Sweet_potato",
+            "Binignit | mainIngredients | Banana"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Binignit | mainIngredients | Banana",
+            "Binignit | ingredient | Sweet_potato"
+        ],
+        "triples": [
+            "Binignit | ingredient | Sweet_potato",
+            "Binignit | mainIngredients | Banana"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Binignit | mainIngredients | Banana",
+            "Binignit | ingredient | Sweet_potato"
+        ],
+        "triples": [
+            "Binignit | ingredient | Sweet_potato",
+            "Binignit | mainIngredients | Banana"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bhajji | ingredient | Gram_flour",
+            "Bhajji | similarDish | \"Pakora and other fritters made from wheat or corn flour\""
+        ],
+        "triples": [
+            "Bhajji | similarDish | \"Pakora and other fritters made from wheat or corn flour\"",
+            "Bhajji | ingredient | Gram_flour"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bhajji | ingredient | Gram_flour",
+            "Bhajji | similarDish | \"Pakora and other fritters made from wheat or corn flour\""
+        ],
+        "triples": [
+            "Bhajji | similarDish | \"Pakora and other fritters made from wheat or corn flour\"",
+            "Bhajji | ingredient | Gram_flour"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bhajji | country | India",
+            "India | leaderName | Sumitra_Mahajan"
+        ],
+        "triples": [
+            "Bhajji | country | India",
+            "India | leaderName | Sumitra_Mahajan"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bhajji | country | India",
+            "India | leaderName | Sumitra_Mahajan"
+        ],
+        "triples": [
+            "Bhajji | country | India",
+            "India | leaderName | Sumitra_Mahajan"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bhajji | country | India",
+            "India | leaderName | Sumitra_Mahajan"
+        ],
+        "triples": [
+            "Bhajji | country | India",
+            "India | leaderName | Sumitra_Mahajan"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | leaderName | Tony_Tan"
+        ],
+        "triples": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | leaderName | Tony_Tan"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Singapore | leaderName | Tony_Tan",
+            "Beef_kway_teow | region | Singapore"
+        ],
+        "triples": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | leaderName | Tony_Tan"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | leaderName | Tony_Tan"
+        ],
+        "triples": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | leaderName | Tony_Tan"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | language | Standard_Chinese"
+        ],
+        "triples": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | language | Standard_Chinese"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Singapore | language | Standard_Chinese",
+            "Beef_kway_teow | region | Singapore"
+        ],
+        "triples": [
+            "Beef_kway_teow | region | Singapore",
+            "Singapore | language | Standard_Chinese"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Philippines | ethnicGroup | Chinese_Filipino",
+            "Batchoy | country | Philippines"
+        ],
+        "triples": [
+            "Batchoy | country | Philippines",
+            "Philippines | ethnicGroup | Chinese_Filipino"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Philippines | ethnicGroup | Chinese_Filipino",
+            "Batchoy | country | Philippines"
+        ],
+        "triples": [
+            "Batchoy | country | Philippines",
+            "Philippines | ethnicGroup | Chinese_Filipino"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Batchoy | country | Philippines",
+            "Philippines | ethnicGroup | Chinese_Filipino"
+        ],
+        "triples": [
+            "Batchoy | country | Philippines",
+            "Philippines | ethnicGroup | Chinese_Filipino"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Batchoy | country | Philippines",
+            "Batchoy | ingredient | Shrimp"
+        ],
+        "triples": [
+            "Batchoy | country | Philippines",
+            "Batchoy | ingredient | Shrimp"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Batchoy | country | Philippines",
+            "Batchoy | ingredient | Shrimp"
+        ],
+        "triples": [
+            "Batchoy | country | Philippines",
+            "Batchoy | ingredient | Shrimp"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Batchoy | country | Philippines",
+            "Batchoy | ingredient | Shrimp"
+        ],
+        "triples": [
+            "Batchoy | country | Philippines",
+            "Batchoy | ingredient | Shrimp"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Lemon | genus | Citrus",
+            "Bandeja_paisa | ingredient | Lemon"
+        ],
+        "triples": [
+            "Bandeja_paisa | ingredient | Lemon",
+            "Lemon | genus | Citrus"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Lemon | genus | Citrus",
+            "Bandeja_paisa | ingredient | Lemon"
+        ],
+        "triples": [
+            "Bandeja_paisa | ingredient | Lemon",
+            "Lemon | genus | Citrus"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Lemon | genus | Citrus",
+            "Bandeja_paisa | ingredient | Lemon"
+        ],
+        "triples": [
+            "Bandeja_paisa | ingredient | Lemon",
+            "Lemon | genus | Citrus"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bakewell_tart | ingredient | Shortcrust_pastry",
+            "Bakewell_pudding | dishVariation | Bakewell_tart"
+        ],
+        "triples": [
+            "Bakewell_pudding | dishVariation | Bakewell_tart",
+            "Bakewell_tart | ingredient | Shortcrust_pastry"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bakewell_pudding | dishVariation | Bakewell_tart",
+            "Bakewell_tart | ingredient | Shortcrust_pastry"
+        ],
+        "triples": [
+            "Bakewell_pudding | dishVariation | Bakewell_tart",
+            "Bakewell_tart | ingredient | Shortcrust_pastry"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bakewell_pudding | creator | \"Rutland Arms, Bakewell, in 1820\"",
+            "Bakewell_pudding | mainIngredients | \"Ground almond, jam, butter, eggs\""
+        ],
+        "triples": [
+            "Bakewell_pudding | creator | \"Rutland Arms, Bakewell, in 1820\"",
+            "Bakewell_pudding | mainIngredients | \"Ground almond, jam, butter, eggs\""
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bakewell_pudding | mainIngredients | \"Ground almond, jam, butter, eggs\"",
+            "Bakewell_pudding | creator | \"Rutland Arms, Bakewell, in 1820\""
+        ],
+        "triples": [
+            "Bakewell_pudding | creator | \"Rutland Arms, Bakewell, in 1820\"",
+            "Bakewell_pudding | mainIngredients | \"Ground almond, jam, butter, eggs\""
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Baked_Alaska | course | Dessert",
+            "Dessert | dishVariation | Cookie"
+        ],
+        "triples": [
+            "Baked_Alaska | course | Dessert",
+            "Dessert | dishVariation | Cookie"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Baked_Alaska | country | China",
+            "China | language | Standard_Chinese"
+        ],
+        "triples": [
+            "Baked_Alaska | country | China",
+            "China | language | Standard_Chinese"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "China | language | Standard_Chinese",
+            "Baked_Alaska | country | China"
+        ],
+        "triples": [
+            "Baked_Alaska | country | China",
+            "China | language | Standard_Chinese"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Baked_Alaska | country | \"France, United States or China\"",
+            "Baked_Alaska | ingredient | Christmas_pudding"
+        ],
+        "triples": [
+            "Baked_Alaska | country | \"France, United States or China\"",
+            "Baked_Alaska | ingredient | Christmas_pudding"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Baked_Alaska | country | \"France, United States or China\"",
+            "Baked_Alaska | ingredient | Christmas_pudding"
+        ],
+        "triples": [
+            "Baked_Alaska | country | \"France, United States or China\"",
+            "Baked_Alaska | ingredient | Christmas_pudding"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Baked_Alaska | ingredient | Christmas_pudding",
+            "Baked_Alaska | country | \"France, United States or China\""
+        ],
+        "triples": [
+            "Baked_Alaska | country | \"France, United States or China\"",
+            "Baked_Alaska | ingredient | Christmas_pudding"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bacon_sandwich | ingredient | Bread",
+            "Bacon_sandwich | alternativeName | \"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece n bacon, bacon cob, bacon barm, bacon muffin\""
+        ],
+        "triples": [
+            "Bacon_sandwich | alternativeName | \"Bacon butty, bacon sarnie, rasher sandwich, bacon sanger, piece n bacon, bacon cob, bacon barm, bacon muffin\"",
+            "Bacon_sandwich | ingredient | Bread"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bacon_Explosion | course | \"Main course\"",
+            "Bacon_Explosion | ingredient | Bacon"
+        ],
+        "triples": [
+            "Bacon_Explosion | ingredient | Bacon",
+            "Bacon_Explosion | course | \"Main course\""
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "United_States | leaderName | John_Roberts",
+            "Bacon_Explosion | country | United_States"
+        ],
+        "triples": [
+            "Bacon_Explosion | country | United_States",
+            "United_States | leaderName | John_Roberts"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bacon_Explosion | country | United_States",
+            "United_States | leaderName | John_Roberts"
+        ],
+        "triples": [
+            "Bacon_Explosion | country | United_States",
+            "United_States | leaderName | John_Roberts"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "United_States | leaderName | John_Roberts",
+            "Bacon_Explosion | country | United_States"
+        ],
+        "triples": [
+            "Bacon_Explosion | country | United_States",
+            "United_States | leaderName | John_Roberts"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bacon_Explosion | ingredient | Sausage",
+            "Bacon_Explosion | country | United_States"
+        ],
+        "triples": [
+            "Bacon_Explosion | country | United_States",
+            "Bacon_Explosion | ingredient | Sausage"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bacon_Explosion | country | United_States",
+            "Bacon_Explosion | ingredient | Sausage"
+        ],
+        "triples": [
+            "Bacon_Explosion | country | United_States",
+            "Bacon_Explosion | ingredient | Sausage"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bacon_Explosion | country | United_States",
+            "Bacon_Explosion | ingredient | Sausage"
+        ],
+        "triples": [
+            "Bacon_Explosion | country | United_States",
+            "Bacon_Explosion | ingredient | Sausage"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ayam_penyet | country | Java",
+            "Ayam_penyet | mainIngredients | \"Squeezed\" or \"smashed\" fried chicken served with sambal"
+        ],
+        "triples": [
+            "Ayam_penyet | country | Java",
+            "Ayam_penyet | mainIngredients | \"Squeezed\" or \"smashed\" fried chicken served with sambal"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ayam_penyet | mainIngredients | \"Squeezed\" or \"smashed\" fried chicken served with sambal",
+            "Ayam_penyet | country | Java"
+        ],
+        "triples": [
+            "Ayam_penyet | country | Java",
+            "Ayam_penyet | mainIngredients | \"Squeezed\" or \"smashed\" fried chicken served with sambal"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arr\u00f2s_negre | ingredient | Cuttlefish",
+            "Arr\u00f2s_negre | region | Valencian_Community"
+        ],
+        "triples": [
+            "Arr\u00f2s_negre | region | Valencian_Community",
+            "Arr\u00f2s_negre | ingredient | Cuttlefish"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arr\u00f2s_negre | ingredient | Cuttlefish",
+            "Arr\u00f2s_negre | region | Valencian_Community"
+        ],
+        "triples": [
+            "Arr\u00f2s_negre | region | Valencian_Community",
+            "Arr\u00f2s_negre | ingredient | Cuttlefish"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arr\u00f2s_negre | country | Spain",
+            "Arr\u00f2s_negre | ingredient | Squid"
+        ],
+        "triples": [
+            "Arr\u00f2s_negre | country | Spain",
+            "Arr\u00f2s_negre | ingredient | Squid"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arr\u00f2s_negre | country | Spain",
+            "Arr\u00f2s_negre | ingredient | Squid"
+        ],
+        "triples": [
+            "Arr\u00f2s_negre | country | Spain",
+            "Arr\u00f2s_negre | ingredient | Squid"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | ingredient | Tomato",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | ingredient | Tomato",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | ingredient | Tomato",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | ingredient | Tomato",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | ingredient | Tomato",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | ingredient | Tomato",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | country | Italy",
+            "Italy | capital | Rome"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | country | Italy",
+            "Italy | capital | Rome"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Italy | capital | Rome",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | country | Italy",
+            "Italy | capital | Rome"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | country | Italy",
+            "Italy | capital | Rome"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | country | Italy",
+            "Italy | capital | Rome"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | ingredient | Olive_oil",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | country | Italy",
+            "Arrabbiata_sauce | ingredient | Olive_oil"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arrabbiata_sauce | ingredient | Olive_oil",
+            "Arrabbiata_sauce | country | Italy"
+        ],
+        "triples": [
+            "Arrabbiata_sauce | country | Italy",
+            "Arrabbiata_sauce | ingredient | Olive_oil"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arem-arem | ingredient | Banana_leaf",
+            "Arem-arem | region | Indonesia"
+        ],
+        "triples": [
+            "Arem-arem | region | Indonesia",
+            "Arem-arem | ingredient | Banana_leaf"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arem-arem | ingredient | Banana_leaf",
+            "Arem-arem | region | Indonesia"
+        ],
+        "triples": [
+            "Arem-arem | region | Indonesia",
+            "Arem-arem | ingredient | Banana_leaf"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Arem-arem | ingredient | Banana_leaf",
+            "Arem-arem | region | Indonesia"
+        ],
+        "triples": [
+            "Arem-arem | region | Indonesia",
+            "Arem-arem | ingredient | Banana_leaf"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bandeja_paisa | region | Antioquia_Department",
+            "Antioquia_Department | country | Colombia"
+        ],
+        "triples": [
+            "Antioquia_Department | country | Colombia",
+            "Bandeja_paisa | region | Antioquia_Department"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bandeja_paisa | region | Antioquia_Department",
+            "Antioquia_Department | country | Colombia"
+        ],
+        "triples": [
+            "Antioquia_Department | country | Colombia",
+            "Bandeja_paisa | region | Antioquia_Department"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Amatriciana_sauce | ingredient | Tomato",
+            "Amatriciana_sauce | region | Lazio"
+        ],
+        "triples": [
+            "Amatriciana_sauce | region | Lazio",
+            "Amatriciana_sauce | ingredient | Tomato"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Amatriciana_sauce | region | Lazio",
+            "Amatriciana_sauce | ingredient | Tomato"
+        ],
+        "triples": [
+            "Amatriciana_sauce | region | Lazio",
+            "Amatriciana_sauce | ingredient | Tomato"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Amatriciana_sauce | ingredient | Tomato",
+            "Amatriciana_sauce | region | Lazio"
+        ],
+        "triples": [
+            "Amatriciana_sauce | region | Lazio",
+            "Amatriciana_sauce | ingredient | Tomato"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ajoblanco | region | Andalusia",
+            "Ajoblanco | ingredient | Almond"
+        ],
+        "triples": [
+            "Ajoblanco | ingredient | Almond",
+            "Ajoblanco | region | Andalusia"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ajoblanco | ingredient | Almond",
+            "Ajoblanco | region | Andalusia"
+        ],
+        "triples": [
+            "Ajoblanco | ingredient | Almond",
+            "Ajoblanco | region | Andalusia"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ajoblanco | region | Andalusia",
+            "Ajoblanco | ingredient | Almond"
+        ],
+        "triples": [
+            "Ajoblanco | ingredient | Almond",
+            "Ajoblanco | region | Andalusia"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ajoblanco | ingredient | Bread",
+            "Ajoblanco | country | Spain"
+        ],
+        "triples": [
+            "Ajoblanco | country | Spain",
+            "Ajoblanco | ingredient | Bread"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ajoblanco | ingredient | Bread",
+            "Ajoblanco | country | Spain"
+        ],
+        "triples": [
+            "Ajoblanco | country | Spain",
+            "Ajoblanco | ingredient | Bread"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Ajoblanco | ingredient | Bread",
+            "Ajoblanco | country | Spain"
+        ],
+        "triples": [
+            "Ajoblanco | country | Spain",
+            "Ajoblanco | ingredient | Bread"
+        ],
+        "semcategory": "Food"
+    },
+    {
+        "sorted": [
+            "Bolt_(comicsCharacter) | creator | Paris_Cullins",
+            "Bolt_(comicsCharacter) | creator | Gary_Cohn_(comics)"
+        ],
+        "triples": [
+            "Bolt_(comicsCharacter) | creator | Paris_Cullins",
+            "Bolt_(comicsCharacter) | creator | Gary_Cohn_(comics)"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Blockbuster_(comicsCharacter) | creator | Roger_Stern",
+            "Blockbuster_(comicsCharacter) | creator | Tom_Lyle"
+        ],
+        "triples": [
+            "Blockbuster_(comicsCharacter) | creator | Roger_Stern",
+            "Blockbuster_(comicsCharacter) | creator | Tom_Lyle"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Blockbuster_(comicsCharacter) | creator | Roger_Stern",
+            "Blockbuster_(comicsCharacter) | creator | Tom_Lyle"
+        ],
+        "triples": [
+            "Blockbuster_(comicsCharacter) | creator | Roger_Stern",
+            "Blockbuster_(comicsCharacter) | creator | Tom_Lyle"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Blockbuster_(comicsCharacter) | creator | Roger_Stern",
+            "Blockbuster_(comicsCharacter) | creator | Tom_Lyle"
+        ],
+        "triples": [
+            "Blockbuster_(comicsCharacter) | creator | Roger_Stern",
+            "Blockbuster_(comicsCharacter) | creator | Tom_Lyle"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Black_Pirate | alternativeName | \"Jon Valor\"",
+            "Black_Pirate | creator | Sheldon_Moldoff"
+        ],
+        "triples": [
+            "Black_Pirate | creator | Sheldon_Moldoff",
+            "Black_Pirate | alternativeName | \"Jon Valor\""
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Black_Pirate | alternativeName | \"Jon Valor\"",
+            "Black_Pirate | creator | Sheldon_Moldoff"
+        ],
+        "triples": [
+            "Black_Pirate | creator | Sheldon_Moldoff",
+            "Black_Pirate | alternativeName | \"Jon Valor\""
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Black_Pirate | creator | Sheldon_Moldoff",
+            "Black_Pirate | alternativeName | \"Jon Valor\""
+        ],
+        "triples": [
+            "Black_Pirate | creator | Sheldon_Moldoff",
+            "Black_Pirate | alternativeName | \"Jon Valor\""
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bibbo_Bibbowski | creator | Jerry_Ordway",
+            "Jerry_Ordway | nationality | Americans"
+        ],
+        "triples": [
+            "Bibbo_Bibbowski | creator | Jerry_Ordway",
+            "Jerry_Ordway | nationality | Americans"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Jerry_Ordway | nationality | Americans",
+            "Bibbo_Bibbowski | creator | Jerry_Ordway"
+        ],
+        "triples": [
+            "Bibbo_Bibbowski | creator | Jerry_Ordway",
+            "Jerry_Ordway | nationality | Americans"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bananaman | starring | Bill_Oddie",
+            "Bill_Oddie | birthPlace | Lancashire"
+        ],
+        "triples": [
+            "Bananaman | starring | Bill_Oddie",
+            "Bill_Oddie | birthPlace | Lancashire"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bananaman | starring | Bill_Oddie",
+            "Bill_Oddie | birthPlace | Lancashire"
+        ],
+        "triples": [
+            "Bananaman | starring | Bill_Oddie",
+            "Bill_Oddie | birthPlace | Lancashire"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bill_Oddie | birthPlace | Lancashire",
+            "Bananaman | starring | Bill_Oddie"
+        ],
+        "triples": [
+            "Bananaman | starring | Bill_Oddie",
+            "Bill_Oddie | birthPlace | Lancashire"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bananaman | starring | Graeme_Garden",
+            "Bananaman | broadcastedBy | BBC"
+        ],
+        "triples": [
+            "Bananaman | broadcastedBy | BBC",
+            "Bananaman | starring | Graeme_Garden"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bananaman | starring | Graeme_Garden",
+            "Bananaman | broadcastedBy | BBC"
+        ],
+        "triples": [
+            "Bananaman | broadcastedBy | BBC",
+            "Bananaman | starring | Graeme_Garden"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Bananaman | starring | Graeme_Garden",
+            "Bananaman | broadcastedBy | BBC"
+        ],
+        "triples": [
+            "Bananaman | broadcastedBy | BBC",
+            "Bananaman | starring | Graeme_Garden"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Ballistic_(comicsCharacter) | creator | Doug_Moench",
+            "Ballistic_(comicsCharacter) | alternativeName | \"Kelvin Mao\""
+        ],
+        "triples": [
+            "Ballistic_(comicsCharacter) | creator | Doug_Moench",
+            "Ballistic_(comicsCharacter) | alternativeName | \"Kelvin Mao\""
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Ballistic_(comicsCharacter) | alternativeName | \"Kelvin Mao\"",
+            "Ballistic_(comicsCharacter) | creator | Doug_Moench"
+        ],
+        "triples": [
+            "Ballistic_(comicsCharacter) | creator | Doug_Moench",
+            "Ballistic_(comicsCharacter) | alternativeName | \"Kelvin Mao\""
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Ballistic_(comicsCharacter) | creator | Doug_Moench",
+            "Ballistic_(comicsCharacter) | alternativeName | \"Kelvin Mao\""
+        ],
+        "triples": [
+            "Ballistic_(comicsCharacter) | creator | Doug_Moench",
+            "Ballistic_(comicsCharacter) | alternativeName | \"Kelvin Mao\""
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Asterix_(comicsCharacter) | creator | Ren\u00e9_Goscinny",
+            "Asterix_(comicsCharacter) | creator | Albert_Uderzo"
+        ],
+        "triples": [
+            "Asterix_(comicsCharacter) | creator | Ren\u00e9_Goscinny",
+            "Asterix_(comicsCharacter) | creator | Albert_Uderzo"
+        ],
+        "semcategory": "ComicsCharacter"
+    },
+    {
+        "sorted": [
+            "Gujarat | leaderName | Anandiben_Patel",
+            "Amdavad_ni_Gufa | location | Gujarat"
+        ],
+        "triples": [
+            "Gujarat | leaderName | Anandiben_Patel",
+            "Amdavad_ni_Gufa | location | Gujarat"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Amdavad_ni_Gufa | location | Gujarat",
+            "Gujarat | leaderName | Anandiben_Patel"
+        ],
+        "triples": [
+            "Gujarat | leaderName | Anandiben_Patel",
+            "Amdavad_ni_Gufa | location | Gujarat"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Amdavad_ni_Gufa | location | Gujarat",
+            "Gujarat | leaderName | Anandiben_Patel"
+        ],
+        "triples": [
+            "Gujarat | leaderName | Anandiben_Patel",
+            "Amdavad_ni_Gufa | location | Gujarat"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asser_Levy_Public_Baths | location | 23rd_Street_(Manhattan)",
+            "Asser_Levy_Public_Baths | yearOfConstruction | 1904"
+        ],
+        "triples": [
+            "Asser_Levy_Public_Baths | location | 23rd_Street_(Manhattan)",
+            "Asser_Levy_Public_Baths | yearOfConstruction | 1904"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asser_Levy_Public_Baths | yearOfConstruction | 1904",
+            "Asser_Levy_Public_Baths | location | 23rd_Street_(Manhattan)"
+        ],
+        "triples": [
+            "Asser_Levy_Public_Baths | location | 23rd_Street_(Manhattan)",
+            "Asser_Levy_Public_Baths | yearOfConstruction | 1904"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asser_Levy_Public_Baths | yearOfConstruction | 1904",
+            "Asser_Levy_Public_Baths | location | 23rd_Street_(Manhattan)"
+        ],
+        "triples": [
+            "Asser_Levy_Public_Baths | location | 23rd_Street_(Manhattan)",
+            "Asser_Levy_Public_Baths | yearOfConstruction | 1904"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asilomar_Conference_Grounds | location | Pacific_Grove,_California",
+            "Asilomar_Conference_Grounds | added to the National Register of Historic Places | \"1987-02-27\""
+        ],
+        "triples": [
+            "Asilomar_Conference_Grounds | location | Pacific_Grove,_California",
+            "Asilomar_Conference_Grounds | added to the National Register of Historic Places | \"1987-02-27\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asilomar_Conference_Grounds | location | Pacific_Grove,_California",
+            "Asilomar_Conference_Grounds | added to the National Register of Historic Places | \"1987-02-27\""
+        ],
+        "triples": [
+            "Asilomar_Conference_Grounds | location | Pacific_Grove,_California",
+            "Asilomar_Conference_Grounds | added to the National Register of Historic Places | \"1987-02-27\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asilomar_Conference_Grounds | location | Pacific_Grove,_California",
+            "Asilomar_Conference_Grounds | added to the National Register of Historic Places | \"1987-02-27\""
+        ],
+        "triples": [
+            "Asilomar_Conference_Grounds | location | Pacific_Grove,_California",
+            "Asilomar_Conference_Grounds | added to the National Register of Historic Places | \"1987-02-27\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asilomar_Conference_Grounds | location | \"Asilomar Blvd., Pacific Grove, California\"",
+            "Asilomar_Conference_Grounds | ReferenceNumber in the National Register of Historic Places | \"87000823\""
+        ],
+        "triples": [
+            "Asilomar_Conference_Grounds | location | \"Asilomar Blvd., Pacific Grove, California\"",
+            "Asilomar_Conference_Grounds | ReferenceNumber in the National Register of Historic Places | \"87000823\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asilomar_Conference_Grounds | location | \"Asilomar Blvd., Pacific Grove, California\"",
+            "Asilomar_Conference_Grounds | ReferenceNumber in the National Register of Historic Places | \"87000823\""
+        ],
+        "triples": [
+            "Asilomar_Conference_Grounds | location | \"Asilomar Blvd., Pacific Grove, California\"",
+            "Asilomar_Conference_Grounds | ReferenceNumber in the National Register of Historic Places | \"87000823\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asilomar_Conference_Grounds | ReferenceNumber in the National Register of Historic Places | \"87000823\"",
+            "Asilomar_Conference_Grounds | location | \"Asilomar Blvd., Pacific Grove, California\""
+        ],
+        "triples": [
+            "Asilomar_Conference_Grounds | location | \"Asilomar Blvd., Pacific Grove, California\"",
+            "Asilomar_Conference_Grounds | ReferenceNumber in the National Register of Historic Places | \"87000823\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asher_and_Mary_Isabelle_Richardson_House | location | U.S._Route_83",
+            "Asher_and_Mary_Isabelle_Richardson_House | ReferenceNumber in the National Register of Historic Places | \"88002539\""
+        ],
+        "triples": [
+            "Asher_and_Mary_Isabelle_Richardson_House | location | U.S._Route_83",
+            "Asher_and_Mary_Isabelle_Richardson_House | ReferenceNumber in the National Register of Historic Places | \"88002539\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asher_and_Mary_Isabelle_Richardson_House | location | U.S._Route_83",
+            "Asher_and_Mary_Isabelle_Richardson_House | ReferenceNumber in the National Register of Historic Places | \"88002539\""
+        ],
+        "triples": [
+            "Asher_and_Mary_Isabelle_Richardson_House | location | U.S._Route_83",
+            "Asher_and_Mary_Isabelle_Richardson_House | ReferenceNumber in the National Register of Historic Places | \"88002539\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Asher_and_Mary_Isabelle_Richardson_House | ReferenceNumber in the National Register of Historic Places | \"88002539\"",
+            "Asher_and_Mary_Isabelle_Richardson_House | location | U.S._Route_83"
+        ],
+        "triples": [
+            "Asher_and_Mary_Isabelle_Richardson_House | location | U.S._Route_83",
+            "Asher_and_Mary_Isabelle_Richardson_House | ReferenceNumber in the National Register of Historic Places | \"88002539\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Sri_Lanka | capital | Sri_Jayawardenepura_Kotte",
+            "Ampara_Hospital | country | Sri_Lanka"
+        ],
+        "triples": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Sri_Lanka | capital | Sri_Jayawardenepura_Kotte"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Sri_Lanka | capital | Sri_Jayawardenepura_Kotte"
+        ],
+        "triples": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Sri_Lanka | capital | Sri_Jayawardenepura_Kotte"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Sri_Lanka | capital | Sri_Jayawardenepura_Kotte"
+        ],
+        "triples": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Sri_Lanka | capital | Sri_Jayawardenepura_Kotte"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Ampara_Hospital | region | Ampara_District",
+            "Ampara_Hospital | country | Sri_Lanka"
+        ],
+        "triples": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Ampara_Hospital | region | Ampara_District"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Ampara_Hospital | region | Ampara_District",
+            "Ampara_Hospital | country | Sri_Lanka"
+        ],
+        "triples": [
+            "Ampara_Hospital | country | Sri_Lanka",
+            "Ampara_Hospital | region | Ampara_District"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | architect | Robert_A._M._Stern",
+            "Alan_B._Miller_Hall | tenant | Mason_School_of_Business"
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | tenant | Mason_School_of_Business",
+            "Alan_B._Miller_Hall | architect | Robert_A._M._Stern"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | architect | Robert_A._M._Stern",
+            "Alan_B._Miller_Hall | tenant | Mason_School_of_Business"
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | tenant | Mason_School_of_Business",
+            "Alan_B._Miller_Hall | architect | Robert_A._M._Stern"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | tenant | Mason_School_of_Business",
+            "Alan_B._Miller_Hall | architect | Robert_A._M._Stern"
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | tenant | Mason_School_of_Business",
+            "Alan_B._Miller_Hall | architect | Robert_A._M._Stern"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | owner | College_of_William_&_Mary",
+            "Alan_B._Miller_Hall | location | Williamsburg,_Virginia"
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | owner | College_of_William_&_Mary",
+            "Alan_B._Miller_Hall | location | Williamsburg,_Virginia"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | location | Williamsburg,_Virginia",
+            "Alan_B._Miller_Hall | owner | College_of_William_&_Mary"
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | owner | College_of_William_&_Mary",
+            "Alan_B._Miller_Hall | location | Williamsburg,_Virginia"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | owner | College_of_William_&_Mary",
+            "Alan_B._Miller_Hall | location | Williamsburg,_Virginia"
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | owner | College_of_William_&_Mary",
+            "Alan_B._Miller_Hall | location | Williamsburg,_Virginia"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | address | \"101 Ukrop Way\"",
+            "Alan_B._Miller_Hall | buildingStartDate | \"30 March 2007\""
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | buildingStartDate | \"30 March 2007\"",
+            "Alan_B._Miller_Hall | address | \"101 Ukrop Way\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | buildingStartDate | \"30 March 2007\"",
+            "Alan_B._Miller_Hall | address | \"101 Ukrop Way\""
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | buildingStartDate | \"30 March 2007\"",
+            "Alan_B._Miller_Hall | address | \"101 Ukrop Way\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Alan_B._Miller_Hall | address | \"101 Ukrop Way\"",
+            "Alan_B._Miller_Hall | buildingStartDate | \"30 March 2007\""
+        ],
+        "triples": [
+            "Alan_B._Miller_Hall | buildingStartDate | \"30 March 2007\"",
+            "Alan_B._Miller_Hall | address | \"101 Ukrop Way\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Adisham_Hall | country | Sri_Lanka",
+            "Sri_Lanka | language | Tamil_language"
+        ],
+        "triples": [
+            "Adisham_Hall | country | Sri_Lanka",
+            "Sri_Lanka | language | Tamil_language"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Adisham_Hall | country | Sri_Lanka",
+            "Sri_Lanka | language | Tamil_language"
+        ],
+        "triples": [
+            "Adisham_Hall | country | Sri_Lanka",
+            "Sri_Lanka | language | Tamil_language"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Adisham_Hall | architecturalStyle | \"Tudor and Jacabian\"",
+            "Adisham_Hall | location | \"Haputale, Sri Lanka\""
+        ],
+        "triples": [
+            "Adisham_Hall | architecturalStyle | \"Tudor and Jacabian\"",
+            "Adisham_Hall | location | \"Haputale, Sri Lanka\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Adisham_Hall | location | \"Haputale, Sri Lanka\"",
+            "Adisham_Hall | architecturalStyle | \"Tudor and Jacabian\""
+        ],
+        "triples": [
+            "Adisham_Hall | architecturalStyle | \"Tudor and Jacabian\"",
+            "Adisham_Hall | location | \"Haputale, Sri Lanka\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Addis_Ababa_City_Hall | height | \"42 m\"",
+            "Addis_Ababa_City_Hall | currentTenants | \"Government of Addis Ababa\""
+        ],
+        "triples": [
+            "Addis_Ababa_City_Hall | currentTenants | \"Government of Addis Ababa\"",
+            "Addis_Ababa_City_Hall | height | \"42 m\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Addis_Ababa_City_Hall | height | \"42 m\"",
+            "Addis_Ababa_City_Hall | currentTenants | \"Government of Addis Ababa\""
+        ],
+        "triples": [
+            "Addis_Ababa_City_Hall | currentTenants | \"Government of Addis Ababa\"",
+            "Addis_Ababa_City_Hall | height | \"42 m\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "AC_Hotel_Bella_Sky_Copenhagen | tenant | Marriott_International",
+            "AC_Hotel_Bella_Sky_Copenhagen | floorCount | 23"
+        ],
+        "triples": [
+            "AC_Hotel_Bella_Sky_Copenhagen | tenant | Marriott_International",
+            "AC_Hotel_Bella_Sky_Copenhagen | floorCount | 23"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "AC_Hotel_Bella_Sky_Copenhagen | floorCount | 23",
+            "AC_Hotel_Bella_Sky_Copenhagen | tenant | Marriott_International"
+        ],
+        "triples": [
+            "AC_Hotel_Bella_Sky_Copenhagen | tenant | Marriott_International",
+            "AC_Hotel_Bella_Sky_Copenhagen | floorCount | 23"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "3Arena | owner | Live_Nation_Entertainment",
+            "Live_Nation_Entertainment | location | Beverly_Hills,_California"
+        ],
+        "triples": [
+            "3Arena | owner | Live_Nation_Entertainment",
+            "Live_Nation_Entertainment | location | Beverly_Hills,_California"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Live_Nation_Entertainment | location | Beverly_Hills,_California",
+            "3Arena | owner | Live_Nation_Entertainment"
+        ],
+        "triples": [
+            "3Arena | owner | Live_Nation_Entertainment",
+            "Live_Nation_Entertainment | location | Beverly_Hills,_California"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "3Arena | location | \"East Link Bridge\"",
+            "3Arena | owner | Live_Nation_Entertainment"
+        ],
+        "triples": [
+            "3Arena | owner | Live_Nation_Entertainment",
+            "3Arena | location | \"East Link Bridge\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "3Arena | location | \"East Link Bridge\"",
+            "3Arena | owner | Live_Nation_Entertainment"
+        ],
+        "triples": [
+            "3Arena | owner | Live_Nation_Entertainment",
+            "3Arena | location | \"East Link Bridge\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "3Arena | architect | \"HOK SVE\"",
+            "3Arena | location | North_Wall,_Dublin"
+        ],
+        "triples": [
+            "3Arena | location | North_Wall,_Dublin",
+            "3Arena | architect | \"HOK SVE\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "3Arena | location | North_Wall,_Dublin",
+            "3Arena | architect | \"HOK SVE\""
+        ],
+        "triples": [
+            "3Arena | location | North_Wall,_Dublin",
+            "3Arena | architect | \"HOK SVE\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "3Arena | location | North_Wall,_Dublin",
+            "3Arena | architect | \"HOK SVE\""
+        ],
+        "triples": [
+            "3Arena | location | North_Wall,_Dublin",
+            "3Arena | architect | \"HOK SVE\""
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "300_North_LaSalle | floorCount | 60",
+            "300_North_LaSalle | location | Illinois"
+        ],
+        "triples": [
+            "300_North_LaSalle | location | Illinois",
+            "300_North_LaSalle | floorCount | 60"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "300_North_LaSalle | location | Illinois",
+            "300_North_LaSalle | floorCount | 60"
+        ],
+        "triples": [
+            "300_North_LaSalle | location | Illinois",
+            "300_North_LaSalle | floorCount | 60"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "250_Delaware_Avenue | location | United_States",
+            "United_States | leaderName | Barack_Obama"
+        ],
+        "triples": [
+            "250_Delaware_Avenue | location | United_States",
+            "United_States | leaderName | Barack_Obama"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "250_Delaware_Avenue | location | United_States",
+            "United_States | leaderName | Barack_Obama"
+        ],
+        "triples": [
+            "250_Delaware_Avenue | location | United_States",
+            "United_States | leaderName | Barack_Obama"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "20_Fenchurch_Street | location | London",
+            "London | leaderTitle | European_Parliament"
+        ],
+        "triples": [
+            "20_Fenchurch_Street | location | London",
+            "London | leaderTitle | European_Parliament"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "20_Fenchurch_Street | location | London",
+            "London | leaderTitle | European_Parliament"
+        ],
+        "triples": [
+            "20_Fenchurch_Street | location | London",
+            "London | leaderTitle | European_Parliament"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "20_Fenchurch_Street | location | London",
+            "London | leaderTitle | European_Parliament"
+        ],
+        "triples": [
+            "20_Fenchurch_Street | location | London",
+            "London | leaderTitle | European_Parliament"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "200_Public_Square | floorCount | 45",
+            "200_Public_Square | location | Cleveland"
+        ],
+        "triples": [
+            "200_Public_Square | location | Cleveland",
+            "200_Public_Square | floorCount | 45"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "200_Public_Square | location | Cleveland",
+            "200_Public_Square | floorCount | 45"
+        ],
+        "triples": [
+            "200_Public_Square | location | Cleveland",
+            "200_Public_Square | floorCount | 45"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "11_Diagonal_Street | location | South_Africa",
+            "South_Africa | ethnicGroup | Coloured"
+        ],
+        "triples": [
+            "11_Diagonal_Street | location | South_Africa",
+            "South_Africa | ethnicGroup | Coloured"
+        ],
+        "semcategory": "Building"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | status | \"Retired\"",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "triples": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | status | \"Retired\""
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | status | \"Retired\"",
+            "Buzz_Aldrin | occupation | Fighter_pilot"
+        ],
+        "triples": [
+            "Buzz_Aldrin | occupation | Fighter_pilot",
+            "Buzz_Aldrin | status | \"Retired\""
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | nationality | United_States",
+            "Buzz_Aldrin | birthPlace | Glen_Ridge,_New_Jersey"
+        ],
+        "triples": [
+            "Buzz_Aldrin | birthPlace | Glen_Ridge,_New_Jersey",
+            "Buzz_Aldrin | nationality | United_States"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | birthPlace | Glen_Ridge,_New_Jersey",
+            "Buzz_Aldrin | nationality | United_States"
+        ],
+        "triples": [
+            "Buzz_Aldrin | birthPlace | Glen_Ridge,_New_Jersey",
+            "Buzz_Aldrin | nationality | United_States"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | nationality | United_States",
+            "Buzz_Aldrin | birthPlace | Glen_Ridge,_New_Jersey"
+        ],
+        "triples": [
+            "Buzz_Aldrin | birthPlace | Glen_Ridge,_New_Jersey",
+            "Buzz_Aldrin | nationality | United_States"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Alan_Shepard | was a crew member of | Apollo_14",
+            "Alan_Shepard | dateOfRetirement | \"1974-08-01\""
+        ],
+        "triples": [
+            "Alan_Shepard | was a crew member of | Apollo_14",
+            "Alan_Shepard | dateOfRetirement | \"1974-08-01\""
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Alan_Shepard | was a crew member of | Apollo_14",
+            "Alan_Shepard | dateOfRetirement | \"1974-08-01\""
+        ],
+        "triples": [
+            "Alan_Shepard | was a crew member of | Apollo_14",
+            "Alan_Shepard | dateOfRetirement | \"1974-08-01\""
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "San_Sebasti\u00e1n_de_los_Reyes | isPartOf | Community_of_Madrid",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "triples": [
+            "San_Sebasti\u00e1n_de_los_Reyes | isPartOf | Community_of_Madrid",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes",
+            "San_Sebasti\u00e1n_de_los_Reyes | isPartOf | Community_of_Madrid"
+        ],
+        "triples": [
+            "San_Sebasti\u00e1n_de_los_Reyes | isPartOf | Community_of_Madrid",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes",
+            "San_Sebasti\u00e1n_de_los_Reyes | isPartOf | Community_of_Madrid"
+        ],
+        "triples": [
+            "San_Sebasti\u00e1n_de_los_Reyes | isPartOf | Community_of_Madrid",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Athens_International_Airport | cityServed | Athens",
+            "Athens_International_Airport | runwayLength | 3800.0"
+        ],
+        "triples": [
+            "Athens_International_Airport | cityServed | Athens",
+            "Athens_International_Airport | runwayLength | 3800.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Athens_International_Airport | runwayLength | 3800.0",
+            "Athens_International_Airport | cityServed | Athens"
+        ],
+        "triples": [
+            "Athens_International_Airport | cityServed | Athens",
+            "Athens_International_Airport | runwayLength | 3800.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Athens_International_Airport | location | Spata",
+            "Athens_International_Airport | cityServed | Athens"
+        ],
+        "triples": [
+            "Athens_International_Airport | cityServed | Athens",
+            "Athens_International_Airport | location | Spata"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Athens_International_Airport | location | Spata",
+            "Athens_International_Airport | cityServed | Athens"
+        ],
+        "triples": [
+            "Athens_International_Airport | cityServed | Athens",
+            "Athens_International_Airport | location | Spata"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Athens_International_Airport | location | Spata",
+            "Athens_International_Airport | cityServed | Athens"
+        ],
+        "triples": [
+            "Athens_International_Airport | cityServed | Athens",
+            "Athens_International_Airport | location | Spata"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ashgabat_International_Airport | location | Ashgabat",
+            "Ashgabat_International_Airport | runwayLength | 3800.0"
+        ],
+        "triples": [
+            "Ashgabat_International_Airport | runwayLength | 3800.0",
+            "Ashgabat_International_Airport | location | Ashgabat"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ashgabat_International_Airport | location | Ashgabat",
+            "Ashgabat_International_Airport | runwayLength | 3800.0"
+        ],
+        "triples": [
+            "Ashgabat_International_Airport | runwayLength | 3800.0",
+            "Ashgabat_International_Airport | location | Ashgabat"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ashgabat_International_Airport | location | Ashgabat",
+            "Ashgabat_International_Airport | runwayLength | 3800.0"
+        ],
+        "triples": [
+            "Ashgabat_International_Airport | runwayLength | 3800.0",
+            "Ashgabat_International_Airport | location | Ashgabat"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ardmore_Airport_(New_Zealand) | 3rd_runway_SurfaceType | Poaceae",
+            "Poaceae | class | Monocotyledon"
+        ],
+        "triples": [
+            "Ardmore_Airport_(New_Zealand) | 3rd_runway_SurfaceType | Poaceae",
+            "Poaceae | class | Monocotyledon"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ardmore_Airport_(New_Zealand) | 3rd_runway_SurfaceType | Poaceae",
+            "Poaceae | class | Monocotyledon"
+        ],
+        "triples": [
+            "Ardmore_Airport_(New_Zealand) | 3rd_runway_SurfaceType | Poaceae",
+            "Poaceae | class | Monocotyledon"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ardmore_Airport_(New_Zealand) | 3rd_runway_SurfaceType | Poaceae",
+            "Poaceae | class | Monocotyledon"
+        ],
+        "triples": [
+            "Ardmore_Airport_(New_Zealand) | 3rd_runway_SurfaceType | Poaceae",
+            "Poaceae | class | Monocotyledon"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ardmore_Airport_(New_Zealand) | 2nd_runway_SurfaceType | Poaceae",
+            "Poaceae | order | Poales"
+        ],
+        "triples": [
+            "Ardmore_Airport_(New_Zealand) | 2nd_runway_SurfaceType | Poaceae",
+            "Poaceae | order | Poales"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Ardmore_Airport_(New_Zealand) | 2nd_runway_SurfaceType | Poaceae",
+            "Poaceae | order | Poales"
+        ],
+        "triples": [
+            "Ardmore_Airport_(New_Zealand) | 2nd_runway_SurfaceType | Poaceae",
+            "Poaceae | order | Poales"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Poaceae | order | Poales",
+            "Ardmore_Airport_(New_Zealand) | 2nd_runway_SurfaceType | Poaceae"
+        ],
+        "triples": [
+            "Ardmore_Airport_(New_Zealand) | 2nd_runway_SurfaceType | Poaceae",
+            "Poaceae | order | Poales"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Appleton,_Wisconsin | isPartOf | Grand_Chute,_Wisconsin",
+            "Appleton_International_Airport | cityServed | Appleton,_Wisconsin"
+        ],
+        "triples": [
+            "Appleton_International_Airport | cityServed | Appleton,_Wisconsin",
+            "Appleton,_Wisconsin | isPartOf | Grand_Chute,_Wisconsin"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Appleton,_Wisconsin | isPartOf | Grand_Chute,_Wisconsin",
+            "Appleton_International_Airport | cityServed | Appleton,_Wisconsin"
+        ],
+        "triples": [
+            "Appleton_International_Airport | cityServed | Appleton,_Wisconsin",
+            "Appleton,_Wisconsin | isPartOf | Grand_Chute,_Wisconsin"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Appleton_International_Airport | cityServed | Appleton,_Wisconsin",
+            "Appleton,_Wisconsin | isPartOf | Grand_Chute,_Wisconsin"
+        ],
+        "triples": [
+            "Appleton_International_Airport | cityServed | Appleton,_Wisconsin",
+            "Appleton,_Wisconsin | isPartOf | Grand_Chute,_Wisconsin"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Antwerp_International_Airport | operatingOrganisation | \"Flemish department of Mobility and Public Works\"",
+            "Antwerp_International_Airport | elevationAboveTheSeaLevel_(in_metres) | 12.0"
+        ],
+        "triples": [
+            "Antwerp_International_Airport | operatingOrganisation | \"Flemish department of Mobility and Public Works\"",
+            "Antwerp_International_Airport | elevationAboveTheSeaLevel_(in_metres) | 12.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Angola_International_Airport | location | \u00cdcolo_e_Bengo",
+            "\u00cdcolo_e_Bengo | country | Angola"
+        ],
+        "triples": [
+            "Angola_International_Airport | location | \u00cdcolo_e_Bengo",
+            "\u00cdcolo_e_Bengo | country | Angola"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Angola_International_Airport | cityServed | Luanda",
+            "Angola_International_Airport | elevationAboveTheSeaLevel_(in_metres) | 159"
+        ],
+        "triples": [
+            "Angola_International_Airport | cityServed | Luanda",
+            "Angola_International_Airport | elevationAboveTheSeaLevel_(in_metres) | 159"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Angola_International_Airport | elevationAboveTheSeaLevel_(in_metres) | 159",
+            "Angola_International_Airport | cityServed | Luanda"
+        ],
+        "triples": [
+            "Angola_International_Airport | cityServed | Luanda",
+            "Angola_International_Airport | elevationAboveTheSeaLevel_(in_metres) | 159"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Andrews_County_Airport | location | Texas",
+            "Texas | capital | Austin,_Texas"
+        ],
+        "triples": [
+            "Andrews_County_Airport | location | Texas",
+            "Texas | capital | Austin,_Texas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Andrews_County_Airport | location | Texas",
+            "Texas | capital | Austin,_Texas"
+        ],
+        "triples": [
+            "Andrews_County_Airport | location | Texas",
+            "Texas | capital | Austin,_Texas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Andrews_County_Airport | elevationAboveTheSeaLevel_(in_metres) | 973.0",
+            "Andrews_County_Airport | 4th_runway_SurfaceType | \"Asphalt\""
+        ],
+        "triples": [
+            "Andrews_County_Airport | 4th_runway_SurfaceType | \"Asphalt\"",
+            "Andrews_County_Airport | elevationAboveTheSeaLevel_(in_metres) | 973.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Andrews_County_Airport | 4th_runway_SurfaceType | \"Asphalt\"",
+            "Andrews_County_Airport | elevationAboveTheSeaLevel_(in_metres) | 973.0"
+        ],
+        "triples": [
+            "Andrews_County_Airport | 4th_runway_SurfaceType | \"Asphalt\"",
+            "Andrews_County_Airport | elevationAboveTheSeaLevel_(in_metres) | 973.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Amsterdam_Airport_Schiphol | operatingOrganisation | Schiphol_Group",
+            "Amsterdam_Airport_Schiphol | elevationAboveTheSeaLevel_(in_metres) | -3.3528"
+        ],
+        "triples": [
+            "Amsterdam_Airport_Schiphol | elevationAboveTheSeaLevel_(in_metres) | -3.3528",
+            "Amsterdam_Airport_Schiphol | operatingOrganisation | Schiphol_Group"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Amsterdam_Airport_Schiphol | operatingOrganisation | Schiphol_Group",
+            "Amsterdam_Airport_Schiphol | elevationAboveTheSeaLevel_(in_metres) | -3.3528"
+        ],
+        "triples": [
+            "Amsterdam_Airport_Schiphol | elevationAboveTheSeaLevel_(in_metres) | -3.3528",
+            "Amsterdam_Airport_Schiphol | operatingOrganisation | Schiphol_Group"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Amsterdam_Airport_Schiphol | operatingOrganisation | Schiphol_Group",
+            "Amsterdam_Airport_Schiphol | elevationAboveTheSeaLevel_(in_metres) | -3.3528"
+        ],
+        "triples": [
+            "Amsterdam_Airport_Schiphol | elevationAboveTheSeaLevel_(in_metres) | -3.3528",
+            "Amsterdam_Airport_Schiphol | operatingOrganisation | Schiphol_Group"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Alpena_County_Regional_Airport | location | Wilson_Township,_Alpena_County,_Michigan",
+            "Wilson_Township,_Alpena_County,_Michigan | isPartOf | United_States"
+        ],
+        "triples": [
+            "Alpena_County_Regional_Airport | location | Wilson_Township,_Alpena_County,_Michigan",
+            "Wilson_Township,_Alpena_County,_Michigan | isPartOf | United_States"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Alpena_County_Regional_Airport | location | Wilson_Township,_Alpena_County,_Michigan",
+            "Wilson_Township,_Alpena_County,_Michigan | isPartOf | United_States"
+        ],
+        "triples": [
+            "Alpena_County_Regional_Airport | location | Wilson_Township,_Alpena_County,_Michigan",
+            "Wilson_Township,_Alpena_County,_Michigan | isPartOf | United_States"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Alpena_County_Regional_Airport | location | Wilson_Township,_Alpena_County,_Michigan",
+            "Wilson_Township,_Alpena_County,_Michigan | isPartOf | United_States"
+        ],
+        "triples": [
+            "Alpena_County_Regional_Airport | location | Wilson_Township,_Alpena_County,_Michigan",
+            "Wilson_Township,_Alpena_County,_Michigan | isPartOf | United_States"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Allama_Iqbal_International_Airport | operatingOrganisation | Pakistan_Civil_Aviation_Authority",
+            "Pakistan_Civil_Aviation_Authority | headquarter | Jinnah_International_Airport"
+        ],
+        "triples": [
+            "Allama_Iqbal_International_Airport | operatingOrganisation | Pakistan_Civil_Aviation_Authority",
+            "Pakistan_Civil_Aviation_Authority | headquarter | Jinnah_International_Airport"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Pakistan_Civil_Aviation_Authority | headquarter | Jinnah_International_Airport",
+            "Allama_Iqbal_International_Airport | operatingOrganisation | Pakistan_Civil_Aviation_Authority"
+        ],
+        "triples": [
+            "Allama_Iqbal_International_Airport | operatingOrganisation | Pakistan_Civil_Aviation_Authority",
+            "Pakistan_Civil_Aviation_Authority | headquarter | Jinnah_International_Airport"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Allama_Iqbal_International_Airport | operatingOrganisation | Pakistan_Civil_Aviation_Authority",
+            "Pakistan_Civil_Aviation_Authority | headquarter | Jinnah_International_Airport"
+        ],
+        "triples": [
+            "Allama_Iqbal_International_Airport | operatingOrganisation | Pakistan_Civil_Aviation_Authority",
+            "Pakistan_Civil_Aviation_Authority | headquarter | Jinnah_International_Airport"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Alderney_Airport | 1st_runway_SurfaceType | Poaceae",
+            "Alderney_Airport | runwayLength | 877.0"
+        ],
+        "triples": [
+            "Alderney_Airport | 1st_runway_SurfaceType | Poaceae",
+            "Alderney_Airport | runwayLength | 877.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Alderney_Airport | runwayLength | 877.0",
+            "Alderney_Airport | 1st_runway_SurfaceType | Poaceae"
+        ],
+        "triples": [
+            "Alderney_Airport | 1st_runway_SurfaceType | Poaceae",
+            "Alderney_Airport | runwayLength | 877.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas",
+            "Alcobendas | isPartOf | Community_of_Madrid"
+        ],
+        "triples": [
+            "Alcobendas | isPartOf | Community_of_Madrid",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas",
+            "Alcobendas | isPartOf | Community_of_Madrid"
+        ],
+        "triples": [
+            "Alcobendas | isPartOf | Community_of_Madrid",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "United_States_Air_Force | battles | United_States_invasion_of_Panama",
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force"
+        ],
+        "triples": [
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force",
+            "United_States_Air_Force | battles | United_States_invasion_of_Panama"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "United_States_Air_Force | battles | United_States_invasion_of_Panama",
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force"
+        ],
+        "triples": [
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force",
+            "United_States_Air_Force | battles | United_States_invasion_of_Panama"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "United_States_Air_Force | battles | United_States_invasion_of_Panama",
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force"
+        ],
+        "triples": [
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force",
+            "United_States_Air_Force | battles | United_States_invasion_of_Panama"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force",
+            "United_States_Air_Force | battles | Operation_Enduring_Freedom"
+        ],
+        "triples": [
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force",
+            "United_States_Air_Force | battles | Operation_Enduring_Freedom"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "United_States_Air_Force | battles | Operation_Enduring_Freedom",
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force"
+        ],
+        "triples": [
+            "Al_Asad_Airbase | operatingOrganisation | United_States_Air_Force",
+            "United_States_Air_Force | battles | Operation_Enduring_Freedom"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Al_Asad_Airbase | elevationAboveTheSeaLevel_(in_feet) | 618",
+            "Al_Asad_Airbase | location | \"Al Anbar Province, Iraq\""
+        ],
+        "triples": [
+            "Al_Asad_Airbase | elevationAboveTheSeaLevel_(in_feet) | 618",
+            "Al_Asad_Airbase | location | \"Al Anbar Province, Iraq\""
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Al_Asad_Airbase | elevationAboveTheSeaLevel_(in_feet) | 618",
+            "Al_Asad_Airbase | location | \"Al Anbar Province, Iraq\""
+        ],
+        "triples": [
+            "Al_Asad_Airbase | elevationAboveTheSeaLevel_(in_feet) | 618",
+            "Al_Asad_Airbase | location | \"Al Anbar Province, Iraq\""
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Al_Asad_Airbase | elevationAboveTheSeaLevel_(in_feet) | 618",
+            "Al_Asad_Airbase | location | \"Al Anbar Province, Iraq\""
+        ],
+        "triples": [
+            "Al_Asad_Airbase | elevationAboveTheSeaLevel_(in_feet) | 618",
+            "Al_Asad_Airbase | location | \"Al Anbar Province, Iraq\""
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Agra_Airport | location | India",
+            "India | leaderName | T._S._Thakur"
+        ],
+        "triples": [
+            "Agra_Airport | location | India",
+            "India | leaderName | T._S._Thakur"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Agra_Airport | location | India",
+            "India | leaderName | T._S._Thakur"
+        ],
+        "triples": [
+            "Agra_Airport | location | India",
+            "India | leaderName | T._S._Thakur"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Agra_Airport | location | India",
+            "India | leaderName | T._S._Thakur"
+        ],
+        "triples": [
+            "Agra_Airport | location | India",
+            "India | leaderName | T._S._Thakur"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "triples": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "triples": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "triples": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | San_Sebasti\u00e1n_de_los_Reyes"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "triples": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "triples": [
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | location | Alcobendas",
+            "Adolfo_Su\u00e1rez_Madrid\u2013Barajas_Airport | runwayLength | 3500.0"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Abilene,_Texas | isPartOf | Texas",
+            "Abilene_Regional_Airport | cityServed | Abilene,_Texas"
+        ],
+        "triples": [
+            "Abilene_Regional_Airport | cityServed | Abilene,_Texas",
+            "Abilene,_Texas | isPartOf | Texas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Abilene,_Texas | isPartOf | Texas",
+            "Abilene_Regional_Airport | cityServed | Abilene,_Texas"
+        ],
+        "triples": [
+            "Abilene_Regional_Airport | cityServed | Abilene,_Texas",
+            "Abilene,_Texas | isPartOf | Texas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Abilene_Regional_Airport | cityServed | Abilene,_Texas",
+            "Abilene,_Texas | isPartOf | Texas"
+        ],
+        "triples": [
+            "Abilene_Regional_Airport | cityServed | Abilene,_Texas",
+            "Abilene,_Texas | isPartOf | Texas"
+        ],
+        "semcategory": "Airport"
+    },
+    {
+        "sorted": [
+            "Apollo_11 | operator | NASA",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Apollo_11 | operator | NASA",
+            "Buzz_Aldrin | was a crew member of | Apollo_11"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "semcategory": "Astronaut"
+    },
+    {
+        "sorted": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "triples": [
+            "Buzz_Aldrin | was a crew member of | Apollo_11",
+            "Apollo_11 | operator | NASA"
+        ],
+        "semcategory": "Astronaut"
+    }
+]

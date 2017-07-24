@@ -23,6 +23,7 @@ import nltk
 import numpy
 import operator
 import re
+import reference_delex as ref_delex
 import utils
 
 class Delexicalizer(object):
@@ -171,75 +172,7 @@ class Delexicalizer(object):
 
         return template
     ############################################################################
-    # REFERRING EXPRESSIONS PROCESSING
-    # get reference details (syntactic position and referential status) and remove determiners and compounds
-    def get_references(self, out, tag, entity):
-        references = []
-        removals = {}
 
-        for i, snt in enumerate(out):
-            deps = snt['deps_cc']
-            visited_tokens = []
-            for dep in deps:
-                # get syntax
-                if snt['tokens'][dep[2]] == tag and dep[2] not in visited_tokens:
-                    visited_tokens.append(dep[2])
-                    reference = {'syntax':'', 'sentence':i, 'pos':dep[2], 'entity':entity, 'tag':tag, 'determiner':'', 'compounds':[]}
-                    if 'nsubj' in dep[0] or 'nsubjpass' in dep[0]:
-                        reference['syntax'] = 'np-subj'
-                    elif 'nmod:poss' in dep[0] or 'compound' in dep[0]:
-                        reference['syntax'] = 'subj-det'
-                    else:
-                        reference['syntax'] = 'np-obj'
-                    references.append(reference)
-
-        for i, snt in enumerate(out):
-            deps = snt['deps_cc']
-            removals[i] = []
-            for dep in deps:
-                # mark compounds and determiners
-                if snt['tokens'][dep[1]] == tag:
-                    if dep[0] == 'det':
-                        for j, reference in enumerate(references):
-                            if reference['sentence'] == i and reference['pos'] == dep[1]:
-                                references[j]['determiner'] = snt['tokens'][dep[2]].lower()
-                                removals[i].append(dep[2])
-
-                    if dep[0] == 'compound':
-                        for j, reference in enumerate(references):
-                            if reference['sentence'] == i and reference['pos'] == dep[1] \
-                                    and 'AGENT' not in snt['tokens'][dep[2]] \
-                                    and 'PATIENT' not in snt['tokens'][dep[2]] \
-                                    and 'BRIDGE' not in snt['tokens'][dep[2]]:
-                                references[j]['compounds'].append((dep[2], snt['tokens'][dep[2]]))
-                                removals[i].append(dep[2])
-
-        return references, removals
-
-    # Parse and save references (referential status)
-    def parse_references(self):
-        self.references = sorted(self.references, key=lambda x: (x['entity'].name, x['sentence'], x['pos']))
-
-        sentence_statuses = {}
-        for i, reference in enumerate(self.references):
-            if i == 0 or (reference['entity'].name != self.references[i-1]['entity'].name):
-                reference['text_status'] = 'new'
-            else:
-                reference['text_status'] = 'given'
-
-            if reference['entity'].name not in sentence_statuses:
-                reference['sentence_status'] = 'new'
-            else:
-                reference['sentence_status'] = 'given'
-            sentence_statuses[reference['entity'].name] = reference['sentence']
-
-            ref = dbop.save_reference(entity=reference['entity'],
-                                      syntax=reference['syntax'],
-                                      text_status=reference['text_status'],
-                                      sentence_status=reference['sentence_status'])
-
-            refex = dbop.save_refex(reftype=reference['reftype'], refex=reference['refex'])
-            dbop.add_refex(ref, refex)
     ############################################################################
     # Simple matching
     def simple_match(self, template, entity_map):
@@ -264,7 +197,7 @@ class Delexicalizer(object):
         removals = dict(map(lambda i: (i, []), range(len(out))))
         for tag_entity in entities:
             tag, entity = tag_entity
-            references, entity_removals = self.get_references(out, 'SIMPLE-'+tag, entity)
+            references, entity_removals = ref_delex.get_references(out, 'SIMPLE-'+tag, entity)
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
@@ -382,7 +315,7 @@ class Delexicalizer(object):
         out = self.proc_parse.parse_doc(template)['sentences']
         removals = dict(map(lambda i: (i, []), range(len(out))))
         for tag, entity in entity_map.iteritems():
-            references, entity_removals = self.get_references(out, 'PROBABILISTIC-'+tag, entity)
+            references, entity_removals = ref_delex.get_references(out, 'PROBABILISTIC-'+tag, entity)
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
@@ -428,7 +361,7 @@ class Delexicalizer(object):
         out = self.proc_parse.parse_doc(template)['sentences']
         removals = dict(map(lambda i: (i, []), range(len(out))))
         for tag, entity in entity_map.iteritems():
-            references, entity_removals = self.get_references(out, 'SIMILARITY-'+tag, entity)
+            references, entity_removals = ref_delex.get_references(out, 'SIMILARITY-'+tag, entity)
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
@@ -515,7 +448,7 @@ class Delexicalizer(object):
             print 10 * '-'
 
             if self.save_references:
-                self.parse_references()
+                ref_delex.parse_references(self.references)
 
     def run(self):
         # entries = Entry.objects(set='train', size=1)
