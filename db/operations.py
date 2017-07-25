@@ -25,9 +25,9 @@ def save_predicate(name):
 
 # Entity operations
 def save_entity(name, type, ner, category, description):
-    entity = Entity(name=name, type=type)
+    entity = Entity(name=name, type=type, ner=ner, category=category, description=description)
 
-    query = Entity.objects(name=name, type=type, ner=ner, category=category, description=description)
+    query = Entity.objects(name=name, type=type)
     if query.count() == 0:
         entity.save()
     else:

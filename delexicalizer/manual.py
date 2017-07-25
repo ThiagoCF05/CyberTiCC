@@ -12,115 +12,182 @@ import reference_delex as ref_delex
 import sys
 sys.path.append('../')
 sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
+import db.operations as dbop
+
+from db.model import *
 from stanford_corenlp_pywrapper import CoreNLP
 
-def get_references(out, entities):
-    references = []
-    for tag_entity in entities.iteritems():
-        tag, entity = tag_entity
-        refs, entity_removals = ref_delex.get_references(out, tag, entity)
+class ManualDelexicalizer(object):
+    def __init__(self, fname):
+        self.proc = CoreNLP('parse')
 
-        references.extend(refs)
+        f = open(fname)
+        doc = f.read()
+        f.close()
 
-    references = sorted(references, key=lambda x: (x['entity'], x['sentence'], x['pos']))
+        doc = doc.split((50*'*')+'\n')
 
-    sentence_statuses = {}
-    for i, reference in enumerate(references):
-        if i == 0 or (reference['entity'] != references[i-1]['entity']):
-            reference['text_status'] = 'new'
-        else:
-            reference['text_status'] = 'given'
+        for entry in doc:
+            entry = entry.split('\n\n')
 
-        if reference['sentence'] not in sentence_statuses:
-            sentence_statuses[reference['sentence']] = []
+            _, entryId, size, semcategory = entry[0].replace('\n', '').split()
 
-        if reference['entity'] not in sentence_statuses[reference['sentence']]:
-            reference['sentence_status'] = 'new'
-        else:
-            reference['sentence_status'] = 'given'
+            entity_map = dict(map(lambda entity: entity.split(' | '), entry[2].replace('\nENTITY MAP\n', '').split('\n')))
 
-        sentence_statuses[reference['sentence']].append(reference['entity'])
+            lexEntries = entry[3].replace('\nLEX\n', '').split('\n-')[:-1]
 
-    references = sorted(references, key=lambda x: x['general_pos'])
-    return references
+            for lex in lexEntries:
+                if lex[0] == '\n':
+                    lex = lex[1:]
+                lex = lex.split('\n')
 
-def extract_references(text, template, references):
-    text = 'BEGIN BEGIN BEGIN ' + text
-    template = 'BEGIN BEGIN BEGIN ' + template
+                lexId = lex[0]
+                text = lex[1].replace('TEXT: ', '').strip()
+                template = lex[2].replace('TEMPLATE: ', '')
+                correct = lex[3].replace('CORRECT: ', '').strip()
+                comment = lex[4].replace('COMMENT: ', '').strip()
 
-    isOver = False
-    while not isOver:
-        stemplate = template.split()
+                if comment in ['g', 'good']:
+                    self.update_template(entryId, size, semcategory, lexId, template)
+                    references = self.process_references(text, template, entity_map)
+                    self.save_references(references)
+                elif correct != '' and comment != 'wrong':
+                    self.update_template(entryId, size, semcategory, lexId, correct)
+                    references = self.process_references(text, correct, entity_map)
+                    self.save_references(references)
 
-        tag = ''
-        pre_tag, pos_tag, i = [], [], 0
-        for token in stemplate:
-            i += 1
-            if token.split('-')[0] in ['AGENT', 'PATIENT', 'BRIDGE']:
-                tag = token
-                for pos_token in stemplate[i:]:
-                    if pos_token.split('-')[0] in ['AGENT', 'PATIENT', 'BRIDGE']:
-                        break
-                    else:
-                        pos_tag.append(pos_token)
-                break
+    def _get_references_info(self, out, entities):
+        '''
+        Get syntactic position, text and sentence status of the references based on dependency parser
+        :param out: stanford corenlp result
+        :param entities: tag - wikipedia id mapping
+        :return:
+        '''
+        references = []
+        for tag_entity in entities.iteritems():
+            tag, entity = tag_entity
+            refs, entity_removals = ref_delex.get_references(out, tag, entity)
+
+            references.extend(refs)
+
+        references = sorted(references, key=lambda x: (x['entity'], x['sentence'], x['pos']))
+
+        sentence_statuses = {}
+        for i, reference in enumerate(references):
+            if i == 0 or (reference['entity'] != references[i-1]['entity']):
+                reference['text_status'] = 'new'
             else:
-                pre_tag.append(token)
+                reference['text_status'] = 'given'
 
-        if tag == '':
-            isOver = True
-        else:
-            regex = ' '.join(pre_tag).strip() + ' (.+?) ' + ' '.join(pos_tag).strip()
-            f = re.findall(regex, text)
+            if reference['sentence'] not in sentence_statuses:
+                sentence_statuses[reference['sentence']] = []
 
-            if len(f) > 0:
-                reference = f[0]
-                template = template.replace(tag, reference, 1)
+            if reference['entity'] not in sentence_statuses[reference['sentence']]:
+                reference['sentence_status'] = 'new'
+            else:
+                reference['sentence_status'] = 'given'
 
-                for ref in references:
-                    if ref['general_pos'] == i-4:
-                        ref['realization'] = reference
-                        break
-    return references
+            sentence_statuses[reference['sentence']].append(reference['entity'])
 
-proc = CoreNLP('parse')
+        references = sorted(references, key=lambda x: x['general_pos'])
+        return references
 
-f = open('report.txt')
-doc = f.read()
-f.close()
+    def _get_refexes(self, text, template, references):
+        '''
+        Extract referring expressions for each reference overlapping text and template
+        :param text: original text
+        :param template: template (delexicalized text)
+        :param references: references
+        :return:
+        '''
+        text = 'BEGIN BEGIN BEGIN ' + text
+        template = 'BEGIN BEGIN BEGIN ' + template
 
-doc = doc.split((50*'*')+'\n')
+        isOver = False
+        while not isOver:
+            stemplate = template.split()
 
-for entry in doc:
-    entry = entry.split('\n\n')
+            tag = ''
+            pre_tag, pos_tag, i = [], [], 0
+            for token in stemplate:
+                i += 1
+                if token.split('-')[0] in ['AGENT', 'PATIENT', 'BRIDGE']:
+                    tag = token
+                    for pos_token in stemplate[i:]:
+                        if pos_token.split('-')[0] in ['AGENT', 'PATIENT', 'BRIDGE']:
+                            break
+                        else:
+                            pos_tag.append(pos_token)
+                    break
+                else:
+                    pre_tag.append(token)
 
-    _, entryId, size, semcategory = entry[0].replace('\n', '').split()
+            if tag == '':
+                isOver = True
+            else:
+                regex = re.escape(' '.join(pre_tag[-3:]).strip()) + ' (.+?) ' + re.escape(' '.join(pos_tag[:3]).strip())
+                f = re.findall(regex, text)
 
-    entity_map = dict(map(lambda entity: entity.split(' | '), entry[2].replace('\nENTITY MAP\n', '').split('\n')))
+                if len(f) > 0:
+                    refex = f[0]
+                    template = template.replace(tag, refex, 1)
 
-    lexEntries = entry[3].replace('\nLEX\n', '').split('\n-')[:-1]
+                    ref_type = 'name'
+                    if refex.lower() in ['he', 'his', 'him', 'she', 'hers', 'her', 'it', 'its', 'they', 'theirs', 'them']:
+                        ref_type = 'pronoun'
 
-    for lex in lexEntries:
-        if lex[0] == '\n':
-            lex = lex[1:]
-        lex = lex.split('\n')
-        lexId = lex[0]
+                    for ref in references:
+                        if ref['tag'] == tag and 'refex' not in ref:
+                            ref['refex'] = refex
+                            ref['reftype'] = ref_type
+                            break
+                else:
+                    template = template.replace(tag, ' ', 1)
+        return references
 
-        out = proc.parse_doc(lex[1].replace('TEXT: ', '').strip())
+    def update_template(self, entryId, size, semcategory, lexId, template):
+        entry = Entry.objects(docid=entryId, size=size, category=semcategory).first()
+
+        for lexEntry in entry.texts:
+            if lexEntry.docid == lexId:
+                dbop.insert_template(lexEntry, template)
+                break
+
+    def save_references(self, references):
+        '''
+        Save references and referring expressions extracted from the manual annotation
+        :param references:
+        :return:
+        '''
+        for reference in references:
+            if 'refex' in reference:
+                ref = dbop.save_reference(entity=reference['entity'],
+                                          syntax=reference['syntax'],
+                                          text_status=reference['text_status'],
+                                          sentence_status=reference['sentence_status'])
+
+                refex = dbop.save_refex(reftype=reference['reftype'], refex=reference['refex'])
+                dbop.add_refex(ref, refex)
+
+    def process_references(self, text, template, entities):
+        '''
+        Obtain information of references and their referring expressions
+        :param text:
+        :param template:
+        :param entities:
+        :return:
+        '''
+        out = self.proc.parse_doc(text)
         text = []
         for i, snt in enumerate(out['sentences']):
             text.extend(snt['tokens'])
-        text = ' '.join(text)
+        text = ' '.join(text).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
 
-        template = lex[2].replace('TEMPLATE: ', '')
-        correct = lex[3].replace('CORRECT: ', '').strip()
-        comment = lex[4].replace('COMMENT: ', '').strip()
+        out = self.proc.parse_doc(template)['sentences']
+        references = self._get_references_info(out, entities)
+        references = self._get_refexes(text, template, references)
+        return references
 
-        if comment in ['g', 'good']:
-            template = template
-        elif correct != '':
-            template = correct
-
-        out = proc.parse_doc(template)['sentences']
-        references = get_references(out, entity_map)
-        extract_references(text, template, references)
+if __name__ == '__main__':
+    dbop.clean_delex()
+    ManualDelexicalizer('report.txt')
