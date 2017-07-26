@@ -77,13 +77,14 @@ def parse_references(references):
         else:
             reference['text_status'] = 'given'
 
+        if reference['sentence'] not in sentence_statuses:
+            sentence_statuses[reference['sentence']] = []
+
         if reference['entity'].name not in sentence_statuses[reference['sentence']]:
             reference['sentence_status'] = 'new'
         else:
             reference['sentence_status'] = 'given'
 
-        if reference['sentence'] not in sentence_statuses:
-            sentence_statuses[reference['sentence']] = []
         sentence_statuses[reference['sentence']].append(reference['entity'].name)
 
         ref = dbop.save_reference(entity=reference['entity'],

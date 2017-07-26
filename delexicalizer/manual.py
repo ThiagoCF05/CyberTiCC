@@ -27,7 +27,9 @@ class ManualDelexicalizer(object):
 
         doc = doc.split((50*'*')+'\n')
 
-        for entry in doc:
+        print 'Doc size: ', len(doc)
+
+        for entry in doc[:100]:
             entry = entry.split('\n\n')
 
             _, entryId, size, semcategory = entry[0].replace('\n', '').split()
@@ -48,10 +50,14 @@ class ManualDelexicalizer(object):
                 comment = lex[4].replace('COMMENT: ', '').strip()
 
                 if comment in ['g', 'good']:
+                    print template
+                    print 10 * '-'
                     self.update_template(entryId, size, semcategory, lexId, template)
                     references = self.process_references(text, template, entity_map)
                     self.save_references(references)
                 elif correct != '' and comment != 'wrong':
+                    print correct
+                    print 10 * '-'
                     self.update_template(entryId, size, semcategory, lexId, correct)
                     references = self.process_references(text, correct, entity_map)
                     self.save_references(references)
@@ -133,7 +139,7 @@ class ManualDelexicalizer(object):
                     template = template.replace(tag, refex, 1)
 
                     ref_type = 'name'
-                    if refex.lower() in ['he', 'his', 'him', 'she', 'hers', 'her', 'it', 'its', 'they', 'theirs', 'them']:
+                    if refex.lower().strip() in ['he', 'his', 'him', 'she', 'hers', 'her', 'it', 'its', 'they', 'theirs', 'them']:
                         ref_type = 'pronoun'
 
                     for ref in references:

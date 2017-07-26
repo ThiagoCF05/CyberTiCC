@@ -101,7 +101,7 @@ def add_lexEntry(entry, lexEntry):
 # Reference operations
 def save_reference(entity, syntax, text_status, sentence_status):
     if type(entity) == str or type(entity) == unicode:
-        entity = Entity.objects(name=entity).get()
+        entity = Entity.objects(name=entity).first()
     reference = Reference(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
 
     query = Reference.objects(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
@@ -119,7 +119,7 @@ def add_refex(reference, refex):
 def save_refex(reftype, refex):
     entry = Refex(ref_type=reftype, refex=refex)
 
-    query = Refex.objects(ref_type=reftype, refex=refex)
+    query = Refex.objects(ref_type=reftype, refex=refex.strip())
     if query.count() == 0:
         entry.save()
     else:

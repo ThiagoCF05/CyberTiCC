@@ -151,7 +151,7 @@ class Delexicalizer(object):
             template = template.replace(' ' + pronref['reference'], ' PRON-'+tag, 1)
 
             out = self.proc_parse.parse_doc(template)['sentences']
-            references, removals = self.get_references(out, 'PRON-'+tag, entity_map[tag])
+            references, removals = ref_delex.get_references(out, 'PRON-'+tag, entity_map[tag])
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'pronoun'
@@ -174,38 +174,27 @@ class Delexicalizer(object):
     ############################################################################
 
     ############################################################################
-    def get_refex(self, entity):
-        references = Reference.objects(entity=entity)
-        refexes = []
-
-        for reference in references:
-            for refex in reference.refexes:
-                if refex.ref_type != 'pronoun':
-                    refexes.append(refex)
-        refexes = sorted(list(set(refexes)), key=lambda x: len(x), reverse=True)
-        return refexes
-
     # Reference matching
-    def reference_match(self, template, entity_map, delex_tag):
+    def reference_match(self, template, entity_map):
         refexes = {}
+        delex_tag = []
 
-        entities = sorted(entity_map.items(), key=lambda x: len(x[1].name), reverse=True)
-        for tag_entity in entities:
-            tag, entity = tag_entity
+        matchers = self.get_refexes(entity_map)
+        for matcher in matchers:
+            tag, entity_name, matcher = matcher
+            matcher = matcher + ' '
 
-            matchers = self.get_refex(entity)
+            regex = re.findall(re.escape(matcher), template)
+            if len(regex) > 0:
+                template = template.replace(matcher, 'REF-'+tag+' ')
+                if entity_name not in refexes:
+                    refexes[entity_name] = []
+                for row in regex:
+                    refexes[entity_name].append(matcher)
 
-            for matcher in matchers:
-                matcher = matcher + ' '
-                if len(re.findall(re.escape(matcher), template)) > 0:
-                    template = template.replace(matcher, 'REF-'+tag+' ')
-                    if entity.name not in refexes:
-                        refexes[entity.name] = []
-                    refexes[entity.name].append(matcher)
-
-                    # Solving the bracket problem of regular expressions
-                    if len(re.findall(matcher, template)) == 0:
-                        delex_tag.append(tag)
+                # Solving the bracket problem of regular expressions
+                if len(re.findall(matcher, template)) == 0:
+                    delex_tag.append(tag)
 
         out = self.proc_parse.parse_doc(template)['sentences']
         removals = dict(map(lambda i: (i, []), range(len(out))))
@@ -235,6 +224,24 @@ class Delexicalizer(object):
         template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
         return template, delex_tag
 
+    def get_refexes(self, entity_map):
+        '''
+        Get all referring expressions from the mapping entities
+        :param entity_map:
+        :return:
+        '''
+        refexes = []
+        for tag_entity in entity_map.iteritems():
+            tag, entity = tag_entity
+            references = Reference.objects(entity=entity)
+
+            for reference in references:
+                for refex in reference.refexes:
+                    if refex.ref_type != 'pronoun':
+                        refexes.append((tag, entity.name, refex.refex))
+
+        refexes = sorted(list(set(refexes)), key=lambda x: len(x[2]), reverse=True)
+        return refexes
     ############################################################################
 
     ############################################################################
@@ -472,10 +479,11 @@ class Delexicalizer(object):
             else:
                 template = copy.copy(lexEntry.template)
 
-            # Simple match
-            template, delex_tags = self.simple_match(template, entity_map)
             # Reference matching
-            template, delex_tags = self.reference_match(template, entity_map, delex_tags)
+            template, delex_tags = self.reference_match(template, entity_map)
+            # Simple match
+            template, delex_tags2 = self.simple_match(template, entity_map)
+            delex_tags.extend(delex_tags2)
 
             # Similarity matching (only for date matching from now on)
             if len(delex_tags) < len(entity_map):
@@ -506,7 +514,7 @@ class Delexicalizer(object):
             # Coreference match
             template = self.coreference_match(template, entity_map, self.out_parse)
 
-            template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '').replace('PROBABILISTIC-', '')
+            template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '').replace('PROBABILISTIC-', '').replace('REF-', '')
             dbop.insert_template(lexEntry, template)
 
             print text
@@ -527,6 +535,6 @@ class Delexicalizer(object):
         evaluation.evaluate()
 
 if __name__ == '__main__':
-    dbop.clean_delex()
+    # dbop.clean_delex()
     Delexicalizer(_set='train', save_references=True).run()
     Delexicalizer(_set='dev', save_references=False).run()
