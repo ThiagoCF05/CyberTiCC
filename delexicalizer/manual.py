@@ -29,7 +29,7 @@ class ManualDelexicalizer(object):
 
         print 'Doc size: ', len(doc)
 
-        for entry in doc[:100]:
+        for entry in doc:
             entry = entry.split('\n\n')
 
             _, entryId, size, semcategory = entry[0].replace('\n', '').split()
