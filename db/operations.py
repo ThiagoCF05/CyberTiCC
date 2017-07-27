@@ -58,20 +58,25 @@ def save_triple(e1, pred, e2):
     return triple
 
 # Lexical entry operations
-def save_lexEntry(docid, comment, text, parse_tree, template=''):
-    lexEntry = Lex(docid=docid, comment=comment, text=text, template=template, parse_tree=parse_tree)
+def save_lexEntry(docid, comment, text, parse_tree, template='', delex_type=''):
+    lexEntry = Lex(docid=docid, comment=comment, text=text, template=template, parse_tree=parse_tree, delex_type=delex_type)
     response = lexEntry.save()
+    if not response:
+        raise NameError('LexEntry error: ', lexEntry.text)
     return lexEntry
 
-def insert_template(lexEntry, template):
+def insert_template(lexEntry, template, delex_type='automatic'):
     response = lexEntry.modify(set__template=template)
+    if not response:
+        raise NameError('Insert template error: ', lexEntry.text)
+    response = lexEntry.modify(set__delex_type=delex_type)
     if not response:
         raise NameError('Insert template error: ', lexEntry.text)
     return lexEntry
 
 # Template operations
-def save_template(category, triples, template):
-    template = Template(category=category, triples=triples, template=template)
+def save_template(category, triples, template, delex_type):
+    template = Template(category=category, triples=triples, template=template, delex_type=delex_type)
     template.save()
     return template
 

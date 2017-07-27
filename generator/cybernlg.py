@@ -13,6 +13,7 @@ import copy
 import sys
 sys.path.append('../')
 from db.model import *
+from mongoengine.queryset.visitor import Q
 import kenlm
 import nltk
 import operator
@@ -22,7 +23,7 @@ from classifier.maxent import CLF
 from reg.reg_main import REG
 
 class CyberNLG(object):
-    def __init__(self, lm, clf, beam, clf_beam):
+    def __init__(self, lm, clf, beam, clf_beam, delex_type):
         self.references = []
         self.hyps = []
 
@@ -32,6 +33,8 @@ class CyberNLG(object):
         self.model = lm
         self.beam = beam
 
+        self.delex_type = delex_type
+
         self.reg = REG()
 
         deventries = Entry.objects(set='dev').timeout(False)
@@ -39,6 +42,11 @@ class CyberNLG(object):
             self.run(deventry)
 
     def get_new_entitymap(self, entitymap):
+        '''
+        Get tag -> entity mapping with new tags (ENTITY-1, ENTITY-2, etc)
+        :param entitymap:
+        :return:
+        '''
         new_entitymap = {}
 
         tags = sorted(entitymap.keys())
@@ -48,6 +56,13 @@ class CyberNLG(object):
         return new_entitymap
 
     def reg_process(self, templates, entitymap):
+        '''
+        Process for lexicalization of the templates (referring expression genenation)
+        :param self:
+        :param templates:
+        :param entitymap:
+        :return:
+        '''
         new_templates = []
         for template in templates:
             # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
@@ -63,15 +78,31 @@ class CyberNLG(object):
         return new_templates
 
     def order_process(self, triples, semcategory):
+        '''
+        Ordering method
+        :param self:
+        :param triples:
+        :param semcategory:
+        :return:
+        '''
         striples = clf.order(triples, semcategory, self.clf_beam)
         return striples
 
-    def extract_template(self, triples):
+    def _extract_template(self, triples):
+        '''
+        Extract templates based on the triple set
+        :param self:
+        :param triples: triple set
+        :return: templates, tag->entity map and predicates
+        '''
         # entity and predicate mapping
         entitymap, predicates = utils.map_entities(triples=triples)
 
         # Select templates that have the same predicates (in the same order??) than the input triples
-        train_templates = Template.objects(triples__size=len(triples))
+        if self.delex_type in ['automatic', 'manual']:
+            train_templates = Template.objects(Q(triples__size=len(triples)) & Q(delex_type=self.delex_type))
+        else:
+            train_templates = Template.objects(triples__size=len(triples))
         for i, triple in enumerate(triples):
             train_templates = filter(lambda template: template.triples[i].predicate.name == triple.predicate.name, train_templates)
 
@@ -103,10 +134,16 @@ class CyberNLG(object):
         return new_templates, entitymap, predicates
 
     def template_process(self, triples):
+        '''
+        Process a set of triples, extracting the sentence templates that describe it
+        :param self:
+        :param triples:
+        :return:
+        '''
         # Try to extract a full template
         begin, end, templates = 0, len(triples), []
         while begin < len(triples):
-            partial_templates, entitymap, predicates = self.extract_template(triples[begin:end])[:self.beam]
+            partial_templates, entitymap, predicates = self._extract_template(triples[begin:end])[:self.beam]
 
             if len(partial_templates) > 0:
                 if len(templates) == 0:
@@ -233,7 +270,7 @@ if __name__ == '__main__':
     order_step1, order_step2 = '../classifier/data/train_step1.cPickle', '../classifier/data/classifier.cPickle'
     clf = CLF(clf_step1=order_step1, clf_step2=order_step2)
 
-    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=3)
+    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=3, delex_type='')
 
     write_references(nlg.references, args.refs)
     write_hyps(nlg.hyps, args.hyps)

@@ -167,7 +167,7 @@ class Delexicalizer(object):
                         snt_template.append(token)
                 snt_templates[i] = ' '.join(snt_template)
 
-            template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+            template = ' '.join(snt_templates).replace('-LRB- ', '( ').replace(' -RRB-', ' )').replace('-LRB-', '(').replace('-RRB-', ')').strip()
             template = template.replace('PRON-', '')
 
         return template
@@ -221,7 +221,7 @@ class Delexicalizer(object):
                     snt_template.append(token)
             snt_templates[i] = ' '.join(snt_template)
 
-        template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+        template = ' '.join(snt_templates).replace('-LRB- ', '( ').replace(' -RRB-', ' )').replace('-LRB-', '(').replace('-RRB-', ')').strip()
         return template, delex_tag
 
     def get_refexes(self, entity_map):
@@ -458,7 +458,6 @@ class Delexicalizer(object):
 
         return template, delex_tag
     ############################################################################
-
     def process(self, entry):
         entity_map, predicates = self.parse(entry.triples)
         lexEntries = entry.texts
@@ -515,7 +514,7 @@ class Delexicalizer(object):
             template = self.coreference_match(template, entity_map, self.out_parse)
 
             template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '').replace('PROBABILISTIC-', '').replace('REF-', '')
-            dbop.insert_template(lexEntry, template)
+            dbop.insert_template(lexEntry, template, 'automatic')
 
             print text
             print template

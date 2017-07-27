@@ -60,6 +60,7 @@ class Ordering(object):
         training_set = []
         for lex in self.entry.texts:
             template = lex.template
+            delex_type = lex.delex_type
 
             if self.check_tagfrequency(entitymap, template):
                 sort_triples, triples = [], copy.deepcopy(entry.triples)
@@ -84,7 +85,7 @@ class Ordering(object):
                     for snt in out['sentences']:
                         template.extend(snt['tokens'])
                     template = self.generate_template(sort_triples, template, entitymap)
-                    training_set.append({'sorted_triples':sort_triples, 'triples':entry.triples, 'template':template, 'lexEntry':lex, 'semcategory':entry.category})
+                    training_set.append({'sorted_triples':sort_triples, 'triples':entry.triples, 'template':template, 'lexEntry':lex, 'semcategory':entry.category, 'delex_type':delex_type})
         return training_set
 
     def order(self, triples, entitymap, prev_tags, tags):
@@ -115,7 +116,7 @@ class Ordering(object):
         '''
         for row in trainingset:
             # Update database with template with right entity order id and ordered triples
-            dbop.save_template(category=row['semcategory'], triples=row['sorted_triples'], template=row['template'])
+            dbop.save_template(category=row['semcategory'], triples=row['sorted_triples'], template=row['template'], delex_type=row['delex_type'])
 
     def write(self, trainingset, fname):
         result = []

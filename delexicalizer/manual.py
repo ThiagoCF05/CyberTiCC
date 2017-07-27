@@ -156,7 +156,7 @@ class ManualDelexicalizer(object):
 
         for lexEntry in entry.texts:
             if lexEntry.docid == lexId:
-                dbop.insert_template(lexEntry, template)
+                dbop.insert_template(lexEntry, template, 'manual')
                 break
 
     def save_references(self, references):

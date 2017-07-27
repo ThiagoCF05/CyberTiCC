@@ -46,6 +46,7 @@ class Template(Document):
     category = StringField(required=True, max_length=20)
     triples = ListField(ReferenceField(Triple))
     template = StringField(max_length=1000)
+    delex_type = StringField(max_length=10)
 
     meta = {'allow_inheritance': True}
 
@@ -56,6 +57,7 @@ class Lex(Document):
     parse_tree = StringField()
 
     template = StringField(max_length=1000)
+    delex_type = StringField(max_length=10)
     # references = ListField(ReferenceField(Reference))
     meta = {'allow_inheritance': True}
 
