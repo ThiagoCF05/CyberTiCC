@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier/data/dev_step1.cPickle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier/data/devset.cPickle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier/data/train_step1.cPickle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classifier/data/trainset.cPickle" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scripts/moses_commands" afterPath="$PROJECT_DIR$/aligner/moses_commands" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/parallel_data.py" afterPath="$PROJECT_DIR$/aligner/parallel_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classifier/maxent.py" afterPath="$PROJECT_DIR$/classifier/maxent.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -27,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3885">
-              <caret line="273" column="83" lean-forward="false" selection-start-line="273" selection-start-column="83" selection-end-line="273" selection-end-column="83" />
+            <state relative-caret-position="485">
+              <caret line="240" column="0" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
               <folding>
                 <element signature="e#962#1325#0" expanded="false" />
               </folding>
@@ -103,18 +96,18 @@
       <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="155">
+              <caret line="76" column="41" lean-forward="true" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="91" column="14" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+            <state relative-caret-position="221">
+              <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -171,7 +164,6 @@
         <option value="$PROJECT_DIR$/generator/reg/description.py" />
         <option value="$PROJECT_DIR$/generator/reg/form_choice.py" />
         <option value="$PROJECT_DIR$/scripts/tokenizer.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/db/init.py" />
         <option value="$PROJECT_DIR$/delexicalizer/evaluation.py" />
         <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
@@ -185,12 +177,13 @@
         <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
         <option value="$PROJECT_DIR$/db/model.py" />
         <option value="$PROJECT_DIR$/db/operations.py" />
-        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/delexicalizer/manual.py" />
         <option value="$PROJECT_DIR$/classifier/ordering.py" />
         <option value="$PROJECT_DIR$/classifier/maxent.py" />
         <option value="$PROJECT_DIR$/aligner/moses_commands" />
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
+        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
       </list>
     </option>
   </component>
@@ -339,24 +332,7 @@
       <recent name="$PROJECT_DIR$/generator/reg" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.cybernlg">
-    <configuration default="false" name="maxent" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classifier" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CyberTiCC" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classifier/maxent.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.parallel_data">
     <configuration default="false" name="manual" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,6 +397,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CyberTiCC" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generator/cybernlg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="parallel_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aligner" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyberTiCC" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aligner/parallel_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -831,19 +824,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.maxent" />
-      <item index="1" class="java.lang.String" itemvalue="Python.manual" />
-      <item index="2" class="java.lang.String" itemvalue="Python.init" />
-      <item index="3" class="java.lang.String" itemvalue="Python.ordering" />
-      <item index="4" class="java.lang.String" itemvalue="Python.cybernlg" />
+      <item index="0" class="java.lang.String" itemvalue="Python.manual" />
+      <item index="1" class="java.lang.String" itemvalue="Python.init" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ordering" />
+      <item index="3" class="java.lang.String" itemvalue="Python.cybernlg" />
+      <item index="4" class="java.lang.String" itemvalue="Python.parallel_data" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.cybernlg" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ordering" />
-        <item index="2" class="java.lang.String" itemvalue="Python.manual" />
-        <item index="3" class="java.lang.String" itemvalue="Python.init" />
-        <item index="4" class="java.lang.String" itemvalue="Python.maxent" />
+        <item index="0" class="java.lang.String" itemvalue="Python.parallel_data" />
+        <item index="1" class="java.lang.String" itemvalue="Python.cybernlg" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ordering" />
+        <item index="3" class="java.lang.String" itemvalue="Python.manual" />
+        <item index="4" class="java.lang.String" itemvalue="Python.init" />
       </list>
     </recent_temporary>
   </component>
@@ -984,8 +977,13 @@
           <line>190</line>
           <option name="timeStamp" value="304" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aligner/parallel_data.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="305" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="305" />
+      <option name="time" value="306" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1266,14 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="91" column="14" lean-forward="true" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/document.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1325,22 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/moses_commands">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
@@ -1365,13 +1339,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/moses_commands">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3885">
-          <caret line="273" column="83" lean-forward="false" selection-start-line="273" selection-start-column="83" selection-end-line="273" selection-end-column="83" />
+        <state relative-caret-position="485">
+          <caret line="240" column="0" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
           <folding>
             <element signature="e#962#1325#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="76" column="41" lean-forward="true" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="65" column="40" lean-forward="false" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

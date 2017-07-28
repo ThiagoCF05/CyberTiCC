@@ -63,7 +63,7 @@ def map_entities(triples):
     return entity_map, predicates
 
 def entity2tag(entity_map):
-    return dict(map(lambda x: (x[1], x[0]), entity_map.items()))
+    return dict(map(lambda x: (x[1].name, x[0]), entity_map.items()))
 
 def get_e2f(fname):
     f = open(fname)
