@@ -7,6 +7,7 @@ Description:
     Prepare parallel corpus to Moses/GIZA:
     The source language is the sequence of triples, whereas the target is represented
     by the texts (delexicalised or not)
+    Referring expressions are also included in the files
 """
 
 import argparse
@@ -15,6 +16,19 @@ sys.path.append('../')
 from db.model import *
 
 import utils
+
+def get_references():
+    de, en = [], []
+
+    references = Reference.objects()
+    for ref in references:
+        _de = ref.entity.name
+
+        for refex in ref.refexes:
+            _en = refex.refex
+            de.append(_de)
+            en.append(_en)
+    return de, en
 
 def get_parallel(set, delex=True, size=10, evaluation=False):
     entries = Entry.objects(size__lte=size, set=set)
@@ -97,6 +111,11 @@ if __name__ == '__main__':
     EVAL =  args.eval
 
     de, en = get_parallel(SET, DELEX, SIZE, EVAL)
+    if not EVAL:
+        ref_de, ref_en = get_references()
+
+        de.extend(ref_de)
+        en.extend(ref_en)
 
     write(DE_FILE, de)
     if EVAL:

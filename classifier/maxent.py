@@ -9,7 +9,6 @@ Description:
 
 import sys
 sys.path.append('../')
-from db.model import *
 import cPickle as p
 import copy
 import json
@@ -24,22 +23,27 @@ class CLFTraining(object):
         self.dev = json.load(open(fdev))
         # self.test = json.load(open(ftest))
 
-        train_step1, trainset = self.extract_features(self.train)
-        dev_step1, devset = self.extract_features(self.dev)
-        # test_step1, testset = self.extract_features(self.test)
+        step1_train_features, step2_train_features = self.extract_features(self.train)
+        step1_dev_features, step2_dev_features = self.extract_features(self.dev)
+        # step1_test_features, step2_test_features = self.extract_features(self.test)
 
-        p.dump(train_step1, open('data/train_step1.cPickle', 'w'))
-        p.dump(trainset, open('data/trainset.cPickle', 'w'))
+        p.dump(step1_train_features, open('data/step1_train_features.cPickle', 'w'))
+        p.dump(step2_train_features, open('data/step2_train_features.cPickle', 'w'))
 
-        p.dump(dev_step1, open('data/dev_step1.cPickle', 'w'))
-        p.dump(devset, open('data/devset.cPickle', 'w'))
+        p.dump(step1_dev_features, open('data/step1_dev_features.cPickle', 'w'))
+        p.dump(step2_dev_features, open('data/step2_dev_features.cPickle', 'w'))
 
-        clf = MaxentClassifier.train(trainset, 'megam', trace=0, max_iter=1000)
+        clf_step1 = MaxentClassifier.train(step1_train_features, 'megam', trace=0, max_iter=1000)
         # clf = nltk.NaiveBayesClassifier.train(trainset)
-        p.dump(clf, open('data/classifier.cPickle', 'w'))
-        print 'Accuracy: ', accuracy(clf, devset)
+        p.dump(clf_step1, open('data/clf_step1.cPickle', 'w'))
+        print 'Accuracy: ', accuracy(clf_step1, step1_dev_features)
 
-    def step1(self, observations):
+        clf_step2 = MaxentClassifier.train(step2_train_features, 'megam', trace=0, max_iter=1000)
+        # clf = nltk.NaiveBayesClassifier.train(trainset)
+        p.dump(clf_step2, open('data/clf_step2.cPickle', 'w'))
+        print 'Accuracy: ', accuracy(clf_step2, step2_dev_features)
+
+    def step1_bayes(self, observations):
         '''
         :param observations: train_order.json file
         :return: probabilities of the first triple in the ordered array
@@ -90,6 +94,24 @@ class CLFTraining(object):
             'priori_dem':priori_dem,
             'posteriori_dem':posteriori_dem
         }
+
+    def step1(self, observations):
+        self.features_1 = []
+
+        for obs in observations:
+            striples = map(lambda triple: tuple(triple.split(' | ')), obs['sorted'])
+
+            if len(striples) > 1:
+                for i, triple in enumerate(striples):
+                    features = {}
+                    features['predicate'] = triple[1]
+                    features['semcategory'] = obs['semcategory']
+
+                    if i == 0:
+                        self.features_1.append((features, '1'))
+                    else:
+                        self.features_1.append((features, '0'))
+        return self.features_1
 
     def step2(self, observations):
         self.features = []
@@ -166,7 +188,13 @@ class CLF(object):
         self.clf_step1 = p.load(open(clf_step1))
         self.clf_step2 = p.load(open(clf_step2))
 
-    def extract_features(self, triple1, triple2, semcategory):
+    def _step1_features(self, triple, semcategory):
+        features = {}
+        features['predicate'] = triple.predicate.name
+        features['semcategory'] = semcategory
+        return features
+
+    def _step2_features(self, triple1, triple2, semcategory):
         features = {}
         features['predicate1'] = triple1.predicate.name
         features['predicate2'] = triple2.predicate.name
@@ -179,7 +207,7 @@ class CLF(object):
 
         return features
 
-    def step1(self, triples, semcategory, beam=2):
+    def step1_bayes(self, triples, semcategory, beam=2):
         '''
         :param triples:
         :param semcategory:
@@ -212,6 +240,17 @@ class CLF(object):
         candidates = sorted(ranking, key=lambda x: x[1], reverse=True)[:beam]
         return candidates
 
+    def step1(self, triples, semcategory):
+        ranking = []
+        for triple in triples:
+            features = self._step1_features(triple, semcategory)
+
+            prob = self.clf_step1.prob_classify(features)
+            ranking.append(([triple], prob._prob_dict['1']))
+
+        ranking = sorted(ranking, key=lambda x: x[1], reverse=True)
+        return ranking
+
     def step2(self, prev_triples, triples, semcategory):
         '''
         :param prev_triples:
@@ -224,7 +263,7 @@ class CLF(object):
         triple1 = prev_triples[0][-1]
         ranking = []
         for triple2 in triples:
-            features = self.extract_features(triple1, triple2, semcategory)
+            features = self._step2_features(triple1, triple2, semcategory)
 
             prob = self.clf_step2.prob_classify(features)
             ranking.append((triple2, prob._prob_dict['0-1']))
@@ -240,7 +279,7 @@ class CLF(object):
         return new_candidates
 
     def order(self, triples, semcategory, beam=2):
-        candidates = self.step1(triples, semcategory, beam)
+        candidates = self.step1(triples, semcategory)[:beam]
 
         for i in range(len(triples)-1):
             new_candidates = []
@@ -249,6 +288,7 @@ class CLF(object):
                 result = self.step2(candidate, ftriples, semcategory)
                 new_candidates.extend(result)
 
+            new_candidates = sorted(new_candidates, key=lambda x: x[1], reverse=True)
             candidates = new_candidates[:beam]
 
         return candidates

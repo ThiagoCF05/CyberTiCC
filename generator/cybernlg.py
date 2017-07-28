@@ -186,7 +186,7 @@ class CyberNLG(object):
         # Templates selection
         templates = []
         for triples in striples:
-            templates.extend(self.template_process(triples))
+            templates.extend(self.template_process(triples[0]))
 
         templates = sorted(templates, key=lambda template: template[1], reverse=True)[:self.beam]
 
@@ -263,14 +263,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
     parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
+    parser.add_argument('delex_type', type=str, default='automatic+manual', help='delexicalization type (manual or automatic)')
     args = parser.parse_args()
 
-    lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword5.bin')
+    lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword.bin')
 
-    order_step1, order_step2 = '../classifier/data/train_step1.cPickle', '../classifier/data/classifier.cPickle'
+    order_step1, order_step2 = '../classifier/data/clf_step1.cPickle', '../classifier/data/clf_step2.cPickle'
     clf = CLF(clf_step1=order_step1, clf_step2=order_step2)
 
-    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=3, delex_type='')
+    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=3, delex_type=args.delex_type)
 
     write_references(nlg.references, args.refs)
     write_hyps(nlg.hyps, args.hyps)
