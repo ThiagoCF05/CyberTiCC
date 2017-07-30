@@ -13,7 +13,10 @@ Description:
 import argparse
 import sys
 sys.path.append('../')
+sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
+
 from db.model import *
+from stanford_corenlp_pywrapper import CoreNLP
 
 import utils
 
@@ -32,6 +35,7 @@ def get_references():
 
 def get_parallel(set, delex=True, size=10, evaluation=False):
     entries = Entry.objects(size__lte=size, set=set)
+    proc = CoreNLP('ssplit')
 
     de, en = [], []
     for entry in entries:
@@ -66,9 +70,14 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
             if delex:
                 target = lexEntry.template
             else:
-                target = lexEntry.text
-            target_list.append(target)
+                out = proc.parse_doc(lexEntry.text)
 
+                text = ''
+                for snt in out['sentences']:
+                    text += ' '.join(snt['tokens'])
+                    text += ' '
+                target = text.strip()
+            target_list.append(target)
 
             print source
             print target
