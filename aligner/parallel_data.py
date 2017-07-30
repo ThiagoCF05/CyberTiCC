@@ -111,7 +111,8 @@ if __name__ == '__main__':
     EVAL =  args.eval
 
     de, en = get_parallel(SET, DELEX, SIZE, EVAL)
-    if not EVAL:
+    # insert references only in the training set
+    if not EVAL and SET != 'dev':
         ref_de, ref_en = get_references()
 
         de.extend(ref_de)
