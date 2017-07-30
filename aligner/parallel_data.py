@@ -74,7 +74,7 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
 
                 text = ''
                 for snt in out['sentences']:
-                    text += ' '.join(snt['tokens'])
+                    text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
                     text += ' '
                 target = text.strip()
             target_list.append(target)

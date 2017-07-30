@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/parallel_data.py" afterPath="$PROJECT_DIR$/aligner/parallel_data.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -65,9 +64,27 @@
       <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="23" />
+            <state relative-caret-position="432">
+              <caret line="76" column="95" lean-forward="false" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delex.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="476" column="97" lean-forward="true" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="97" />
+              <folding>
+                <element signature="e#1081#3697#0" expanded="false" />
+                <element signature="e#3850#5201#0" expanded="false" />
+                <element signature="e#9922#12089#0" expanded="false" />
+                <element signature="e#12232#12887#0" expanded="false" />
+                <element signature="e#13053#13877#0" expanded="false" />
+                <element signature="e#13961#16475#0" expanded="false" />
+                <element signature="e#16555#18355#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1200,22 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="497" column="16" lean-forward="false" selection-start-line="497" selection-start-column="16" selection-end-line="497" selection-end-column="16" />
-          <folding>
-            <element signature="e#1081#3697#0" expanded="false" />
-            <element signature="e#3850#5201#0" expanded="false" />
-            <element signature="e#9922#12089#0" expanded="false" />
-            <element signature="e#12232#12887#0" expanded="false" />
-            <element signature="e#13053#13877#0" expanded="false" />
-            <element signature="e#13961#16475#0" expanded="false" />
-            <element signature="e#16555#18355#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/operations.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -1328,11 +1329,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
+    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="67" />
-          <folding />
+        <state relative-caret-position="312">
+          <caret line="476" column="97" lean-forward="true" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="97" />
+          <folding>
+            <element signature="e#1081#3697#0" expanded="false" />
+            <element signature="e#3850#5201#0" expanded="false" />
+            <element signature="e#9922#12089#0" expanded="false" />
+            <element signature="e#12232#12887#0" expanded="false" />
+            <element signature="e#13053#13877#0" expanded="false" />
+            <element signature="e#13961#16475#0" expanded="false" />
+            <element signature="e#16555#18355#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1344,10 +1353,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="104" column="23" lean-forward="false" selection-start-line="104" selection-start-column="11" selection-end-line="104" selection-end-column="23" />
+        <state relative-caret-position="432">
+          <caret line="76" column="95" lean-forward="false" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
           <folding />
         </state>
       </provider>
