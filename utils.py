@@ -88,6 +88,8 @@ def write_references(fname, refs):
     f3 = open(fname+'3', 'w')
     f4 = open(fname+'4', 'w')
     f5 = open(fname+'5', 'w')
+    f6 = open(fname+'6', 'w')
+    f7 = open(fname+'7', 'w')
 
     for references in refs:
         f1.write(references[0].lower().encode('utf-8'))
@@ -109,11 +111,21 @@ def write_references(fname, refs):
             f5.write(references[4].lower().encode('utf-8'))
         f5.write('\n')
 
+        if len(references) >= 6:
+            f6.write(references[5].lower().encode('utf-8'))
+        f6.write('\n')
+
+        if len(references) >= 7:
+            f7.write(references[6].lower().encode('utf-8'))
+        f7.write('\n')
+
     f1.close()
     f2.close()
     f3.close()
     f4.close()
     f5.close()
+    f6.close()
+    f7.close()
 
 def write_hyps(fname, hyps):
     f = open(fname, 'w')
