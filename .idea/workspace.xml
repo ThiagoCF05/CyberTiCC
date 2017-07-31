@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aligner/smt.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generator/template.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/parallel_data.py" afterPath="$PROJECT_DIR$/aligner/parallel_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/smt.sh" afterPath="$PROJECT_DIR$/aligner/smt.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -24,7 +24,7 @@
       <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="15">
               <caret line="61" column="15" lean-forward="false" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
               <folding>
                 <element signature="e#962#1325#0" expanded="false" />
@@ -36,8 +36,18 @@
       <file leaf-file-name="template.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/template.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="smt.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -53,41 +63,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="moses_commands" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aligner/moses_commands">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="smt.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_delex.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/run_delex.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="76" column="95" lean-forward="false" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
+            <state relative-caret-position="462">
+              <caret line="125" column="41" lean-forward="false" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -96,8 +86,8 @@
       <file leaf-file-name="delex.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="476" column="97" lean-forward="true" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="97" />
+            <state relative-caret-position="2805">
+              <caret line="476" column="97" lean-forward="false" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="97" />
               <folding>
                 <element signature="e#1081#3697#0" expanded="false" />
                 <element signature="e#3850#5201#0" expanded="false" />
@@ -129,7 +119,7 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
+            <state relative-caret-position="1830">
               <caret line="122" column="4" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
               <folding />
             </state>
@@ -204,11 +194,11 @@
         <option value="$PROJECT_DIR$/classifier/ordering.py" />
         <option value="$PROJECT_DIR$/classifier/maxent.py" />
         <option value="$PROJECT_DIR$/aligner/moses_commands" />
-        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/aligner/smt.sh" />
         <option value="$PROJECT_DIR$/generator/template.sh" />
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
+        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
+        <option value="$PROJECT_DIR$/aligner/smt.sh" />
       </list>
     </option>
   </component>
@@ -231,6 +221,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -296,6 +287,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CyberTiCC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CyberTiCC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -316,7 +321,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -913,7 +917,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18336026" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18578352" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -998,7 +1002,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aligner/parallel_data.py</url>
-          <line>121</line>
+          <line>123</line>
           <option name="timeStamp" value="305" />
         </line-breakpoint>
       </breakpoints>
@@ -1226,13 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/mongoengine/base/document.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1258,7 +1255,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="45" lean-forward="false" selection-start-line="90" selection-start-column="45" selection-end-line="90" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,7 +1263,7 @@
         <state relative-caret-position="-1443">
           <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="37" />
           <folding>
-            <element signature="e#156#167#0" expanded="true" />
+            <element signature="e#156#167#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1277,26 +1273,31 @@
         <state relative-caret-position="-33">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="46" />
           <folding>
-            <element signature="e#165#174#0" expanded="true" />
+            <element signature="e#165#174#0" expanded="false" />
             <element signature="e#2188#3534#0" expanded="false" />
             <element signature="e#3600#5551#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
+    <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="476" column="97" lean-forward="true" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="97" />
-          <folding>
-            <element signature="e#1081#3697#0" expanded="false" />
-            <element signature="e#3850#5201#0" expanded="false" />
-            <element signature="e#9922#12089#0" expanded="false" />
-            <element signature="e#12232#12887#0" expanded="false" />
-            <element signature="e#13053#13877#0" expanded="false" />
-            <element signature="e#13961#16475#0" expanded="false" />
-            <element signature="e#16555#18355#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="132">
+          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/moses_commands">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/run_delex.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1308,11 +1309,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
+    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="76" column="95" lean-forward="false" selection-start-line="76" selection-start-column="95" selection-end-line="76" selection-end-column="95" />
-          <folding />
+        <state relative-caret-position="2805">
+          <caret line="476" column="97" lean-forward="false" selection-start-line="476" selection-start-column="45" selection-end-line="476" selection-end-column="97" />
+          <folding>
+            <element signature="e#1081#3697#0" expanded="false" />
+            <element signature="e#3850#5201#0" expanded="false" />
+            <element signature="e#9922#12089#0" expanded="false" />
+            <element signature="e#12232#12887#0" expanded="false" />
+            <element signature="e#13053#13877#0" expanded="false" />
+            <element signature="e#13961#16475#0" expanded="false" />
+            <element signature="e#16555#18355#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1329,49 +1338,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/tokenizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="35" column="67" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
+        <state relative-caret-position="1830">
           <caret line="122" column="4" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/moses_commands">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/run_delex.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="15">
           <caret line="61" column="15" lean-forward="false" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
           <folding>
             <element signature="e#962#1325#0" expanded="false" />
@@ -1379,10 +1356,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="125" column="41" lean-forward="false" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="50" column="40" lean-forward="false" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generator/template.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
           <folding />
         </state>
       </provider>

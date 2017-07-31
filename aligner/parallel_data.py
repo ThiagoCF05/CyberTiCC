@@ -106,6 +106,7 @@ if __name__ == '__main__':
     parser.add_argument('size', type=int, default=10, help='consider sentences with less or equal to N triples')
     parser.add_argument("--dev", action="store_true", help="development set")
     parser.add_argument("--delex", action="store_true", help="delexicalized templates")
+    parser.add_argument("--references", action="store_true", help="include references")
     parser.add_argument("--eval", action="store_true", help="evaluation mode")
 
     args = parser.parse_args()
@@ -118,10 +119,11 @@ if __name__ == '__main__':
         SET = 'dev'
     DELEX = args.delex
     EVAL =  args.eval
+    REFS = args.references
 
     de, en = get_parallel(SET, DELEX, SIZE, EVAL)
     # insert references only in the training set
-    if not EVAL and SET != 'dev':
+    if not EVAL and SET != 'dev' and REFS:
         ref_de, ref_en = get_references()
 
         de.extend(ref_de)
