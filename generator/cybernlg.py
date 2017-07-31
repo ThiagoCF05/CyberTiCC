@@ -196,7 +196,11 @@ class CyberNLG(object):
         templates = self.reg_process(templates, entitymap)
 
         # Ranking with KenLM
-        template = sorted(templates, key=lambda x: self.model.score(x), reverse=True)[0]
+        templates = sorted(templates, key=lambda x: self.model.score(x), reverse=True)
+        if len(templates) > 0:
+            template = templates[0]
+        else:
+            template = ''
 
         self.hyps.append(template.strip())
 

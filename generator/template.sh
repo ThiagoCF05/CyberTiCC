@@ -1,5 +1,6 @@
 #!/bin/bash
 
+rm -R /home/tcastrof/cyber/data/template/manual
 mkdir /home/tcastrof/cyber/data/template/manual
 
 python cybernlg.py \
@@ -7,6 +8,7 @@ python cybernlg.py \
 	/home/tcastrof/cyber/data/template/manual/ref \
 	manual
 
+rm -R /home/tcastrof/cyber/data/template/automatic
 mkdir /home/tcastrof/cyber/data/template/automatic
 
 python cybernlg.py \
