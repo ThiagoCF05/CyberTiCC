@@ -87,7 +87,7 @@ class REG(object):
         references = sorted(references, key=lambda x: (x['sentence'], x['pos']))
         prev_references = []
         for reference in references:
-            reference['realization'] = self._realize(prev_references, reference)
+            reference['realization'] = self._realize(prev_references, reference).lower()
             prev_references.append(reference)
 
         for reference in references:

@@ -88,7 +88,7 @@ class CyberNLG(object):
         striples = clf.order(triples, semcategory, self.clf_beam)
         return striples
 
-    def _extract_template(self, triples):
+    def _extract_template(self, triples, semcategory=''):
         '''
         Extract templates based on the triple set
         :param self:
@@ -100,11 +100,22 @@ class CyberNLG(object):
 
         # Select templates that have the same predicates (in the same order??) than the input triples
         if self.delex_type in ['automatic', 'manual']:
-            train_templates = Template.objects(Q(triples__size=len(triples)) & Q(delex_type=self.delex_type))
+            if semcategory == '':
+                train_templates = Template.objects(Q(triples__size=len(triples)) & Q(delex_type=self.delex_type))
+            else:
+                train_templates = Template.objects(Q(triples__size=len(triples)) & Q(delex_type=self.delex_type) & Q(category=semcategory))
         else:
-            train_templates = Template.objects(triples__size=len(triples))
+            if semcategory == '':
+                train_templates = Template.objects(triples__size=len(triples))
+            else:
+                train_templates = Template.objects(Q(triples__size=len(triples)) & Q(category=semcategory))
+
         for i, triple in enumerate(triples):
-            train_templates = filter(lambda template: template.triples[i].predicate.name == triple.predicate.name, train_templates)
+            new_train_templates = []
+            for train_template in train_templates:
+                if triple.predicate.name in map(lambda triple: triple.predicate.name, train_template.triples):
+                    new_train_templates.append(train_template)
+            train_templates = copy.deepcopy(new_train_templates)
 
         # extract templates
         templates = []
@@ -131,9 +142,12 @@ class CyberNLG(object):
                 template = template.replace(tag, '_'.join(entity.name.replace('\'', '').replace('\"', '').split()))
             new_templates.append((template, float(freq)/dem))
 
+        if len(new_templates) == 0 and semcategory != '':
+            new_templates, entitymap, predicates = self._extract_template(triples, '')
+
         return new_templates, entitymap, predicates
 
-    def template_process(self, triples):
+    def template_process(self, triples, semcategory=''):
         '''
         Process a set of triples, extracting the sentence templates that describe it
         :param self:
@@ -143,7 +157,7 @@ class CyberNLG(object):
         # Try to extract a full template
         begin, end, templates = 0, len(triples), []
         while begin < len(triples):
-            partial_templates, entitymap, predicates = self._extract_template(triples[begin:end])[:self.beam]
+            partial_templates, entitymap, predicates = self._extract_template(triples[begin:end], semcategory)[:self.beam]
 
             if len(partial_templates) > 0:
                 if len(templates) == 0:
@@ -187,7 +201,7 @@ class CyberNLG(object):
         # Templates selection
         templates = []
         for triples in striples:
-            templates.extend(self.template_process(triples[0]))
+            templates.extend(self.template_process(triples[0], semcategory))
 
         templates = sorted(templates, key=lambda template: template[1], reverse=True)[:self.beam]
 
