@@ -149,12 +149,13 @@ class CyberNLG(object):
                 if len(templates) == 0:
                     templates = map(lambda template: ([template[0]], template[1]), partial_templates)
                 else:
+                    new_templates = []
                     for i, template in enumerate(templates):
                         for partial_template in partial_templates:
-                            templates[i][0].append(partial_template[0])
-                            templates[i] = (templates[i][0], templates[i][1] * partial_template[1])
+                            new_template = (templates[i][0] + [partial_template[0]], templates[i][1] * partial_template[1])
+                            new_templates.append(new_template)
 
-                    templates = sorted(templates, key=lambda template: template[1], reverse=True)[:self.beam]
+                    templates = sorted(new_templates, key=lambda template: template[1], reverse=True)[:self.beam]
 
                 begin = copy.copy(end)
                 end = len(triples)

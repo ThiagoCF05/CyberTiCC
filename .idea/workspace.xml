@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/template.sh" afterPath="$PROJECT_DIR$/generator/template.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -20,19 +19,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="202" column="24" lean-forward="false" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
+            <state relative-caret-position="172">
+              <caret line="154" column="102" lean-forward="false" selection-start-line="154" selection-start-column="102" selection-end-line="154" selection-end-column="102" />
               <folding>
                 <element signature="e#962#1325#0" expanded="false" />
+                <element signature="e#1384#2326#0" expanded="false" />
+                <element signature="e#2387#2606#0" expanded="false" />
+                <element signature="e#2658#4533#0" expanded="false" />
+                <element signature="e#6009#7495#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="template.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/template.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -196,8 +199,8 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/aligner/smt.sh" />
-        <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/generator/template.sh" />
+        <option value="$PROJECT_DIR$/generator/cybernlg.py" />
       </list>
     </option>
   </component>
@@ -996,7 +999,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/generator/cybernlg.py</url>
-          <line>190</line>
+          <line>191</line>
           <option name="timeStamp" value="304" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1370,21 +1373,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="202" column="24" lean-forward="false" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
-          <folding>
-            <element signature="e#962#1325#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generator/template.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="50" lean-forward="false" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="154" column="102" lean-forward="false" selection-start-line="154" selection-start-column="102" selection-end-line="154" selection-end-column="102" />
+          <folding>
+            <element signature="e#962#1325#0" expanded="false" />
+            <element signature="e#1384#2326#0" expanded="false" />
+            <element signature="e#2387#2606#0" expanded="false" />
+            <element signature="e#2658#4533#0" expanded="false" />
+            <element signature="e#6009#7495#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
