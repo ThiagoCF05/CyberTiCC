@@ -12,6 +12,7 @@ import argparse
 import copy
 import sys
 sys.path.append('../')
+sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
 from db.model import *
 from mongoengine.queryset.visitor import Q
 import kenlm
@@ -21,6 +22,7 @@ import utils
 
 from classifier.maxent import CLF
 from reg.reg_main import REG
+from stanford_corenlp_pywrapper import CoreNLP
 
 class CyberNLG(object):
     def __init__(self, lm, clf, beam, clf_beam, delex_type):
@@ -226,6 +228,16 @@ class CyberNLG(object):
         return template
 
 def write_references(refs, fname):
+    def get_tok_lw(reference, proc):
+        ref = reference
+        out = proc.parse_doc(ref)
+        text = ''
+        for snt in out['sentences']:
+            text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+            text += ' '
+        text = text.strip().lower()
+        return text
+
     f1 = open(fname+'1', 'w')
     f2 = open(fname+'2', 'w')
     f3 = open(fname+'3', 'w')
@@ -234,32 +246,42 @@ def write_references(refs, fname):
     f6 = open(fname+'6', 'w')
     f7 = open(fname+'7', 'w')
 
+    proc = CoreNLP('ssplit')
+
     for references in refs:
-        f1.write(references[0].encode('utf-8'))
+        text = get_tok_lw(references[0], proc)
+
+        f1.write(text.encode('utf-8'))
         f1.write('\n')
 
         if len(references) >= 2:
-            f2.write(references[1].encode('utf-8'))
+            text = get_tok_lw(references[1], proc)
+            f2.write(text.encode('utf-8'))
         f2.write('\n')
 
         if len(references) >= 3:
-            f3.write(references[2].encode('utf-8'))
+            text = get_tok_lw(references[2], proc)
+            f3.write(text.encode('utf-8'))
         f3.write('\n')
 
         if len(references) >= 4:
-            f4.write(references[3].encode('utf-8'))
+            text = get_tok_lw(references[3], proc)
+            f4.write(text.encode('utf-8'))
         f4.write('\n')
 
         if len(references) >= 5:
-            f5.write(references[4].encode('utf-8'))
+            text = get_tok_lw(references[4], proc)
+            f5.write(text.encode('utf-8'))
         f5.write('\n')
 
         if len(references) >= 6:
-            f6.write(references[5].encode('utf-8'))
+            text = get_tok_lw(references[5], proc)
+            f6.write(text.encode('utf-8'))
         f6.write('\n')
 
         if len(references) >= 7:
-            f7.write(references[6].encode('utf-8'))
+            text = get_tok_lw(references[6], proc)
+            f7.write(text.encode('utf-8'))
         f7.write('\n')
 
     f1.close()

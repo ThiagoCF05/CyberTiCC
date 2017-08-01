@@ -8,6 +8,7 @@ python parallel_data.py /home/tcastrof/cyber/data/smt/lex/train.de /home/tcastro
 
 python parallel_data.py /home/tcastrof/cyber/data/smt/lex/dev.de /home/tcastrof/cyber/data/smt/lex/dev.en 10 --dev
 
+mkdir /home/tcastrof/cyber/data/smt/lex/refs
 python parallel_data.py /home/tcastrof/cyber/data/smt/lex/refs/dev.de_gold /home/tcastrof/cyber/data/smt/lex/refs/dev.ref 10 --dev --eval
 
 cd /home/tcastrof/cyber/data/smt/lex
@@ -46,6 +47,7 @@ python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/train.de /home/tca
 
 python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/dev.de /home/tcastrof/cyber/data/smt/lex_ref/dev.en 10 --dev
 
+mkdir /home/tcastrof/cyber/data/smt/lex_ref/refs
 python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/refs/dev.de_gold /home/tcastrof/cyber/data/smt/lex_ref/refs/dev.ref 10 --dev --eval
 
 cd /home/tcastrof/cyber/data/smt/lex_ref

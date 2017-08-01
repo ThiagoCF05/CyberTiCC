@@ -13,4 +13,5 @@ mkdir /home/tcastrof/cyber/data/template/automatic
 
 python cybernlg.py \
 	/home/tcastrof/cyber/data/template/automatic/hyps \
-	/home/tcastrof/cyber/data/template/automatic/ref
+	/home/tcastrof/cyber/data/template/automatic/ref \
+	 automatic+manual
