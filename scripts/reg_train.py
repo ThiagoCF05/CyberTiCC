@@ -31,7 +31,7 @@ for ref in refs:
         'name':[]
     }
 
-    for refex in ref:
+    for refex in ref.refexes:
         reftype = refex.ref_type
         references[(syntax, text_status, sentence_status, entity)][reftype].append(refex.refex)
 
@@ -42,27 +42,27 @@ for ref in refs:
 
 f = open('reg', 'w')
 for key in references:
-    f.write('\t'.join(list(key)))
+    f.write('\t'.join(list(key)).encode('utf-8'))
     f.write('\n')
 
     refexes = sorted(references[key]['name'].items(), key=lambda x: x[1], reverse=True)[:2]
     for refex in refexes:
-        f.write('\t'.join(['name', refex]))
+        f.write('\t'.join(['name', refex[0], str(refex[1])]).encode('utf-8'))
         f.write('\n')
 
     refexes = sorted(references[key]['pronoun'].items(), key=lambda x: x[1], reverse=True)[:2]
     for refex in refexes:
-        f.write('\t'.join(['pronoun', refex]))
+        f.write('\t'.join(['pronoun', refex[0], str(refex[1])]).encode('utf-8'))
         f.write('\n')
 
     refexes = sorted(references[key]['description'].items(), key=lambda x: x[1], reverse=True)[:2]
     for refex in refexes:
-        f.write('\t'.join(['description', refex]))
+        f.write('\t'.join(['description', refex[0], str(refex[1])]).encode('utf-8'))
         f.write('\n')
 
     refexes = sorted(references[key]['demonstrative'].items(), key=lambda x: x[1], reverse=True)[:2]
     for refex in refexes:
-        f.write('\t'.join(['demonstrative', refex]))
+        f.write('\t'.join(['demonstrative', refex[0], str(refex[1])]).encode('utf-8'))
         f.write('\n')
     f.write(10 * '-')
     f.write('\n')

@@ -124,11 +124,11 @@ def add_refex(reference, refex):
 def save_refex(reftype, refex, annotation='automatic'):
     entry = Refex(ref_type=reftype, refex=refex, annotation=annotation)
 
-    query = Refex.objects(ref_type=reftype, refex=refex.strip(), annotation=annotation)
-    if query.count() == 0:
-        entry.save()
-    else:
-        entry = query.get()
+    # query = Refex.objects(ref_type=reftype, refex=refex.strip(), annotation=annotation)
+    # if query.count() == 0:
+    #     entry.save()
+    # else:
+    #     entry = query.get()
     return entry
 
 # Clean database
@@ -136,7 +136,6 @@ def clean():
     Entry.objects().delete()
     Triple.objects().delete()
     Reference.objects().delete()
-    Refex.objects().delete()
     Lex.objects().delete()
     Entity.objects().delete()
     Predicate.objects().delete()
@@ -144,6 +143,5 @@ def clean():
 # Clean delex information
 def clean_delex():
     Reference.objects().delete()
-    Refex.objects().delete()
     Lex.objects().update(template='')
     Template.objects().delete()

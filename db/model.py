@@ -27,7 +27,7 @@ class Triple(Document):
 
     meta = {'allow_inheritance': True}
 
-class Refex(Document):
+class Refex(EmbeddedDocument):
     ref_type = StringField(required=True, max_length=10)
     refex = StringField(required=True, max_length=400)
     annotation = StringField(max_length=10)
@@ -39,7 +39,7 @@ class Reference(Document):
     text_status = StringField(required=True, max_length=10)
     sentence_status = StringField(required=True, max_length=10)
 
-    refexes = ListField(ReferenceField(Refex))
+    refexes = ListField(EmbeddedDocumentField(Refex))
 
     meta = {'allow_inheritance': True}
 
