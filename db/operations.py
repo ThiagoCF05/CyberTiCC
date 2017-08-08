@@ -76,7 +76,9 @@ def insert_template(lexEntry, template, delex_type='automatic'):
 
 # Template operations
 def save_template(category, triples, template, delex_type):
-    template = Template(category=category, triples=triples, template=template, delex_type=delex_type)
+    size = Template.objects().count()
+
+    template = Template(docid=size+1, category=category, triples=triples, template=template, delex_type=delex_type)
     template.save()
     return template
 
@@ -122,7 +124,8 @@ def add_refex(reference, refex):
 
 # Referring expression
 def save_refex(reftype, refex, annotation='automatic'):
-    entry = Refex(ref_type=reftype, refex=refex, annotation=annotation)
+    size = Refex.objects().count()
+    entry = Refex(docid=size+1, ref_type=reftype, refex=refex, annotation=annotation)
 
     # query = Refex.objects(ref_type=reftype, refex=refex.strip(), annotation=annotation)
     # if query.count() == 0:

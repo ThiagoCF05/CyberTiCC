@@ -471,66 +471,67 @@ class Delexicalizer(object):
         entity_map, predicates = self.parse(entry.triples)
         lexEntries = entry.texts
         for lexEntry in lexEntries:
-            self.references = []
+            if lexEntry.template.strip() == '':
+                self.references = []
 
-            # stanford parsing
-            out_parse = self.proc.parse_doc(lexEntry.text)
-            self.out_parse = out_parse
+                # stanford parsing
+                out_parse = self.proc.parse_doc(lexEntry.text)
+                self.out_parse = out_parse
 
-            # get template
-            text = lexEntry.text
-            if lexEntry.template == '':
-                template = []
-                for snt in self.out_parse['sentences']:
-                    template.append(' '.join(snt['tokens']))
-                template = ' '.join(template).replace('-LRB-', '(').replace('-RRB-', ')').strip()
-            else:
-                template = copy.copy(lexEntry.template)
-
-            # Reference matching
-            template, delex_tags = self.reference_match(template, entity_map)
-            # Simple match
-            template, delex_tags2 = self.simple_match(template, entity_map)
-            delex_tags.extend(delex_tags2)
-
-            # Similarity matching (only for date matching from now on)
-            if len(delex_tags) < len(entity_map):
-                template, new_nps = self.normalize_dates(template, self.out_parse)
-
-                out = self.proc_parse.parse_doc(template)
-                parse_trees = []
-                for snt in out['sentences']:
-                    parse_trees.append(snt['parse'])
-
-                if len(parse_trees) > 1:
-                    parse_tree = '(MULTI-SENTENCE '
-                    for tree in parse_trees:
-                        parse_tree += tree + ' '
-                    parse_tree = parse_tree.strip() + ')'
+                # get template
+                text = lexEntry.text
+                if lexEntry.template == '':
+                    template = []
+                    for snt in self.out_parse['sentences']:
+                        template.append(' '.join(snt['tokens']))
+                    template = ' '.join(template).replace('-LRB-', '(').replace('-RRB-', ')').strip()
                 else:
-                    parse_tree = parse_trees[0]
+                    template = copy.copy(lexEntry.template)
 
-                nps = self.get_nps(parse_tree)
-                nps.extend(new_nps)
-                if len(nps) > 0:
-                    template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)
+                # Reference matching
+                template, delex_tags = self.reference_match(template, entity_map)
+                # Simple match
+                template, delex_tags2 = self.simple_match(template, entity_map)
+                delex_tags.extend(delex_tags2)
 
-            # Probabilistic matching
-            # nps = self.get_nps(parse_tree)
-            # template = self.probabilistic_match(template, entity_map, predicates, nps)
+                # Similarity matching (only for date matching from now on)
+                if len(delex_tags) < len(entity_map):
+                    template, new_nps = self.normalize_dates(template, self.out_parse)
 
-            # Coreference match
-            template = self.coreference_match(template, entity_map, self.out_parse)
+                    out = self.proc_parse.parse_doc(template)
+                    parse_trees = []
+                    for snt in out['sentences']:
+                        parse_trees.append(snt['parse'])
 
-            template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '').replace('PROBABILISTIC-', '').replace('REF-', '')
-            dbop.insert_template(lexEntry, template, 'automatic')
+                    if len(parse_trees) > 1:
+                        parse_tree = '(MULTI-SENTENCE '
+                        for tree in parse_trees:
+                            parse_tree += tree + ' '
+                        parse_tree = parse_tree.strip() + ')'
+                    else:
+                        parse_tree = parse_trees[0]
 
-            print text
-            print template
-            print 10 * '-'
+                    nps = self.get_nps(parse_tree)
+                    nps.extend(new_nps)
+                    if len(nps) > 0:
+                        template, delex_tags = self.similarity_match(template, entity_map, delex_tags, nps)
 
-            if self.save_references:
-                ref_delex.parse_references(self.references)
+                # Probabilistic matching
+                # nps = self.get_nps(parse_tree)
+                # template = self.probabilistic_match(template, entity_map, predicates, nps)
+
+                # Coreference match
+                template = self.coreference_match(template, entity_map, self.out_parse)
+
+                template = template.replace('SIMILARITY-', '').replace('SIMPLE-', '').replace('PROBABILISTIC-', '').replace('REF-', '')
+                dbop.insert_template(lexEntry, template, 'automatic')
+
+                print text
+                print template
+                print 10 * '-'
+
+                if self.save_references:
+                    ref_delex.parse_references(self.references)
 
     def run(self):
         # entries = Entry.objects(set='train', size=1)
@@ -538,11 +539,15 @@ class Delexicalizer(object):
 
         print entries.count()
         for entry in entries:
-            if entry.texts[0].template == '':
-                self.process(entry)
+            self.process(entry)
         evaluation.evaluate()
 
 if __name__ == '__main__':
     # dbop.clean_delex()
-    Delexicalizer(_set='train', save_references=True).run()
-    Delexicalizer(_set='dev', save_references=False).run()
+    delex = Delexicalizer(_set='train', save_references=True)
+    delex.run()
+    del delex
+
+    delex = Delexicalizer(_set='dev', save_references=False)
+    delex.run()
+    del delex

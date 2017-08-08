@@ -70,13 +70,14 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
             if delex:
                 target = lexEntry.template
             else:
-                out = proc.parse_doc(lexEntry.text)
+                target = lexEntry.text
+            out = proc.parse_doc(target)
 
-                text = ''
-                for snt in out['sentences']:
-                    text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
-                    text += ' '
-                target = text.strip()
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            target = text.strip()
             target_list.append(target)
 
             print source

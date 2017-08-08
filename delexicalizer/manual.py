@@ -18,8 +18,9 @@ from db.model import *
 from stanford_corenlp_pywrapper import CoreNLP
 
 class ManualDelexicalizer(object):
-    def __init__(self, fname):
+    def __init__(self, fname, _set='train'):
         self.proc = CoreNLP('parse')
+        self._set = _set
 
         f = open(fname)
         doc = f.read()
@@ -52,7 +53,7 @@ class ManualDelexicalizer(object):
                 if comment in ['g', 'good']:
                     print template
                     print 10 * '-'
-                    self.update_template(entryId, size, semcategory, lexId, template)
+                    self.update_template(entryId, size, semcategory, _set, lexId, template)
                     references = self.process_references(text, template, entity_map)
                     self.save_references(references)
                 elif correct != '' and comment != 'wrong':
@@ -155,8 +156,8 @@ class ManualDelexicalizer(object):
                     template = template.replace(tag, ' ', 1)
         return references
 
-    def update_template(self, entryId, size, semcategory, lexId, template):
-        entry = Entry.objects(docid=entryId, size=size, category=semcategory).first()
+    def update_template(self, entryId, size, semcategory, _set, lexId, template):
+        entry = Entry.objects(docid=entryId, size=size, category=semcategory, set=_set).first()
 
         for lexEntry in entry.texts:
             if lexEntry.docid == lexId:

@@ -28,6 +28,7 @@ class Triple(Document):
     meta = {'allow_inheritance': True}
 
 class Refex(EmbeddedDocument):
+    docid = StringField(required=True)
     ref_type = StringField(required=True, max_length=10)
     refex = StringField(required=True, max_length=400)
     annotation = StringField(max_length=10)
@@ -44,6 +45,7 @@ class Reference(Document):
     meta = {'allow_inheritance': True}
 
 class Template(Document):
+    docid = IntField(required=True)
     category = StringField(required=True, max_length=20)
     triples = ListField(ReferenceField(Triple))
     template = StringField(max_length=1000)
