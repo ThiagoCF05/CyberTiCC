@@ -59,7 +59,7 @@ class ManualDelexicalizer(object):
                 elif correct != '' and comment != 'wrong':
                     print correct
                     print 10 * '-'
-                    self.update_template(entryId, size, semcategory, lexId, correct)
+                    self.update_template(entryId, size, semcategory, _set, lexId, correct)
                     references = self.process_references(text, correct, entity_map)
                     self.save_references(references)
 
