@@ -119,8 +119,11 @@ def save_reference(entity, syntax, text_status, sentence_status):
         reference = query.get()
     return reference
 
-def add_refex(reference, refex):
-    reference.update(add_to_set__refexes=[refex])
+def add_refex(reference, reftype, refex, annotation='automatic'):
+    size = len(reference.refexes)
+    entry = Refex(docid=size+1, ref_type=reftype, refex=refex, annotation=annotation)
+
+    reference.update(add_to_set__refexes=[entry])
 
 # Referring expression
 def save_refex(reftype, refex, annotation='automatic'):

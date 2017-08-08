@@ -92,5 +92,4 @@ def parse_references(references, annotation='automatic'):
                                   text_status=reference['text_status'],
                                   sentence_status=reference['sentence_status'])
 
-        refex = dbop.save_refex(reftype=reference['reftype'], refex=reference['refex'], annotation=annotation)
-        dbop.add_refex(ref, refex)
+        dbop.add_refex(ref, reference['reftype'], reference['refex'], annotation)
