@@ -30,6 +30,7 @@ class Triple(Document):
 class Refex(Document):
     ref_type = StringField(required=True, max_length=10)
     refex = StringField(required=True, max_length=400)
+    annotation = StringField(max_length=10)
 
 class Reference(Document):
     entity = ReferenceField(Entity)

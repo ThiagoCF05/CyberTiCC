@@ -30,6 +30,11 @@ def regular_bayes(references, distributions=DISTRIBUTIONS):
     return references
 
 def variation_bayes(references):
+    '''
+    Apply variation in the choice of referential with distributions from ACL 2016 model
+    :param references:
+    :return:
+    '''
     distributions = p.load(open('reg/pronoun_data/form_distributions.cPickle'))
     def group():
         g = {}

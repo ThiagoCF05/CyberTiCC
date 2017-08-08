@@ -16,11 +16,12 @@ import operator
 
 class ProperNameTraining(object):
     def __init__(self):
-        references = Reference.objects()
+        self.references = Reference.objects()
 
+    def run_lm(self):
         self.trainset = {}
         self.trainset_backoff = {}
-        for reference in references:
+        for reference in self.references:
             text_status = reference.text_status
             entity = reference.entity.name
 
@@ -38,7 +39,6 @@ class ProperNameTraining(object):
 
                         self.trainset[(text_status, entity, n_tm1)].append(n_t)
                         self.trainset_backoff[(entity, n_tm1)].append(n_t)
-
 
         for key in self.trainset:
             self.trainset[key] = nltk.FreqDist(self.trainset[key])
@@ -120,4 +120,5 @@ class ProperNameGeneration(object):
 
 if __name__ == '__main__':
     train = ProperNameTraining()
+    train.run_lm()
     train.write_pickle()

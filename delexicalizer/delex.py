@@ -181,7 +181,7 @@ class Delexicalizer(object):
 
         matchers = self.get_refexes(entity_map)
         for matcher in matchers:
-            tag, entity_name, matcher = matcher
+            tag, entity_name, matcher, reftype = matcher
             matcher = matcher + ' '
 
             regex = re.findall(re.escape(matcher), template)
@@ -190,7 +190,7 @@ class Delexicalizer(object):
                 if entity_name not in refexes:
                     refexes[entity_name] = []
                 for row in regex:
-                    refexes[entity_name].append(matcher)
+                    refexes[entity_name].append({'matcher':matcher, 'reftype':reftype})
 
                 # Solving the bracket problem of regular expressions
                 if len(re.findall(matcher, template)) == 0:
@@ -202,8 +202,8 @@ class Delexicalizer(object):
             references, entity_removals = ref_delex.get_references(out, 'REF-'+tag, entity)
             for i, reference in enumerate(references):
                 reference['tag'] = tag
-                reference['reftype'] = 'name'
-                reference['refex'] = refexes[entity.name][i]
+                reference['reftype'] = refexes[entity.name][i]['reftype']
+                reference['refex'] = refexes[entity.name][i]['matcher']
 
                 del reference['determiner']
                 del reference['compounds']
@@ -221,7 +221,7 @@ class Delexicalizer(object):
                     snt_template.append(token)
             snt_templates[i] = ' '.join(snt_template)
 
-        template = ' '.join(snt_templates).replace('-LRB- ', '( ').replace(' -RRB-', ' )').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+        template = ' '.join(snt_templates).replace('-LRB-', '(').replace('-RRB-', ')').strip()
         return template, delex_tag
 
     def get_refexes(self, entity_map):
@@ -238,7 +238,7 @@ class Delexicalizer(object):
             for reference in references:
                 for refex in reference.refexes:
                     if refex.ref_type != 'pronoun':
-                        refexes.append((tag, entity.name, refex.refex))
+                        refexes.append((tag, entity.name, refex.refex, refex.ref_type))
 
         refexes = sorted(list(set(refexes)), key=lambda x: len(x[2]), reverse=True)
         return refexes
@@ -272,6 +272,10 @@ class Delexicalizer(object):
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
+                if reference['determiner'].lower().strip() in ['the', 'a']:
+                    reference['reftype'] = 'description'
+                elif reference['determiner'].lower().strip() in ['this', 'that', 'these', 'those']:
+                    reference['reftype'] = 'demonstrative'
 
                 reference['refex'] = reference['determiner']
                 for compound in sorted(reference['compounds'], key=lambda x: x[0]):
@@ -294,7 +298,7 @@ class Delexicalizer(object):
                     snt_template.append(token)
             snt_templates[i] = ' '.join(snt_template)
 
-        template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+        template = ' '.join(snt_templates).replace('-LRB-', '(').replace('-RRB-', ')').strip()
         return template, delex
     ############################################################################
 
@@ -436,6 +440,11 @@ class Delexicalizer(object):
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
+                if reference['determiner'].lower().strip() in ['the', 'a']:
+                    reference['reftype'] = 'description'
+                elif reference['determiner'].lower().strip() in ['this', 'that', 'these', 'those']:
+                    reference['reftype'] = 'demonstrative'
+
                 reference['refex'] = refexes[entity.name]
 
                 del reference['determiner']
@@ -454,7 +463,7 @@ class Delexicalizer(object):
                     snt_template.append(token)
             snt_templates[i] = ' '.join(snt_template)
 
-        template = ' '.join(snt_templates).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+        template = ' '.join(snt_templates).replace('-LRB-', '(').replace('-RRB-', ')').strip()
 
         return template, delex_tag
     ############################################################################

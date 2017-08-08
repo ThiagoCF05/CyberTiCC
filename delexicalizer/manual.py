@@ -141,6 +141,10 @@ class ManualDelexicalizer(object):
                     ref_type = 'name'
                     if refex.lower().strip() in ['he', 'his', 'him', 'she', 'hers', 'her', 'it', 'its', 'they', 'theirs', 'them']:
                         ref_type = 'pronoun'
+                    elif refex.lower().strip().split()[0] in ['the', 'a']:
+                        ref_type = 'description'
+                    elif refex.lower().strip().split()[0] in ['this', 'these', 'that', 'those']:
+                        ref_type = 'demonstrative'
 
                     for ref in references:
                         if ref['tag'] == tag and 'refex' not in ref:
@@ -172,7 +176,7 @@ class ManualDelexicalizer(object):
                                           text_status=reference['text_status'],
                                           sentence_status=reference['sentence_status'])
 
-                refex = dbop.save_refex(reftype=reference['reftype'], refex=reference['refex'])
+                refex = dbop.save_refex(reftype=reference['reftype'], refex=reference['refex'], annotation='manual')
                 dbop.add_refex(ref, refex)
 
     def process_references(self, text, template, entities):
@@ -187,7 +191,7 @@ class ManualDelexicalizer(object):
         text = []
         for i, snt in enumerate(out['sentences']):
             text.extend(snt['tokens'])
-        text = ' '.join(text).replace('-LRB- ', '(').replace(' -RRB-', ')').replace('-LRB-', '(').replace('-RRB-', ')').strip()
+        text = ' '.join(text).replace('-LRB- ', '(').replace(' -RRB-', ')').strip()
 
         out = self.proc.parse_doc(template)['sentences']
         references = self._get_references_info(out, entities)

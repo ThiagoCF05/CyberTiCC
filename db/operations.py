@@ -121,10 +121,10 @@ def add_refex(reference, refex):
     reference.update(add_to_set__refexes=[refex])
 
 # Referring expression
-def save_refex(reftype, refex):
-    entry = Refex(ref_type=reftype, refex=refex)
+def save_refex(reftype, refex, annotation='automatic'):
+    entry = Refex(ref_type=reftype, refex=refex, annotation=annotation)
 
-    query = Refex.objects(ref_type=reftype, refex=refex.strip())
+    query = Refex.objects(ref_type=reftype, refex=refex.strip(), annotation=annotation)
     if query.count() == 0:
         entry.save()
     else:
