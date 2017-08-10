@@ -69,7 +69,7 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
 
         target_list = []
         for lexEntry in entry.texts:
-            if delex:
+            if delex and not evaluation:
                 target = lexEntry.template
             else:
                 target = lexEntry.text
