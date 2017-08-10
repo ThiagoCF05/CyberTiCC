@@ -39,7 +39,7 @@ class SimpleREG(object):
 
         f = open('eval1.out', 'w')
         for text in texts:
-            f.write(text)
+            f.write(text.encode('utf-8'))
             f.write('\n')
         f.close()
 

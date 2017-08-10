@@ -44,11 +44,11 @@
       <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+            <state relative-caret-position="402">
+              <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
               <folding>
                 <element signature="e#157#176#0" expanded="true" />
-                <element signature="e#1421#3169#0" expanded="false" />
+                <element signature="e#1437#3185#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1347,11 +1347,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        <state relative-caret-position="402">
+          <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
           <folding>
             <element signature="e#157#176#0" expanded="true" />
-            <element signature="e#1421#3169#0" expanded="false" />
+            <element signature="e#1437#3185#0" expanded="false" />
           </folding>
         </state>
       </provider>
