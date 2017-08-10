@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/nmt.sh" afterPath="$PROJECT_DIR$/aligner/nmt.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/reg_train.py" afterPath="$PROJECT_DIR$/scripts/reg_train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/parallel_data.py" afterPath="$PROJECT_DIR$/aligner/parallel_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/smt.sh" afterPath="$PROJECT_DIR$/aligner/smt.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -20,6 +21,18 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="140" column="51" lean-forward="false" selection-start-line="140" selection-start-column="51" selection-end-line="140" selection-end-column="51" />
+              <folding>
+                <element signature="e#333#348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="reg_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/reg_train.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -30,21 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nmt.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nmt.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smt.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="smt.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="78" column="107" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="107" />
+            <state relative-caret-position="300">
+              <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -121,13 +134,11 @@
         <option value="$PROJECT_DIR$/classifier/maxent.py" />
         <option value="$PROJECT_DIR$/aligner/moses_commands" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/aligner/smt.sh" />
         <option value="$PROJECT_DIR$/generator/template.sh" />
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/generator/reg/form_choice.py" />
         <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
-        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/db/model.py" />
         <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
         <option value="$PROJECT_DIR$/db/operations.py" />
@@ -135,7 +146,9 @@
         <option value="$PROJECT_DIR$/delexicalizer/manual.py" />
         <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
         <option value="$PROJECT_DIR$/scripts/reg_train.py" />
+        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/aligner/nmt.sh" />
+        <option value="$PROJECT_DIR$/aligner/smt.sh" />
       </list>
     </option>
   </component>
@@ -880,7 +893,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aligner/parallel_data.py</url>
-          <line>41</line>
+          <line>43</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -925,7 +938,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aligner/parallel_data.py</url>
-          <line>124</line>
+          <line>126</line>
           <option name="timeStamp" value="305" />
         </line-breakpoint>
       </breakpoints>
@@ -1214,14 +1227,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/run_generator.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1298,6 +1303,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="140" column="51" lean-forward="false" selection-start-line="140" selection-start-column="51" selection-end-line="140" selection-end-column="51" />
+          <folding>
+            <element signature="e#333#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/reg_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -1308,16 +1331,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="78" column="107" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="300">
+          <caret line="59" column="36" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="36" />
           <folding />
         </state>
       </provider>

@@ -11,6 +11,7 @@ Description:
 """
 
 import argparse
+import cPickle as p
 import sys
 sys.path.append('../')
 sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
@@ -28,16 +29,17 @@ def get_references():
         _de = ref.entity.name
 
         for refex in ref.refexes:
-            _en = refex.refex
-            de.append(_de)
-            en.append(_en)
+            if refex.annotation == 'manual':
+                _en = refex.refex
+                de.append(_de)
+                en.append(_en)
     return de, en
 
 def get_parallel(set, delex=True, size=10, evaluation=False):
     entries = Entry.objects(size__lte=size, set=set)
     proc = CoreNLP('ssplit')
 
-    de, en = [], []
+    de, en, entity_maps = [], [], []
     for entry in entries:
         entity_map, predicates = utils.map_entities(entry.triples)
         entity2tag = utils.entity2tag(entity_map)
@@ -84,12 +86,14 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
             print target
             print 10 * '-'
             if not evaluation:
+                entity_maps.append(entity_map)
                 de.append(source.strip())
                 en.append(target)
         if evaluation:
+            entity_maps.append(entity_map)
             de.append(source.strip())
             en.append(target_list)
-    return de, en
+    return de, en, entity_maps
 
 def write(fname, docs):
     f = open(fname, 'w')
@@ -102,8 +106,7 @@ if __name__ == '__main__':
     # python parallel_data.py /home/tcastrof/cyber/data/delex/train.de /home/tcastrof/cyber/data/delex/train.en 10 --dev --delex --eval
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('de', type=str, default='/home/tcastrof/cyber/data/delex/train.de', help='source language file')
-    parser.add_argument('en', type=str, default='/home/tcastrof/cyber/data/delex/train.en', help='target language file')
+    parser.add_argument('f', type=str, default='/home/tcastrof/cyber/data/delex/train', help='language file')
     parser.add_argument('size', type=int, default=10, help='consider sentences with less or equal to N triples')
     parser.add_argument("--dev", action="store_true", help="development set")
     parser.add_argument("--delex", action="store_true", help="delexicalized templates")
@@ -112,8 +115,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    DE_FILE = args.de
-    EN_FILE = args.en
+    FILE = args.f
     SIZE = args.size
     SET = 'train'
     if args.dev:
@@ -122,7 +124,7 @@ if __name__ == '__main__':
     EVAL =  args.eval
     REFS = args.references
 
-    de, en = get_parallel(SET, DELEX, SIZE, EVAL)
+    de, en, entity_maps = get_parallel(SET, DELEX, SIZE, EVAL)
     # insert references only in the training set
     if not EVAL and SET != 'dev' and REFS:
         ref_de, ref_en = get_references()
@@ -130,8 +132,10 @@ if __name__ == '__main__':
         de.extend(ref_de)
         en.extend(ref_en)
 
-    write(DE_FILE, de)
+    write(FILE+'.de', de)
     if EVAL:
-        utils.write_references(EN_FILE, en)
+        utils.write_references(FILE+'.en', en)
     else:
-        write(EN_FILE, en)
+        write(FILE+'.en', en)
+
+    p.dump(entity_maps, open(FILE+'.cPickle', 'w'))

@@ -4,12 +4,12 @@
 rm -R /home/tcastrof/cyber/data/smt/lex/
 mkdir /home/tcastrof/cyber/data/smt/lex/
 
-python parallel_data.py /home/tcastrof/cyber/data/smt/lex/train.de /home/tcastrof/cyber/data/smt/lex/train.en 10
+python parallel_data.py /home/tcastrof/cyber/data/smt/lex/train 10
 
-python parallel_data.py /home/tcastrof/cyber/data/smt/lex/dev.de /home/tcastrof/cyber/data/smt/lex/dev.en 10 --dev
+python parallel_data.py /home/tcastrof/cyber/data/smt/lex/dev 10 --dev
 
 mkdir /home/tcastrof/cyber/data/smt/lex/refs
-python parallel_data.py /home/tcastrof/cyber/data/smt/lex/refs/dev.de_gold /home/tcastrof/cyber/data/smt/lex/refs/dev.ref 10 --dev --eval
+python parallel_data.py /home/tcastrof/cyber/data/smt/lex/refs/eval 10 --dev --eval
 
 cd /home/tcastrof/cyber/data/smt/lex
 
@@ -37,18 +37,18 @@ perl /home/tcastrof/workspace/mosesdecoder/scripts/training/mert-moses.pl \
     --batch-mira --return-best-dev \
     --batch-mira-args '-J 60'
 
-/home/tcastrof/workspace/mosesdecoder/bin/moses -f mert-work/moses.ini -s 1000 < refs/dev.de_gold > dev.out
+/home/tcastrof/workspace/mosesdecoder/bin/moses -f mert-work/moses.ini -s 1000 < refs/eval.de > eval.out
 
 # references
 rm -R /home/tcastrof/cyber/data/smt/lex_ref/
 mkdir /home/tcastrof/cyber/data/smt/lex_ref/
 
-python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/train.de /home/tcastrof/cyber/data/smt/lex_ref/train.en 10 --references
+python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/train 10 --references
 
-python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/dev.de /home/tcastrof/cyber/data/smt/lex_ref/dev.en 10 --dev
+python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/dev 10 --dev
 
 mkdir /home/tcastrof/cyber/data/smt/lex_ref/refs
-python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/refs/dev.de_gold /home/tcastrof/cyber/data/smt/lex_ref/refs/dev.ref 10 --dev --eval
+python parallel_data.py /home/tcastrof/cyber/data/smt/lex_ref/refs/eval 10 --dev --eval
 
 cd /home/tcastrof/cyber/data/smt/lex_ref
 
@@ -76,4 +76,4 @@ perl /home/tcastrof/workspace/mosesdecoder/scripts/training/mert-moses.pl \
     --batch-mira --return-best-dev \
     --batch-mira-args '-J 60'
 
-/home/tcastrof/workspace/mosesdecoder/bin/moses -f mert-work/moses.ini -s 1000 < refs/dev.de_gold > dev.out
+/home/tcastrof/workspace/mosesdecoder/bin/moses -f mert-work/moses.ini -s 1000 < refs/eval.de > eval.out
