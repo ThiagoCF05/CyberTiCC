@@ -119,7 +119,7 @@ class REG(object):
         return template
 
 if __name__ == '__main__':
-    fname = '/home/tcastrof/wmt16-scripts/sample/data/refs'
+    fname = '/home/tcastrof/cyber/data/nmt/delex/refs'
 
     simple = SimpleREG()
     simple.run(fname)
