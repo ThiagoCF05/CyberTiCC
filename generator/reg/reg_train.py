@@ -27,8 +27,9 @@ refs = Reference.objects()
 entities = Entity.objects()
 
 for entity in entities:
+    print 'Entity: ', entity.name
     pronouns[entity.name] = []
-    bnames, bdescriptions, bdemonstratives = [], [], [], []
+    bnames, bdescriptions, bdemonstratives = [], [], []
 
     for syntax in ['np-subj', 'np-obj', 'subj-det']:
         for text_status in ['new', 'given']:
