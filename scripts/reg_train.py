@@ -17,6 +17,28 @@ references = {}
 
 refs = Reference.objects()
 
+entities = Entity.objects()
+
+for entity in entities:
+    for syntax in ['np-subj', 'np-obj', 'subj-det']:
+        for text_status in ['new', 'given']:
+            for sentence_status in ['new', 'given']:
+                reference = Reference.objects(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
+
+                if reference.count() > 0:
+                    reference = reference.first()
+
+                    references[(syntax, text_status, sentence_status, entity)] = {
+                        'pronoun':[],
+                        'description':[],
+                        'demonstrative':[],
+                        'name':[]
+                    }
+
+                    for refex in reference.refexes:
+                        reftype = refex.ref_type
+                        references[(syntax, text_status, sentence_status, entity)][reftype].append(refex.refex.strip())
+
 for ref in refs:
     syntax = ref.syntax
     text_status = ref.text_status
@@ -33,7 +55,7 @@ for ref in refs:
 
     for refex in ref.refexes:
         reftype = refex.ref_type
-        references[(syntax, text_status, sentence_status, entity)][reftype].append(refex.refex)
+        references[(syntax, text_status, sentence_status, entity)][reftype].append(refex.refex.strip())
 
     references[(syntax, text_status, sentence_status, entity)]['name'] = nltk.FreqDist(references[(syntax, text_status, sentence_status, entity)]['name'])
     references[(syntax, text_status, sentence_status, entity)]['pronoun'] = nltk.FreqDist(references[(syntax, text_status, sentence_status, entity)]['pronoun'])
