@@ -7,6 +7,8 @@ Description:
     Main code for Referring expression generation
 """
 
+import cPickle as p
+import os
 import sys
 sys.path.append('../')
 sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
@@ -16,6 +18,27 @@ import pronoun as prp
 import proper_name as nnp
 import description as dsc
 import form_choice
+
+class SimpleREG(object):
+    def run(self, fname):
+        entity_maps = p.load(open(os.path.join(fname, 'eval1.cPickle')))
+
+        f = open(os.path.join(fname, 'eval1.bpe.de.output.postprocessed.dev'))
+        texts = f.read().lower().split('\n')
+        f.close()
+
+        for i, text in enumerate(texts):
+            entity_map = entity_maps[i]
+
+            for tag in entity_map:
+                name = ' '.join(entity_map[tag].name.lower().split('_'))
+                texts[i] = texts[i].replace(tag.lower(), name)
+
+        f = open('eval1.out', 'w')
+        for text in texts:
+            f.write(text)
+            f.write('\n')
+        f.close()
 
 class REG(object):
     def __init__(self):
@@ -94,3 +117,9 @@ class REG(object):
             template = template.replace(reference['tag'], reference['realization'], 1)
 
         return template
+
+if __name__ == '__main__':
+    fname = '/home/tcastrof/wmt16-scripts/sample/data/refs'
+
+    simple = SimpleREG()
+    simple.run(fname)
