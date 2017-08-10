@@ -13,6 +13,7 @@ import sys
 sys.path.append('../')
 sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
 from stanford_corenlp_pywrapper import CoreNLP
+from db.model import *
 
 import pronoun as prp
 import proper_name as nnp
@@ -26,6 +27,8 @@ class SimpleREG(object):
         f = open(os.path.join(fname, 'eval1.bpe.de.output.postprocessed.dev'))
         texts = f.read().lower().split('\n')
         f.close()
+
+        print len(texts), len(entity_maps)
 
         for i, text in enumerate(texts):
             entity_map = entity_maps[i]

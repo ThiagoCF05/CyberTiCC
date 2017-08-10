@@ -86,12 +86,10 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
             print target
             print 10 * '-'
             if not evaluation:
-                entity_map = dict(map(lambda x: (x[0], x[1].name), entity_map.items()))
                 entity_maps.append(entity_map)
                 de.append(source.strip())
                 en.append(target)
         if evaluation:
-            entity_map = dict(map(lambda x: (x[0], x[1].name), entity_map.items()))
             entity_maps.append(entity_map)
             de.append(source.strip())
             en.append(target_list)

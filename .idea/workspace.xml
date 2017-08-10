@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/parallel_data.py" afterPath="$PROJECT_DIR$/aligner/parallel_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_main.py" afterPath="$PROJECT_DIR$/generator/reg/reg_main.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -19,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="93" column="83" lean-forward="false" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="83" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="22" />
               <folding>
                 <element signature="e#333#348#0" expanded="true" />
               </folding>
@@ -34,21 +35,21 @@
       <file leaf-file-name="reg_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/reg_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-183">
+            <state relative-caret-position="555">
               <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1167">
-              <caret line="121" column="53" lean-forward="false" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+            <state relative-caret-position="300">
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding>
                 <element signature="e#157#176#0" expanded="true" />
-                <element signature="e#1349#3097#0" expanded="false" />
+                <element signature="e#1416#3164#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -69,6 +70,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="339">
               <caret line="42" column="15" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,8 +159,8 @@
         <option value="$PROJECT_DIR$/scripts/reg_train.py" />
         <option value="$PROJECT_DIR$/aligner/nmt.sh" />
         <option value="$PROJECT_DIR$/aligner/smt.sh" />
-        <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
         <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
+        <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
       </list>
     </option>
   </component>
@@ -943,7 +954,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aligner/parallel_data.py</url>
-          <line>128</line>
+          <line>126</line>
           <option name="timeStamp" value="305" />
         </line-breakpoint>
       </breakpoints>
@@ -1285,14 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="93" column="13" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -1317,20 +1320,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
+    <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1167">
-          <caret line="121" column="53" lean-forward="false" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
-          <folding>
-            <element signature="e#157#176#0" expanded="true" />
-            <element signature="e#1349#3097#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/reg_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-183">
+        <state relative-caret-position="555">
           <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding />
         </state>
@@ -1338,10 +1338,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="93" column="83" lean-forward="false" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="83" />
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="22" />
           <folding>
             <element signature="e#333#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding>
+            <element signature="e#157#176#0" expanded="true" />
+            <element signature="e#1416#3164#0" expanded="false" />
           </folding>
         </state>
       </provider>
