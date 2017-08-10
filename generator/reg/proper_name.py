@@ -98,6 +98,15 @@ class ProperNameGeneration(object):
         self.model = p.load(open('reg/name_data/model.cPickle'))
         self.backoff = p.load(open('reg/name_data/backoff_model.cPickle'))
 
+    def generate_major(self, reference, data):
+        '''
+        Generate based on result of reg_train.py script
+        :param reference:
+        :param data:
+        :return:
+        '''
+        pass
+
     def generate(self, reference):
         text_status = reference['text_status']
         entity = reference['entity'].name

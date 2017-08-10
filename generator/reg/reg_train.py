@@ -36,9 +36,9 @@ for entity in entities:
             for sentence_status in ['new', 'given']:
                 reference = Reference.objects(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
 
-                names[(syntax, text_status, sentence_status, entity)] = []
-                descriptions[(syntax, text_status, sentence_status, entity)] = []
-                demonstratives[(syntax, text_status, sentence_status, entity)] = []
+                names[(syntax, text_status, sentence_status, entity.name)] = []
+                descriptions[(syntax, text_status, sentence_status, entity.name)] = []
+                demonstratives[(syntax, text_status, sentence_status, entity.name)] = []
 
                 if reference.count() > 0:
                     reference = reference.first()
@@ -49,18 +49,18 @@ for entity in entities:
                         if reftype == 'pronoun' and reg in lemma:
                             pronouns[entity.name].append(reg)
                         elif reftype == 'name':
-                            names[(syntax, text_status, sentence_status, entity)].append(reg)
+                            names[(syntax, text_status, sentence_status, entity.name)].append(reg)
                         elif reftype == 'description':
-                            descriptions[(syntax, text_status, sentence_status, entity)].append(reg)
+                            descriptions[(syntax, text_status, sentence_status, entity.name)].append(reg)
                         elif reftype == 'demonstrative':
-                            demonstratives[(syntax, text_status, sentence_status, entity)].append(reg)
+                            demonstratives[(syntax, text_status, sentence_status, entity.name)].append(reg)
 
-                if len(names[(syntax, text_status, sentence_status, entity)]) == 0:
-                    bnames.append((syntax, text_status, sentence_status, entity))
-                if len(descriptions[(syntax, text_status, sentence_status, entity)]) == 0:
-                    bdescriptions.append((syntax, text_status, sentence_status, entity))
-                if len(demonstratives[(syntax, text_status, sentence_status, entity)]) == 0:
-                    bdemonstratives.append((syntax, text_status, sentence_status, entity))
+                if len(names[(syntax, text_status, sentence_status, entity.name)]) == 0:
+                    bnames.append((syntax, text_status, sentence_status, entity.name))
+                if len(descriptions[(syntax, text_status, sentence_status, entity.name)]) == 0:
+                    bdescriptions.append((syntax, text_status, sentence_status, entity.name))
+                if len(demonstratives[(syntax, text_status, sentence_status, entity.name)]) == 0:
+                    bdemonstratives.append((syntax, text_status, sentence_status, entity.name))
 
             # First backoff
             reference = Reference.objects(entity=entity, syntax=syntax, text_status=text_status)

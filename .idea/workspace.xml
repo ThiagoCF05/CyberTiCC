@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/proper_name.py" afterPath="$PROJECT_DIR$/generator/reg/proper_name.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_main.py" afterPath="$PROJECT_DIR$/generator/reg/reg_main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_train.py" afterPath="$PROJECT_DIR$/generator/reg/reg_train.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,8 +36,8 @@
       <file leaf-file-name="reg_train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+            <state relative-caret-position="-573">
+              <caret line="62" column="93" lean-forward="false" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="93" />
               <folding>
                 <element signature="e#183#202#0" expanded="true" />
               </folding>
@@ -56,12 +58,22 @@
       <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state relative-caret-position="300">
+              <caret line="100" column="31" lean-forward="false" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
               <folding>
                 <element signature="e#157#176#0" expanded="true" />
-                <element signature="e#1437#3185#0" expanded="false" />
+                <element signature="e#1486#3234#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proper_name.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,7 +172,6 @@
         <option value="$PROJECT_DIR$/generator/template.sh" />
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/generator/reg/form_choice.py" />
-        <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
         <option value="$PROJECT_DIR$/db/model.py" />
         <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
         <option value="$PROJECT_DIR$/db/operations.py" />
@@ -169,9 +180,10 @@
         <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
         <option value="$PROJECT_DIR$/aligner/nmt.sh" />
         <option value="$PROJECT_DIR$/aligner/smt.sh" />
-        <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
         <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/scripts/reg_train.py" />
+        <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
+        <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_train.py" />
       </list>
     </option>
@@ -1183,13 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/form_choice.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -1325,17 +1330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
-          <folding>
-            <element signature="e#157#176#0" expanded="true" />
-            <element signature="e#1437#3185#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1362,10 +1356,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="100" column="31" lean-forward="false" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+          <folding>
+            <element signature="e#157#176#0" expanded="true" />
+            <element signature="e#1486#3234#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="107" column="12" lean-forward="false" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/reg_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state relative-caret-position="-573">
+          <caret line="62" column="93" lean-forward="false" selection-start-line="62" selection-start-column="93" selection-end-line="62" selection-end-column="93" />
           <folding>
             <element signature="e#183#202#0" expanded="true" />
           </folding>

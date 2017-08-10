@@ -45,6 +45,7 @@ class SimpleREG(object):
 
 class REG(object):
     def __init__(self):
+        self.data = p.load(open('data.cPickle'))
         self.proc = CoreNLP('parse')
         self.nnp = nnp.ProperNameGeneration()
         self.prp = prp.Pronominalization()
