@@ -105,7 +105,18 @@ class ProperNameGeneration(object):
         :param data:
         :return:
         '''
-        pass
+        syntax = reference['syntax']
+        text_status = reference['text_status']
+        sentence_status = reference['sentence_status']
+        entity = reference['entity']
+
+        names = data[(syntax, text_status, sentence_status, entity)]
+        if len(names) > 0:
+            name = names[0][0]
+        else:
+            name = ' '.join(entity.name.replace('\'', '').replace('\"', '').split('_'))
+
+        return name
 
     def generate(self, reference):
         text_status = reference['text_status']

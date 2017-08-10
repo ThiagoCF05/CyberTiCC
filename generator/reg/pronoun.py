@@ -17,6 +17,55 @@ class Pronominalization(object):
     def __init__(self):
         self.pronoun_list = p.load(open('reg/pronoun_data/pronouns.cPickle'))
 
+    def generate_major(self, prev_references, reference, data):
+        entity = reference['entity']
+        syntax = reference['syntax']
+
+        pronouns = data[entity]
+        if len(pronouns) == 0:
+            if syntax == 'subj-det':
+                pronoun = 'its'
+            else:
+                pronoun = 'it'
+        else:
+            pronoun = pronouns[0]
+
+            if pronoun == 'he':
+                if syntax == 'np-obj':
+                    pronoun = 'him'
+                elif syntax == 'subj-det':
+                    pronoun = 'his'
+            elif pronoun == 'she':
+                if syntax != 'np-subj':
+                    pronoun = 'her'
+            elif pronoun == 'it':
+                if syntax == 'subj-det':
+                    pronoun = 'its'
+                else:
+                    pronoun = 'it'
+            elif pronoun == 'they':
+                if syntax == 'np-obj':
+                    pronoun = 'them'
+                elif syntax == 'subj-det':
+                    pronoun = 'their'
+
+        # Check for a competitor
+        competitors = {
+            'he':'he', 'his':'he',
+            'she':'she', 'her':'she', 'hers':'she',
+            'it':'it', 'its':'it',
+            'we':'we', 'our':'we', 'ours':'we', 'us':'we',
+            'they':'they', 'their':'they', 'theirs':'they', 'them':'they'
+        }
+        isCompetitor = False
+        for prev_reference in prev_references:
+            if prev_reference['entity'].name != entity and prev_reference['realization'].lower() in competitors:
+                if competitors[prev_reference['realization'].lower()] == competitors[pronoun]:
+                    isCompetitor = True
+                    break
+
+        return isCompetitor, pronoun
+
     def generate(self, prev_references, reference):
         '''
         :param prev_references: previous realized references

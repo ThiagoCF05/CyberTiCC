@@ -11,6 +11,33 @@ class DescriptionGeneration(object):
     def __init__(self):
         pass
 
+    def generate_major(self, prev_references, reference, data):
+        syntax = reference['syntax']
+        text_status = reference['text_status']
+        sentence_status = reference['sentence_status']
+        entity = reference['entity']
+
+        descriptions = data[(syntax, text_status, sentence_status, entity)]
+        if len(descriptions) == 0:
+            name = ' '.join(entity.replace('\'', '').replace('\"', '').split('_'))
+            return name
+        else:
+            description = descriptions[0][0]
+
+            # Check for a competitor
+            isCompetitor = False
+            for prev_reference in prev_references:
+                if prev_reference['entity'].name != entity and prev_reference['realization'] == description:
+                    isCompetitor = True
+                    break
+
+            # If it is a competitor, return the name of the entity
+            if not isCompetitor:
+                return description
+            else:
+                name = ' '.join(entity.replace('\'', '').replace('\"', '').split('_'))
+                return name
+
     def generate(self, prev_references, reference, form='description'):
         '''
         :param prev_references: previous realized references

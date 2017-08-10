@@ -34,7 +34,7 @@ class SimpleREG(object):
             entity_map = entity_maps[i]
 
             for tag in entity_map:
-                name = ' '.join(entity_map[tag].name.lower().split('_'))
+                name = ' '.join(entity_map[tag].name.lower().name.replace('\'', '').replace('\"', '').split('_'))
                 texts[i] = texts[i].replace(tag.lower(), name)
 
         f = open('eval1.out', 'w')
@@ -44,8 +44,8 @@ class SimpleREG(object):
         f.close()
 
 class REG(object):
-    def __init__(self):
-        self.data = p.load(open('data.cPickle'))
+    def __init__(self, fdata):
+        self.data = p.load(open(fdata))
         self.proc = CoreNLP('parse')
         self.nnp = nnp.ProperNameGeneration()
         self.prp = prp.Pronominalization()
@@ -94,15 +94,15 @@ class REG(object):
             isCompetitor, pronoun = self.prp.generate(prev_references, reference)
 
             if isCompetitor:
-                return self.dsc.generate(prev_references, reference, 'description')
+                return self.dsc.generate_major(prev_references, reference, self.data['descriptions'])
             else:
                 return pronoun
         elif reference['form'] == 'name':
-            return self.nnp.generate(reference)
+            return self.nnp.generate_major(reference, self.data['names'])
         elif reference['form'] == 'description':
-            return self.dsc.generate(prev_references, reference, 'description')
+            return self.dsc.generate_major(prev_references, reference, self.data['descriptions'])
         elif reference['form'] == 'demonstrative':
-            return self.dsc.generate(prev_references, reference, 'demonstrative')
+            return self.dsc.generate_major(prev_references, reference, self.data['demonstratives'])
 
     def generate(self, template, entitymap):
         self.template = template

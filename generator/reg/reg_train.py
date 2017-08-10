@@ -104,7 +104,6 @@ for entity in entities:
                         demonstratives[key].append(reg)
                     bdemonstratives = []
 
-
     # Third backoff
     reference = Reference.objects(entity=entity)
     if reference.count() > 0:
