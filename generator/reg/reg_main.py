@@ -30,7 +30,7 @@ class SimpleREG(object):
 
         print len(texts), len(entity_maps)
 
-        for i, text in enumerate(texts)[:-1]:
+        for i, text in enumerate(texts[:-1]):
             entity_map = entity_maps[i]
 
             for tag in entity_map:
