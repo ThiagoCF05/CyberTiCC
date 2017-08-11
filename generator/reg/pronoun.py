@@ -58,7 +58,7 @@ class Pronominalization(object):
 
         # Check for a competitor
         competitors = {
-            'he':'he', 'his':'he',
+            'he':'he', 'his':'he', 'him':'he',
             'she':'she', 'her':'she', 'hers':'she',
             'it':'it', 'its':'it',
             'we':'we', 'our':'we', 'ours':'we', 'us':'we',
