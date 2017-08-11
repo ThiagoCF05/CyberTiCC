@@ -125,7 +125,7 @@ class REG(object):
     def run(self, fin, fout):
         entity_maps = p.load(open(os.path.join(fin, 'eval1.cPickle')))
 
-        f = open(os.path.join(fname, 'eval1.bpe.de.output.postprocessed.dev'))
+        f = open(fin)
         templates = f.read().lower().split('\n')
         f.close()
 
@@ -146,8 +146,8 @@ class REG(object):
         f.close()
 
 if __name__ == '__main__':
-    fin = '/home/tcastrof/cyber/data/nmt/delex/refs'
-    fout = '/home/tcastrof/cyber/data/nmt/delex'
+    fin = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.bpe.de.output.postprocessed.dev'
+    fout = '/home/tcastrof/cyber/data/nmt/delex/refs/dev.out'
 
     simple = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
     simple.run(fin, fout)
