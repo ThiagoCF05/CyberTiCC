@@ -106,7 +106,7 @@ class REG(object):
 
     def generate(self, template, entitymap):
         self.template = template.lower()
-        self.entitymap = dict(map(lambda x: (x[0].lower(), x[1].lower()), entitymap.items()))
+        self.entitymap = dict(map(lambda x: (x[0].lower(), x[1]), entitymap.items()))
 
         references = self._extract_references()
         references = form_choice.variation_bayes(references)
