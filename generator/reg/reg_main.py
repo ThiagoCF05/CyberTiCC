@@ -125,12 +125,11 @@ class REG(object):
     def run(self, fin, fout):
         entity_maps = p.load(open(os.path.join(fin, 'eval1.cPickle')))
 
-        f = open(fin)
+        f = open(os.path.join(fin, 'eval1.bpe.de.output.postprocessed.dev'))
         templates = f.read().lower().split('\n')
         f.close()
 
         print len(templates), len(entity_maps)
-
 
         texts = []
         for i, template in enumerate(templates[:-1]):
@@ -139,6 +138,10 @@ class REG(object):
             text = self.generate(template, entity_map)
             texts.append(text)
 
+            print template
+            print text
+            print 10 * '-'
+
         f = open(fout, 'w')
         for text in texts:
             f.write(text.encode('utf-8'))
@@ -146,7 +149,7 @@ class REG(object):
         f.close()
 
 if __name__ == '__main__':
-    fin = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.bpe.de.output.postprocessed.dev'
+    fin = '/home/tcastrof/cyber/data/nmt/delex/refs'
     fout = '/home/tcastrof/cyber/data/nmt/delex/refs/dev.out'
 
     simple = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
