@@ -35,7 +35,7 @@ class Pronominalization(object):
             else:
                 pronoun = 'it'
         else:
-            pronoun = pronouns[0]
+            pronoun = pronouns[0][0]
 
             if pronoun == 'he':
                 if syntax == 'np-obj':

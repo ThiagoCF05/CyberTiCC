@@ -91,7 +91,7 @@ class REG(object):
 
     def _realize(self, prev_references, reference):
         if reference['form'] == 'pronoun':
-            isCompetitor, pronoun = self.prp.generate(prev_references, reference)
+            isCompetitor, pronoun = self.prp.generate_major(prev_references, reference, self.data['pronouns'])
 
             if isCompetitor:
                 return self.dsc.generate_major(prev_references, reference, self.data['descriptions'])
