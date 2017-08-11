@@ -108,13 +108,13 @@ class ProperNameGeneration(object):
         syntax = reference['syntax']
         text_status = reference['text_status']
         sentence_status = reference['sentence_status']
-        entity = reference['entity']
+        entity = reference['entity'].name
 
         names = data[(syntax, text_status, sentence_status, entity)]
         if len(names) > 0:
             name = names[0][0]
         else:
-            name = ' '.join(entity.name.replace('\'', '').replace('\"', '').split('_'))
+            name = ' '.join(entity.replace('\'', '').replace('\"', '').split('_'))
 
         return name
 

@@ -15,7 +15,7 @@ class DescriptionGeneration(object):
         syntax = reference['syntax']
         text_status = reference['text_status']
         sentence_status = reference['sentence_status']
-        entity = reference['entity']
+        entity = reference['entity'].name
 
         descriptions = data[(syntax, text_status, sentence_status, entity)]
         if len(descriptions) == 0:

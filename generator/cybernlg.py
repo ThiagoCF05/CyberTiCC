@@ -37,7 +37,7 @@ class CyberNLG(object):
 
         self.delex_type = delex_type
 
-        self.reg = REG('home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
+        self.reg = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
 
         deventries = Entry.objects(set='dev').timeout(False)
         for deventry in deventries:
