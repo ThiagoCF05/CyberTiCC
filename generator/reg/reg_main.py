@@ -144,7 +144,7 @@ class REG(object):
 
         f = open(fout, 'w')
         for text in texts:
-            f.write(text.encode('utf-8'))
+            f.write(text)
             f.write('\n')
         f.close()
 
