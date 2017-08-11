@@ -105,8 +105,8 @@ class REG(object):
             return self.dsc.generate_major(prev_references, reference, self.data['demonstratives'])
 
     def generate(self, template, entitymap):
-        self.template = template
-        self.entitymap = entitymap
+        self.template = template.lower()
+        self.entitymap = dict(map(lambda x: (x[0].lower(), x[1].lower()), entitymap.items()))
 
         references = self._extract_references()
         references = form_choice.variation_bayes(references)
@@ -122,8 +122,32 @@ class REG(object):
 
         return template
 
-if __name__ == '__main__':
-    fname = '/home/tcastrof/cyber/data/nmt/delex/refs'
+    def run(self, fin, fout):
+        entity_maps = p.load(open(os.path.join(fin, 'eval1.cPickle')))
 
-    simple = SimpleREG()
-    simple.run(fname)
+        f = open(os.path.join(fname, 'eval1.bpe.de.output.postprocessed.dev'))
+        templates = f.read().lower().split('\n')
+        f.close()
+
+        print len(templates), len(entity_maps)
+
+
+        texts = []
+        for i, template in enumerate(templates[:-1]):
+            entity_map = entity_maps[i]
+
+            text = self.generate(template, entity_map)
+            texts.append(text)
+
+        f = open(fout, 'w')
+        for text in texts:
+            f.write(text.encode('utf-8'))
+            f.write('\n')
+        f.close()
+
+if __name__ == '__main__':
+    fin = '/home/tcastrof/cyber/data/nmt/delex/refs'
+    fout = '/home/tcastrof/cyber/data/nmt/delex'
+
+    simple = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
+    simple.run(fin, fout)
