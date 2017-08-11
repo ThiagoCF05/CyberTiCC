@@ -18,6 +18,13 @@ class Pronominalization(object):
         self.pronoun_list = p.load(open('reg/pronoun_data/pronouns.cPickle'))
 
     def generate_major(self, prev_references, reference, data):
+        '''
+        Generating a pronoun according to reg_train.py script
+        :param prev_references:
+        :param reference:
+        :param data:
+        :return:
+        '''
         entity = reference['entity'].name
         syntax = reference['syntax']
 

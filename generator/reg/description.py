@@ -12,6 +12,13 @@ class DescriptionGeneration(object):
         pass
 
     def generate_major(self, prev_references, reference, data):
+        '''
+        Generating a description/demonstrative according to reg_train.py script
+        :param prev_references:
+        :param reference:
+        :param data:
+        :return:
+        '''
         syntax = reference['syntax']
         text_status = reference['text_status']
         sentence_status = reference['sentence_status']
