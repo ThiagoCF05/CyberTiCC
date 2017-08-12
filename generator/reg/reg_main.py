@@ -118,14 +118,7 @@ class REG(object):
             prev_references.append(reference)
 
         for reference in references:
-            try:
-                template = template.encode('utf-8').replace(reference['tag'], reference['realization'], 1)
-            except:
-                print reference['tag'], reference['realization']
-                print template
-                entity = reference['entity'].name
-                name = ' '.join(entity.replace('\'', '').replace('\"', '').split('_'))
-                template = template.encode('utf-8').replace(reference['tag'], name, 1)
+            template = template.replace(reference['tag'], reference['realization'], 1)
 
         return template
 
