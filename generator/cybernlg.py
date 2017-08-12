@@ -113,11 +113,14 @@ class CyberNLG(object):
                 train_templates = Template.objects(Q(triples__size=len(triples)) & Q(category=semcategory))
 
         for i, triple in enumerate(triples):
-            new_train_templates = []
-            for train_template in train_templates:
-                if triple.predicate.name in map(lambda triple: triple.predicate.name, train_template.triples):
-                    new_train_templates.append(train_template)
-            train_templates = copy.deepcopy(new_train_templates)
+            train_templates = filter(lambda train_template: train_template.triples[i].predicate.name == triple.predicate.name, train_templates)
+
+        # for i, triple in enumerate(triples):
+        #     new_train_templates = []
+        #     for train_template in train_templates:
+        #         if triple.predicate.name in map(lambda triple: triple.predicate.name, train_template.triples):
+        #             new_train_templates.append(train_template)
+        #     train_templates = copy.deepcopy(new_train_templates)
 
         # extract templates
         templates = []
