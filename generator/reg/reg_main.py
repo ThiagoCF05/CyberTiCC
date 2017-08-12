@@ -117,10 +117,11 @@ class REG(object):
             reference['realization'] = self._realize(prev_references, reference).lower()
             prev_references.append(reference)
 
+        print template
         for reference in references:
-            print reference['tag'], reference['realization']
-            print template
             template = template.encode('utf-8').replace(reference['tag'], reference['realization'], 1)
+        print template
+        print 10 * '-'
 
         return template
 
