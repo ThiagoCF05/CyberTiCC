@@ -150,7 +150,7 @@ class REG(object):
 
 if __name__ == '__main__':
     fin = '/home/tcastrof/cyber/data/nmt/delex/refs'
-    fout = '/home/tcastrof/cyber/data/nmt/delex/refs/dev.out'
+    fout = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.out'
 
     simple = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
     simple.run(fin, fout)

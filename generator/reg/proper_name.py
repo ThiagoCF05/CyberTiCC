@@ -112,7 +112,7 @@ class ProperNameGeneration(object):
 
         names = data[(syntax, text_status, sentence_status, entity)]
         if len(names) > 0:
-            name = names[0][0].decode('utf-8')
+            name = names[0][0].encode('utf-8')
         else:
             name = ' '.join(entity.replace('\'', '').replace('\"', '').split('_'))
 
