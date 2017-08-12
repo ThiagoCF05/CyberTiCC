@@ -213,7 +213,7 @@ class CyberNLG(object):
         templates = self.reg_process(templates, entitymap)
 
         # Ranking with KenLM
-        templates = sorted(templates, key=lambda x: self.model.score(x), reverse=True)
+        # templates = sorted(templates, key=lambda x: self.model.score(x), reverse=True)
         if len(templates) > 0:
             template = templates[0]
         else:
@@ -307,7 +307,8 @@ if __name__ == '__main__':
     parser.add_argument('delex_type', type=str, default='automatic+manual', help='delexicalization type (manual or automatic)')
     args = parser.parse_args()
 
-    lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword.bin')
+    # lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword.bin')
+    lm = None
 
     order_step1, order_step2 = '../classifier/data/clf_step1.cPickle', '../classifier/data/clf_step2.cPickle'
     clf = CLF(clf_step1=order_step1, clf_step2=order_step2)
