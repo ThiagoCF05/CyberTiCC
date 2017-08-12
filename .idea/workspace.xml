@@ -94,8 +94,8 @@
       <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="120" column="122" lean-forward="false" selection-start-line="120" selection-start-column="122" selection-end-line="120" selection-end-column="122" />
+            <state relative-caret-position="387">
+              <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
               <folding>
                 <element signature="e#157#176#0" expanded="true" />
               </folding>
@@ -1373,8 +1373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="120" column="122" lean-forward="false" selection-start-line="120" selection-start-column="122" selection-end-line="120" selection-end-column="122" />
+        <state relative-caret-position="387">
+          <caret line="119" column="16" lean-forward="true" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
           <folding>
             <element signature="e#157#176#0" expanded="true" />
           </folding>
