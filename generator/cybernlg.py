@@ -53,7 +53,7 @@ class CyberNLG(object):
 
         tags = sorted(entitymap.keys())
         for i, tag in enumerate(tags):
-            new_tag = 'ENTITY-' + str(i+1)
+            new_tag = 'entity-' + str(i+1)
             new_entitymap[entitymap[tag]] = new_tag
         return new_entitymap
 
