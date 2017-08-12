@@ -118,7 +118,7 @@ class REG(object):
             prev_references.append(reference)
 
         for reference in references:
-            template = str(template).replace(reference['tag'], str(reference['realization']), 1)
+            template = template.replace(reference['tag'], unicode(reference['realization']), 1)
 
         return template
 
