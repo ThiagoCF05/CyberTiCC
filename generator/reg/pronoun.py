@@ -69,6 +69,7 @@ class Pronominalization(object):
             if prev_reference['entity'].name != entity:
                 distractor_pronouns = data[prev_reference['entity'].name]
                 if competitors[pronoun] in distractor_pronouns:
+                    print 'COMPETITOR'
                     isCompetitor = True
                     break
             # if prev_reference['entity'].name != entity and prev_reference['realization'].lower() in competitors:

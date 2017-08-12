@@ -39,7 +39,7 @@ class CyberNLG(object):
 
         self.reg = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
 
-        deventries = Entry.objects(set='dev', category='Airport', docid='Id3', size=4).timeout(False)
+        deventries = Entry.objects(set='dev').timeout(False)
         for deventry in deventries:
             self.run(deventry)
 
