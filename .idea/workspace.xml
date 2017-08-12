@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_main.py" afterPath="$PROJECT_DIR$/generator/reg/reg_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/description.py" afterPath="$PROJECT_DIR$/generator/reg/description.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/proper_name.py" afterPath="$PROJECT_DIR$/generator/reg/proper_name.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -81,6 +82,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="description.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/generator/reg/description.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="simplenlg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/simplenlg.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,7 +102,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
@@ -99,26 +110,6 @@
               <folding>
                 <element signature="e#157#176#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="description.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generator/reg/description.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proper_name.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="110" column="41" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -195,11 +186,11 @@
         <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/scripts/reg_train.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_train.py" />
-        <option value="$PROJECT_DIR$/generator/reg/description.py" />
-        <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
         <option value="$PROJECT_DIR$/generator/reg/pronoun.py" />
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
+        <option value="$PROJECT_DIR$/generator/reg/description.py" />
+        <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
       </list>
     </option>
   </component>
@@ -1293,14 +1284,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/form_choice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="33" column="87" lean-forward="false" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classifier/ordering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1313,14 +1296,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/description.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1357,10 +1332,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="41" column="85" lean-forward="false" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
+          <folding>
+            <element signature="e#5738#7137#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/proper_name.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="110" column="41" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="41" />
+        <state relative-caret-position="519">
+          <caret line="114" column="30" lean-forward="false" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1373,6 +1358,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+          <folding>
+            <element signature="e#157#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/reg/form_choice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="33" column="87" lean-forward="false" selection-start-line="33" selection-start-column="87" selection-end-line="33" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
@@ -1381,23 +1384,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
+    <entry file="file://$PROJECT_DIR$/generator/reg/description.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="41" column="85" lean-forward="false" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="85" />
-          <folding>
-            <element signature="e#5738#7137#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
-          <folding>
-            <element signature="e#157#176#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

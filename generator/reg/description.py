@@ -29,7 +29,7 @@ class DescriptionGeneration(object):
             name = ' '.join(entity.replace('\'', '').replace('\"', '').split('_'))
             return name
         else:
-            description = descriptions[0][0].encode('utf-8')
+            description = descriptions[0][0]
 
             # Check for a competitor
             isCompetitor = False
