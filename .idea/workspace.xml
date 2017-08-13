@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/nmt.sh" afterPath="$PROJECT_DIR$/aligner/nmt.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classifier/data/dev_order.json" afterPath="$PROJECT_DIR$/classifier/data/dev_order.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classifier/data/train_order.json" afterPath="$PROJECT_DIR$/classifier/data/train_order.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/delex.py" afterPath="$PROJECT_DIR$/delexicalizer/delex.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/manual.py" afterPath="$PROJECT_DIR$/delexicalizer/manual.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/pronoun.py" afterPath="$PROJECT_DIR$/generator/reg/pronoun.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_main.py" afterPath="$PROJECT_DIR$/generator/reg/reg_main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_train.py" afterPath="$PROJECT_DIR$/generator/reg/reg_train.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/template.sh" afterPath="$PROJECT_DIR$/generator/template.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -32,8 +22,28 @@
       <file leaf-file-name="template.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generator/template.sh">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reg_train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generator/reg/reg_train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="477">
+              <caret line="138" column="7" lean-forward="false" selection-start-line="138" selection-start-column="7" selection-end-line="138" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nmt.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="20" />
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,11 +182,11 @@
         <option value="$PROJECT_DIR$/delexicalizer/manual.py" />
         <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_train.py" />
-        <option value="$PROJECT_DIR$/generator/template.sh" />
         <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/generator/reg/pronoun.py" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
+        <option value="$PROJECT_DIR$/generator/template.sh" />
       </list>
     </option>
   </component>
@@ -236,24 +246,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="generator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CyberTiCC" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CyberTiCC" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1295,14 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="84" lean-forward="false" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/delexicalizer/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1323,14 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="56" lean-forward="false" selection-start-line="107" selection-start-column="56" selection-end-line="107" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/reg_train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="138" column="7" lean-forward="false" selection-start-line="138" selection-start-column="7" selection-end-line="138" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1394,10 +1370,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/template.sh">
+    <entry file="file://$PROJECT_DIR$/generator/reg/reg_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="138" column="7" lean-forward="false" selection-start-line="138" selection-start-column="7" selection-end-line="138" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="20" />
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/template.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
           <folding />
         </state>
       </provider>
