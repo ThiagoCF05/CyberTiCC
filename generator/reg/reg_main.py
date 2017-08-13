@@ -37,8 +37,8 @@ class SimpleREG(object):
             for tag in entity_map:
                 name = ' '.join(entity_map[tag].name.lower().replace('\'', '').replace('\"', '').split('_'))
                 print texts[i]
-                print name
-                texts[i] = texts[i].replace(tag.lower(), name)
+                print tag, name
+                texts[i] = texts[i].replace(tag.lower(), str(name))
 
         f = open(fout, 'w')
         for text in texts:
