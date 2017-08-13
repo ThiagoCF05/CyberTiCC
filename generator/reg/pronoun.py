@@ -68,8 +68,9 @@ class Pronominalization(object):
         for prev_reference in prev_references[::-1]:
             if prev_reference['entity'].name != entity:
                 distractor_pronouns = data[prev_reference['entity'].name]
+                if len(distractor_pronouns) == 0:
+                    distractor_pronouns = ['it']
                 if competitors[pronoun] in distractor_pronouns:
-                    print 'COMPETITOR'
                     isCompetitor = True
                     break
             else:
@@ -100,7 +101,7 @@ class Pronominalization(object):
 
         # Check for a competitor
         competitors = {
-            'he':'he', 'his':'he',
+            'he':'he', 'his':'he', 'him':'he',
             'she':'she', 'her':'she', 'hers':'she',
             'it':'it', 'its':'it',
             'we':'we', 'our':'we', 'ours':'we', 'us':'we',

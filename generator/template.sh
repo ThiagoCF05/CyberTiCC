@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python reg/reg_train.py
+
 rm -R /home/tcastrof/cyber/data/template/manual
 mkdir /home/tcastrof/cyber/data/template/manual
 

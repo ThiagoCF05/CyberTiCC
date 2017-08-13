@@ -1,5 +1,24 @@
 import copy
 
+def get_topic(triples, entity_map):
+    entity_map = entity2tag(entity_map)
+
+    freq = dict(map(lambda x: (x, 0), entity_map.values()))
+    for triple in triples:
+        tag = entity_map[triple.agent.name]
+        freq[tag] += 1
+
+        tag = entity_map[triple.patient.name]
+        freq[tag] += 1
+
+    max_freq = max(freq.values())
+    f = []
+    for tag in freq:
+        if freq[tag] == max_freq:
+            f.append(tag)
+
+    return sorted(f)[0]
+
 # TO DO: bring entities with references
 def map_entities(triples):
     entity_map, nagents, npatients, nbridges = {}, 1, 1, 1

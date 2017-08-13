@@ -272,7 +272,7 @@ class Delexicalizer(object):
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
-                if reference['determiner'].lower().strip() in ['the', 'a']:
+                if reference['determiner'].lower().strip() in ['the', 'a', 'an']:
                     reference['reftype'] = 'description'
                 elif reference['determiner'].lower().strip() in ['this', 'that', 'these', 'those']:
                     reference['reftype'] = 'demonstrative'
@@ -440,7 +440,7 @@ class Delexicalizer(object):
             for reference in references:
                 reference['tag'] = tag
                 reference['reftype'] = 'name'
-                if reference['determiner'].lower().strip() in ['the', 'a']:
+                if reference['determiner'].lower().strip() in ['the', 'a', 'an']:
                     reference['reftype'] = 'description'
                 elif reference['determiner'].lower().strip() in ['this', 'that', 'these', 'those']:
                     reference['reftype'] = 'demonstrative'

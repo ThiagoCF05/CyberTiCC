@@ -142,7 +142,7 @@ class ManualDelexicalizer(object):
                     ref_type = 'name'
                     if refex.lower().strip() in ['he', 'his', 'him', 'she', 'hers', 'her', 'it', 'its', 'they', 'theirs', 'them']:
                         ref_type = 'pronoun'
-                    elif refex.lower().strip().split()[0] in ['the', 'a']:
+                    elif refex.lower().strip().split()[0] in ['the', 'a', 'an']:
                         ref_type = 'description'
                     elif refex.lower().strip().split()[0] in ['this', 'these', 'that', 'those']:
                         ref_type = 'demonstrative'

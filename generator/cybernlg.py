@@ -38,8 +38,10 @@ class CyberNLG(object):
         self.delex_type = delex_type
 
         self.reg = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
+        # self.reg = REG('reg/data.cPickle')
 
         deventries = Entry.objects(set='dev').timeout(False)
+        # deventries = Entry.objects(set='dev', size=4).timeout(False)
         for deventry in deventries:
             self.run(deventry)
 
@@ -114,13 +116,6 @@ class CyberNLG(object):
 
         for i, triple in enumerate(triples):
             train_templates = filter(lambda train_template: train_template.triples[i].predicate.name == triple.predicate.name, train_templates)
-
-        # for i, triple in enumerate(triples):
-        #     new_train_templates = []
-        #     for train_template in train_templates:
-        #         if triple.predicate.name in map(lambda triple: triple.predicate.name, train_template.triples):
-        #             new_train_templates.append(train_template)
-        #     train_templates = copy.deepcopy(new_train_templates)
 
         # extract templates
         templates = []
@@ -216,7 +211,7 @@ class CyberNLG(object):
         templates = self.reg_process(templates, entitymap)
 
         # Ranking with KenLM
-        # templates = sorted(templates, key=lambda x: self.model.score(x), reverse=True)
+        templates = sorted(templates, key=lambda x: self.model.score(x), reverse=True)
         if len(templates) > 0:
             template = templates[0]
         else:
@@ -310,13 +305,20 @@ if __name__ == '__main__':
     parser.add_argument('delex_type', type=str, default='automatic+manual', help='delexicalization type (manual or automatic)')
     args = parser.parse_args()
 
-    # lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword.bin')
-    lm = None
+    delex_type = args.delex_type
+    refs = args.refs
+    hyps = args.hyps
+
+    # delex_type = 'manual'
+    # refs = ''
+    # hyps = ''
+
+    lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword.bin')
 
     order_step1, order_step2 = '../classifier/data/clf_step1.cPickle', '../classifier/data/clf_step2.cPickle'
     clf = CLF(clf_step1=order_step1, clf_step2=order_step2)
 
-    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=3, delex_type=args.delex_type)
+    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=4, delex_type=delex_type)
 
-    write_references(nlg.references, args.refs)
-    write_hyps(nlg.hyps, args.hyps)
+    write_references(nlg.references, refs)
+    write_hyps(nlg.hyps, hyps)

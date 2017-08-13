@@ -38,9 +38,6 @@ class SimpleREG(object):
             entity_map = entity_maps[i]
             for tag in entity_map:
                 name = ' '.join(entity_map[tag].name.lower().replace('\'', '').replace('\"', '').split('_'))
-                print texts[i]
-                print tag, name
-                print type(texts[i])
                 texts[i] = texts[i].replace(tag.lower(), str(name))
 
         f = open(fout, 'w')
@@ -76,29 +73,37 @@ class REG(object):
                 for dep in deps:
                     if snt['tokens'][dep[2]] == tag and dep[2] not in visited_tokens:
                         visited_tokens.append(dep[2])
-                        reference = {'syntax':'', 'sentence':i, 'pos':dep[2], 'tag':tag, 'entity':self.entitymap[tag]}
-                        if 'nsubj' in dep[0] or 'nsubjpass' in dep[0] or 'compound' in dep[0]:
+                        reference = {'syntax':'', 'sentence':i, 'pos':dep[2], 'tag':tag, 'entity':self.entitymap[tag], 'no_pronoun':False}
+                        if 'nsubj' in dep[0] or 'nsubjpass' in dep[0]:
                             reference['syntax'] = 'np-subj'
                         elif 'nmod:poss' in dep[0]:
                             reference['syntax'] = 'subj-det'
+                        elif 'iobj' in dep[0] or 'dobj' in dep[0] or 'nmod' in dep[0]:
+                            reference['syntax'] = 'np-obj'
                         else:
+                            if 'compound' in dep[0]:
+                                reference['no_pronoun'] = True
                             reference['syntax'] = 'np-obj'
                         references.append(reference)
 
         # Classify the references by text and sentence status
-        references = sorted(references, key=lambda x: (x['entity'], x['sentence'], x['pos']))
+        references = sorted(references, key=lambda x: (x['entity'].name, x['sentence'], x['pos']))
         sentence_statuses = {}
         for i, reference in enumerate(references):
-            if i == 0 or (reference['entity'] != references[i-1]['entity']):
+            if i == 0 or (reference['entity'].name != references[i-1]['entity'].name):
                 reference['text_status'] = 'new'
             else:
                 reference['text_status'] = 'given'
 
-            if reference['entity'] not in sentence_statuses:
+            if reference['sentence'] not in sentence_statuses:
+                sentence_statuses[reference['sentence']] = []
+
+            if reference['entity'].name not in sentence_statuses[reference['sentence']]:
                 reference['sentence_status'] = 'new'
             else:
                 reference['sentence_status'] = 'given'
-            sentence_statuses[reference['entity']] = reference['sentence']
+
+            sentence_statuses[reference['sentence']].append(reference['entity'].name)
 
         return references
 
@@ -106,7 +111,9 @@ class REG(object):
         if reference['form'] == 'pronoun':
             isCompetitor, pronoun = self.prp.generate_major(prev_references, reference, self.data['pronouns'])
 
-            if isCompetitor:
+            if reference['no_pronoun']:
+                return self.nnp.generate_major(reference, self.data['names'])
+            elif isCompetitor:
                 return self.dsc.generate_major(prev_references, reference, self.data['descriptions'])
             else:
                 return pronoun

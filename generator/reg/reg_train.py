@@ -36,9 +36,12 @@ for entity in entities:
             for sentence_status in ['new', 'given']:
                 reference = Reference.objects(entity=entity, syntax=syntax, text_status=text_status, sentence_status=sentence_status)
 
-                names[(syntax, text_status, sentence_status, entity.name)] = []
-                descriptions[(syntax, text_status, sentence_status, entity.name)] = []
-                demonstratives[(syntax, text_status, sentence_status, entity.name)] = []
+                if (syntax, text_status, sentence_status, entity.name) not in names:
+                    names[(syntax, text_status, sentence_status, entity.name)] = []
+                if (syntax, text_status, sentence_status, entity.name) not in descriptions:
+                    descriptions[(syntax, text_status, sentence_status, entity.name)] = []
+                if (syntax, text_status, sentence_status, entity.name) not in demonstratives:
+                    demonstratives[(syntax, text_status, sentence_status, entity.name)] = []
 
                 if reference.count() > 0:
                     reference = reference.first()
@@ -46,14 +49,15 @@ for entity in entities:
                     for refex in reference.refexes:
                         reftype = refex.ref_type
                         reg = refex.refex.strip().lower()
-                        if reftype == 'pronoun' and reg in lemma:
-                            pronouns[entity.name].append(reg)
-                        elif reftype == 'name':
-                            names[(syntax, text_status, sentence_status, entity.name)].append(reg)
-                        elif reftype == 'description':
-                            descriptions[(syntax, text_status, sentence_status, entity.name)].append(reg)
-                        elif reftype == 'demonstrative':
-                            demonstratives[(syntax, text_status, sentence_status, entity.name)].append(reg)
+                        if len(reg) > 3:
+                            if reftype == 'pronoun' and reg in lemma:
+                                pronouns[entity.name].append(reg)
+                            elif reftype == 'name':
+                                names[(syntax, text_status, sentence_status, entity.name)].append(reg)
+                            elif reftype == 'description':
+                                descriptions[(syntax, text_status, sentence_status, entity.name)].append(reg)
+                            elif reftype == 'demonstrative':
+                                demonstratives[(syntax, text_status, sentence_status, entity.name)].append(reg)
 
                 if len(names[(syntax, text_status, sentence_status, entity.name)]) == 0:
                     bnames.append((syntax, text_status, sentence_status, entity.name))
@@ -70,6 +74,29 @@ for entity in entities:
                 for refex in reference.refexes:
                     reftype = refex.ref_type
                     reg = refex.refex.strip().lower()
+                    if len(reg) > 3:
+                        if reftype == 'name':
+                            for key in bnames:
+                                names[key].append(reg)
+                            bnames = []
+                        elif reftype == 'description':
+                            for key in bdescriptions:
+                                descriptions[key].append(reg)
+                            bdescriptions = []
+                        elif reftype == 'demonstrative':
+                            for key in bdemonstratives:
+                                demonstratives[key].append(reg)
+                            bdemonstratives = []
+
+        # Second backoff
+        reference = Reference.objects(entity=entity, syntax=syntax)
+        if reference.count() > 0:
+            reference = reference.first()
+
+            for refex in reference.refexes:
+                reftype = refex.ref_type
+                reg = refex.refex.strip().lower()
+                if len(reg) > 3:
                     if reftype == 'name':
                         for key in bnames:
                             names[key].append(reg)
@@ -83,14 +110,15 @@ for entity in entities:
                             demonstratives[key].append(reg)
                         bdemonstratives = []
 
-        # Second backoff
-        reference = Reference.objects(entity=entity, syntax=syntax)
-        if reference.count() > 0:
-            reference = reference.first()
+    # Third backoff
+    reference = Reference.objects(entity=entity)
+    if reference.count() > 0:
+        reference = reference.first()
 
-            for refex in reference.refexes:
-                reftype = refex.ref_type
-                reg = refex.refex.strip().lower()
+        for refex in reference.refexes:
+            reftype = refex.ref_type
+            reg = refex.refex.strip().lower()
+            if len(reg) > 3:
                 if reftype == 'name':
                     for key in bnames:
                         names[key].append(reg)
@@ -103,27 +131,6 @@ for entity in entities:
                     for key in bdemonstratives:
                         demonstratives[key].append(reg)
                     bdemonstratives = []
-
-    # Third backoff
-    reference = Reference.objects(entity=entity)
-    if reference.count() > 0:
-        reference = reference.first()
-
-        for refex in reference.refexes:
-            reftype = refex.ref_type
-            reg = refex.refex.strip().lower()
-            if reftype == 'name':
-                for key in bnames:
-                    names[key].append(reg)
-                bnames = []
-            elif reftype == 'description':
-                for key in bdescriptions:
-                    descriptions[key].append(reg)
-                bdescriptions = []
-            elif reftype == 'demonstrative':
-                for key in bdemonstratives:
-                    demonstratives[key].append(reg)
-                bdemonstratives = []
 
 for entity in pronouns:
     pronouns[entity] = sorted(nltk.FreqDist(pronouns[entity]).items(), key=lambda x:x[1], reverse=True)[:2]
