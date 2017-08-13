@@ -10,6 +10,8 @@ Description:
 import cPickle as p
 import os
 import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 sys.path.append('../')
 sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
 from stanford_corenlp_pywrapper import CoreNLP
@@ -38,6 +40,7 @@ class SimpleREG(object):
                 name = ' '.join(entity_map[tag].name.lower().replace('\'', '').replace('\"', '').split('_'))
                 print texts[i]
                 print tag, name
+                print type(texts[i])
                 texts[i] = texts[i].replace(tag.lower(), str(name))
 
         f = open(fout, 'w')
