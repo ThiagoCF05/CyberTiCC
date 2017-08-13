@@ -35,7 +35,7 @@ class SimpleREG(object):
         for i, text in enumerate(texts[:-1]):
             entity_map = entity_maps[i]
             for tag in entity_map:
-                name = ' '.join(entity_map[tag].name.lower().name.replace('\'', '').replace('\"', '').split('_'))
+                name = ' '.join(entity_map[tag].name.lower().replace('\'', '').replace('\"', '').split('_'))
                 texts[i] = texts[i].replace(tag.lower(), name)
 
         f = open(fout, 'w')
@@ -143,13 +143,7 @@ class REG(object):
         for i, template in enumerate(templates[:-1]):
             entity_map = entity_maps[i]
 
-            # out = self.proc.parse_doc(template)['sentences']
-            # template = []
-            # for i, snt in enumerate(out):
-            #     template.extend(snt['tokens'])
-            # template = ' '.join(template).replace('-LRB- ', '(').replace(' -RRB-', ')').strip()
-
-            text = self.generate(unicode(template), entity_map)
+            text = self.generate(template, entity_map)
             texts.append(text)
 
             print template
@@ -164,7 +158,6 @@ class REG(object):
 
 if __name__ == '__main__':
     fin = '/home/tcastrof/cyber/data/nmt/delex/refs'
-
     fout = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.simple'
     simple = SimpleREG()
     simple.run(fin=fin, fout=fout)
