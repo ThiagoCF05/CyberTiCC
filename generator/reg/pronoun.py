@@ -65,13 +65,15 @@ class Pronominalization(object):
             'they':'they', 'their':'they', 'theirs':'they', 'them':'they'
         }
         isCompetitor = False
-        for prev_reference in prev_references:
+        for prev_reference in prev_references[::-1]:
             if prev_reference['entity'].name != entity:
                 distractor_pronouns = data[prev_reference['entity'].name]
                 if competitors[pronoun] in distractor_pronouns:
                     print 'COMPETITOR'
                     isCompetitor = True
                     break
+            else:
+                break
             # if prev_reference['entity'].name != entity and prev_reference['realization'].lower() in competitors:
             #     if competitors[prev_reference['realization'].lower()] == competitors[pronoun]:
             #         isCompetitor = True

@@ -21,10 +21,12 @@ import description as dsc
 import form_choice
 
 class SimpleREG(object):
-    def run(self, fname):
-        entity_maps = p.load(open(os.path.join(fname, 'eval1.cPickle')))
+    def run(self, fin, fout):
+        self.proc = CoreNLP('ssplit')
 
-        f = open(os.path.join(fname, 'eval1.bpe.de.output.postprocessed.dev'))
+        entity_maps = p.load(open(os.path.join(fin, 'eval1.cPickle')))
+
+        f = open(os.path.join(fin, 'eval1.bpe.de.output.postprocessed.dev'))
         texts = f.read().lower().split('\n')
         f.close()
 
@@ -32,13 +34,19 @@ class SimpleREG(object):
 
         for i, text in enumerate(texts[:-1]):
             entity_map = entity_maps[i]
-
             for tag in entity_map:
                 name = ' '.join(entity_map[tag].name.lower().name.replace('\'', '').replace('\"', '').split('_'))
                 texts[i] = texts[i].replace(tag.lower(), name)
 
-        f = open('eval1.out', 'w')
+        f = open(fout, 'w')
         for text in texts:
+            out = self.proc.parse_doc(text)['sentences']
+
+            text = []
+            for i, snt in enumerate(out):
+                text.extend(snt['tokens'])
+            text = ' '.join(text).replace('-LRB- ', '(').replace(' -RRB-', ')').strip()
+
             f.write(text.encode('utf-8'))
             f.write('\n')
         f.close()
@@ -64,9 +72,9 @@ class REG(object):
                     if snt['tokens'][dep[2]] == tag and dep[2] not in visited_tokens:
                         visited_tokens.append(dep[2])
                         reference = {'syntax':'', 'sentence':i, 'pos':dep[2], 'tag':tag, 'entity':self.entitymap[tag]}
-                        if 'nsubj' in dep[0] or 'nsubjpass' in dep[0]:
+                        if 'nsubj' in dep[0] or 'nsubjpass' in dep[0] or 'compound' in dep[0]:
                             reference['syntax'] = 'np-subj'
-                        elif 'nmod:poss' in dep[0] or 'compound' in dep[0]:
+                        elif 'nmod:poss' in dep[0]:
                             reference['syntax'] = 'subj-det'
                         else:
                             reference['syntax'] = 'np-obj'
@@ -150,7 +158,11 @@ class REG(object):
 
 if __name__ == '__main__':
     fin = '/home/tcastrof/cyber/data/nmt/delex/refs'
-    fout = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.out'
+    
+    fout = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.simple'
+    simple = SimpleREG()
+    simple.run(fin=fin, fout=fout)
 
-    simple = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
-    simple.run(fin, fout)
+    fout = '/home/tcastrof/cyber/data/nmt/delex/refs/eval1.out'
+    reg = REG('/home/tcastrof/cyber/CyberTiCC/generator/reg/data.cPickle')
+    reg.run(fin, fout)
