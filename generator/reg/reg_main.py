@@ -21,6 +21,7 @@ import pronoun as prp
 import proper_name as nnp
 import description as dsc
 import form_choice
+import re
 
 class SimpleREG(object):
     def run(self, fin, fout):
@@ -107,7 +108,54 @@ class REG(object):
 
         return references
 
+    def _realize_date(self, date):
+        year, month, day = date.replace('\'', '').replace('\"', '').split('-')
+
+        if day[-1] == '1':
+            day = day + 'st'
+        elif day[-1] == '2':
+            day = day + 'nd'
+        elif day[-1] == '3':
+            day = day + 'rd'
+        else:
+            day = day + 'th'
+
+        month = int(month)
+        if month == 1:
+            month = 'january'
+        elif month == 2:
+            month = 'february'
+        elif month == 3:
+            month = 'march'
+        elif month == 4:
+            month = 'april'
+        elif month == 5:
+            month = 'may'
+        elif month == 6:
+            month = 'june'
+        elif month == 7:
+            month = 'july'
+        elif month == 8:
+            month = 'august'
+        elif month == 9:
+            month = 'september'
+        elif month == 10:
+            month = 'october'
+        elif month == 11:
+            month = 'november'
+        elif month == 12:
+            month = 'december'
+        else:
+            month = str(month)
+
+        return ' '.join([month, day, year])
+
     def _realize(self, prev_references, reference):
+        entity = reference['entity'].name
+        regex = '([0-9]{4})-([0-9]{2})-([0-9]{2})'
+        if re.match(regex, entity) != None:
+            return self._realize_date(entity)
+
         if reference['form'] == 'pronoun':
             isCompetitor, pronoun = self.prp.generate_major(prev_references, reference, self.data['pronouns'])
 
