@@ -59,14 +59,16 @@ class CyberNLG(object):
             new_entitymap[entitymap[tag]] = new_tag
         return new_entitymap
 
-    def reg_process(self, templates, entitymap):
+    def reg_process(self, templates, triples, entitymap):
         '''
         Process for lexicalization of the templates (referring expression genenation)
         :param self:
         :param templates:
+        :param triples:
         :param entitymap:
         :return:
         '''
+        topic = utils.get_topic(triples, entitymap)
         new_templates = []
         for template in templates:
             # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
@@ -75,9 +77,13 @@ class CyberNLG(object):
                 name = '_'.join(entity.name.replace('\'', '').replace('\"', '').split())
                 template = template.replace(name, tag)
 
+            for entity, tag in new_entitymap.items():
+                if entity.name == entitymap[topic].name:
+                    topic = tag
+
             # Generating referring expressions
             new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))
-            template = self.reg.generate(template, new_entitymap)
+            template = self.reg.generate(template, new_entitymap, topic)
             new_templates.append(template)
         return new_templates
 
@@ -157,7 +163,8 @@ class CyberNLG(object):
         # Try to extract a full template
         begin, end, templates = 0, len(triples), []
         while begin < len(triples):
-            partial_templates, entitymap, predicates = self._extract_template(triples[begin:end], semcategory)[:self.beam]
+            partial_templates, entitymap, predicates = self._extract_template(triples[begin:end], semcategory)
+            partial_templates = partial_templates[:self.beam]
 
             if len(partial_templates) > 0:
                 if len(templates) == 0:
@@ -208,7 +215,7 @@ class CyberNLG(object):
         # Referring expression generation
         entitymap, predicates = utils.map_entities(deventry.triples)
         templates = map(lambda template: ' '.join(template[0]), templates)
-        templates = self.reg_process(templates, entitymap)
+        templates = self.reg_process(templates, triples[0], entitymap)
 
         # Ranking with KenLM
         templates = sorted(templates, key=lambda x: self.model.score(x), reverse=True)
@@ -314,11 +321,13 @@ if __name__ == '__main__':
     # hyps = ''
 
     lm = kenlm.Model('/roaming/tcastrof/gigaword/gigaword.bin')
+    # lm = None
 
     order_step1, order_step2 = '../classifier/data/clf_step1.cPickle', '../classifier/data/clf_step2.cPickle'
     clf = CLF(clf_step1=order_step1, clf_step2=order_step2)
 
     nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=4, delex_type=delex_type)
+    # nlg = CyberNLG(lm=lm, clf=clf, beam=2, clf_beam=1, delex_type=delex_type)
 
     write_references(nlg.references, refs)
     write_hyps(nlg.hyps, hyps)

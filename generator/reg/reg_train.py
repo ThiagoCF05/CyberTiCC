@@ -49,15 +49,14 @@ for entity in entities:
                     for refex in reference.refexes:
                         reftype = refex.ref_type
                         reg = refex.refex.strip().lower()
-                        if len(reg) > 3:
-                            if reftype == 'pronoun' and reg in lemma:
-                                pronouns[entity.name].append(reg)
-                            elif reftype == 'name':
-                                names[(syntax, text_status, sentence_status, entity.name)].append(reg)
-                            elif reftype == 'description':
-                                descriptions[(syntax, text_status, sentence_status, entity.name)].append(reg)
-                            elif reftype == 'demonstrative':
-                                demonstratives[(syntax, text_status, sentence_status, entity.name)].append(reg)
+                        if reftype == 'pronoun' and reg in lemma:
+                            pronouns[entity.name].append(reg)
+                        elif reftype == 'name' and len(reg) > 3:
+                            names[(syntax, text_status, sentence_status, entity.name)].append(reg)
+                        elif reftype == 'description' and len(reg) > 3:
+                            descriptions[(syntax, text_status, sentence_status, entity.name)].append(reg)
+                        elif reftype == 'demonstrative' and len(reg) > 3:
+                            demonstratives[(syntax, text_status, sentence_status, entity.name)].append(reg)
 
                 if len(names[(syntax, text_status, sentence_status, entity.name)]) == 0:
                     bnames.append((syntax, text_status, sentence_status, entity.name))

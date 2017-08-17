@@ -150,10 +150,11 @@ class REG(object):
 
         return ' '.join([month, day, year])
 
-    def _realize(self, prev_references, reference):
+    def _realize(self, prev_references, reference, topic=''):
         entity = reference['entity'].name
         regex = '([0-9]{4})-([0-9]{2})-([0-9]{2})'
-        if re.match(regex, entity) != None:
+        matcher = re.match(regex, entity)
+        if matcher is not None:
             return self._realize_date(entity)
 
         if reference['form'] == 'pronoun':
@@ -161,7 +162,7 @@ class REG(object):
 
             if reference['no_pronoun']:
                 return self.nnp.generate_major(reference, self.data['names'])
-            elif isCompetitor:
+            elif isCompetitor and reference['tag'].lower() != topic.lower():
                 return self.dsc.generate_major(prev_references, reference, self.data['descriptions'])
             else:
                 return pronoun
@@ -172,7 +173,7 @@ class REG(object):
         elif reference['form'] == 'demonstrative':
             return self.dsc.generate_major(prev_references, reference, self.data['demonstratives'])
 
-    def generate(self, template, entitymap):
+    def generate(self, template, entitymap, topic=''):
         self.template = template.lower()
         self.entitymap = dict(map(lambda x: (x[0].lower(), x[1]), entitymap.items()))
 
@@ -182,7 +183,7 @@ class REG(object):
         references = sorted(references, key=lambda x: (x['sentence'], x['pos']))
         prev_references = []
         for reference in references:
-            reference['realization'] = self._realize(prev_references, reference).lower()
+            reference['realization'] = self._realize(prev_references, reference, topic).lower()
             prev_references.append(reference)
 
         for reference in references:
