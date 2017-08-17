@@ -6,6 +6,8 @@ import itertools
 import numpy
 import operator
 
+from db.model import *
+
 class Tripleorder(object):
     def __init__(self, freq_dict, beam):
         self.freq_dict = freq_dict
@@ -19,15 +21,16 @@ class Tripleorder(object):
         #
         # self.newinstance = newinstancelist
         # self.instance = instance
+        self.triples = instance
 
         sortedlist = []
         # First make a new list containing the labels for every instance of the testset with the position and occurrence information
         instancelist = []
-        for label in self.newinstance:
-            if label in self.freq_dict:
-                instancelist.append({label: self.freq_dict[label]})
+        for triple in self.triples:
+            if triple.predicate.name in self.freq_dict:
+                instancelist.append({triple.predicate.name: self.freq_dict[triple.predicate.name]})
             else:
-                instancelist.append({label: self.freq_dict['misc']})
+                instancelist.append({triple.predicate.name: self.freq_dict['misc']})
 
         # First get an inventory of the number of times a label has appeared in an instance in the testset
         timeslist = []
@@ -118,7 +121,7 @@ class Tripleorder(object):
             for combination in sentence:
                 t = ()
                 for label in combination:
-                    t = t + (self.instance[self.newinstance.index(label)],)
+                    t = t + (filter(lambda triple: triple.predicate.name == label, self.triples)[0],)
                 sentencelist.append(t)
             fullsortedlist.append(sentencelist)
 
@@ -133,7 +136,10 @@ with open('../data/freq_order.json') as json_data:
     d = json.load(json_data)
 
 test = Tripleorder(d, 4)
+
+entry = Entry.objects(set='test', size=4).first()
+_in = entry.triples
 r = test.order(_in)
 
 for triples in r:
-    print triples
+    print map(lambda triple: triple.agent.name + ' | ' + triple.predicate.name + ' | ' + triple.patient.name, triples)

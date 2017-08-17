@@ -109,6 +109,7 @@ if __name__ == '__main__':
     parser.add_argument('f', type=str, default='/home/tcastrof/cyber/data/delex/train', help='language file')
     parser.add_argument('size', type=int, default=10, help='consider sentences with less or equal to N triples')
     parser.add_argument("--dev", action="store_true", help="development set")
+    parser.add_argument("--test", action="store_true", help="test set")
     parser.add_argument("--delex", action="store_true", help="delexicalized templates")
     parser.add_argument("--references", action="store_true", help="include references")
     parser.add_argument("--eval", action="store_true", help="evaluation mode")
@@ -118,6 +119,8 @@ if __name__ == '__main__':
     FILE = args.f
     SIZE = args.size
     SET = 'train'
+    if args.test:
+        SET = 'test'
     if args.dev:
         SET = 'dev'
     DELEX = args.delex
