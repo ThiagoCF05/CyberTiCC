@@ -548,6 +548,6 @@ if __name__ == '__main__':
     delex.run()
     del delex
 
-    delex = Delexicalizer(_set='dev', save_references=False)
+    delex = Delexicalizer(_set='dev', save_references=True)
     delex.run()
     del delex

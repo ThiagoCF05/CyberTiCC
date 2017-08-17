@@ -12,13 +12,13 @@ class Tripleorder(object):
         self.beam = beam
 
     def order(self, instance):
-        newinstancelist = []
-        for i in instance:
-            newtriple = i.split(' | ')
-            newinstancelist.append(newtriple[1])
-
-        self.newinstance = newinstancelist
-        self.instance = instance
+        # newinstancelist = []
+        # for i in instance:
+        #     newtriple = i.split(' | ')
+        #     newinstancelist.append(newtriple[1])
+        #
+        # self.newinstance = newinstancelist
+        # self.instance = instance
 
         sortedlist = []
         # First make a new list containing the labels for every instance of the testset with the position and occurrence information

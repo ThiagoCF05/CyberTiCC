@@ -133,6 +133,14 @@ if __name__ == '__main__':
 
     dbinit = DBInit()
 
+    # TEST SET
+    TEST_DIR = '../data/test'
+    for dir in os.listdir(TEST_DIR):
+        if dir != '.DS_Store':
+            f = os.path.join(TEST_DIR, dir)
+            print f
+            dbinit.run(f, 'test')
+
     # TRAIN SET
     TRAIN_DIR = '../data/train'
     for dir in os.listdir(TRAIN_DIR):

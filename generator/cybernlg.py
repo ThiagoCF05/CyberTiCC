@@ -28,6 +28,7 @@ class CyberNLG(object):
     def __init__(self, lm, clf, beam, clf_beam, delex_type):
         self.references = []
         self.hyps = []
+        self.hyps_test = []
 
         self.clf = clf
         self.clf_beam = clf_beam
@@ -43,7 +44,11 @@ class CyberNLG(object):
         deventries = Entry.objects(set='dev').timeout(False)
         # deventries = Entry.objects(set='dev', size=4).timeout(False)
         for deventry in deventries:
-            self.run(deventry)
+            self.run(deventry, 'dev')
+
+        testentries = Entry.objects(set='test').timeout(False)
+        for testentry in testentries:
+            self.run(testentry, 'test')
 
     def get_new_entitymap(self, entitymap):
         '''
@@ -189,20 +194,29 @@ class CyberNLG(object):
                     end = len(triples)
         return templates
 
-    def run(self, deventry):
-        print 10 * '-'
-        print 'ID:', str(deventry.docid), str(deventry.size), str(deventry.category)
-
-        # extract references (gold standard)
+    def extract_gold_standard(self, texts):
+        '''
+        extract references (gold standard)
+        :param texts:
+        :return:
+        '''
         refs = []
-        for lexEntry in deventry.texts:
+        for lexEntry in texts:
             text = lexEntry.text
             refs.append(text)
         self.references.append(refs)
 
+    def run(self, entry, _set):
+        print 10 * '-'
+        print 'ID:', str(entry.docid), str(entry.size), str(entry.category)
+
+        if _set == 'dev':
+            # extract references (gold standard)
+            self.extract_gold_standard(entry.texts)
+
         # ordering triples
-        triples = deventry.triples
-        semcategory = deventry.category
+        triples = entry.triples
+        semcategory = entry.category
         striples = self.order_process(triples, semcategory)
 
         # Templates selection
@@ -213,7 +227,7 @@ class CyberNLG(object):
         templates = sorted(templates, key=lambda template: template[1], reverse=True)[:self.beam]
 
         # Referring expression generation
-        entitymap, predicates = utils.map_entities(deventry.triples)
+        entitymap, predicates = utils.map_entities(entry.triples)
         templates = map(lambda template: ' '.join(template[0]), templates)
         templates = self.reg_process(templates, triples[0], entitymap)
 
@@ -224,7 +238,10 @@ class CyberNLG(object):
         else:
             template = ''
 
-        self.hyps.append(template.strip())
+        if _set == 'dev':
+            self.hyps.append(template.strip())
+        else:
+            self.hyps_test.append(template.strip())
 
         print 'Entities: ', str(map(lambda x: (x[0], x[1].name), entitymap.items()))
         print 'Predicate: ', str(map(lambda predicate: predicate.name, predicates))
@@ -309,12 +326,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('hyps', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps', help='hypothesis writing file')
     parser.add_argument('refs', type=str, default='/home/tcastrof/cyber/data/easy_nlg/ref', help='references writing file')
+    parser.add_argument('hyps_test', type=str, default='/home/tcastrof/cyber/data/easy_nlg/hyps_test', help='hypothesis writing file')
     parser.add_argument('delex_type', type=str, default='automatic+manual', help='delexicalization type (manual or automatic)')
     args = parser.parse_args()
 
     delex_type = args.delex_type
     refs = args.refs
     hyps = args.hyps
+    hyps_test = args.hyps_test
 
     # delex_type = 'manual'
     # refs = ''
@@ -326,8 +345,10 @@ if __name__ == '__main__':
     order_step1, order_step2 = '../classifier/data/clf_step1.cPickle', '../classifier/data/clf_step2.cPickle'
     clf = CLF(clf_step1=order_step1, clf_step2=order_step2)
 
-    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=4, delex_type=delex_type)
+    nlg = CyberNLG(lm=lm, clf=clf, beam=100, clf_beam=5, delex_type=delex_type)
     # nlg = CyberNLG(lm=lm, clf=clf, beam=2, clf_beam=1, delex_type=delex_type)
 
     write_references(nlg.references, refs)
     write_hyps(nlg.hyps, hyps)
+
+    write_hyps(nlg.hyps_test, hyps_test)

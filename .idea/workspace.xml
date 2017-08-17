@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/test/triples/test.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aligner/parallel_data.py" afterPath="$PROJECT_DIR$/aligner/parallel_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classifier/chris/order_test.py" afterPath="$PROJECT_DIR$/classifier/chris/order_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/init.py" afterPath="$PROJECT_DIR$/db/init.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delexicalizer/delex.py" afterPath="$PROJECT_DIR$/delexicalizer/delex.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/template.sh" afterPath="$PROJECT_DIR$/generator/template.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -22,19 +29,28 @@
       <file leaf-file-name="nmt.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="79" lean-forward="false" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
+            <state relative-caret-position="330">
+              <caret line="22" column="84" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="84" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smt.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
+      <file leaf-file-name="delex.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="550" column="58" lean-forward="false" selection-start-line="550" selection-start-column="58" selection-end-line="550" selection-end-column="58" />
+              <folding>
+                <element signature="e#1081#3697#0" expanded="false" />
+                <element signature="e#3850#5201#0" expanded="false" />
+                <element signature="e#5277#6832#0" expanded="false" />
+                <element signature="e#9969#12388#0" expanded="false" />
+                <element signature="e#12531#13186#0" expanded="false" />
+                <element signature="e#13352#14176#0" expanded="false" />
+                <element signature="e#14260#16774#0" expanded="false" />
+                <element signature="e#16854#18907#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,52 +58,20 @@
       <file leaf-file-name="cybernlg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
-              <caret line="216" column="12" lean-forward="false" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="order_test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classifier/chris/order_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1005">
-              <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="-2445">
+              <caret line="164" column="20" lean-forward="false" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#3380#5774#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="order_train.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classifier/chris/order_train.py">
+      <file leaf-file-name="parallel_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pronoun.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generator/reg/pronoun.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="128" column="23" lean-forward="true" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -96,21 +80,11 @@
       <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+            <state relative-caret-position="220">
+              <caret line="160" column="52" lean-forward="false" selection-start-line="160" selection-start-column="52" selection-end-line="160" selection-end-column="52" />
               <folding>
                 <element signature="e#157#176#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/delexicalizer/report.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="132" column="43" lean-forward="false" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="43" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -159,7 +133,6 @@
         <option value="$PROJECT_DIR$/scripts/entity_info.py" />
         <option value="$PROJECT_DIR$/generator/simplenlg.py" />
         <option value="$PROJECT_DIR$/scripts/tokenizer.py" />
-        <option value="$PROJECT_DIR$/db/init.py" />
         <option value="$PROJECT_DIR$/delexicalizer/evaluation.py" />
         <option value="$PROJECT_DIR$/scripts/report.py" />
         <option value="$PROJECT_DIR$/delexicalizer/ordering.py" />
@@ -175,30 +148,30 @@
         <option value="$PROJECT_DIR$/db/operations.py" />
         <option value="$PROJECT_DIR$/delexicalizer/reference_delex.py" />
         <option value="$PROJECT_DIR$/scripts/run_generator.sh" />
-        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
         <option value="$PROJECT_DIR$/scripts/reg_train.py" />
         <option value="$PROJECT_DIR$/generator/reg/description.py" />
         <option value="$PROJECT_DIR$/generator/reg/proper_name.py" />
         <option value="$PROJECT_DIR$/delexicalizer/manual.py" />
-        <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
         <option value="$PROJECT_DIR$/generator/reg/pronoun.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/generator/template.sh" />
         <option value="$PROJECT_DIR$/generator/reg/reg_train.py" />
         <option value="$PROJECT_DIR$/aligner/nmt.sh" />
         <option value="$PROJECT_DIR$/generator/reg/reg_main.py" />
         <option value="$PROJECT_DIR$/aligner/smt.sh" />
-        <option value="$PROJECT_DIR$/generator/cybernlg.py" />
         <option value="$PROJECT_DIR$/classifier/chris/Test_order.py" />
         <option value="$PROJECT_DIR$/classifier/chris/order_train.py" />
         <option value="$PROJECT_DIR$/classifier/chris/order_test.py" />
+        <option value="$PROJECT_DIR$/db/init.py" />
+        <option value="$PROJECT_DIR$/delexicalizer/delex.py" />
+        <option value="$PROJECT_DIR$/generator/template.sh" />
+        <option value="$PROJECT_DIR$/generator/cybernlg.py" />
+        <option value="$PROJECT_DIR$/aligner/parallel_data.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="686" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -252,7 +225,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="delexicalizer" />
+              <option name="myItemId" value="generator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,6 +265,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/anaconda/bin" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/thiagocastroferreira/Documents/Doutorado/4 - Fourth/CyberTiCC/delexicalizer/delex.py" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -307,24 +281,7 @@
       <recent name="$PROJECT_DIR$/manual" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.order_test">
-    <configuration default="false" name="ordering" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classifier" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CyberTiCC" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classifier/ordering.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.init">
     <configuration default="false" name="cybernlg" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -389,6 +346,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CyberTiCC" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classifier/chris/order_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="init" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyberTiCC" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/init.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -799,19 +773,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.ordering" />
-      <item index="1" class="java.lang.String" itemvalue="Python.cybernlg" />
-      <item index="2" class="java.lang.String" itemvalue="Python.reg_train" />
-      <item index="3" class="java.lang.String" itemvalue="Python.order_train" />
-      <item index="4" class="java.lang.String" itemvalue="Python.order_test" />
+      <item index="0" class="java.lang.String" itemvalue="Python.cybernlg" />
+      <item index="1" class="java.lang.String" itemvalue="Python.reg_train" />
+      <item index="2" class="java.lang.String" itemvalue="Python.order_train" />
+      <item index="3" class="java.lang.String" itemvalue="Python.order_test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.init" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.order_test" />
-        <item index="1" class="java.lang.String" itemvalue="Python.order_train" />
-        <item index="2" class="java.lang.String" itemvalue="Python.cybernlg" />
-        <item index="3" class="java.lang.String" itemvalue="Python.reg_train" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ordering" />
+        <item index="0" class="java.lang.String" itemvalue="Python.init" />
+        <item index="1" class="java.lang.String" itemvalue="Python.order_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.order_train" />
+        <item index="3" class="java.lang.String" itemvalue="Python.cybernlg" />
+        <item index="4" class="java.lang.String" itemvalue="Python.reg_train" />
       </list>
     </recent_temporary>
   </component>
@@ -850,7 +824,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="686" extended-state="1" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -871,7 +845,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3041096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3041096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21001616" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -949,7 +923,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/generator/cybernlg.py</url>
-          <line>212</line>
+          <line>226</line>
           <option name="timeStamp" value="304" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -974,12 +948,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/generator/cybernlg.py</url>
-          <line>70</line>
+          <line>75</line>
           <option name="timeStamp" value="321" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/generator/cybernlg.py</url>
-          <line>84</line>
+          <line>89</line>
           <option name="timeStamp" value="325" />
         </line-breakpoint>
       </breakpoints>
@@ -1155,6 +1129,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="37" column="119" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="37" selection-end-column="119" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,25 +1177,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/reference_delex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="87" column="81" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="87" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/manual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="144" column="77" lean-forward="false" selection-start-line="144" selection-start-column="77" selection-end-line="144" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/train/7triples/7triples_Astronaut_train_challenge.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1228,13 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="59" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/init.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1246,67 +1200,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="418" column="69" lean-forward="false" selection-start-line="418" selection-start-column="69" selection-end-line="418" selection-end-column="69" />
-          <folding>
-            <element signature="e#1081#3697#0" expanded="false" />
-            <element signature="e#3850#5201#0" expanded="false" />
-            <element signature="e#5277#6832#0" expanded="false" />
-            <element signature="e#9969#12388#0" expanded="false" />
-            <element signature="e#12531#13186#0" expanded="false" />
-            <element signature="e#13352#14176#0" expanded="false" />
-            <element signature="e#14260#16774#0" expanded="false" />
-            <element signature="e#16854#18907#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="115" column="30" lean-forward="true" selection-start-line="115" selection-start-column="30" selection-end-line="115" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator/reg/pronoun.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generator/template.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="79" lean-forward="false" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1327,24 +1224,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="216" column="12" lean-forward="false" selection-start-line="216" selection-start-column="12" selection-end-line="216" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classifier/chris/order_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1005">
-          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classifier/chris/order_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -1355,20 +1234,121 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/delexicalizer/report.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="132" column="43" lean-forward="false" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/smt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delexicalizer/reference_delex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="160" column="19" lean-forward="true" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+        <state relative-caret-position="220">
+          <caret line="160" column="52" lean-forward="false" selection-start-line="160" selection-start-column="52" selection-end-line="160" selection-end-column="52" />
           <folding>
             <element signature="e#157#176#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delexicalizer/report.txt">
+    <entry file="file://$PROJECT_DIR$/classifier/chris/order_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="132" column="43" lean-forward="false" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="43" />
+        <state relative-caret-position="300">
+          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/template.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="53" lean-forward="false" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/nmt.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="84" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delexicalizer/delex.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="550" column="58" lean-forward="false" selection-start-line="550" selection-start-column="58" selection-end-line="550" selection-end-column="58" />
+          <folding>
+            <element signature="e#1081#3697#0" expanded="false" />
+            <element signature="e#3850#5201#0" expanded="false" />
+            <element signature="e#5277#6832#0" expanded="false" />
+            <element signature="e#9969#12388#0" expanded="false" />
+            <element signature="e#12531#13186#0" expanded="false" />
+            <element signature="e#13352#14176#0" expanded="false" />
+            <element signature="e#14260#16774#0" expanded="false" />
+            <element signature="e#16854#18907#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/reg/pronoun.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-290">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/init.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="131" column="8" lean-forward="false" selection-start-line="131" selection-start-column="8" selection-end-line="131" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delexicalizer/manual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="144" column="77" lean-forward="false" selection-start-line="144" selection-start-column="77" selection-end-line="144" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/cybernlg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2445">
+          <caret line="164" column="20" lean-forward="false" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
+          <folding>
+            <element signature="e#3380#5774#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="128" column="23" lean-forward="true" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
           <folding />
         </state>
       </provider>

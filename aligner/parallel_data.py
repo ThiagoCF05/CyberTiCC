@@ -126,7 +126,7 @@ if __name__ == '__main__':
 
     de, en, entity_maps = get_parallel(SET, DELEX, SIZE, EVAL)
     # insert references only in the training set
-    if not EVAL and SET != 'dev' and REFS:
+    if not EVAL and SET == 'train' and REFS:
         ref_de, ref_en = get_references()
 
         de.extend(ref_de)
