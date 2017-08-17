@@ -17,7 +17,7 @@ perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
     -root-dir . \
     --corpus train \
     -mgiza \
-    --max-phrase-length 9 \
+    --max-phrase-length 20 \
     -external-bin-dir /home/tcastrof/workspace/mgiza \
     --f de --e en \
     --parallel \
@@ -56,7 +56,7 @@ perl /home/tcastrof/workspace/mosesdecoder/scripts/training/train-model.perl \
     -root-dir . \
     --corpus train \
     -mgiza \
-    --max-phrase-length 9 \
+    --max-phrase-length 20 \
     -external-bin-dir /home/tcastrof/workspace/mgiza \
     --f de --e en \
     --parallel \
