@@ -82,9 +82,11 @@ class CyberNLG(object):
                 name = '_'.join(entity.name.replace('\'', '').replace('\"', '').split())
                 template = template.replace(name, tag)
 
+            # map the topic to the right tag
             for entity, tag in new_entitymap.items():
                 if entity.name == entitymap[topic].name:
                     topic = tag
+                    break
 
             # Generating referring expressions
             new_entitymap = dict(map(lambda x: (x[1], x[0]), new_entitymap.items()))

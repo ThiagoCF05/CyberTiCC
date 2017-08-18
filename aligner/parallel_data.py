@@ -93,6 +93,9 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
             entity_maps.append(entity_map)
             de.append(source.strip())
             en.append(target_list)
+        elif set == 'test':
+            entity_maps.append(entity_map)
+            de.append(source.strip())
     return de, en, entity_maps
 
 def write(fname, docs):
