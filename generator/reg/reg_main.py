@@ -153,7 +153,7 @@ class REG(object):
     def _realize(self, prev_references, reference, topic=''):
         entity = reference['entity'].name
         regex = '([0-9]{4})-([0-9]{2})-([0-9]{2})'
-        matcher = re.match(regex, entity)
+        matcher = re.match(regex, entity.replace('\'', '').replace('\"', ''))
         if matcher is not None:
             return self._realize_date(entity)
 
