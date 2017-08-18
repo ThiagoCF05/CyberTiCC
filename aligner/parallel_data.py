@@ -98,7 +98,7 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
                 source += patient
             source += ' '
 
-            if not DELEX:
+            if not DELEX and set=='train' and not evaluation:
                 de.append(agent)
                 name = ' '.join(agent.replace('\'', '').replace('\"', '').split('_'))
                 out = proc.parse_doc(name)
