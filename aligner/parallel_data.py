@@ -98,23 +98,24 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
                 source += patient
             source += ' '
 
-            de.append(agent)
-            name = ' '.join(agent.replace('\'', '').replace('\"', '').split('_'))
-            out = proc.parse_doc(name)
-            text = ''
-            for snt in out['sentences']:
-                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
-                text += ' '
-            en.append(text.strip())
+            if not DELEX:
+                de.append(agent)
+                name = ' '.join(agent.replace('\'', '').replace('\"', '').split('_'))
+                out = proc.parse_doc(name)
+                text = ''
+                for snt in out['sentences']:
+                    text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                    text += ' '
+                en.append(text.strip())
 
-            de.append(patient)
-            name = ' '.join(patient.replace('\'', '').replace('\"', '').split('_'))
-            out = proc.parse_doc(name)
-            text = ''
-            for snt in out['sentences']:
-                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
-                text += ' '
-            en.append(text.strip())
+                de.append(patient)
+                name = ' '.join(patient.replace('\'', '').replace('\"', '').split('_'))
+                out = proc.parse_doc(name)
+                text = ''
+                for snt in out['sentences']:
+                    text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                    text += ' '
+                en.append(text.strip())
 
         target_list = []
         for lexEntry in entry.texts:
@@ -181,7 +182,7 @@ if __name__ == '__main__':
 
     de, en, entity_maps = get_parallel(SET, DELEX, SIZE, EVAL)
     # insert references only in the training set
-    if not EVAL and SET == 'train':
+    if not EVAL and SET == 'train' and not DELEX:
         ref_de, ref_en = get_test_references()
 
         de.extend(ref_de)
