@@ -50,7 +50,7 @@ for entity in entities:
                         reftype = refex.ref_type
                         reg = refex.refex.strip().lower()
                         if reftype == 'pronoun' and reg in lemma:
-                            pronouns[entity.name].append(reg)
+                            pronouns[entity.name].append(lemma[reg])
                         elif reftype == 'name' and len(reg) > 3:
                             names[(syntax, text_status, sentence_status, entity.name)].append(reg)
                         elif reftype == 'description' and len(reg) > 3:
