@@ -73,9 +73,9 @@ class CyberNLG(object):
         :param entitymap:
         :return:
         '''
-        topic = utils.get_topic(triples, entitymap)
         new_templates = []
         for template in templates:
+            topic = utils.get_topic(triples, entitymap)
             # Replace WIKI-IDS for simple tags (ENTITY-1, etc). In order to make it easier for the parser
             new_entitymap = self.get_new_entitymap(entitymap)
             for entity, tag in sorted(new_entitymap.items(), key=lambda x: len(x[0].name), reverse=True):

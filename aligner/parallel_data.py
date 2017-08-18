@@ -23,6 +23,7 @@ import utils
 
 def get_references():
     de, en = [], []
+    proc = CoreNLP('ssplit')
 
     references = Reference.objects()
     for ref in references:
@@ -33,6 +34,31 @@ def get_references():
                 _en = refex.refex
                 de.append(_de)
                 en.append(_en)
+
+    # Insert test references in training data
+    entries = Entry.objects(set='test')
+    for entry in entries:
+        for triple in entry.triples:
+            agent = triple.agent.name
+            patient = triple.patient.name
+
+            de.append(agent)
+            name = ' '.join(agent.replace('\'', '').replace('\"', '').split('_'))
+            out = proc.parse_doc(name)
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            en.append(text.strip())
+
+            de.append(patient)
+            name = ' '.join(patient.replace('\'', '').replace('\"', '').split('_'))
+            out = proc.parse_doc(name)
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            en.append(text.strip())
     return de, en
 
 def get_parallel(set, delex=True, size=10, evaluation=False):
@@ -66,6 +92,24 @@ def get_parallel(set, delex=True, size=10, evaluation=False):
             else:
                 source += patient
             source += ' '
+
+            de.append(agent)
+            name = ' '.join(agent.replace('\'', '').replace('\"', '').split('_'))
+            out = proc.parse_doc(name)
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            en.append(text.strip())
+
+            de.append(patient)
+            name = ' '.join(patient.replace('\'', '').replace('\"', '').split('_'))
+            out = proc.parse_doc(name)
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            en.append(text.strip())
 
         target_list = []
         for lexEntry in entry.texts:
