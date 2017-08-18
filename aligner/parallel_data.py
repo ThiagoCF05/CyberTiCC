@@ -21,19 +21,9 @@ from stanford_corenlp_pywrapper import CoreNLP
 
 import utils
 
-def get_references():
+def get_test_references():
     de, en = [], []
     proc = CoreNLP('ssplit')
-
-    references = Reference.objects()
-    for ref in references:
-        _de = ref.entity.name
-
-        for refex in ref.refexes:
-            if refex.annotation == 'manual':
-                _en = refex.refex
-                de.append(_de)
-                en.append(_en)
 
     # Insert test references in training data
     entries = Entry.objects(set='test')
@@ -59,6 +49,21 @@ def get_references():
                 text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
                 text += ' '
             en.append(text.strip())
+    return de, en
+
+def get_references():
+    de, en = [], []
+
+    references = Reference.objects()
+    for ref in references:
+        _de = ref.entity.name
+
+        for refex in ref.refexes:
+            if refex.annotation == 'manual':
+                _en = refex.refex
+                de.append(_de)
+                en.append(_en)
+
     return de, en
 
 def get_parallel(set, delex=True, size=10, evaluation=False):
@@ -176,11 +181,17 @@ if __name__ == '__main__':
 
     de, en, entity_maps = get_parallel(SET, DELEX, SIZE, EVAL)
     # insert references only in the training set
-    if not EVAL and SET == 'train' and REFS:
-        ref_de, ref_en = get_references()
+    if not EVAL and SET == 'train':
+        ref_de, ref_en = get_test_references()
 
         de.extend(ref_de)
         en.extend(ref_en)
+
+        if REFS:
+            ref_de, ref_en = get_references()
+
+            de.extend(ref_de)
+            en.extend(ref_en)
 
     write(FILE+'.de', de)
     if EVAL:
