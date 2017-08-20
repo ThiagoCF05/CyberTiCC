@@ -35,7 +35,7 @@ class Postprocessing(object):
                         dev_gold.extend(_gold)
         self.write_hyps(dev_order, fdev + '.ordered')
 
-        utils.write_references('/home/tcastrof/cyber/CyberTiCC/scripts/results/gold/dev.en', dev_gold)
+        utils.write_references('results/gold/dev.en', dev_gold)
 
         # TEST
         test_order, test_gold = [], []
@@ -112,7 +112,7 @@ class Postprocessing(object):
             size = int(_entry.attrib['size'])
             semcategory = _entry.attrib['category']
 
-            if _set == 'dev':
+            if _set == u'dev':
                 order.append(self.dev_order[(docid, size, semcategory, _set)])
                 gold.append(self.dev_gold[(docid, size, semcategory, _set)])
             else:
