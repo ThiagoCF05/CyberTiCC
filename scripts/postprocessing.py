@@ -134,4 +134,5 @@ class Postprocessing(object):
 
 
 if __name__ == '__main__':
+    postprocessing = Postprocessing('results/smt_dev.out', 'results/smt_test.out')
     postprocessing = Postprocessing('results/nmt_dev.out', 'results/nmt_test.out')

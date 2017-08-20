@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/postprocessing.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/tokenizer.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/cybernlg.py" afterPath="$PROJECT_DIR$/generator/cybernlg.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generator/reg/reg_main.py" afterPath="$PROJECT_DIR$/generator/reg/reg_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/postprocessing.py" afterPath="$PROJECT_DIR$/scripts/postprocessing.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -23,11 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="postprocessing.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="postprocessing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/postprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+            <state relative-caret-position="612">
+              <caret line="136" column="69" lean-forward="false" selection-start-line="136" selection-start-column="69" selection-end-line="136" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -63,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reg_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2715">
+            <state relative-caret-position="447">
               <caret line="223" column="25" lean-forward="false" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
               <folding>
                 <element signature="e#4095#5150#0" expanded="false" />
@@ -1429,14 +1425,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/postprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/results/smt_dev.out">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1447,11 +1435,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generator/reg/reg_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2715">
+        <state relative-caret-position="447">
           <caret line="223" column="25" lean-forward="false" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
           <folding>
             <element signature="e#4095#5150#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="136" column="69" lean-forward="false" selection-start-line="136" selection-start-column="69" selection-end-line="136" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
