@@ -213,7 +213,14 @@ class REG(object):
 
         f = open(fout, 'w')
         for text in texts:
-            f.write(text)
+            out = self.proc.parse_doc(text)['sentences']
+
+            text = []
+            for i, snt in enumerate(out):
+                text.extend(snt['tokens'])
+            text = ' '.join(text).replace('-LRB- ', '(').replace(' -RRB-', ')').strip()
+
+            f.write(text.encode('utf-8'))
             f.write('\n')
         f.close()
 

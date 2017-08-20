@@ -317,9 +317,17 @@ def write_references(refs, fname):
     f7.close()
 
 def write_hyps(hyps, fname):
+    proc = CoreNLP('ssplit')
+
     f = open(fname, 'w')
     for hyp in hyps:
-        f.write(hyp.encode('utf-8'))
+        out = proc.parse_doc(hyp)
+        text = ''
+        for snt in out['sentences']:
+            text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+            text += ' '
+
+        f.write(text.encode('utf-8'))
         f.write('\n')
     f.close()
 
