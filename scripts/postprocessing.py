@@ -35,7 +35,7 @@ class Postprocessing(object):
                         dev_gold.extend(_gold)
         self.write_hyps(dev_order, fdev + '.ordered')
 
-        utils.write_references('results/gold/dev.en', dev_gold)
+        utils.write_references('/home/tcastrof/cyber/CyberTiCC/scripts/results/gold/dev.en', dev_gold)
 
         # TEST
         test_order, test_gold = [], []
