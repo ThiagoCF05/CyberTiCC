@@ -1,4 +1,7 @@
 import copy
+import sys
+sys.path.append('/home/tcastrof/workspace/stanford_corenlp_pywrapper')
+from stanford_corenlp_pywrapper import CoreNLP
 
 def get_topic(triples, entity_map):
     entity_map = entity2tag(entity_map)
@@ -102,6 +105,8 @@ def get_e2f(fname):
     return e2f
 
 def write_references(fname, refs):
+    proc = CoreNLP('ssplit')
+
     f1 = open(fname+'1', 'w')
     f2 = open(fname+'2', 'w')
     f3 = open(fname+'3', 'w')
@@ -111,31 +116,68 @@ def write_references(fname, refs):
     f7 = open(fname+'7', 'w')
 
     for references in refs:
-        f1.write(references[0].lower().encode('utf-8'))
+        out = proc.parse_doc(references[0].lower())
+        text = ''
+        for snt in out['sentences']:
+            text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+            text += ' '
+
+        f1.write(text.encode('utf-8'))
         f1.write('\n')
 
         if len(references) >= 2:
-            f2.write(references[1].lower().encode('utf-8'))
+            out = proc.parse_doc(references[1].lower())
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+
+            f2.write(text.encode('utf-8'))
         f2.write('\n')
 
         if len(references) >= 3:
-            f3.write(references[2].lower().encode('utf-8'))
+            out = proc.parse_doc(references[2].lower())
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            f3.write(text.encode('utf-8'))
         f3.write('\n')
 
         if len(references) >= 4:
-            f4.write(references[3].lower().encode('utf-8'))
+            out = proc.parse_doc(references[3].lower())
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            f4.write(text.encode('utf-8'))
         f4.write('\n')
 
         if len(references) >= 5:
-            f5.write(references[4].lower().encode('utf-8'))
+            out = proc.parse_doc(references[4].lower())
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            f5.write(text.encode('utf-8'))
         f5.write('\n')
 
         if len(references) >= 6:
-            f6.write(references[5].lower().encode('utf-8'))
+            out = proc.parse_doc(references[5].lower())
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            f6.write(text.encode('utf-8'))
         f6.write('\n')
 
         if len(references) >= 7:
-            f7.write(references[6].lower().encode('utf-8'))
+            out = proc.parse_doc(references[6].lower())
+            text = ''
+            for snt in out['sentences']:
+                text += ' '.join(snt['tokens']).replace('-LRB-', '(').replace('-RRB-', ')')
+                text += ' '
+            f7.write(text.encode('utf-8'))
         f7.write('\n')
 
     f1.close()

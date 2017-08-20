@@ -47,19 +47,6 @@ class Postprocessing(object):
         # save previous orders
         self.save_prev_order()
 
-    def save_prev_order(self):
-        f = open('results/dev_prev_order.txt', 'w')
-        for prev in self.dev_key_order:
-            f.write('\t'.join(map(lambda x: str(x), prev)))
-            f.write('\n')
-        f.close()
-
-        f = open('results/test_prev_order.txt', 'w')
-        for prev in self.test_key_order:
-            f.write(prev)
-            f.write('\n')
-        f.close()
-
     def get_results(self, fdev, ftest):
         def read_file(fname):
             f = open(fname)
@@ -82,6 +69,10 @@ class Postprocessing(object):
             docid = entry.docid
             self.dev_order[(docid, size, semcategory, _set)] = devresults[i]
             self.dev_key_order.append([docid, size, semcategory, _set])
+
+            print (docid, size, semcategory, _set)
+            print devresults[i]
+            print 10 * '*'
 
             texts = map(lambda x: x.text, entry.texts)
             self.dev_gold[(docid, size, semcategory, _set)] = texts
@@ -118,6 +109,19 @@ class Postprocessing(object):
             else:
                 order.append(self.test_order[docid])
         return order, gold
+
+    def save_prev_order(self):
+        f = open('results/dev_prev_order.txt', 'w')
+        for prev in self.dev_key_order:
+            f.write('\t'.join(map(lambda x: str(x), prev)))
+            f.write('\n')
+        f.close()
+
+        f = open('results/test_prev_order.txt', 'w')
+        for prev in self.test_key_order:
+            f.write(prev)
+            f.write('\n')
+        f.close()
 
     def write_hyps(self, order, fname):
         f = open(fname, 'w')
