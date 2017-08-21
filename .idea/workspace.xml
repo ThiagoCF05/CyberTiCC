@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f70c8a2a-9712-4eae-a13c-2f50ac11d6c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/postprocessing.py" afterPath="$PROJECT_DIR$/scripts/postprocessing.py" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,11 +23,12 @@
       <file leaf-file-name="postprocessing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/postprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="103" column="70" lean-forward="false" selection-start-line="103" selection-start-column="70" selection-end-line="103" selection-end-column="70" />
+            <state relative-caret-position="627">
+              <caret line="141" column="81" lean-forward="false" selection-start-line="141" selection-start-column="81" selection-end-line="141" selection-end-column="81" />
               <folding>
-                <element signature="e#3473#3825#0" expanded="false" />
-                <element signature="e#3875#4236#0" expanded="false" />
+                <element signature="e#1528#2644#0" expanded="false" />
+                <element signature="e#2688#3433#0" expanded="false" />
+                <element signature="e#3474#3826#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1236,13 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/results/nmt_test.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="1849" column="31" lean-forward="false" selection-start-line="1849" selection-start-column="27" selection-end-line="1849" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aligner/parallel_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1425,13 +1420,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/results/nmt_test.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="1836" column="29" lean-forward="true" selection-start-line="1836" selection-start-column="29" selection-end-line="1836" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/postprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="103" column="70" lean-forward="false" selection-start-line="103" selection-start-column="70" selection-end-line="103" selection-end-column="70" />
+        <state relative-caret-position="627">
+          <caret line="141" column="81" lean-forward="false" selection-start-line="141" selection-start-column="81" selection-end-line="141" selection-end-column="81" />
           <folding>
-            <element signature="e#3473#3825#0" expanded="false" />
-            <element signature="e#3875#4236#0" expanded="false" />
+            <element signature="e#1528#2644#0" expanded="false" />
+            <element signature="e#2688#3433#0" expanded="false" />
+            <element signature="e#3474#3826#0" expanded="false" />
           </folding>
         </state>
       </provider>

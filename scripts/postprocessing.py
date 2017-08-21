@@ -42,7 +42,7 @@ class Postprocessing(object):
         TEST_FILE = u'../data/test/triples/test.xml'
         _order, _gold = self.order(TEST_FILE, u'test')
         test_order.extend(_order)
-        self.write_hyps(dev_order, ftest + '.ordered')
+        self.write_hyps(test_order, ftest + '.ordered')
 
         # save previous orders
         self.save_prev_order()
@@ -136,7 +136,7 @@ class Postprocessing(object):
             f.write('\n')
         f.close()
 
-
 if __name__ == '__main__':
     postprocessing = Postprocessing('results/smt_dev.out', 'results/smt_test.out')
     postprocessing = Postprocessing('results/nmt_dev.out', 'results/nmt_test.out')
+    postprocessing = Postprocessing('results/template_dev.out', 'results/template_test.out')
