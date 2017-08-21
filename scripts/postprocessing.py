@@ -101,9 +101,9 @@ class Postprocessing(object):
             semcategory = _entry.attrib['category']
 
             if _set == u'dev':
-                print (docid, size, semcategory, _set)
-                print self.dev_order[(docid, size, semcategory, _set)]
-                print 10 * '*'
+                # print (docid, size, semcategory, _set)
+                # print self.dev_order[(docid, size, semcategory, _set)]
+                # print 10 * '*'
 
                 order.append(self.dev_order[(docid, size, semcategory, _set)])
                 gold.append(self.dev_gold[(docid, size, semcategory, _set)])
