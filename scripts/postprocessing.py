@@ -30,6 +30,7 @@ class Postprocessing(object):
                 f = os.path.join(DEV_DIR, dir)
                 for fname in os.listdir(f):
                     if fname != u'.DS_Store':
+                        print os.path.join(f, fname)
                         _order, _gold = self.order(os.path.join(f, fname), u'dev')
                         dev_order.extend(_order)
                         dev_gold.extend(_gold)
